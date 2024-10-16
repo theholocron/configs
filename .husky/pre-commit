@@ -1,1 +1,1 @@
-npx lint-staged --config @theholocron/lint-staged-config
+npx lint-staged --config @theholocron/lint-staged-config && npm run release
