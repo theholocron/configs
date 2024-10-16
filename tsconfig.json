@@ -1,3 +1,6 @@
 {
-  "extends": "@theholcron/tsconfig/node-next/tsconfig.json"
+  "extends": "./packages/tsconfig/node-next/tsconfig.json"
+  "compilerOptions": {
+    "allowJs": true
+  }
 }

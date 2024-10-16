@@ -1,47 +1,39 @@
 {
-  "name": "@theholocron/<name>",
-  "description": "<description>",
-  "homepage": "https://github.com/theholocron/<name>#readme",
-  "author": "Newton Koumantzelis",
-  "version": "0.1.0",
+  "name": "@theholocron/configs",
+  "version": "0.0.0",
+  "description": "Shareable configuration files.",
+  "homepage": "https://github.com/theholocron/configs#readme",
+  "bugs": "https://github.com/theholocron/configs/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/theholocron/<name>.git"
+    "url": "git+https://github.com/theholocron/configs.git"
   },
-  "bugs": "https://github.com/theholocron/<name>/issues",
-  "releases": "https://github.com/theholocron/<name>/releases",
-  "wiki": "https://github.com/theholocron/<name>/wiki",
   "license": "GPL-3.0",
-  "packageManager": "npm@9.5.0",
+  "author": "Newton Koumantzelis",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "lint": "turbo run lint",
+    "prepare": "husky",
+    "release": "changeset",
+    "test": "turbo run test"
+  },
   "commitlint": {
     "extends": "@theholocron"
-  },
-  "eslintConfig": {
-    "extends": "@theholocron"
-  },
-  "jest": {
-    "displayName": "<name>",
-    "preset": "@theholocron/jest-config"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "prettier": "@theholocron/prettier-config",
-  "scripts": {
-    "build": "tsc --noEmit",
-    "lint": "eslint --ignore-path .gitignore '**/*.{js,jsx,ts,tsx}'",
-    "release": "changeset",
-    "start": "",
-    "test": "jest"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.9",
-    "@theholocron/commitlint-config": "^2.0.0",
-    "@theholocron/eslint-config": "^2.0.0",
-    "@theholocron/jest-config": "^2.0.0",
-    "@theholocron/lint-staged-config": "^2.0.0",
-    "@theholocron/prettier-config": "^2.0.0",
-    "@theholocron/tsconfig": "^2.0.0"
-  }
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "husky": "^9.1.6",
+    "turbo": "^2.1.3"
+  },
+  "packageManager": "npm@9.5.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "releases": "https://github.com/theholocron/configs/releases",
+  "wiki": "https://github.com/theholocron/configs/wiki"
 }

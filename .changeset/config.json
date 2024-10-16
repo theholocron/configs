@@ -4,5 +4,15 @@
   "baseBranch": "main",
   "changelog": ["@changesets/changelog-github", {"repo": "theholocron/configs"}],
   "commit": false,
+  "fixed": [[
+    "@theholocron/browserslist-config",
+    "@theholocron/bundlewatch-config",
+    "@theholocron/commitlint-config",
+    "@theholocron/eslint-config",
+    "@theholocron/jest-config",
+    "@theholocron/lint-staged-config",
+    "@theholocron/prettier-config",
+    "@theholocron/tsconfig"
+  ]],
   "updateInternalDependencies": "patch"
 }
