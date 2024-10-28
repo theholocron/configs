@@ -1,6 +1,14 @@
 {
-  "extends": "./packages/tsconfig/node-next/tsconfig.json"
+  "display": "Shareable Configurations",
+  "extends": "@tsconfig/node-lts/tsconfig.json",
   "compilerOptions": {
-    "allowJs": true
-  }
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "paths": {
+      "@/package": ["./package.json"],
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["./node_modules"]
 }

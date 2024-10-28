@@ -6,7 +6,7 @@
   "bugs": "https://github.com/theholocron/configs/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/theholocron/configs.git"
+    "url": "https://github.com/theholocron/configs.git"
   },
   "license": "GPL-3.0",
   "author": "Newton Koumantzelis",
@@ -15,12 +15,8 @@
   ],
   "scripts": {
     "lint": "turbo run lint",
-    "prepare": "husky",
     "release": "changeset",
     "test": "turbo run test"
-  },
-  "commitlint": {
-    "extends": "@theholocron"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.0",
@@ -31,6 +27,10 @@
     "turbo": "^2.2.3"
   },
   "packageManager": "npm@9.5.0",
+  "engines": {
+    "node": ">=23",
+    "npm": ">=10"
+  },
   "publishConfig": {
     "access": "public"
   },
