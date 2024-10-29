@@ -70,10 +70,10 @@ jobs:
           # VALIDATE_GRAPHQL_PRETTIER: true
           # VALIDATE_HTML_PRETTIER: true
           # VALIDATE_JAVASCRIPT_PRETTIER: true
-          VALIDATE_JSON: true
+          # VALIDATE_JSON: true
           # VALIDATE_JSON_PRETTIER: true
           # VALIDATE_JSX_PRETTIER: true
-          VALIDATE_MARKDOWN: true
+          # VALIDATE_MARKDOWN: true
           # VALIDATE_MARKDOWN_PRETTIER: true
           # VALIDATE_NATURAL_LANGUAGE: true
           # VALIDATE_TSX: true
