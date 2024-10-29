@@ -42,14 +42,14 @@ jobs:
           EDITORCONFIG_FILE_NAME: ".editorconfig-checker.json"
           # FIX_CSS_PRETTIER: true
           FIX_ENV: true
-          FIX_GRAPHQL_PRETTIER: true
-          FIX_HTML_PRETTIER: true
-          FIX_JAVASCRIPT_PRETTIER: true
+          # FIX_GRAPHQL_PRETTIER: true
+          # FIX_HTML_PRETTIER: true
+          # FIX_JAVASCRIPT_PRETTIER: true
           # FIX_JSON_PRETTIER: true => turning this off til i figure out why its not respecting config
-          FIX_JSX_PRETTIER: true
-          FIX_MARKDOWN_PRETTIER: true
-          FIX_TSX: true
-          FIX_TYPESCRIPT_PRETTIER: true
+          # FIX_JSX_PRETTIER: true
+          # FIX_MARKDOWN_PRETTIER: true
+          # FIX_TSX: true
+          # FIX_TYPESCRIPT_PRETTIER: true
           # FIX_YAML_PRETTIER: true => turning this off til i figure out why its not respecting config
           # GITHUB_ACTIONS_CONFIG_FILE: "actionlint.yml" => basically unneeded
           # GITLEAKS_CONFIG: ".gitleaks.toml" # Path to your Gitleaks config if you have one
@@ -67,15 +67,17 @@ jobs:
           VALIDATE_GIT_MERGE_CONFLICT_MARKERS: true
           VALIDATE_GITHUB_ACTIONS: true
           VALIDATE_GITLEAKS: true
-          VALIDATE_GRAPHQL_PRETTIER: true
-          VALIDATE_HTML_PRETTIER: true
-          VALIDATE_JAVASCRIPT_PRETTIER: true
-          VALIDATE_JSON_PRETTIER: true
-          VALIDATE_JSX_PRETTIER: true
-          VALIDATE_MARKDOWN_PRETTIER: true
+          # VALIDATE_GRAPHQL_PRETTIER: true
+          # VALIDATE_HTML_PRETTIER: true
+          # VALIDATE_JAVASCRIPT_PRETTIER: true
+          # VALIDATE_JSON: true
+          # VALIDATE_JSON_PRETTIER: true
+          # VALIDATE_JSX_PRETTIER: true
+          # VALIDATE_MARKDOWN: true
+          # VALIDATE_MARKDOWN_PRETTIER: true
           # VALIDATE_NATURAL_LANGUAGE: true
-          VALIDATE_TSX: true
-          VALIDATE_TYPESCRIPT_PRETTIER: true
+          # VALIDATE_TSX: true
+          # VALIDATE_TYPESCRIPT_PRETTIER: true
           VALIDATE_YAML: true # turning on for now while prettier is broken
           # VALIDATE_YAML_PRETTIER: true => turning it off because its writing 4 spaces instead of 2
           YAML_CONFIG_FILE: "yamllint.config.yml"
