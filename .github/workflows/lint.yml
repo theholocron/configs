@@ -53,12 +53,12 @@ jobs:
           # FIX_YAML_PRETTIER: true => turning this off til i figure out why its not respecting config
           # GITHUB_ACTIONS_CONFIG_FILE: "actionlint.yml" => basically unneeded
           # GITLEAKS_CONFIG: ".gitleaks.toml" # Path to your Gitleaks config if you have one
-          JAVASCRIPT_ES_CONFIG_FILE: "eslint.config.js"
+          # JAVASCRIPT_ES_CONFIG_FILE: "eslint.config.js"
           # MARKDOWN_CONFIG_FILE: ".markdown-lint.yml"
           # NATURAL_LANGUAGE_CONFIG_FILE: "textlint.config.js"
-          PRETTIER_CONFIG: "prettier.config.js"
-          TYPESCRIPT_ES_CONFIG_FILE: "eslint.config.js"
-          TYPESCRIPT_STANDARD_TSCONFIG_FILE: "tsconfig.json"
+          # PRETTIER_CONFIG: "prettier.config.js"
+          # TYPESCRIPT_ES_CONFIG_FILE: "eslint.config.js"
+          # TYPESCRIPT_STANDARD_TSCONFIG_FILE: "tsconfig.json"
           # VALIDATE_CSS_PRETTIER: true
           VALIDATE_DOCKERFILE: true
           VALIDATE_EDITORCONFIG: true
