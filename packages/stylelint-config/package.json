@@ -14,7 +14,7 @@
   "main": "stylelint.config.js",
   "dependencies": {
     "stylelint": "^16.10.0",
-    "stylelint-config-standard": "^36.0.1",
+    "stylelint-config-standard": "^38.0.0",
     "stylelint-config-standard-scss": "^13.1.0"
   },
   "publishConfig": {
