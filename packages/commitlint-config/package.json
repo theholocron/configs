@@ -16,7 +16,7 @@
     "test": "commitlint --from HEAD~1 --to HEAD --verbose"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.8.1",
+    "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^19.8.1"
   },
   "peerDependencies": {
