@@ -1,20 +1,13 @@
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 import { includeIgnoreFile } from "@eslint/compat";
 import pluginJs from "@eslint/js";
 import pluginReact from "eslint-plugin-react";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
-// Get the current file path and directory (node_modules/foo/)
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// Navigate to the root directory (two levels up from node_modules/foo/)
-const rootDir = path.resolve(__dirname, "../../../");
-
-// Resolve the .gitignore file from the root directory
-const gitignorePath = path.resolve(rootDir, ".gitignore");
+// process.cwd() is always the project root regardless of where the package is
+// installed — ../../../ from import.meta.url breaks in pnpm's CAS deep paths.
+const gitignorePath = path.resolve(process.cwd(), ".gitignore");
 
 /**
  * @see https://eslint.org/docs/latest/use/configure/
