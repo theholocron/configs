@@ -25,9 +25,6 @@ import tseslint from "typescript-eslint";
  * @type {import("eslint").Linter.Config[]}
  */
 export default [
-	// Global ignore — standalone object with only `ignores` (no `files`) applies globally
-	// across all configs, not just within the scope of this object.
-	{ ignores: ["**/mockServiceWorker.js"] },
 	{
 		name: "theholocron/base",
 		files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
