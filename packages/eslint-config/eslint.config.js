@@ -10,11 +10,11 @@ import tseslint from "typescript-eslint";
  * consuming project's eslint.config.js using its own import.meta.url so
  * the path resolves to the project root, not node_modules.
  *
- * Usage in a consuming project:
+ * Usage in a consuming project (ESLint v10):
  *
  *   import { fileURLToPath } from "node:url";
  *   import { defineConfig, includeIgnoreFile } from "eslint/config";
- *   import holocron from "@theholocron/eslint-config";
+ *   import { holocron } from "@theholocron/eslint-config";
  *
  *   export default defineConfig([
  *     includeIgnoreFile(fileURLToPath(new URL(".gitignore", import.meta.url))),
@@ -25,10 +25,12 @@ import tseslint from "typescript-eslint";
  * @type {import("eslint").Linter.Config[]}
  */
 export default [
+	// Global ignore — standalone object with only `ignores` (no `files`) applies globally
+	// across all configs, not just within the scope of this object.
+	{ ignores: ["**/mockServiceWorker.js"] },
 	{
 		name: "theholocron/base",
 		files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
-		ignores: ["**/mockServiceWorker.js"],
 	},
 	{
 		languageOptions: {
