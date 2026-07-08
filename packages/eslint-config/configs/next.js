@@ -1,6 +1,6 @@
 import next from "@next/eslint-plugin-next";
 
-export function next() {
+export function nextConfig() {
 	return [
 		{
 			name: "@theholocron/next",
@@ -14,3 +14,5 @@ export function next() {
 		},
 	];
 }
+
+export { nextConfig as next };

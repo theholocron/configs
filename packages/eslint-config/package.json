@@ -71,7 +71,6 @@
     "@vitest/eslint-plugin": "^1",
     "eslint": "^10",
     "eslint-plugin-cypress": "^6",
-    "eslint-plugin-import": "^2",
     "eslint-plugin-n": "^18",
     "eslint-plugin-react": "^7",
     "eslint-plugin-storybook": "^10",
@@ -86,9 +85,6 @@
       "optional": true
     },
     "eslint-plugin-cypress": {
-      "optional": true
-    },
-    "eslint-plugin-import": {
       "optional": true
     },
     "eslint-plugin-n": {

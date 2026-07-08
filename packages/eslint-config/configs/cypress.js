@@ -5,13 +5,9 @@ export function cypressConfig() {
 		{
 			name: "@theholocron/cypress",
 			files: ["cypress/**/*.{js,ts,jsx,tsx}"],
-			plugins: {
-				cypress,
-			},
-			languageOptions: {
-				globals: cypress.environments.globals.globals,
-			},
-			rules: cypress.configs.recommended.rules,
+			extends: [
+				cypress.configs.recommended,
+			],
 		},
 	];
 }

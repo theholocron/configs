@@ -3,7 +3,7 @@ import { node } from "../configs/node.js";
 import { typescript } from "../configs/typescript.js";
 import { vitest } from "../configs/vitest.js";
 
-export function reactApp() {
+export function nodeApp() {
 	return [
 		...base(),
 		...node(),
