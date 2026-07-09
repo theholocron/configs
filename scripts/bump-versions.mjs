@@ -34,6 +34,7 @@ for (const entry of entries) {
 	try {
 		pkg = JSON.parse(readFileSync(pkgFile, 'utf8'))
 	} catch {
+		console.warn(`  ! skipping packages/${entry}: no package.json or malformed JSON`)
 		continue
 	}
 	if (pkg.private) {
