@@ -58,6 +58,22 @@
       "import": "./configs/cypress.js",
       "default": "./configs/cypress.js"
     },
+    "./bundles/library": {
+      "import": "./bundles/library.js",
+      "default": "./bundles/library.js"
+    },
+    "./bundles/next-app": {
+      "import": "./bundles/next-app.js",
+      "default": "./bundles/next-app.js"
+    },
+    "./bundles/node-app": {
+      "import": "./bundles/node-app.js",
+      "default": "./bundles/node-app.js"
+    },
+    "./bundles/react-app": {
+      "import": "./bundles/react-app.js",
+      "default": "./bundles/react-app.js"
+    },
     "./package.json": "./package.json"
   },
   "files": [
