@@ -43,6 +43,12 @@ jobs:
           # GitHub Status Check won't become failure with warning.
           # level: warning # [info,warning, error]
 
+      # EPMatt/reviewdog-action-tsc was removed: the action runs `npm install`
+      # internally and crashes with MODULE_NOT_FOUND against a pnpm lockfile.
+      # Type safety is enforced at the package level (storybook-config ships
+      # .ts files but no root tsconfig exists to run a workspace-level check).
+      # Re-add once the action supports pnpm or a tsconfig is added at root.
+
       # - uses: reviewdog/action-stylelint@v1
       #   name: Check CSS using StyleLint
       #   with:
