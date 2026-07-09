@@ -10,4 +10,4 @@ if [ $? -ne 0 ]; then
 fi
 
 # Run lint-staged with a custom config
-npx lint-staged --config @theholocron/lint-staged-config
+pnpm exec lint-staged --config @theholocron/lint-staged-config

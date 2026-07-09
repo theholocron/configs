@@ -1,6 +1,7 @@
 {
   "name": "@theholocron/configs",
-  "version": "0.0.0",
+  "version": "4.1.0",
+  "private": true,
   "description": "Shareable configuration files.",
   "homepage": "https://github.com/theholocron/configs#readme",
   "bugs": "https://github.com/theholocron/configs/issues",
@@ -10,30 +11,28 @@
   },
   "license": "GPL-3.0",
   "author": "Newton Koumantzelis",
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "lint": "turbo run lint",
-    "release": "changeset",
     "test": "turbo run test"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.5.0",
-    "@changesets/cli": "^2.27.9",
     "@commitlint/cli": "^19.5.0",
+    "@theholocron/cli": "alpha",
     "@commitlint/config-conventional": "^19.5.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/exec": "^7.1.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.1",
+    "conventional-changelog-conventionalcommits": "^10.2.0",
     "husky": "^9.1.6",
+    "semantic-release": "^25.0.5",
     "sort-package-json": "^3.4.0",
     "turbo": "^2.2.3"
   },
-  "packageManager": "npm@9.5.0",
+  "packageManager": "pnpm@10.34.4",
   "engines": {
     "node": ">=22",
-    "npm": ">=10"
-  },
-  "publishConfig": {
-    "access": "public"
+    "pnpm": ">=10"
   },
   "releases": "https://github.com/theholocron/configs/releases",
   "wiki": "https://github.com/theholocron/configs/wiki"
