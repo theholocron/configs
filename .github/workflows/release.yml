@@ -1,0 +1,62 @@
+name: Release
+
+on: # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - main
+      - alpha
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: |
+          Run semantic-release --dry-run. True = analyze + preview only, no
+          git writes, no publish. Only meaningful for workflow_dispatch runs;
+          push-triggered runs always run fully.
+        required: false
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Ensure npm supports OIDC Trusted Publishing
+        run: npm install -g npm@latest
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+        env:
+          HUSKY: 0
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            pnpm exec semantic-release --dry-run
+          else
+            pnpm exec semantic-release
+          fi

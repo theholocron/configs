@@ -21,14 +21,19 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GH_TOKEN }}
 
-      - uses: actions/setup-node@v4
-        name: Setup Node.js @v20
-        with:
-          cache: npm
-          node-version: 20.x
+      - uses: pnpm/action-setup@v4
+        name: Setup pnpm
 
-      - run: npm ci
+      - uses: actions/setup-node@v4
+        name: Setup Node.js @v22
+        with:
+          cache: pnpm
+          node-version: 22.x
+
+      - run: pnpm install --frozen-lockfile
         name: Install dependencies
+        env:
+          HUSKY: 0
 
       - uses: super-linter/super-linter/slim@v7.1.0
         name: Run Super Linter
