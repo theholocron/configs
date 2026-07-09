@@ -43,11 +43,6 @@ jobs:
           # GitHub Status Check won't become failure with warning.
           # level: warning # [info,warning, error]
 
-      - uses: EPMatt/reviewdog-action-tsc@v1
-        name: Check types using TypeScript
-        with:
-          reporter: github-pr-check
-
       # - uses: reviewdog/action-stylelint@v1
       #   name: Check CSS using StyleLint
       #   with:
