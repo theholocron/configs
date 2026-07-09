@@ -1,0 +1,20 @@
+{
+  "project": {
+    "name": "configs",
+    "description": "Shared configuration packages for the theholocron organization.",
+    "repo": "theholocron/configs",
+    "workflows": [
+      "lint",
+      "review",
+      { "name": "release", "with": { "run-build": false } },
+      "stale",
+      "greetings",
+      "dependencies",
+      "bookkeeping-pr"
+    ]
+  },
+  "providers": {
+    "source": "github",
+    "ci": "github"
+  }
+}
