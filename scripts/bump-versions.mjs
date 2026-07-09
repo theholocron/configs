@@ -13,10 +13,6 @@ if (!nextVersion) {
 
 function bumpFile(absPath, label) {
 	const pkg = JSON.parse(readFileSync(absPath, 'utf8'))
-	if (pkg.private) {
-		console.log(`  · skipping private package ${label}`)
-		return
-	}
 	const old = pkg.version
 	pkg.version = nextVersion
 	writeFileSync(absPath, JSON.stringify(pkg, null, 2) + '\n')
@@ -25,6 +21,7 @@ function bumpFile(absPath, label) {
 
 console.log(`Bumping configs monorepo to ${nextVersion}…`)
 
+// Root is always bumped — private means "don't publish", not "don't version".
 bumpFile(join(repoRoot, 'package.json'), '@theholocron/configs-monorepo')
 
 const packagesDir = join(repoRoot, 'packages')
@@ -33,9 +30,14 @@ for (const entry of entries) {
 	const pkgDir = join(packagesDir, entry)
 	if (!statSync(pkgDir).isDirectory()) continue
 	const pkgFile = join(pkgDir, 'package.json')
+	let pkg
 	try {
-		statSync(pkgFile)
+		pkg = JSON.parse(readFileSync(pkgFile, 'utf8'))
 	} catch {
+		continue
+	}
+	if (pkg.private) {
+		console.log(`  · skipping private package packages/${entry}`)
 		continue
 	}
 	bumpFile(pkgFile, `packages/${entry}`)
