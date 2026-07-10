@@ -53,8 +53,8 @@ echo "fix(scope): message" | commitlint  # passes
 ### `subject-case` — not sentence-case, start-case, pascal-case, or upper-case
 
 ```sh
-echo "fix(scope): Some message" | commitlint   # passes
-echo "fix(scope): SOME MESSAGE" | commitlint   # fails
+echo "fix(scope): Some message" | commitlint   # fails
+echo "fix(scope): some message" | commitlint   # passes
 ```
 
 ### `subject-empty` — never empty

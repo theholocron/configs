@@ -6,14 +6,16 @@
  */
 import { readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 
+const SEMVER_RE = /^\d+\.\d+\.\d+(?:-[\w.]+)?(?:\+[\w.]+)?$/;
 const version = process.argv[2];
-if (!version) {
+if (!version || !SEMVER_RE.test(version)) {
 	console.error("Usage: node scripts/bump-versions.mjs <new-version>");
 	process.exit(1);
 }
 
-const cwd = new URL("..", import.meta.url).pathname;
+const cwd = fileURLToPath(new URL("..", import.meta.url));
 
 function bumpFile(absPath, label) {
 	const pkg = JSON.parse(readFileSync(absPath, "utf8"));
