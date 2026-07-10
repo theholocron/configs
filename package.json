@@ -20,7 +20,7 @@
     "@theholocron/cli": "alpha",
     "@theholocron/eslint-config": "workspace:*",
     "@theholocron/holocron-plugin-github": "alpha",
-    "@commitlint/config-conventional": "^19.5.0",
+    "@commitlint/config-conventional": "^21.2.0",
     "eslint": "^10",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/exec": "^7.1.0",
