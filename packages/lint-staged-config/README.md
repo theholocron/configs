@@ -34,8 +34,12 @@ Or add it to `package.json`:
 
 ## What runs on staged files
 
-| File type | Commands |
+| File pattern | Commands |
 |---|---|
-| `*.{js,jsx,ts,tsx,mjs,cjs}` | `prettier --write`, `eslint --fix` |
-| `*.{css,scss}` | `stylelint --fix` |
-| `*.{json,md,yaml,yml}` | `prettier --write` |
+| `*.{js,jsx}` | `prettier --write`, `eslint` |
+| `*.{ts,tsx}` | `prettier --write`, `eslint`, `tsc-files --noEmit` |
+| `*.css` | `stylelint --fix` |
+| `*.scss` | `stylelint --syntax=scss --fix` |
+| `*.{md,mdx}` | `prettier --write` |
+| `*.{png,jpeg,jpg,gif,svg}` | `imagemin-lint-staged` |
+| `package.json` | `sort-package-json` |
