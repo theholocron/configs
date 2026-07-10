@@ -28,13 +28,13 @@ importers:
         version: 12.0.9(semantic-release@25.0.5(typescript@5.9.3))
       '@theholocron/cli':
         specifier: alpha
-        version: 2.0.0-alpha.9
+        version: 2.0.0-alpha.10
       '@theholocron/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
       '@theholocron/holocron-plugin-github':
         specifier: alpha
-        version: 2.0.0-alpha.9(@theholocron/cli@2.0.0-alpha.9)
+        version: 2.0.0-alpha.9(@theholocron/cli@2.0.0-alpha.10)
       conventional-changelog-conventionalcommits:
         specifier: ^10.2.0
         version: 10.2.1
@@ -1933,8 +1933,8 @@ packages:
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
 
-  '@theholocron/cli@2.0.0-alpha.9':
-    resolution: {integrity: sha512-z+hds0NJl4SsR+xqwTEh8a3cM0+ZdLT45cdC7jRmtpRx1lF+1FEcBuDrw+4IO5dgGNQTiIVWMD2OPtsx+lnaiQ==}
+  '@theholocron/cli@2.0.0-alpha.10':
+    resolution: {integrity: sha512-d7isOKEGMt6xj/3u1rwa4+PFAnvPFajUP92Qtueren4H6z10uUUSDzwrcwdJAtDciCmhp+6WuxmW4+V67yhoBA==}
     hasBin: true
 
   '@theholocron/holocron-plugin-github@2.0.0-alpha.9':
@@ -10032,14 +10032,14 @@ snapshots:
     dependencies:
       '@testing-library/dom': 10.4.1
 
-  '@theholocron/cli@2.0.0-alpha.9':
+  '@theholocron/cli@2.0.0-alpha.10':
     dependencies:
       '@napi-rs/keyring': 1.3.0
       yargs: 18.0.0
 
-  '@theholocron/holocron-plugin-github@2.0.0-alpha.9(@theholocron/cli@2.0.0-alpha.9)':
+  '@theholocron/holocron-plugin-github@2.0.0-alpha.9(@theholocron/cli@2.0.0-alpha.10)':
     dependencies:
-      '@theholocron/cli': 2.0.0-alpha.9
+      '@theholocron/cli': 2.0.0-alpha.10
       libsodium-wrappers: 0.7.16
 
   '@turbo/darwin-64@2.10.4':
