@@ -1,5 +1,4 @@
 import { mergeConfig } from "vite";
-import react from "@vitejs/plugin-react";
 
 /**
  * Vite preset for React single-page applications.
@@ -7,9 +6,11 @@ import react from "@vitejs/plugin-react";
  * via options.plugins if tsconfig path aliases are needed.
  *
  * @param {import('vite').UserConfig} [overrides={}]
- * @returns {import('vite').UserConfig}
+ * @returns {Promise<import('vite').UserConfig>}
  */
-export function reactApp(overrides = {}) {
+export async function reactApp(overrides = {}) {
+	const { default: react } = await import("@vitejs/plugin-react");
+
 	return mergeConfig(
 		{
 			plugins: [react()],
