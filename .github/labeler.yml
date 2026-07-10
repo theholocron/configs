@@ -1,28 +1,31 @@
-# Add "documentation" label to any changes within "docs" folder or any subfolders or .md files within the entire repository
+---
+# Conventional Commits title matching for github/issue-labeler.
+# include-title: 1 is set in the bookkeeping-pr workflow.
+# Patterns use [!:(] to match all valid CC forms:
+#   fix:          normal fix
+#   fix(scope):   scoped fix
+#   fix!:         breaking fix
+#   fix!(scope):  breaking scoped fix
+chore:
+  - "^chore[!:(]"
+
+ci:
+  - "^ci[!:(]"
+
 documentation:
-- any:
-  - changed-files:
-    - any-glob-to-any-file:
-      - docs/**
-      - "**/*.md"
+  - "^docs[!:(]"
 
-# Add "bug" label to any PR where the head branch name starts with `fix` with file changes to src directory
 bug:
-- all:
-  - changed-files:
-    - any-glob-to-any-file: src/**
-  - head-branch: "^fix-"
+  - "^fix[!:(]"
 
-# Add "enhancement" label to any PR where the head branch name starts with `feat` with file changes to src directory
 enhancement:
-- all:
-  - changed-files:
-    - any-glob-to-any-file: src/**
-  - head-branch: "^feat-"
+  - "^feat[!:(]"
 
-# Add "release" label to any PR that is opened against the `main` branch
-release:
-- all:
-  - changed-files:
-    - any-glob-to-any-file: .changeset/*
-  - base-branch: "main"
+refactor:
+  - "^refactor[!:(]"
+
+performance:
+  - "^perf[!:(]"
+
+test:
+  - "^test[!:(]"
