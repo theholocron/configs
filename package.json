@@ -16,7 +16,7 @@
     "test": "turbo run test"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.5.0",
+    "@commitlint/cli": "^21.2.1",
     "@theholocron/cli": "alpha",
     "@theholocron/eslint-config": "workspace:*",
     "@theholocron/holocron-plugin-github": "alpha",
