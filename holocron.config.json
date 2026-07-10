@@ -3,6 +3,10 @@
     "name": "configs",
     "description": "Shared configuration packages for the theholocron organization.",
     "repo": "theholocron/configs",
+    "repoPolicy": {
+      "preset": "balanced",
+      "requiredChecks": ["DCO", "Review / Review PRs"]
+    },
     "workflows": [
       "lint",
       "review",
