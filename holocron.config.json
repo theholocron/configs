@@ -5,10 +5,11 @@
     "repo": "theholocron/configs",
     "repoPolicy": {
       "preset": "balanced",
-      "requiredChecks": ["DCO", "Review / Review PRs"]
+      "requiredChecks": ["DCO", "Review / Review PRs", "eslint"]
     },
     "workflows": [
       "lint",
+      "codeql",
       "review",
       { "name": "release", "with": { "run-build": false } },
       "stale",
@@ -19,6 +20,15 @@
   },
   "providers": {
     "source": "github",
-    "ci": "github"
+    "ci": "github",
+    "issues": [
+      "github",
+      {
+        "labels": {
+          "inProgress": "status:in-progress",
+          "inReview": "status:in-review"
+        }
+      }
+    ]
   }
 }
