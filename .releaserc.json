@@ -38,7 +38,7 @@
       "@semantic-release/exec",
       {
         "prepareCmd": "pnpm exec holocron npm bump-versions ${nextRelease.version}",
-        "publishCmd": "pnpm -r --filter='./packages/*' publish --access public --no-git-checks --tag ${nextRelease.channel || 'latest'}"
+        "publishCmd": "for dir in packages/*/; do pkg=$(node -p \"require('./$dir/package.json').name\"); ver=$(node -p \"require('./$dir/package.json').version\"); private=$(node -p \"require('./$dir/package.json').private || false\"); [ \"$private\" = \"true\" ] && continue; npm view \"${pkg}@${ver}\" version 2>/dev/null && echo \"skip ${pkg}@${ver} (already published)\" || pnpm --filter \"./$dir\" publish --access public --no-git-checks --tag ${nextRelease.channel || 'latest'}; done"
       }
     ],
     [
