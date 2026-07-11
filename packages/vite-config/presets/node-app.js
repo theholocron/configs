@@ -1,14 +1,5 @@
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
 import { mergeConfig } from "vite";
-
-function packageName() {
-	try {
-		return JSON.parse(readFileSync(resolve(process.cwd(), "package.json"), "utf-8")).name ?? "unknown";
-	} catch {
-		return "unknown";
-	}
-}
+import { packageName } from "./package-name.js";
 
 /**
  * Vite preset for Node.js CLI tools and server apps.
