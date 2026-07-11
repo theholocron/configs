@@ -1,5 +1,4 @@
-import { base } from "@theholocron/eslint-config";
-import { node } from "@theholocron/eslint-config/node";
+import { base, node } from "@theholocron/eslint-config";
 import globals from "globals";
 
 export default [
