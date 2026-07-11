@@ -10,6 +10,7 @@
   },
   "license": "GPL-3.0",
   "author": "Newton Koumantzelis",
+  "type": "module",
   "main": "index.js",
   "files": [
     "browserslistrc.json",
