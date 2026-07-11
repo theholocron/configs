@@ -1,5 +1,5 @@
 import { mergeConfig } from "vite";
-import { packageName } from "./package-name.js";
+import { getPackageName } from "./get-package-name.js";
 
 /**
  * Vite preset for publishable libraries.
@@ -20,7 +20,7 @@ export async function library({ entry = "src/index.ts", name, external = [], ove
 		plugins.push(
 			codecovVitePlugin({
 				enableBundleAnalysis: !!process.env.CODECOV_TOKEN,
-				bundleName: packageName(),
+				bundleName: getPackageName(),
 				uploadToken: process.env.CODECOV_TOKEN,
 			}),
 		);

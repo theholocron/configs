@@ -1,5 +1,5 @@
 import { mergeConfig } from "vite";
-import { packageName } from "./package-name.js";
+import { getPackageName } from "./get-package-name.js";
 
 /**
  * Vite preset for Node.js CLI tools and server apps.
@@ -18,7 +18,7 @@ export async function nodeApp({ entry = "src/index.ts", overrides = {} } = {}) {
 		plugins.push(
 			codecovVitePlugin({
 				enableBundleAnalysis: !!process.env.CODECOV_TOKEN,
-				bundleName: packageName(),
+				bundleName: getPackageName(),
 				uploadToken: process.env.CODECOV_TOKEN,
 			}),
 		);
