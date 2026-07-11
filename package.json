@@ -11,26 +11,29 @@
   },
   "license": "GPL-3.0",
   "author": "Newton Koumantzelis",
+  "type": "module",
   "scripts": {
     "lint": "turbo run lint",
     "test": "turbo run test"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.1",
-    "@theholocron/cli": "alpha",
-    "@theholocron/eslint-config": "workspace:*",
-    "@theholocron/holocron-plugin-github": "alpha",
     "@commitlint/config-conventional": "^21.2.0",
-    "eslint": "^10",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/exec": "^7.1.0",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^12.0.9",
-    "conventional-changelog-conventionalcommits": "^10.2.0",
-    "husky": "^9.1.6",
-    "semantic-release": "^25.0.5",
+    "@theholocron/cli": "alpha",
+    "@theholocron/eslint-config": "workspace:*",
+    "@theholocron/holocron-plugin-github": "alpha",
+    "conventional-changelog-conventionalcommits": "^10.2.1",
+    "eslint": "^10.7.0",
+    "eslint-plugin-n": "^18.2.2",
+    "globals": "^17.7.0",
+    "husky": "^9.1.7",
+    "semantic-release": "^25.0.6",
     "sort-package-json": "^4.0.0",
-    "turbo": "^2.2.3"
+    "turbo": "^2.10.4"
   },
   "packageManager": "pnpm@10.34.4",
   "engines": {

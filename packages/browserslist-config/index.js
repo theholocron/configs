@@ -1,2 +1,2 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
-module.exports = require("./browserslistrc.json");
+import config from "./browserslistrc.json" with { type: "json" };
+export default config;
