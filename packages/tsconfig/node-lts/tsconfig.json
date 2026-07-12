@@ -9,6 +9,9 @@
     "target": "es2024",
     "strict": true,
     "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true
   }
 }
