@@ -1,6 +1,6 @@
-# Configs
+# @theholocron/configs
 
-Shareable configuration packages for all theholocron projects.
+Shareable configuration used accross the Galaxy.
 
 ## Packages
 
@@ -33,7 +33,10 @@ See each package's README for usage details.
 
 ```bash
 pnpm install
-pnpm lint          # ESLint across all packages
+pnpm build         # build all packages
+pnpm test          # test all packages
+pnpm typecheck     # typecheck all packages
+pnpm lint          # lint all packages
 ```
 
 This repo uses [pnpm workspaces](https://pnpm.io/workspaces) and
@@ -43,4 +46,4 @@ This repo uses [pnpm workspaces](https://pnpm.io/workspaces) and
 
 Releases are automated via [semantic-release](https://semantic-release.gitbook.io/)
 on push to `main`. All packages are versioned and published in lockstep.
-See [CHANGELOG.md](CHANGELOG.md) for the release history.
+See [releases](https://github.com/theholocron/clients/releases).
