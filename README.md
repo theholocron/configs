@@ -39,11 +39,10 @@ pnpm typecheck     # typecheck all packages
 pnpm lint          # lint all packages
 ```
 
-This repo uses [pnpm workspaces](https://pnpm.io/workspaces) and
-[Turborepo](https://turbo.build/repo). Node 22+ and pnpm 10+ required.
+This repo uses [pnpm workspaces](https://pnpm.io/workspaces) and [Turborepo](https://turbo.build/repo). Node 22+ and pnpm 10+ required.
 
 ## Releases
 
 Releases are automated via [semantic-release](https://semantic-release.gitbook.io/)
 on push to `main`. All packages are versioned and published in lockstep.
-See [releases](https://github.com/theholocron/clients/releases).
+See [releases](https://github.com/theholocron/configs/releases).
