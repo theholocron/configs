@@ -6,8 +6,12 @@ export default defineConfig({
 		description: "Shared configuration packages for the theholocron organization.",
 		repo: "theholocron/configs",
 		repoPolicy: {
-			preset: "balanced",
-			requiredChecks: ["DCO", "Review / Review PRs", "eslint"],
+			preset: "strict",
+			requiredChecks: [
+				"DCO",
+				"Lint / Lint",
+				"Review / Review PRs",
+			],
 		},
 		workflows: [
 			"lint",

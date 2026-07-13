@@ -75,6 +75,7 @@ package. Quick checklist:
 
 ## Workflow
 
+- **Always open a PR — never push directly to the default branch.** Even for small fixes: create a branch, push it, open a PR. This lets CI run, keeps history reviewable, and respects branch protection. The only exception is bootstrapping a brand-new repo before protection is set up.
 - **Conventional Commits.** `feat:` / `fix:` / `chore(deps):` / `docs:` / `ci:`
   — semantic-release uses these to compute the next version.
 - **Always `git commit -s`** (DCO). The `Signed-off-by:` trailer is required.
