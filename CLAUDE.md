@@ -35,7 +35,7 @@ packages/
   prettier-config/       — @theholocron/prettier-config
   storybook-config/      — @theholocron/storybook-config
   stylelint-config/      — @theholocron/stylelint-config
-  tsconfig/              — @theholocron/tsconfig         (nextjs/ node-next/ node14/ node18/)
+  tsconfig/              — @theholocron/tsconfig         (nextjs/ node-lts/)
   vite-config/           — @theholocron/vite-config      (presets/)
   vitest-config/         — @theholocron/vitest-config    (presets/ + bundles/)
 scripts/
