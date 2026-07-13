@@ -59,6 +59,8 @@ package. Quick checklist:
 
 ## Code patterns
 
+- **Package manager: pnpm only.** Never use `npm` or `yarn`. Run workspace-wide tasks through Turbo (`pnpm lint`, etc.); run single-package tasks with `pnpm --filter <name> <script>`.
+- **No `any` in TypeScript.** Config packages are plain JS so this rarely applies, but any TypeScript helper files should use `unknown` + type guards rather than `any`.
 - **No build step.** `index.js` (or named exports) are plain ESM. Do not add
   TypeScript compilation unless the package genuinely needs it.
 - **Peer dependencies.** Every tool the config wraps goes in `peerDependencies`
