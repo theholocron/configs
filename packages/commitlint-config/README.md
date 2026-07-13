@@ -8,7 +8,7 @@ A [CommitLint configuration](https://commitlint.js.org/reference/configuration.h
 pnpm add -D @theholocron/commitlint-config @commitlint/cli
 ```
 
-Peer dependencies (`@commitlint/cli ^19`, `@commitlint/config-conventional ^19`) are resolved automatically.
+`@commitlint/cli` is required to run commitlint directly (e.g., in git hooks or CI). `@commitlint/config-conventional` is a peer dependency resolved automatically by your package manager.
 
 ## Usage
 
