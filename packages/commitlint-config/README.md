@@ -5,8 +5,10 @@ A [CommitLint configuration](https://commitlint.js.org/reference/configuration.h
 ## Installation
 
 ```bash
-npm install --save-dev @theholocron/commitlint-config @commitlint/cli @commitlint/config-conventional
+pnpm add -D @theholocron/commitlint-config @commitlint/cli
 ```
+
+Peer dependencies (`@commitlint/cli ^19`, `@commitlint/config-conventional ^19`) are resolved automatically.
 
 ## Usage
 
