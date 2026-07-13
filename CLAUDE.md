@@ -9,6 +9,7 @@ Three repos, one rule per concern:
 - **Shareable tool config (ESLint, Prettier, TSConfig, Vitest, …)** → `theholocron/configs` (this repo). If you find yourself copy-pasting a tool config across repos, it belongs here as a `@theholocron/*-config` package.
 - **HTTP clients and API wrappers** → `theholocron/clients`. REST clients for third-party services and shared HTTP primitives live there.
 - **Anything that can be automated** → `theholocron/holocron`. Infrastructure commands, CI orchestration, and repo lifecycle automation belong in the Holocron CLI.
+- **`holocron.config` format** — use `holocron.config.ts` with `defineConfig` in any repo that has a `package.json` (the CLI must be resolvable at runtime). Use `holocron.config.json` in content-only repos with no Node.js infrastructure (e.g., `.github`, `.github-private`).
 
 ## Architecture
 
