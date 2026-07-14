@@ -7,11 +7,11 @@ settings:
 catalogs:
   holocron:
     '@theholocron/cli':
-      specifier: 2.0.0-alpha.22
-      version: 2.0.0-alpha.22
+      specifier: 2.0.0-alpha.27
+      version: 2.0.0-alpha.27
     '@theholocron/holocron-plugin-github':
-      specifier: 2.0.0-alpha.22
-      version: 2.0.0-alpha.22
+      specifier: 2.0.0-alpha.27
+      version: 2.0.0-alpha.27
 
 importers:
 
@@ -37,13 +37,13 @@ importers:
         version: 12.0.9(semantic-release@25.0.6(typescript@5.9.3))
       '@theholocron/cli':
         specifier: catalog:holocron
-        version: 2.0.0-alpha.22
+        version: 2.0.0-alpha.27
       '@theholocron/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
       '@theholocron/holocron-plugin-github':
         specifier: catalog:holocron
-        version: 2.0.0-alpha.22(@theholocron/cli@2.0.0-alpha.22)
+        version: 2.0.0-alpha.27(@theholocron/cli@2.0.0-alpha.27)
       conventional-changelog-conventionalcommits:
         specifier: ^10.2.1
         version: 10.2.1
@@ -223,7 +223,7 @@ importers:
         version: 38.0.0(stylelint@16.26.1(typescript@5.9.3))
       stylelint-config-standard-scss:
         specifier: ^15
-        version: 15.0.1(postcss@8.5.16)(stylelint@16.26.1(typescript@5.9.3))
+        version: 15.0.1(postcss@8.5.19)(stylelint@16.26.1(typescript@5.9.3))
 
   packages/tsconfig:
     dependencies:
@@ -2049,14 +2049,14 @@ packages:
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
 
-  '@theholocron/cli@2.0.0-alpha.22':
-    resolution: {integrity: sha512-oLJOB0vTkZwAIvEVUf2y5btGRYEX9MqbA8lavpn8VZUe1nG+Y8ScEJF/PZxWOgvW1WEWklNOVq9OQBDnzeatAQ==}
+  '@theholocron/cli@2.0.0-alpha.27':
+    resolution: {integrity: sha512-SDkX1FO+ocngUu7ez52KL5oqj9c4xQrRSIy7Q7hN4ncliySyiNEnNqnQOxMMPQQdOIiE86pjZWZMW/1Vb+uweg==}
     hasBin: true
 
-  '@theholocron/holocron-plugin-github@2.0.0-alpha.22':
-    resolution: {integrity: sha512-evzHzMHIz8KWJaTWtnPoeBt3STtd3zTRXRCRWA4VgSYeTIdSeU7UYa6ooOjqsASQ5hzpPwjbLIF9p6wKNe4eJw==}
+  '@theholocron/holocron-plugin-github@2.0.0-alpha.27':
+    resolution: {integrity: sha512-0t+ApM2dhwZMlohTrxXEDUUXjojnbsKUxEU0qv1oXoykwV4jSLcXusd9KPJezt1pYDIawhfFP7KoAUmzVrgEbw==}
     peerDependencies:
-      '@theholocron/cli': 2.0.0-alpha.22
+      '@theholocron/cli': 2.0.0-alpha.27
 
   '@theholocron/http-client@0.1.0':
     resolution: {integrity: sha512-ul45D9F1nQmfbQ5x6Q4zQT20mBnmCZ7HmpSpXWvQPAf0kI8pZfd7rvpuc2fkXBI7w5uDfH+KFoaCGpzL+HDyoA==}
@@ -5419,6 +5419,11 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
+  nanoid@3.3.16:
+    resolution: {integrity: sha512-bzlKTyNJ7+LdGIIwy8ijFpIqEQIvafahV7eYykJ8Cvh42EdJeODoJ6gUJXpQJvej1BddH8OqTXZNE/KfbWAu8Q==}
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
@@ -5965,6 +5970,10 @@ packages:
 
   postcss@8.5.16:
     resolution: {integrity: sha512-vuwillviilfKZsg0VGj5R/YwwcHx4SLsIOI/7K6mQkWx+l5cUHTjj5g0AasTBcyXsbfTgrwsUNmVUb5xVwyPwg==}
+    engines: {node: ^10 || ^12 || >=14}
+
+  postcss@8.5.19:
+    resolution: {integrity: sha512-Mz8SaolMd8nB+G13WkORcxQKHZ/NE4xXevtkJHVuG+guo9/wYKlIMTKAqGdEmYOXR2ijPjTYNHssizdaVSUNdQ==}
     engines: {node: ^10 || ^12 || >=14}
 
   prelude-ls@1.2.1:
@@ -9304,16 +9313,16 @@ snapshots:
     dependencies:
       '@testing-library/dom': 10.4.1
 
-  '@theholocron/cli@2.0.0-alpha.22':
+  '@theholocron/cli@2.0.0-alpha.27':
     dependencies:
       '@napi-rs/keyring': 1.3.0
       '@theholocron/http-client': 0.1.0
       tsx: 4.23.1
       yargs: 18.0.0
 
-  '@theholocron/holocron-plugin-github@2.0.0-alpha.22(@theholocron/cli@2.0.0-alpha.22)':
+  '@theholocron/holocron-plugin-github@2.0.0-alpha.27(@theholocron/cli@2.0.0-alpha.27)':
     dependencies:
-      '@theholocron/cli': 2.0.0-alpha.22
+      '@theholocron/cli': 2.0.0-alpha.27
       libsodium-wrappers: 0.7.16
 
   '@theholocron/http-client@0.1.0': {}
@@ -13237,6 +13246,8 @@ snapshots:
 
   nanoid@3.3.15: {}
 
+  nanoid@3.3.16: {}
+
   natural-compare@1.4.0: {}
 
   neo-async@2.6.2: {}
@@ -13689,9 +13700,9 @@ snapshots:
     dependencies:
       postcss: 8.5.16
 
-  postcss-scss@4.0.9(postcss@8.5.16):
+  postcss-scss@4.0.9(postcss@8.5.19):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.19
 
   postcss-selector-parser@7.1.4:
     dependencies:
@@ -13703,6 +13714,12 @@ snapshots:
   postcss@8.5.16:
     dependencies:
       nanoid: 3.3.15
+      picocolors: 1.1.1
+      source-map-js: 1.2.1
+
+  postcss@8.5.19:
+    dependencies:
+      nanoid: 3.3.16
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
@@ -14583,26 +14600,26 @@ snapshots:
 
   strnum@1.1.2: {}
 
-  stylelint-config-recommended-scss@15.0.1(postcss@8.5.16)(stylelint@16.26.1(typescript@5.9.3)):
+  stylelint-config-recommended-scss@15.0.1(postcss@8.5.19)(stylelint@16.26.1(typescript@5.9.3)):
     dependencies:
-      postcss-scss: 4.0.9(postcss@8.5.16)
+      postcss-scss: 4.0.9(postcss@8.5.19)
       stylelint: 16.26.1(typescript@5.9.3)
       stylelint-config-recommended: 16.0.0(stylelint@16.26.1(typescript@5.9.3))
       stylelint-scss: 6.14.0(stylelint@16.26.1(typescript@5.9.3))
     optionalDependencies:
-      postcss: 8.5.16
+      postcss: 8.5.19
 
   stylelint-config-recommended@16.0.0(stylelint@16.26.1(typescript@5.9.3)):
     dependencies:
       stylelint: 16.26.1(typescript@5.9.3)
 
-  stylelint-config-standard-scss@15.0.1(postcss@8.5.16)(stylelint@16.26.1(typescript@5.9.3)):
+  stylelint-config-standard-scss@15.0.1(postcss@8.5.19)(stylelint@16.26.1(typescript@5.9.3)):
     dependencies:
       stylelint: 16.26.1(typescript@5.9.3)
-      stylelint-config-recommended-scss: 15.0.1(postcss@8.5.16)(stylelint@16.26.1(typescript@5.9.3))
+      stylelint-config-recommended-scss: 15.0.1(postcss@8.5.19)(stylelint@16.26.1(typescript@5.9.3))
       stylelint-config-standard: 38.0.0(stylelint@16.26.1(typescript@5.9.3))
     optionalDependencies:
-      postcss: 8.5.16
+      postcss: 8.5.19
 
   stylelint-config-standard@38.0.0(stylelint@16.26.1(typescript@5.9.3)):
     dependencies:
@@ -15121,7 +15138,7 @@ snapshots:
       esbuild: 0.28.1
       fdir: 6.5.0(picomatch@4.0.5)
       picomatch: 4.0.5
-      postcss: 8.5.16
+      postcss: 8.5.19
       rollup: 4.62.2
       tinyglobby: 0.2.17
     optionalDependencies:

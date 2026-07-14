@@ -7,11 +7,6 @@ export default defineConfig({
 		repo: "theholocron/configs",
 		repoPolicy: {
 			preset: "strict",
-			requiredChecks: [
-				"DCO",
-				"Lint / Lint",
-				"Review / Review PRs",
-			],
 		},
 		workflows: [
 			"lint",
