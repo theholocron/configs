@@ -1,4 +1,5 @@
 <!-- editorconfig-checker-disable-file -->
+
 @../github-private/CLAUDE.md
 
 # CLAUDE.md
