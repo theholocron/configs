@@ -53,7 +53,7 @@ package. Quick checklist:
 
 ## Code patterns
 
-- **ESLint override:** `n/no-unpublished-import` is disabled in every
+- **ESLint override:** `n/no-unpublished-import` is turned off in every
   package's `eslint.config.js`. This is a known false positive for the
   TypeScript `src/ → dist/` build model — `files[]` in `package.json`
   lists `dist/`, so every relative `src/` import is flagged. Keep the
