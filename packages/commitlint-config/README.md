@@ -1,4 +1,5 @@
 <!-- editorconfig-checker-disable-file -->
+
 # CommitLint Config
 
 A [CommitLint configuration](https://commitlint.js.org/reference/configuration.html#shareable-configuration) for writing well-formatted and consistent Git commits.
@@ -17,7 +18,7 @@ In your project `commitlint.config.js`:
 
 ```javascript
 export default {
-  extends: ["@theholocron/commitlint-config"],
+	extends: ["@theholocron/commitlint-config"],
 };
 ```
 
