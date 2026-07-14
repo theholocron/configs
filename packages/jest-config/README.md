@@ -1,3 +1,4 @@
+<!-- editorconfig-checker-disable-file -->
 # Jest Config — Deprecated
 
 > **This package is deprecated.** New projects should use

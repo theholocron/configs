@@ -1,3 +1,4 @@
+<!-- editorconfig-checker-disable-file -->
 # Bundlewatch Config
 
 A [Bundlewatch configuration](https://bundlewatch.io/#/reference/configuration) for monitoring bundle size in libraries.

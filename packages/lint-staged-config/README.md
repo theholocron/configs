@@ -1,3 +1,4 @@
+<!-- editorconfig-checker-disable-file -->
 # Lint Staged Config
 
 A [lint-staged configuration](https://github.com/lint-staged/lint-staged#configuration) for running linters on Git-staged files.

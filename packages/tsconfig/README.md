@@ -1,3 +1,4 @@
+<!-- editorconfig-checker-disable-file -->
 # TypeScript Config
 
 A [TypeScript configuration](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) for writing typed JavaScript.

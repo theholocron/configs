@@ -1,3 +1,4 @@
+<!-- editorconfig-checker-disable-file -->
 # Browserslist Config
 
 A [browserslist configuration](https://github.com/browserslist/browserslist#shareable-configs) defining the browsers and devices supported by theholocron projects.

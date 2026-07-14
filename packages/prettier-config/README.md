@@ -1,3 +1,4 @@
+<!-- editorconfig-checker-disable-file -->
 # Prettier Config
 
 A [Prettier configuration](https://prettier.io/docs/en/configuration) for consistent code formatting.
