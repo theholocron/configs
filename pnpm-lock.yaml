@@ -38,9 +38,6 @@ importers:
       '@theholocron/cli':
         specifier: catalog:holocron
         version: 2.0.0-alpha.27
-      '@theholocron/commitlint-config':
-        specifier: workspace:*
-        version: link:packages/commitlint-config
       '@theholocron/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
