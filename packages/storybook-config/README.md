@@ -1,5 +1,4 @@
 <!-- editorconfig-checker-disable-file -->
-
 # Storybook Config
 
 A [Storybook configuration](https://storybook.js.org/docs/configure) with addons and theme setup for React component libraries.
