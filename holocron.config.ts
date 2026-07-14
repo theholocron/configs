@@ -3,15 +3,11 @@ import { defineConfig } from "@theholocron/cli";
 export default defineConfig({
 	project: {
 		name: "configs",
-		description: "Shared configuration packages for the theholocron organization.",
+		description:
+			"Shared configuration packages for the theholocron organization.",
 		repo: "theholocron/configs",
 		repoPolicy: {
 			preset: "strict",
-			requiredChecks: [
-				"DCO",
-				"Lint / Lint",
-				"Review / Review PRs",
-			],
 		},
 		workflows: [
 			"lint",
@@ -27,6 +23,14 @@ export default defineConfig({
 	providers: {
 		source: "github",
 		ci: "github",
-		issues: ["github", { labels: { inProgress: "status:in-progress", inReview: "status:in-review" } }],
+		issues: [
+			"github",
+			{
+				labels: {
+					inProgress: "status:in-progress",
+					inReview: "status:in-review",
+				},
+			},
+		],
 	},
 });

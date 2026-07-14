@@ -1,31 +1,20 @@
----
-# Conventional Commits title matching for github/issue-labeler.
-# include-title: 1 is set in the bookkeeping-pr workflow.
-# Patterns use [!:(] to match all valid CC forms:
-#   fix:          normal fix
-#   fix(scope):   scoped fix
-#   fix!:         breaking fix
-#   fix!(scope):  breaking scoped fix
-chore:
-  - "^chore[!:(]"
-
-ci:
-  - "^ci[!:(]"
-
-documentation:
-  - "^docs[!:(]"
+# AUTO-GENERATED — do not edit directly.
+# Source:  theholocron/holocron · packages/cli/src/commands/setup.ts
+# Synced:  2026-07-14T05:02:27.113Z
+# Tool:    holocron setup
+# Changes: run `holocron setup` to regenerate.
 
 bug:
-  - "^fix[!:(]"
+  - '^fix'
+
+dependencies:
+  - '^chore\(deps'
+
+documentation:
+  - '^docs'
 
 enhancement:
-  - "^feat[!:(]"
+  - '^feat'
 
-refactor:
-  - "^refactor[!:(]"
-
-performance:
-  - "^perf[!:(]"
-
-test:
-  - "^test[!:(]"
+github_actions:
+  - '^ci'
