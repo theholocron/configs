@@ -44,10 +44,10 @@ Use the `.claude/skills/configs-package.md` skill, which scaffolds the full
 package. Quick checklist:
 
 1. Create `packages/<tool>-config/` with:
-    - `package.json` — follow the shape of an existing package; include all
-      relevant `peerDependencies` as optional where the tool itself is optional
-    - `index.js` — default export or named export(s) of the config object
-    - `README.md` — Installation + Usage sections; see existing packages for tone
+   - `package.json` — follow the shape of an existing package; include all
+     relevant `peerDependencies` as optional where the tool itself is optional
+   - `index.js` — default export or named export(s) of the config object
+   - `README.md` — Installation + Usage sections; see existing packages for tone
 2. Add the package to `pnpm-workspace.yaml` if it is not auto-discovered.
 3. Verify `pnpm install` resolves and `pnpm lint` passes (ESLint config lints itself).
 4. Open a PR with a `feat:` commit — semantic-release will compute a minor bump

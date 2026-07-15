@@ -42,34 +42,34 @@ Key fields:
 
 ```json
 {
-	"name": "@theholocron/<tool>-config",
-	"version": "4.1.0",
-	"description": "A <Tool> configuration for <purpose>.",
-	"homepage": "https://github.com/theholocron/configs/tree/main/packages/<tool>-config#readme",
-	"bugs": "https://github.com/theholocron/configs/issues",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/theholocron/configs.git"
-	},
-	"license": "GPL-3.0",
-	"author": "Newton Koumantzelis",
-	"type": "module",
-	"exports": {
-		".": { "import": "./index.js", "default": "./index.js" }
-	},
-	"files": ["index.js"],
-	"peerDependencies": {
-		"<tool>": "^<major>"
-	},
-	"publishConfig": { "access": "public" }
+  "name": "@theholocron/<tool>-config",
+  "version": "4.1.0",
+  "description": "A <Tool> configuration for <purpose>.",
+  "homepage": "https://github.com/theholocron/configs/tree/main/packages/<tool>-config#readme",
+  "bugs": "https://github.com/theholocron/configs/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theholocron/configs.git"
+  },
+  "license": "GPL-3.0",
+  "author": "Newton Koumantzelis",
+  "type": "module",
+  "exports": {
+    ".": { "import": "./index.js", "default": "./index.js" }
+  },
+  "files": ["index.js"],
+  "peerDependencies": {
+    "<tool>": "^<major>"
+  },
+  "publishConfig": { "access": "public" }
 }
 ```
 
 - Match `version` to the current monorepo version (check the root `package.json`).
 - All peer deps that are optional per-preset go under `peerDependenciesMeta`:
-    ```json
-    "peerDependenciesMeta": { "<tool>": { "optional": true } }
-    ```
+  ```json
+  "peerDependenciesMeta": { "<tool>": { "optional": true } }
+  ```
 - Export each preset/bundle as a subpath (`"./presets/node"`, `"./bundles/library"`, …)
   and add those to `"files"`.
 
@@ -81,7 +81,7 @@ Key fields:
  * @type {import("<tool>").Config}
  */
 const config = {
-	// ...
+  // ...
 };
 
 export default config;

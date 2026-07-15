@@ -6,7 +6,10 @@
   "IgnoreDefaults": false,
   "SpacesAfterTabs": false,
   "NoColor": false,
-  "Exclude": ["(^|.+/)LICENSE$", "^public/.*"],
+  "Exclude": [
+    "(^|.+/)LICENSE$",
+    "^public/.*"
+  ],
   "AllowedContentTypes": [],
   "PassedFiles": [],
   "Disable": {
