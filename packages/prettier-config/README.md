@@ -12,6 +12,7 @@ npm install --save-dev @theholocron/prettier-config prettier
 
 In your project `package.json`:
 
+<!-- prettier-ignore -->
 ```json
 {
 	"prettier": "@theholocron/prettier-config"
