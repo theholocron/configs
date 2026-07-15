@@ -7,11 +7,11 @@ settings:
 catalogs:
   holocron:
     '@theholocron/cli':
-      specifier: 2.0.0-alpha.35
-      version: 2.0.0-alpha.35
+      specifier: 2.0.0-alpha.42
+      version: 2.0.0-alpha.42
     '@theholocron/holocron-plugin-github':
-      specifier: 2.0.0-alpha.35
-      version: 2.0.0-alpha.35
+      specifier: 2.0.0-alpha.42
+      version: 2.0.0-alpha.42
 
 importers:
 
@@ -37,7 +37,7 @@ importers:
         version: 12.0.9(semantic-release@25.0.7(typescript@5.9.3))
       '@theholocron/cli':
         specifier: catalog:holocron
-        version: 2.0.0-alpha.35
+        version: 2.0.0-alpha.42
       '@theholocron/commitlint-config':
         specifier: workspace:*
         version: link:packages/commitlint-config
@@ -46,7 +46,7 @@ importers:
         version: link:packages/eslint-config
       '@theholocron/holocron-plugin-github':
         specifier: catalog:holocron
-        version: 2.0.0-alpha.35(@theholocron/cli@2.0.0-alpha.35)
+        version: 2.0.0-alpha.42(@theholocron/cli@2.0.0-alpha.42)
       '@theholocron/semantic-release-config':
         specifier: workspace:*
         version: link:packages/semantic-release-config
@@ -2082,14 +2082,14 @@ packages:
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
 
-  '@theholocron/cli@2.0.0-alpha.35':
-    resolution: {integrity: sha512-QbI10tcT9/tW/ZePxNNJwrDAvDZNbwhL4bfaIWeLKq/8VGWhN0m5w2xV4wCwA1Ap69+jIF2EvxUwNhOx2QtNSw==}
+  '@theholocron/cli@2.0.0-alpha.42':
+    resolution: {integrity: sha512-CEIN8xCBwF26ur3nXB34GA227EzjHJXizPd9kqls1WmDTSVjT+N8kwJAVen7XKJtTF0zLz8lvBM/ZLRtRL+log==}
     hasBin: true
 
-  '@theholocron/holocron-plugin-github@2.0.0-alpha.35':
-    resolution: {integrity: sha512-K9pKt6gV4nxN/wLvyxW5ezURCHnfmZiu/IjrcVnwyNPWBSmP7qCKPLTXUE8H8NEl+SI6HMNj5Qtkpk129Ur5aw==}
+  '@theholocron/holocron-plugin-github@2.0.0-alpha.42':
+    resolution: {integrity: sha512-Jv3AhLDLk+GuXtL4nIX2gRPWFyeeI16+Nw9nvLLkr6+c5bDbCdkyHIZ2dv8N28AzbwEx1S2xo1t9cS+HIQDtPg==}
     peerDependencies:
-      '@theholocron/cli': 2.0.0-alpha.35
+      '@theholocron/cli': 2.0.0-alpha.42
 
   '@theholocron/http-client@0.1.0':
     resolution: {integrity: sha512-ul45D9F1nQmfbQ5x6Q4zQT20mBnmCZ7HmpSpXWvQPAf0kI8pZfd7rvpuc2fkXBI7w5uDfH+KFoaCGpzL+HDyoA==}
@@ -9358,16 +9358,16 @@ snapshots:
     dependencies:
       '@testing-library/dom': 10.4.1
 
-  '@theholocron/cli@2.0.0-alpha.35':
+  '@theholocron/cli@2.0.0-alpha.42':
     dependencies:
       '@napi-rs/keyring': 1.3.0
       '@theholocron/http-client': 0.1.0
       tsx: 4.23.1
       yargs: 18.0.0
 
-  '@theholocron/holocron-plugin-github@2.0.0-alpha.35(@theholocron/cli@2.0.0-alpha.35)':
+  '@theholocron/holocron-plugin-github@2.0.0-alpha.42(@theholocron/cli@2.0.0-alpha.42)':
     dependencies:
-      '@theholocron/cli': 2.0.0-alpha.35
+      '@theholocron/cli': 2.0.0-alpha.42
       libsodium-wrappers: 0.7.16
 
   '@theholocron/http-client@0.1.0': {}
