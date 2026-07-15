@@ -15,7 +15,7 @@ In your project `package.json`:
 <!-- prettier-ignore -->
 ```json
 {
-	"prettier": "@theholocron/prettier-config"
+  "prettier": "@theholocron/prettier-config"
 }
 ```
 
