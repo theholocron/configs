@@ -1,5 +1,3 @@
-<!-- editorconfig-checker-disable-file -->
-
 # configs-package
 
 Scaffold a new shareable config package in `theholocron/configs`.

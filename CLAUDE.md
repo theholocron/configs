@@ -32,10 +32,11 @@ packages/
   stylelint-config/      — @theholocron/stylelint-config
   tsconfig/              — @theholocron/tsconfig         (nextjs/ node-lts/)
   vite-config/           — @theholocron/vite-config      (presets/)
+  semantic-release-config/ — @theholocron/semantic-release-config
   vitest-config/         — @theholocron/vitest-config    (presets/ + bundles/)
 scripts/
   bump-versions.mjs      — lockstep version bump (called by semantic-release)
-.releaserc.json          — semantic-release config (lockstep publish, root CHANGELOG)
+release.config.js        — semantic-release config (lockstep publish, root CHANGELOG)
 ```
 
 ## Adding a new config package
