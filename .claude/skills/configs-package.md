@@ -99,7 +99,7 @@ Follow this structure (see existing READMEs for tone):
 ```markdown
 # <Tool> Config
 
-A [<Tool> configuration](<official-docs-url>) for <one-line description>.
+A [<Tool> configuration](official-docs-url) for <one-line description>.
 
 ## Installation
 
