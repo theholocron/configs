@@ -36,7 +36,7 @@ packages/
   vitest-config/         — @theholocron/vitest-config    (presets/ + bundles/)
 scripts/
   bump-versions.mjs      — lockstep version bump (called by semantic-release)
-release.config.js        — semantic-release config (lockstep publish, root CHANGELOG)
+release.config.ts        — semantic-release config (lockstep publish, root CHANGELOG)
 ```
 
 ## Adding a new config package
@@ -57,7 +57,7 @@ package. Quick checklist:
 ## Code patterns
 
 - **ESLint override:** `n/no-unpublished-import` is turned off in every
-  package's `eslint.config.js`. This is a known false positive for the
+  package's `eslint.config.ts`. This is a known false positive for the
   TypeScript `src/ → dist/` build model — `files[]` in `package.json`
   lists `dist/`, so every relative `src/` import is flagged. Keep the
   rule off at project level; do not push it to the org config.
