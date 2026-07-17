@@ -1,3 +1,4 @@
+import type { Linter } from "eslint";
 import { base } from "@theholocron/eslint-config";
 import { node } from "@theholocron/eslint-config/node";
 import globals from "globals";
@@ -17,4 +18,4 @@ export default [
 	{
 		ignores: ["**/node_modules/**", "**/dist/**"],
 	},
-];
+] satisfies Linter.Config[];
