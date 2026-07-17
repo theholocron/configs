@@ -38,7 +38,7 @@ export default defineConfig({
 			"lint",
 			"codeql",
 			"review",
-			{ name: "release", with: { "run-build": false } },
+			{ name: "release", with: { "run-build": true } },
 			"stale",
 			"greetings",
 			"dependencies",

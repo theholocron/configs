@@ -6,3 +6,7 @@ catalogs:
   holocron:
     '@theholocron/cli': 2.0.0-alpha.42
     '@theholocron/holocron-plugin-github': 2.0.0-alpha.42
+
+catalog:
+  tsdown: ^0.22.8
+  typescript: ^5.9.3
