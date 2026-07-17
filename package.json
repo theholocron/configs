@@ -15,6 +15,7 @@
   "scripts": {
     "build": "turbo run build",
     "lint": "turbo run lint",
+    "prepare": "turbo run build",
     "test": "turbo run test"
   },
   "devDependencies": {
@@ -28,6 +29,7 @@
     "@theholocron/cli": "catalog:holocron",
     "@theholocron/commitlint-config": "workspace:*",
     "@theholocron/eslint-config": "workspace:*",
+    "@theholocron/lint-staged-config": "workspace:*",
     "@theholocron/holocron-plugin-github": "catalog:holocron",
     "@theholocron/semantic-release-config": "workspace:*",
     "conventional-changelog-conventionalcommits": "^10.2.1",
