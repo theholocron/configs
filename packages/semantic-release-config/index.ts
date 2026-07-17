@@ -1,4 +1,7 @@
-interface ExecOptions { prepareCmd?: string; publishCmd?: string }
+interface ExecOptions {
+	prepareCmd?: string;
+	publishCmd?: string;
+}
 interface Options {
 	branches?: Array<string | Record<string, unknown>>;
 	exec?: ExecOptions;
@@ -46,7 +49,11 @@ const defaultMessage =
 /**
  * @see https://semantic-release.gitbook.io/semantic-release/usage/configuration
  */
-export function defineConfig({ branches = ["main"], exec, assets = defaultAssets }: Options = {}): object {
+export function defineConfig({
+	branches = ["main"],
+	exec,
+	assets = defaultAssets,
+}: Options = {}): object {
 	return {
 		branches,
 		plugins: [

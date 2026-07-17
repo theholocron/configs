@@ -7,7 +7,9 @@ import { getPackageName } from "./get-package-name.js";
  * via options.plugins if tsconfig path aliases are needed.
  * Uploads bundle stats to Codecov when CODECOV_TOKEN is set.
  */
-export async function reactApp(overrides: UserConfig = {}): Promise<UserConfig> {
+export async function reactApp(
+	overrides: UserConfig = {},
+): Promise<UserConfig> {
 	const { default: react } = await import("@vitejs/plugin-react");
 
 	const plugins = [react()];

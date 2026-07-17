@@ -6,7 +6,10 @@ import { getPackageName } from "./get-package-name.js";
  * Targets Node 22, outputs a single ESM bundle, no browser polyfills.
  * Uploads bundle stats to Codecov when CODECOV_TOKEN is set.
  */
-export async function nodeApp({ entry = "src/index.ts", overrides = {} }: { entry?: string; overrides?: UserConfig } = {}): Promise<UserConfig> {
+export async function nodeApp({
+	entry = "src/index.ts",
+	overrides = {},
+}: { entry?: string; overrides?: UserConfig } = {}): Promise<UserConfig> {
 	const plugins = [];
 	try {
 		const { codecovVitePlugin } = await import("@codecov/vite-plugin");
