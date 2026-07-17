@@ -12,7 +12,7 @@
   "license": "GPL-3.0",
   "author": "Newton Koumantzelis",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "dist/jest-preset.js",
   "scripts": {
     "build": "tsdown"
   },
@@ -23,9 +23,14 @@
   },
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
+      "types": "./dist/jest-preset.d.ts",
+      "import": "./dist/jest-preset.js",
+      "default": "./dist/jest-preset.js"
+    },
+    "./jest-preset": {
+      "types": "./dist/jest-preset.d.ts",
+      "import": "./dist/jest-preset.js",
+      "default": "./dist/jest-preset.js"
     },
     "./package.json": "./package.json"
   },
