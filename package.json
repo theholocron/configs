@@ -13,6 +13,7 @@
   "author": "Newton Koumantzelis",
   "type": "module",
   "scripts": {
+    "build": "turbo run build",
     "lint": "turbo run lint",
     "test": "turbo run test"
   },
@@ -37,6 +38,11 @@
     "semantic-release": "^25.0.7",
     "sort-package-json": "^4.0.0",
     "turbo": "^2.10.5"
+  },
+  "pnpm": {
+    "overrides": {
+      "yuku-parser": "0.6.3"
+    }
   },
   "packageManager": "pnpm@10.34.4",
   "engines": {

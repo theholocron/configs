@@ -11,8 +11,8 @@ Conventions for working on the `theholocron/configs` monorepo.
 - **pnpm workspace monorepo** with Turborepo for task orchestration.
 - Each package under `packages/` is an independently published npm package
   (`@theholocron/<name>`).
-- Packages export plain JS config objects/functions — no build step, no
-  TypeScript compilation. Source is the published artifact.
+- Packages are written in TypeScript and compiled to `dist/` via tsdown. Each
+  package has a `build` script; `pnpm build` runs turbo across all packages.
 - **Lockstep versioning**: all packages share the same version number.
   `scripts/bump-versions.mjs` updates every non-private `package.json` during
   the semantic-release prepare phase.
@@ -61,8 +61,9 @@ package. Quick checklist:
   TypeScript `src/ → dist/` build model — `files[]` in `package.json`
   lists `dist/`, so every relative `src/` import is flagged. Keep the
   rule off at project level; do not push it to the org config.
-- **No build step.** `index.js` (or named exports) are plain ESM. Do not add
-  TypeScript compilation unless the package genuinely needs it.
+- **TypeScript source compiles to `dist/`.** Imports inside source files use
+  `.js` extensions (TypeScript ESM convention — the TS resolver finds `.ts`
+  files).
 - **Peer dependencies.** Every tool the config wraps goes in `peerDependencies`
   with `peerDependenciesMeta.<name>.optional: true` when the caller may not use
   every preset (common for multi-preset packages like eslint-config).
@@ -84,7 +85,7 @@ package. Quick checklist:
 
 - **semantic-release** on push to `main` (stable) or `alpha` (prerelease).
 - The release workflow calls the reusable `theholocron/.github` release workflow
-  with `run-build: false` (no build step needed).
+  with `run-build: true` to compile each package before publish.
 - `@semantic-release/changelog` writes the root `CHANGELOG.md`.
 - `scripts/bump-versions.mjs` bumps all package versions in lockstep.
 - `pnpm -r publish` publishes every non-private package.
