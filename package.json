@@ -43,6 +43,7 @@
   },
   "pnpm": {
     "overrides": {
+      "@commitlint/config-conventional>conventional-changelog-conventionalcommits": "7",
       "yuku-parser": "0.6.3"
     }
   },
