@@ -3,6 +3,7 @@
   "tasks": {
     "build": { "outputs": ["dist/**"] },
     "lint": { "dependsOn": ["^build"] },
-    "test": { "dependsOn": ["build", "^build"] }
+    "test": { "dependsOn": ["build", "^build"] },
+    "typecheck": { "dependsOn": ["^build"] }
   }
 }
