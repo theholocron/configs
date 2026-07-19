@@ -1,18 +1,8 @@
-import type { HolocronConfig } from "@theholocron/cli";
-
-interface RepoPreset {
-	protection: "balanced" | "strict" | "none";
-	properties: {
-		lifecycle?: "active" | "experimental" | "deprecated";
-		open_source?: boolean;
-		runtime_environment?: "node" | "browser" | "universal" | "none";
-		uses_external_packages?: boolean;
-	};
-}
+import type { HolocronConfig, RepoConfig } from "@theholocron/cli";
 
 export interface HolocronPreset {
 	providers: HolocronConfig["providers"];
-	repo: RepoPreset;
+	repo: Omit<RepoConfig, "name" | "requiredChecks">;
 	workflows: NonNullable<HolocronConfig["project"]["workflows"]>;
 }
 
