@@ -48,11 +48,6 @@ component_management:
       paths:
         - packages/eslint-config/**
 
-    - component_id: jest-config
-      name: "@theholocron/jest-config"
-      paths:
-        - packages/jest-config/**
-
     - component_id: lint-staged-config
       name: "@theholocron/lint-staged-config"
       paths:
