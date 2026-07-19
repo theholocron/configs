@@ -1,5 +1,9 @@
 import { describe, it, expect } from "vitest";
-import { commitAnalyzer, releaseNotesGenerator, defineConfig } from "./index.js";
+import {
+	commitAnalyzer,
+	releaseNotesGenerator,
+	defineConfig,
+} from "./index.js";
 
 describe("semantic-release-config", () => {
 	describe("commitAnalyzer", () => {
@@ -18,13 +22,18 @@ describe("semantic-release-config", () => {
 	describe("releaseNotesGenerator", () => {
 		it("is a two-element tuple [plugin-name, options]", () => {
 			expect(Array.isArray(releaseNotesGenerator)).toBe(true);
-			expect(releaseNotesGenerator[0]).toBe("@semantic-release/release-notes-generator");
+			expect(releaseNotesGenerator[0]).toBe(
+				"@semantic-release/release-notes-generator",
+			);
 		});
 	});
 
 	describe("defineConfig()", () => {
 		it("returns an object with branches and plugins", () => {
-			const config = defineConfig() as { branches: unknown[]; plugins: unknown[] };
+			const config = defineConfig() as {
+				branches: unknown[];
+				plugins: unknown[];
+			};
 			expect(Array.isArray(config.branches)).toBe(true);
 			expect(Array.isArray(config.plugins)).toBe(true);
 		});
@@ -35,7 +44,9 @@ describe("semantic-release-config", () => {
 		});
 
 		it("accepts custom branches", () => {
-			const config = defineConfig({ branches: ["main", "alpha"] }) as { branches: string[] };
+			const config = defineConfig({ branches: ["main", "alpha"] }) as {
+				branches: string[];
+			};
 			expect(config.branches).toContain("alpha");
 		});
 	});

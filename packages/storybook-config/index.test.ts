@@ -5,7 +5,10 @@ import { vi, describe, it, expect, beforeAll } from "vitest";
 vi.mock("@storybook/react", () => ({ setProjectAnnotations: vi.fn() }));
 vi.mock("@storybook/react-vite", () => ({}));
 vi.mock("@storybook/addon-viewport", () => ({ INITIAL_VIEWPORTS: {} }));
-vi.mock("msw-storybook-addon", () => ({ mswLoader: vi.fn(), initialize: vi.fn() }));
+vi.mock("msw-storybook-addon", () => ({
+	mswLoader: vi.fn(),
+	initialize: vi.fn(),
+}));
 vi.mock("playwright", () => ({}));
 vi.mock("axe-playwright", () => ({ injectAxe: vi.fn(), checkA11y: vi.fn() }));
 
@@ -25,7 +28,9 @@ describe("storybook-config", () => {
 	it("exports storybookConfig with addons and framework", () => {
 		expect(typeof config.storybookConfig).toBe("object");
 		expect(Array.isArray(config.storybookConfig.addons)).toBe(true);
-		expect(config.storybookConfig.framework?.name).toBe("@storybook/react-vite");
+		expect(config.storybookConfig.framework?.name).toBe(
+			"@storybook/react-vite",
+		);
 	});
 
 	it("exports storybookPreview with layout and parameters", () => {

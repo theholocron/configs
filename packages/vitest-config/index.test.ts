@@ -44,8 +44,17 @@ describe("vitest-config — bundles", () => {
 
 	it("library() accepts per-file threshold overrides", () => {
 		const config = library({
-			thresholds: { "src/generated.ts": { lines: 0, functions: 0, branches: 0, statements: 0 } },
+			thresholds: {
+				"src/generated.ts": {
+					lines: 0,
+					functions: 0,
+					branches: 0,
+					statements: 0,
+				},
+			},
 		});
-		expect(config.test?.coverage?.thresholds?.["src/generated.ts"]).toBeDefined();
+		expect(
+			config.test?.coverage?.thresholds?.["src/generated.ts"],
+		).toBeDefined();
 	});
 });
