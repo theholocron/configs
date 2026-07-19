@@ -23,19 +23,27 @@ describe("theholocronNode()", () => {
 		});
 	});
 
-	describe("repoPolicy", () => {
-		it("sets strict preset", () => {
-			const { repoPolicy } = theholocronNode();
-			expect(repoPolicy.preset).toBe("strict");
+	describe("repo", () => {
+		it("sets strict protection", () => {
+			const { repo } = theholocronNode();
+			expect(repo.protection).toBe("strict");
+		});
+
+		it("sets active node properties", () => {
+			const { repo } = theholocronNode();
+			expect(repo.properties).toMatchObject({
+				lifecycle: "active",
+				open_source: true,
+				runtime_environment: "node",
+				uses_external_packages: true,
+			});
 		});
 	});
 
 	describe("workflows", () => {
 		it("includes the baseline workflow set", () => {
 			const { workflows } = theholocronNode();
-			const names = workflows.map((w) =>
-				typeof w === "string" ? w : w.name,
-			);
+			const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
 			for (const expected of [
 				"lint",
 				"test",
@@ -53,9 +61,7 @@ describe("theholocronNode()", () => {
 
 		it("does not include release (stays repo-specific)", () => {
 			const { workflows } = theholocronNode();
-			const names = workflows.map((w) =>
-				typeof w === "string" ? w : w.name,
-			);
+			const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
 			expect(names).not.toContain("release");
 		});
 	});

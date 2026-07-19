@@ -1,8 +1,18 @@
 import type { HolocronConfig } from "@theholocron/cli";
 
+interface RepoPreset {
+	protection: "balanced" | "strict" | "none";
+	properties: {
+		lifecycle?: "active" | "experimental" | "deprecated";
+		open_source?: boolean;
+		runtime_environment?: "node" | "browser" | "universal" | "none";
+		uses_external_packages?: boolean;
+	};
+}
+
 export interface HolocronPreset {
 	providers: HolocronConfig["providers"];
-	repoPolicy: NonNullable<HolocronConfig["project"]["repoPolicy"]>;
+	repo: RepoPreset;
 	workflows: NonNullable<HolocronConfig["project"]["workflows"]>;
 }
 
@@ -15,12 +25,15 @@ export interface HolocronPreset {
  * export default defineConfig({
  *   project: {
  *     name: "my-repo",
- *     repo: "theholocron/my-repo",
- *     repoPolicy: defaults.repoPolicy,
+ *     repo: {
+ *       name: "theholocron/my-repo",
+ *       topics: ["typescript"],
+ *       ...defaults.repo,
+ *     },
  *     workflows: [...defaults.workflows, { name: "release", with: { "run-build": true } }],
  *   },
  *   providers: defaults.providers,
- * } satisfies HolocronConfig);
+ * });
  */
 export function theholocronNode(): HolocronPreset {
 	return {
@@ -37,8 +50,14 @@ export function theholocronNode(): HolocronPreset {
 				},
 			],
 		},
-		repoPolicy: {
-			preset: "strict",
+		repo: {
+			protection: "strict",
+			properties: {
+				lifecycle: "active",
+				open_source: true,
+				runtime_environment: "node",
+				uses_external_packages: true,
+			},
 		},
 		workflows: [
 			"lint",
