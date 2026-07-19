@@ -62,6 +62,9 @@ importers:
       '@theholocron/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
+      '@theholocron/holocron-config':
+        specifier: workspace:*
+        version: link:packages/holocron-config
       '@theholocron/holocron-plugin-github':
         specifier: catalog:holocron
         version: 2.0.0-alpha.42(@theholocron/cli@2.0.0-alpha.42)
