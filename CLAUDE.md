@@ -25,7 +25,6 @@ packages/
   bundlewatch-config/    — @theholocron/bundlewatch-config
   commitlint-config/     — @theholocron/commitlint-config
   eslint-config/         — @theholocron/eslint-config  (configs/ + bundles/)
-  jest-config/           — @theholocron/jest-config     (DEPRECATED → vitest-config)
   lint-staged-config/    — @theholocron/lint-staged-config
   prettier-config/       — @theholocron/prettier-config
   semantic-release-config/ — @theholocron/semantic-release-config
@@ -59,8 +58,11 @@ package. Quick checklist:
 2. Add `vitest` and `@theholocron/vitest-config: "workspace:*"` to `devDependencies`.
 3. Add `"build": "tsdown"`, `"test": "vitest run"`, and `"typecheck": "tsc --noEmit"`
    to `scripts`.
-4. Verify `pnpm install` resolves, `pnpm build` succeeds, and `pnpm test` passes.
-5. Open a PR with a `feat:` commit — semantic-release will compute a minor bump
+4. Add an entry to `codecov.yml` under `component_management.individual_components`
+   with `component_id: <slug>`, `name: "<slug>"`, and `paths: [packages/<slug>/**]`.
+   (Will be automated by `holocron setup` once theholocron/holocron#168 ships.)
+5. Verify `pnpm install` resolves, `pnpm build` succeeds, and `pnpm test` passes.
+6. Open a PR with a `feat:` commit — semantic-release will compute a minor bump
    and publish all packages in lockstep.
 
 ## Code patterns
