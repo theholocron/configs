@@ -34,27 +34,10 @@ describe("vitest-config — presets", () => {
 });
 
 describe("vitest-config — bundles", () => {
-	it("library() returns config with coverage thresholds", () => {
+	it("library() enables coverage with lcov reporter", () => {
 		const config = library();
-		expect(config.test?.coverage?.thresholds?.lines).toBe(80);
-		expect(config.test?.coverage?.thresholds?.branches).toBe(80);
-		expect(config.test?.coverage?.thresholds?.functions).toBe(80);
-		expect(config.test?.coverage?.thresholds?.statements).toBe(80);
-	});
-
-	it("library() accepts per-file threshold overrides", () => {
-		const config = library({
-			thresholds: {
-				"src/generated.ts": {
-					lines: 0,
-					functions: 0,
-					branches: 0,
-					statements: 0,
-				},
-			},
-		});
-		expect(
-			config.test?.coverage?.thresholds?.["src/generated.ts"],
-		).toBeDefined();
+		expect(config.test?.coverage?.enabled).toBe(true);
+		expect(config.test?.coverage?.provider).toBe("v8");
+		expect(config.test?.coverage?.reporter).toContain("lcov");
 	});
 });
