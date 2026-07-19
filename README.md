@@ -9,6 +9,7 @@ Shareable configuration used accross the Galaxy.
 | [`@theholocron/browserslist-config`](./packages/browserslist-config)         | Browser and device targets                         |
 | [`@theholocron/commitlint-config`](./packages/commitlint-config)             | Conventional commit enforcement                    |
 | [`@theholocron/eslint-config`](./packages/eslint-config)                     | ESLint rules for JS/TS/React/Next/Node             |
+| [`@theholocron/holocron-config`](./packages/holocron-config)                 | Shareable holocron configuration presets           |
 | [`@theholocron/lint-staged-config`](./packages/lint-staged-config)           | Pre-commit lint-staged hooks                       |
 | [`@theholocron/prettier-config`](./packages/prettier-config)                 | Prettier formatting rules                          |
 | [`@theholocron/semantic-release-config`](./packages/semantic-release-config) | Semantic-release config for automated versioning   |
