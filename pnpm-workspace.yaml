@@ -10,3 +10,4 @@ catalogs:
 catalog:
   tsdown: ^0.22.8
   typescript: ^5.9.3
+  vitest: ^4.0.0
