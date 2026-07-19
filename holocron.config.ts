@@ -36,6 +36,8 @@ export default defineConfig({
 		},
 		workflows: [
 			"lint",
+			"test",
+			"typecheck",
 			"codeql",
 			"review",
 			{ name: "release", with: { "run-build": true } },
