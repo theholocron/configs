@@ -39,5 +39,4 @@ export { default } from "@theholocron/lint-staged-config";
 | `*.css`                    | `stylelint --fix`               |
 | `*.scss`                   | `stylelint --syntax=scss --fix` |
 | `*.{md,mdx}`               | `prettier --write`              |
-| `*.{png,jpeg,jpg,gif,svg}` | `imagemin-lint-staged`          |
 | `package.json`             | `sort-package-json`             |

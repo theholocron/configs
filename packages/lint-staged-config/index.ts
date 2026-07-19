@@ -6,8 +6,7 @@ const config = {
 	"*.{js,jsx}": ["prettier --write", "eslint"],
 	"*.md": ["prettier --write"],
 	"*.mdx": ["prettier --write"],
-	"*.{png,jpeg,jpg,gif,svg}": "imagemin-lint-staged",
-	"*.scss": "stylelint --syntax=scss --fix",
+"*.scss": "stylelint --syntax=scss --fix",
 	"*.{ts,tsx}": ["prettier --write", "eslint"],
 	"package.json": "sort-package-json",
 };
