@@ -4,8 +4,8 @@ Shareable configuration used accross the Galaxy.
 
 ## Packages
 
-| Package                                                              | Description                                        |
-| -------------------------------------------------------------------- | -------------------------------------------------- |
+| Package                                                                      | Description                                        |
+| ---------------------------------------------------------------------------- | -------------------------------------------------- |
 | [`@theholocron/browserslist-config`](./packages/browserslist-config)         | Browser and device targets                         |
 | [`@theholocron/bundlewatch-config`](./packages/bundlewatch-config)           | Bundle size monitoring                             |
 | [`@theholocron/commitlint-config`](./packages/commitlint-config)             | Conventional commit enforcement                    |
