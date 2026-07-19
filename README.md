@@ -19,7 +19,6 @@ Shareable configuration used accross the Galaxy.
 | [`@theholocron/tsdown-config`](./packages/tsdown-config)                     | tsdown presets for ESM library builds              |
 | [`@theholocron/vite-config`](./packages/vite-config)                         | Vite presets for libraries, React apps, Node tools |
 | [`@theholocron/vitest-config`](./packages/vitest-config)                     | Vitest presets and coverage bundles                |
-| [`@theholocron/jest-config`](./packages/jest-config)                         | **Deprecated** — use `@theholocron/vitest-config`  |
 
 ## Development
 
