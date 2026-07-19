@@ -45,7 +45,8 @@
   "pnpm": {
     "overrides": {
       "@commitlint/config-conventional>conventional-changelog-conventionalcommits": "7",
-      "yuku-parser": "0.6.3"
+      "yuku-parser": "0.6.3",
+      "uuid": "^11.1.1"
     }
   },
   "packageManager": "pnpm@10.34.4",
