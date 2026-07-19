@@ -6,18 +6,20 @@ Shareable configuration used accross the Galaxy.
 
 | Package                                                              | Description                                        |
 | -------------------------------------------------------------------- | -------------------------------------------------- |
-| [`@theholocron/browserslist-config`](./packages/browserslist-config) | Browser and device targets                         |
-| [`@theholocron/bundlewatch-config`](./packages/bundlewatch-config)   | Bundle size monitoring                             |
-| [`@theholocron/commitlint-config`](./packages/commitlint-config)     | Conventional commit enforcement                    |
-| [`@theholocron/eslint-config`](./packages/eslint-config)             | ESLint rules for JS/TS/React/Next/Node             |
-| [`@theholocron/lint-staged-config`](./packages/lint-staged-config)   | Pre-commit lint-staged hooks                       |
-| [`@theholocron/prettier-config`](./packages/prettier-config)         | Prettier formatting rules                          |
-| [`@theholocron/storybook-config`](./packages/storybook-config)       | Storybook addon and theme setup                    |
-| [`@theholocron/stylelint-config`](./packages/stylelint-config)       | StyleLint rules for CSS/SCSS                       |
-| [`@theholocron/tsconfig`](./packages/tsconfig)                       | TypeScript base configs (NextJS, node-lts)         |
-| [`@theholocron/vite-config`](./packages/vite-config)                 | Vite presets for libraries, React apps, Node tools |
-| [`@theholocron/vitest-config`](./packages/vitest-config)             | Vitest presets and coverage bundles                |
-| [`@theholocron/jest-config`](./packages/jest-config)                 | **Deprecated** — use `@theholocron/vitest-config`  |
+| [`@theholocron/browserslist-config`](./packages/browserslist-config)         | Browser and device targets                         |
+| [`@theholocron/bundlewatch-config`](./packages/bundlewatch-config)           | Bundle size monitoring                             |
+| [`@theholocron/commitlint-config`](./packages/commitlint-config)             | Conventional commit enforcement                    |
+| [`@theholocron/eslint-config`](./packages/eslint-config)                     | ESLint rules for JS/TS/React/Next/Node             |
+| [`@theholocron/lint-staged-config`](./packages/lint-staged-config)           | Pre-commit lint-staged hooks                       |
+| [`@theholocron/prettier-config`](./packages/prettier-config)                 | Prettier formatting rules                          |
+| [`@theholocron/semantic-release-config`](./packages/semantic-release-config) | Semantic-release config for automated versioning   |
+| [`@theholocron/storybook-config`](./packages/storybook-config)               | Storybook addon and theme setup                    |
+| [`@theholocron/stylelint-config`](./packages/stylelint-config)               | StyleLint rules for CSS/SCSS                       |
+| [`@theholocron/tsconfig`](./packages/tsconfig)                               | TypeScript base configs (NextJS, node-lts)         |
+| [`@theholocron/tsdown-config`](./packages/tsdown-config)                     | tsdown presets for ESM library builds              |
+| [`@theholocron/vite-config`](./packages/vite-config)                         | Vite presets for libraries, React apps, Node tools |
+| [`@theholocron/vitest-config`](./packages/vitest-config)                     | Vitest presets and coverage bundles                |
+| [`@theholocron/jest-config`](./packages/jest-config)                         | **Deprecated** — use `@theholocron/vitest-config`  |
 
 ## Development
 
