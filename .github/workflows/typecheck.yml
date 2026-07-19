@@ -1,0 +1,24 @@
+# AUTO-GENERATED — do not edit directly.
+# Source:  theholocron/holocron · packages/cli/src/commands/setup-workflows.ts
+# Synced:  2026-07-19T03:27:27.000Z
+# Tool:    holocron sync-github
+# Changes: edit source in theholocron/holocron and push to alpha or main.
+name: Typecheck
+
+on: # yamllint disable-line rule:truthy
+  push:
+    branches: [main, alpha]
+  pull_request:
+
+concurrency:
+  group: typecheck-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  typecheck:
+    name: Typecheck
+    uses: theholocron/.github/.github/workflows/typecheck.yml@main
+    secrets: inherit
