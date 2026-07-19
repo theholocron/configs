@@ -2,7 +2,7 @@ import { defineConfig } from "@theholocron/cli";
 import type { HolocronConfig } from "@theholocron/cli";
 import { node } from "@theholocron/holocron-config";
 
-const defaults = node();
+const { repo, workflows, providers } = node();
 export default defineConfig({
 	project: {
 		name: "configs",
@@ -27,12 +27,12 @@ export default defineConfig({
 				"vite-config",
 				"vitest-config",
 			],
-			...defaults.repo,
+			...repo,
 		},
 		workflows: [
-			...defaults.workflows,
+			...workflows,
 			{ name: "release", with: { "run-build": true } },
 		],
 	},
-	providers: defaults.providers,
+	providers,
 } satisfies HolocronConfig);
