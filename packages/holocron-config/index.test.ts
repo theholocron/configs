@@ -33,7 +33,9 @@ describe("theholocronNode()", () => {
 	describe("workflows", () => {
 		it("includes the baseline workflow set", () => {
 			const { workflows } = theholocronNode();
-			const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
+			const names = workflows.map((w) =>
+				typeof w === "string" ? w : w.name,
+			);
 			for (const expected of [
 				"lint",
 				"test",
@@ -51,7 +53,9 @@ describe("theholocronNode()", () => {
 
 		it("does not include release (stays repo-specific)", () => {
 			const { workflows } = theholocronNode();
-			const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
+			const names = workflows.map((w) =>
+				typeof w === "string" ? w : w.name,
+			);
 			expect(names).not.toContain("release");
 		});
 	});
