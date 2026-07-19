@@ -11,7 +11,6 @@ export default defineConfig({
 			protection: "strict",
 			topics: [
 				"browserslist-config",
-				"bundlewatch-config",
 				"commitlint-config",
 				"developer-tools",
 				"eslint-config",
