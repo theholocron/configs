@@ -28,11 +28,12 @@ packages/
   jest-config/           — @theholocron/jest-config     (DEPRECATED → vitest-config)
   lint-staged-config/    — @theholocron/lint-staged-config
   prettier-config/       — @theholocron/prettier-config
+  semantic-release-config/ — @theholocron/semantic-release-config
   storybook-config/      — @theholocron/storybook-config
   stylelint-config/      — @theholocron/stylelint-config
   tsconfig/              — @theholocron/tsconfig         (nextjs/ node-lts/)
+  tsdown-config/         — @theholocron/tsdown-config    (presets/)
   vite-config/           — @theholocron/vite-config      (presets/)
-  semantic-release-config/ — @theholocron/semantic-release-config
   vitest-config/         — @theholocron/vitest-config    (presets/ + bundles/)
 scripts/
   bump-versions.mjs      — lockstep version bump (called by semantic-release)
@@ -44,14 +45,22 @@ release.config.ts        — semantic-release config (lockstep publish, root CHA
 Use the `.claude/skills/configs-package.md` skill, which scaffolds the full
 package. Quick checklist:
 
-1. Create `packages/<tool>-config/` with:
-   - `package.json` — follow the shape of an existing package; include all
-     relevant `peerDependencies` as optional where the tool itself is optional
-   - `index.js` — default export or named export(s) of the config object
+1. Create `packages/<tool>-config/` with the following files, modelled on an
+   existing TypeScript package (e.g. `prettier-config`):
+   - `package.json` — follow the standard shape; include all relevant
+     `peerDependencies`, mark optional ones under `peerDependenciesMeta`
+   - `index.ts` — default export or named export(s) of the config object/function
+   - `tsconfig.json` — extend `@theholocron/tsconfig/node-lts`; set
+     `rootDir: "."` and `outDir: "dist"`
+   - `tsdown.config.ts` — list every entry point that needs its own dist file
+   - `vitest.config.ts` — use the `node` preset from `@theholocron/vitest-config`
+   - `index.test.ts` — smoke test that every export has the expected runtime shape
    - `README.md` — Installation + Usage sections; see existing packages for tone
-2. Add the package to `pnpm-workspace.yaml` if it is not auto-discovered.
-3. Verify `pnpm install` resolves and `pnpm lint` passes (ESLint config lints itself).
-4. Open a PR with a `feat:` commit — semantic-release will compute a minor bump
+2. Add `vitest` and `@theholocron/vitest-config: "workspace:*"` to `devDependencies`.
+3. Add `"build": "tsdown"`, `"test": "vitest run"`, and `"typecheck": "tsc --noEmit"`
+   to `scripts`.
+4. Verify `pnpm install` resolves, `pnpm build` succeeds, and `pnpm test` passes.
+5. Open a PR with a `feat:` commit — semantic-release will compute a minor bump
    and publish all packages in lockstep.
 
 ## Code patterns
@@ -76,9 +85,12 @@ package. Quick checklist:
 
 ## Quality
 
+- `pnpm build` — compiles all TypeScript packages to `dist/` via tsdown.
+- `pnpm test` — vitest smoke tests across all packages via Turbo. Each package
+  has an `index.test.ts` (or similar) that verifies every export has the correct
+  runtime shape. Tests run after build (`^build` dependency in turbo.json).
+- `pnpm typecheck` — `tsc --noEmit` in each TypeScript package.
 - `pnpm lint` — ESLint via Turbo across all packages. Must pass before commit.
-- No test suite (config packages have no logic to unit-test; rely on consumer
-  repos for integration validation).
 - `pnpm install --frozen-lockfile` must succeed after any `package.json` change.
 
 ## Releases (automated)
