@@ -39,6 +39,11 @@
       "import": "./dist/index.js",
       "default": "./dist/index.js"
     },
+    "./node": {
+      "types": "./dist/configs/node.d.ts",
+      "import": "./dist/configs/node.js",
+      "default": "./dist/configs/node.js"
+    },
     "./package.json": "./package.json"
   },
   "files": [

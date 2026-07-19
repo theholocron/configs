@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { node } from "./index.js";
+import { node } from "./configs/node.js";
 
 describe("node()", () => {
 	describe("providers", () => {
