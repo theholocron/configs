@@ -29,66 +29,66 @@ component_management:
         target: auto
   individual_components:
     - component_id: browserslist-config
-      name: "@theholocron/browserslist-config"
+      name: "browserslist-config"
       paths:
         - packages/browserslist-config/**
 
     - component_id: bundlewatch-config
-      name: "@theholocron/bundlewatch-config"
+      name: "bundlewatch-config"
       paths:
         - packages/bundlewatch-config/**
 
     - component_id: commitlint-config
-      name: "@theholocron/commitlint-config"
+      name: "commitlint-config"
       paths:
         - packages/commitlint-config/**
 
     - component_id: eslint-config
-      name: "@theholocron/eslint-config"
+      name: "eslint-config"
       paths:
         - packages/eslint-config/**
 
     - component_id: lint-staged-config
-      name: "@theholocron/lint-staged-config"
+      name: "lint-staged-config"
       paths:
         - packages/lint-staged-config/**
 
     - component_id: prettier-config
-      name: "@theholocron/prettier-config"
+      name: "prettier-config"
       paths:
         - packages/prettier-config/**
 
     - component_id: semantic-release-config
-      name: "@theholocron/semantic-release-config"
+      name: "semantic-release-config"
       paths:
         - packages/semantic-release-config/**
 
     - component_id: storybook-config
-      name: "@theholocron/storybook-config"
+      name: "storybook-config"
       paths:
         - packages/storybook-config/**
 
     - component_id: stylelint-config
-      name: "@theholocron/stylelint-config"
+      name: "stylelint-config"
       paths:
         - packages/stylelint-config/**
 
     - component_id: tsconfig
-      name: "@theholocron/tsconfig"
+      name: "tsconfig"
       paths:
         - packages/tsconfig/**
 
     - component_id: tsdown-config
-      name: "@theholocron/tsdown-config"
+      name: "tsdown-config"
       paths:
         - packages/tsdown-config/**
 
     - component_id: vite-config
-      name: "@theholocron/vite-config"
+      name: "vite-config"
       paths:
         - packages/vite-config/**
 
     - component_id: vitest-config
-      name: "@theholocron/vitest-config"
+      name: "vitest-config"
       paths:
         - packages/vitest-config/**
