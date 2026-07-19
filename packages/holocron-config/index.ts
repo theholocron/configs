@@ -19,7 +19,7 @@ export interface HolocronPreset {
  *     repoPolicy: defaults.repoPolicy,
  *     workflows: [...defaults.workflows, { name: "release", with: { "run-build": true } }],
  *   },
- *   ...defaults.providers,
+ *   providers: defaults.providers,
  * } satisfies HolocronConfig);
  */
 export function theholocronNode(): HolocronPreset {
