@@ -11,7 +11,7 @@ export interface HolocronPreset {
  * Spread the returned fragments into `defineConfig()` — only add what's unique per repo.
  *
  * @example
- * const defaults = theholocronNode();
+ * const defaults = node();
  * export default defineConfig({
  *   project: {
  *     name: "my-repo",
@@ -25,7 +25,7 @@ export interface HolocronPreset {
  *   providers: defaults.providers,
  * });
  */
-export function theholocronNode(): HolocronPreset {
+export function node(): HolocronPreset {
 	return {
 		providers: {
 			source: "github",

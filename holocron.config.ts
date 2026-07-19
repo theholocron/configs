@@ -1,8 +1,8 @@
 import { defineConfig } from "@theholocron/cli";
 import type { HolocronConfig } from "@theholocron/cli";
-import { theholocronNode } from "@theholocron/holocron-config";
+import { node } from "@theholocron/holocron-config";
 
-const defaults = theholocronNode();
+const defaults = node();
 export default defineConfig({
 	project: {
 		name: "configs",
