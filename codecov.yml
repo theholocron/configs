@@ -33,11 +33,6 @@ component_management:
       paths:
         - packages/browserslist-config/**
 
-    - component_id: bundlewatch-config
-      name: "bundlewatch-config"
-      paths:
-        - packages/bundlewatch-config/**
-
     - component_id: commitlint-config
       name: "commitlint-config"
       paths:

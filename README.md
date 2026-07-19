@@ -7,7 +7,7 @@ Shareable configuration used accross the Galaxy.
 | Package                                                                      | Description                                        |
 | ---------------------------------------------------------------------------- | -------------------------------------------------- |
 | [`@theholocron/browserslist-config`](./packages/browserslist-config)         | Browser and device targets                         |
-| [`@theholocron/bundlewatch-config`](./packages/bundlewatch-config)           | Bundle size monitoring                             |
+| [`@theholocron/bundlewatch-config`](./packages/bundlewatch-config)           | **Deprecated** — use Codecov bundle analysis via `@theholocron/vite-config` |
 | [`@theholocron/commitlint-config`](./packages/commitlint-config)             | Conventional commit enforcement                    |
 | [`@theholocron/eslint-config`](./packages/eslint-config)                     | ESLint rules for JS/TS/React/Next/Node             |
 | [`@theholocron/lint-staged-config`](./packages/lint-staged-config)           | Pre-commit lint-staged hooks                       |
