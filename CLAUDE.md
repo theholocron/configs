@@ -22,7 +22,6 @@ Conventions for working on the `theholocron/configs` monorepo.
 ```
 packages/
   browserslist-config/   — @theholocron/browserslist-config
-  bundlewatch-config/    — @theholocron/bundlewatch-config  (DEPRECATED → Codecov bundle analysis via vite-config)
   commitlint-config/     — @theholocron/commitlint-config
   eslint-config/         — @theholocron/eslint-config  (configs/ + bundles/)
   lint-staged-config/    — @theholocron/lint-staged-config
