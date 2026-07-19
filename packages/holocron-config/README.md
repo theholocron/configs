@@ -29,7 +29,7 @@ export default defineConfig({
       { name: "release", with: { "run-build": true } },
     ],
   },
-  ...defaults.providers,
+  providers: defaults.providers,
 } satisfies HolocronConfig);
 ```
 
