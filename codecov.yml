@@ -43,6 +43,11 @@ component_management:
       paths:
         - packages/eslint-config/**
 
+    - component_id: holocron-config
+      name: "holocron-config"
+      paths:
+        - packages/holocron-config/**
+
     - component_id: lint-staged-config
       name: "lint-staged-config"
       paths:
