@@ -30,6 +30,7 @@
     "@theholocron/cli": "catalog:holocron",
     "@theholocron/commitlint-config": "workspace:*",
     "@theholocron/eslint-config": "workspace:*",
+    "@theholocron/holocron-config": "workspace:*",
     "@theholocron/holocron-plugin-github": "catalog:holocron",
     "@theholocron/lint-staged-config": "workspace:*",
     "@theholocron/semantic-release-config": "workspace:*",
