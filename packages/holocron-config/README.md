@@ -35,10 +35,10 @@ export default defineConfig({
 
 `theholocronNode()` returns three fragments:
 
-| Fragment | Contents |
-| --- | --- |
-| `providers` | `source: "github"`, `ci: "github"`, `issues: ["github", { labels: … }]` |
-| `repoPolicy` | `preset: "strict"` |
-| `workflows` | `lint`, `test`, `typecheck`, `codeql`, `review`, `stale`, `greetings`, `dependencies`, `bookkeeping-pr` |
+| Fragment     | Contents                                                                                                |
+| ------------ | ------------------------------------------------------------------------------------------------------- |
+| `providers`  | `source: "github"`, `ci: "github"`, `issues: ["github", { labels: … }]`                                 |
+| `repoPolicy` | `preset: "strict"`                                                                                      |
+| `workflows`  | `lint`, `test`, `typecheck`, `codeql`, `review`, `stale`, `greetings`, `dependencies`, `bookkeeping-pr` |
 
 Everything else — `project.name`, `project.description`, `project.repo`, and any per-repo workflow overrides (e.g. `release`) — stays in the consuming repo's config.
