@@ -1,0 +1,99 @@
+codecov:
+  require_ci_to_pass: true
+
+coverage:
+  precision: 2
+  round: down
+  range: "50...100"
+  status:
+    project:
+      default:
+        # Configs packages have smoke tests, not unit tests — track trend rather
+        # than enforcing a hard threshold.
+        target: auto
+        threshold: 5%
+    patch:
+      default:
+        target: auto
+        threshold: 5%
+
+comment:
+  layout: "reach,diff,flags,components"
+  behavior: default
+  require_changes: true
+
+component_management:
+  default_rules:
+    statuses:
+      - type: project
+        target: auto
+  individual_components:
+    - component_id: browserslist-config
+      name: "@theholocron/browserslist-config"
+      paths:
+        - packages/browserslist-config/**
+
+    - component_id: bundlewatch-config
+      name: "@theholocron/bundlewatch-config"
+      paths:
+        - packages/bundlewatch-config/**
+
+    - component_id: commitlint-config
+      name: "@theholocron/commitlint-config"
+      paths:
+        - packages/commitlint-config/**
+
+    - component_id: eslint-config
+      name: "@theholocron/eslint-config"
+      paths:
+        - packages/eslint-config/**
+
+    - component_id: jest-config
+      name: "@theholocron/jest-config"
+      paths:
+        - packages/jest-config/**
+
+    - component_id: lint-staged-config
+      name: "@theholocron/lint-staged-config"
+      paths:
+        - packages/lint-staged-config/**
+
+    - component_id: prettier-config
+      name: "@theholocron/prettier-config"
+      paths:
+        - packages/prettier-config/**
+
+    - component_id: semantic-release-config
+      name: "@theholocron/semantic-release-config"
+      paths:
+        - packages/semantic-release-config/**
+
+    - component_id: storybook-config
+      name: "@theholocron/storybook-config"
+      paths:
+        - packages/storybook-config/**
+
+    - component_id: stylelint-config
+      name: "@theholocron/stylelint-config"
+      paths:
+        - packages/stylelint-config/**
+
+    - component_id: tsconfig
+      name: "@theholocron/tsconfig"
+      paths:
+        - packages/tsconfig/**
+
+    - component_id: tsdown-config
+      name: "@theholocron/tsdown-config"
+      paths:
+        - packages/tsdown-config/**
+
+    - component_id: vite-config
+      name: "@theholocron/vite-config"
+      paths:
+        - packages/vite-config/**
+
+    - component_id: vitest-config
+      name: "@theholocron/vitest-config"
+      paths:
+        - packages/vitest-config/**
