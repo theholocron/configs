@@ -1,42 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { node } from "./configs/node.js";
+import { node } from "./index.js";
 
 describe("node()", () => {
-	describe("providers", () => {
-		it("uses github for source and ci", () => {
-			const { providers } = node();
-			expect(providers.source).toBe("github");
-			expect(providers.ci).toBe("github");
-		});
-
-		it("configures github issues with status labels", () => {
-			const { providers } = node();
-			expect(providers.issues).toMatchObject([
-				"github",
-				{
-					labels: {
-						inProgress: "status:in-progress",
-						inReview: "status:in-review",
-					},
-				},
-			]);
-		});
-	});
-
 	describe("repo", () => {
 		it("sets strict protection", () => {
 			const { repo } = node();
 			expect(repo.protection).toBe("strict");
-		});
-
-		it("sets active node properties", () => {
-			const { repo } = node();
-			expect(repo.properties).toMatchObject({
-				lifecycle: "active",
-				open_source: true,
-				runtime_environment: "node",
-				uses_external_packages: true,
-			});
 		});
 	});
 
@@ -67,6 +36,27 @@ describe("node()", () => {
 				typeof w === "string" ? w : w.name,
 			);
 			expect(names).not.toContain("release");
+		});
+	});
+
+	describe("providers", () => {
+		it("uses github for source and ci", () => {
+			const { providers } = node();
+			expect(providers.source).toBe("github");
+			expect(providers.ci).toBe("github");
+		});
+
+		it("configures github issues with status labels", () => {
+			const { providers } = node();
+			expect(providers.issues).toMatchObject([
+				"github",
+				{
+					labels: {
+						inProgress: "status:in-progress",
+						inReview: "status:in-review",
+					},
+				},
+			]);
 		});
 	});
 });

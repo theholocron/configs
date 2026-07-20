@@ -3,7 +3,7 @@ import type { HolocronConfig, RepoConfig } from "@theholocron/cli";
 export interface HolocronPreset {
 	providers: HolocronConfig["providers"];
 	repo: Omit<RepoConfig, "name" | "requiredChecks">;
-	workflows: NonNullable<HolocronConfig["project"]["workflows"]>;
+	workflows: NonNullable<HolocronConfig["workflows"]>;
 }
 
 /**
@@ -11,18 +11,12 @@ export interface HolocronPreset {
  * Spread the returned fragments into `defineConfig()` — only add what's unique per repo.
  *
  * @example
- * const defaults = node();
+ * const { repo, workflows, providers } = node();
  * export default defineConfig({
- *   project: {
- *     name: "my-repo",
- *     repo: {
- *       name: "theholocron/my-repo",
- *       topics: ["typescript"],
- *       ...defaults.repo,
- *     },
- *     workflows: [...defaults.workflows, { name: "release", with: { "run-build": true } }],
- *   },
- *   providers: defaults.providers,
+ *   name: "my-repo",
+ *   repo: { name: "theholocron/my-repo", topics: ["typescript"], ...repo },
+ *   workflows: [...workflows, { name: "release", with: { "run-build": true } }],
+ *   providers,
  * });
  */
 export function node(): HolocronPreset {
