@@ -24,7 +24,7 @@ describe("node()", () => {
 				"stale",
 				"greetings",
 				"dependencies",
-				"bookkeeping-pr",
+				"bookkeeping",
 			]) {
 				expect(names).toContain(expected);
 			}
