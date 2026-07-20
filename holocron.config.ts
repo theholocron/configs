@@ -4,11 +4,9 @@ import { node } from "@theholocron/holocron-config";
 
 const { repo, workflows, providers } = node();
 export default defineConfig({
-	name: "configs",
 	description:
 		"Shared configuration packages for the theholocron organization.",
 	repo: {
-		name: "theholocron/configs",
 		topics: [
 			"browserslist-config",
 			"commitlint-config",
