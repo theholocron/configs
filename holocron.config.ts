@@ -7,7 +7,6 @@ export default defineConfig({
 	description:
 		"Shared configuration packages for the theholocron organization.",
 	repo: {
-		name: "theholocron/configs",
 		topics: [
 			"browserslist-config",
 			"commitlint-config",
