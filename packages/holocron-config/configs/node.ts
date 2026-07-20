@@ -52,7 +52,7 @@ export function node(): HolocronPreset {
 			"stale",
 			"greetings",
 			"dependencies",
-			"bookkeeping-pr",
+			"bookkeeping",
 		],
 	};
 }
