@@ -26,10 +26,7 @@ export default defineConfig({
     topics: ["nodejs", "typescript"],
     ...repo,
   },
-  workflows: [
-    ...workflows,
-    { name: "release", with: { "run-build": true } },
-  ],
+  workflows: [...workflows, { name: "release", with: { "run-build": true } }],
   providers,
 } satisfies HolocronConfig);
 ```
@@ -38,8 +35,8 @@ export default defineConfig({
 
 | Fragment    | Contents                                                                                                |
 | ----------- | ------------------------------------------------------------------------------------------------------- |
-| `repo`      | `protection: "strict"`, `properties: { lifecycle: "active", … }`                                       |
+| `repo`      | `protection: "strict"`, `properties: { lifecycle: "active", … }`                                        |
 | `workflows` | `lint`, `test`, `typecheck`, `codeql`, `review`, `stale`, `greetings`, `dependencies`, `bookkeeping-pr` |
-| `providers` | `source: "github"`, `ci: "github"`, `issues: ["github", { labels: … }]`                                |
+| `providers` | `source: "github"`, `ci: "github"`, `issues: ["github", { labels: … }]`                                 |
 
 Everything else — `name`, `repo.name`, `repo.topics`, and any per-repo workflow overrides (e.g. `release`) — stays in the consuming repo's config.

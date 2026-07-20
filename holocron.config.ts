@@ -5,7 +5,8 @@ import { node } from "@theholocron/holocron-config";
 const { repo, workflows, providers } = node();
 export default defineConfig({
 	name: "configs",
-	description: "Shared configuration packages for the theholocron organization.",
+	description:
+		"Shared configuration packages for the theholocron organization.",
 	repo: {
 		name: "theholocron/configs",
 		topics: [
@@ -27,9 +28,6 @@ export default defineConfig({
 		],
 		...repo,
 	},
-	workflows: [
-		...workflows,
-		{ name: "release", with: { "run-build": true } },
-	],
+	workflows: [...workflows, { name: "release", with: { "run-build": true } }],
 	providers,
 } satisfies HolocronConfig);
