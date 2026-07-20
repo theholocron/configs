@@ -4,35 +4,32 @@ import { node } from "@theholocron/holocron-config";
 
 const { repo, workflows, providers } = node();
 export default defineConfig({
-	project: {
-		name: "configs",
-		description:
-			"Shared configuration packages for the theholocron organization.",
-		repo: {
-			name: "theholocron/configs",
-			topics: [
-				"browserslist-config",
-				"commitlint-config",
-				"developer-tools",
-				"eslint-config",
-				"lint-staged-config",
-				"nodejs",
-				"prettier-config",
-				"semantic-release-config",
-				"shareable-configs",
-				"storybook-config",
-				"stylelint-config",
-				"tsconfig",
-				"tsdown-config",
-				"vite-config",
-				"vitest-config",
-			],
-			...repo,
-		},
-		workflows: [
-			...workflows,
-			{ name: "release", with: { "run-build": true } },
+	name: "configs",
+	description: "Shared configuration packages for the theholocron organization.",
+	repo: {
+		name: "theholocron/configs",
+		topics: [
+			"browserslist-config",
+			"commitlint-config",
+			"developer-tools",
+			"eslint-config",
+			"lint-staged-config",
+			"nodejs",
+			"prettier-config",
+			"semantic-release-config",
+			"shareable-configs",
+			"storybook-config",
+			"stylelint-config",
+			"tsconfig",
+			"tsdown-config",
+			"vite-config",
+			"vitest-config",
 		],
+		...repo,
 	},
+	workflows: [
+		...workflows,
+		{ name: "release", with: { "run-build": true } },
+	],
 	providers,
 } satisfies HolocronConfig);
