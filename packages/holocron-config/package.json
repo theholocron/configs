@@ -28,7 +28,8 @@
     "@theholocron/vitest-config": "workspace:*",
     "tsdown": "catalog:",
     "typescript": "catalog:",
-    "vitest": "catalog:"
+    "vitest": "catalog:",
+    "@vitest/coverage-v8": "catalog:"
   },
   "peerDependencies": {
     "@theholocron/cli": ">=2.0.0-alpha.1"

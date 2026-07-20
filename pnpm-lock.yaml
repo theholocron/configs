@@ -6,6 +6,9 @@ settings:
 
 catalogs:
   default:
+    '@vitest/coverage-v8':
+      specifier: ^4.1.10
+      version: 4.1.10
     tsdown:
       specifier: ^0.22.8
       version: 0.22.9
@@ -13,7 +16,7 @@ catalogs:
       specifier: ^5.9.3
       version: 5.9.3
     vitest:
-      specifier: ^4.0.0
+      specifier: ^4.1.10
       version: 4.1.10
   holocron:
     '@theholocron/cli':
@@ -116,6 +119,9 @@ importers:
       '@theholocron/vitest-config':
         specifier: workspace:*
         version: link:../vitest-config
+      '@vitest/coverage-v8':
+        specifier: 'catalog:'
+        version: 4.1.10(@vitest/browser@4.1.10)(vitest@4.1.10)
       tsdown:
         specifier: 'catalog:'
         version: 0.22.9(tsx@4.23.1)(typescript@5.9.3)
@@ -159,6 +165,9 @@ importers:
       '@theholocron/vitest-config':
         specifier: workspace:*
         version: link:../vitest-config
+      '@vitest/coverage-v8':
+        specifier: 'catalog:'
+        version: 4.1.10(@vitest/browser@4.1.10)(vitest@4.1.10)
       globals:
         specifier: ^17.0.0
         version: 17.7.0
@@ -186,6 +195,9 @@ importers:
       '@theholocron/vitest-config':
         specifier: workspace:*
         version: link:../vitest-config
+      '@vitest/coverage-v8':
+        specifier: 'catalog:'
+        version: 4.1.10(@vitest/browser@4.1.10)(vitest@4.1.10)
       tsdown:
         specifier: 'catalog:'
         version: 0.22.9(tsx@4.23.1)(typescript@5.9.3)
@@ -211,6 +223,9 @@ importers:
       '@theholocron/vitest-config':
         specifier: workspace:*
         version: link:../vitest-config
+      '@vitest/coverage-v8':
+        specifier: 'catalog:'
+        version: 4.1.10(@vitest/browser@4.1.10)(vitest@4.1.10)
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -236,6 +251,9 @@ importers:
       '@theholocron/vitest-config':
         specifier: workspace:*
         version: link:../vitest-config
+      '@vitest/coverage-v8':
+        specifier: 'catalog:'
+        version: 4.1.10(@vitest/browser@4.1.10)(vitest@4.1.10)
       tsdown:
         specifier: 'catalog:'
         version: 0.22.9(tsx@4.23.1)(typescript@5.9.3)
@@ -279,6 +297,9 @@ importers:
       '@theholocron/vitest-config':
         specifier: workspace:*
         version: link:../vitest-config
+      '@vitest/coverage-v8':
+        specifier: 'catalog:'
+        version: 4.1.10(@vitest/browser@4.1.10)(vitest@4.1.10)
       tsdown:
         specifier: 'catalog:'
         version: 0.22.9(tsx@4.23.1)(typescript@5.9.3)
@@ -349,6 +370,9 @@ importers:
       '@theholocron/vitest-config':
         specifier: workspace:*
         version: link:../vitest-config
+      '@vitest/coverage-v8':
+        specifier: 'catalog:'
+        version: 4.1.10(@vitest/browser@4.1.10)(vitest@4.1.10)
       tsdown:
         specifier: 'catalog:'
         version: 0.22.9(tsx@4.23.1)(typescript@5.9.3)
@@ -377,6 +401,9 @@ importers:
       '@theholocron/vitest-config':
         specifier: workspace:*
         version: link:../vitest-config
+      '@vitest/coverage-v8':
+        specifier: 'catalog:'
+        version: 4.1.10(@vitest/browser@4.1.10)(vitest@4.1.10)
       tsdown:
         specifier: 'catalog:'
         version: 0.22.9(tsx@4.23.1)(typescript@5.9.3)
@@ -401,6 +428,9 @@ importers:
       '@theholocron/vitest-config':
         specifier: workspace:*
         version: link:../vitest-config
+      '@vitest/coverage-v8':
+        specifier: 'catalog:'
+        version: 4.1.10(@vitest/browser@4.1.10)(vitest@4.1.10)
       tsdown:
         specifier: 'catalog:'
         version: 0.22.9(tsx@4.23.1)(typescript@5.9.3)
@@ -429,6 +459,9 @@ importers:
       '@theholocron/vitest-config':
         specifier: workspace:*
         version: link:../vitest-config
+      '@vitest/coverage-v8':
+        specifier: 'catalog:'
+        version: 4.1.10(@vitest/browser@4.1.10)(vitest@4.1.10)
       tsdown:
         specifier: 'catalog:'
         version: 0.22.9(tsx@4.23.1)(typescript@5.9.3)
@@ -456,9 +489,6 @@ importers:
       '@vitest/browser':
         specifier: ^4
         version: 4.1.10(vite@7.3.6(@types/node@26.1.1)(jiti@2.6.1)(tsx@4.23.1)(yaml@2.9.0))(vitest@4.1.10)
-      '@vitest/coverage-v8':
-        specifier: ^4
-        version: 4.1.10(@vitest/browser@4.1.10)(vitest@4.1.10)
       jsdom:
         specifier: ^26
         version: 26.1.0
@@ -469,6 +499,9 @@ importers:
       '@theholocron/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      '@vitest/coverage-v8':
+        specifier: 'catalog:'
+        version: 4.1.10(@vitest/browser@4.1.10)(vitest@4.1.10)
       tsdown:
         specifier: 'catalog:'
         version: 0.22.9(tsx@4.23.1)(typescript@5.9.3)
