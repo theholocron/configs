@@ -1,16 +1,16 @@
 import { describe, expect, it } from "vitest";
-import { theholocronNode } from "./index.js";
+import { node } from "./configs/node.js";
 
-describe("theholocronNode()", () => {
+describe("node()", () => {
 	describe("providers", () => {
 		it("uses github for source and ci", () => {
-			const { providers } = theholocronNode();
+			const { providers } = node();
 			expect(providers.source).toBe("github");
 			expect(providers.ci).toBe("github");
 		});
 
 		it("configures github issues with status labels", () => {
-			const { providers } = theholocronNode();
+			const { providers } = node();
 			expect(providers.issues).toMatchObject([
 				"github",
 				{
@@ -23,16 +23,26 @@ describe("theholocronNode()", () => {
 		});
 	});
 
-	describe("repoPolicy", () => {
-		it("sets strict preset", () => {
-			const { repoPolicy } = theholocronNode();
-			expect(repoPolicy.preset).toBe("strict");
+	describe("repo", () => {
+		it("sets strict protection", () => {
+			const { repo } = node();
+			expect(repo.protection).toBe("strict");
+		});
+
+		it("sets active node properties", () => {
+			const { repo } = node();
+			expect(repo.properties).toMatchObject({
+				lifecycle: "active",
+				open_source: true,
+				runtime_environment: "node",
+				uses_external_packages: true,
+			});
 		});
 	});
 
 	describe("workflows", () => {
 		it("includes the baseline workflow set", () => {
-			const { workflows } = theholocronNode();
+			const { workflows } = node();
 			const names = workflows.map((w) =>
 				typeof w === "string" ? w : w.name,
 			);
@@ -52,7 +62,7 @@ describe("theholocronNode()", () => {
 		});
 
 		it("does not include release (stays repo-specific)", () => {
-			const { workflows } = theholocronNode();
+			const { workflows } = node();
 			const names = workflows.map((w) =>
 				typeof w === "string" ? w : w.name,
 			);

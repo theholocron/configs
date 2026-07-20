@@ -1,6 +1,8 @@
 import { defineConfig } from "@theholocron/cli";
 import type { HolocronConfig } from "@theholocron/cli";
+import { node } from "@theholocron/holocron-config";
 
+const { repo, workflows, providers } = node();
 export default defineConfig({
 	project: {
 		name: "configs",
@@ -8,7 +10,6 @@ export default defineConfig({
 			"Shared configuration packages for the theholocron organization.",
 		repo: {
 			name: "theholocron/configs",
-			protection: "strict",
 			topics: [
 				"browserslist-config",
 				"commitlint-config",
@@ -26,37 +27,12 @@ export default defineConfig({
 				"vite-config",
 				"vitest-config",
 			],
-			properties: {
-				lifecycle: "active",
-				open_source: true,
-				runtime_environment: "node",
-				uses_external_packages: true,
-			},
+			...repo,
 		},
 		workflows: [
-			"lint",
-			"test",
-			"typecheck",
-			"codeql",
-			"review",
+			...workflows,
 			{ name: "release", with: { "run-build": true } },
-			"stale",
-			"greetings",
-			"dependencies",
-			"bookkeeping-pr",
 		],
 	},
-	providers: {
-		source: "github",
-		ci: "github",
-		issues: [
-			"github",
-			{
-				labels: {
-					inProgress: "status:in-progress",
-					inReview: "status:in-review",
-				},
-			},
-		],
-	},
+	providers,
 } satisfies HolocronConfig);
