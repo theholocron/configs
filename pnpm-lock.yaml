@@ -20,11 +20,11 @@ catalogs:
       version: 4.1.10
   holocron:
     '@theholocron/cli':
-      specifier: 2.0.0-alpha.54
-      version: 2.0.0-alpha.54
+      specifier: 2.0.0-alpha.56
+      version: 2.0.0-alpha.56
     '@theholocron/holocron-plugin-github':
-      specifier: 2.0.0-alpha.54
-      version: 2.0.0-alpha.54
+      specifier: 2.0.0-alpha.56
+      version: 2.0.0-alpha.56
 
 overrides:
   '@commitlint/config-conventional>conventional-changelog-conventionalcommits': '7'
@@ -58,7 +58,7 @@ importers:
         version: 12.0.9(semantic-release@25.0.7(typescript@5.9.3))
       '@theholocron/cli':
         specifier: catalog:holocron
-        version: 2.0.0-alpha.54
+        version: 2.0.0-alpha.56
       '@theholocron/commitlint-config':
         specifier: workspace:*
         version: link:packages/commitlint-config
@@ -70,7 +70,7 @@ importers:
         version: link:packages/holocron-config
       '@theholocron/holocron-plugin-github':
         specifier: catalog:holocron
-        version: 2.0.0-alpha.54(@theholocron/cli@2.0.0-alpha.54)(@theholocron/github-client@0.7.0)
+        version: 2.0.0-alpha.56(@theholocron/cli@2.0.0-alpha.56)(@theholocron/github-client@0.11.3)
       '@theholocron/lint-staged-config':
         specifier: workspace:*
         version: link:packages/lint-staged-config
@@ -191,7 +191,7 @@ importers:
     devDependencies:
       '@theholocron/cli':
         specifier: catalog:holocron
-        version: 2.0.0-alpha.54
+        version: 2.0.0-alpha.56
       '@theholocron/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
@@ -2205,26 +2205,26 @@ packages:
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
 
-  '@theholocron/cli@2.0.0-alpha.54':
-    resolution: {integrity: sha512-148oxUOBxs9R6QVRyqDYOZChp5zvx+LgeaY12f46v5BsUVkxtG1mfatdExs61BXEfwUTlV3sbNKVDJc/1klIAQ==}
+  '@theholocron/cli@2.0.0-alpha.56':
+    resolution: {integrity: sha512-bu23IZqVhhzpvfX7ogCFmcq+QeeMj1DgEYhAZoSeB7WguKzTAFZaeF9yWU5mMiRXP+1byqB4lS/nvl19GcChMg==}
     hasBin: true
 
-  '@theholocron/github-client@0.7.0':
-    resolution: {integrity: sha512-7fQ1AY0ZUh95cS7HARBfTWMyYnP56aBMJ0TfT6XKCzQEgSUc4VvsCzUsBW0gnBF/BrqgBHNWQXfK0Fs1kFXUVw==}
+  '@theholocron/github-client@0.11.3':
+    resolution: {integrity: sha512-5XilkR1+0L0sE6/KGs2rGGvCPySKnYu0hRJ3vf6YRf1sz1kA2YPy9/zeZTArG0PVtF4GQWGZQ0DQCUvOWZAc6g==}
     engines: {node: '>=22.0.0'}
 
-  '@theholocron/holocron-plugin-github@2.0.0-alpha.54':
-    resolution: {integrity: sha512-b60gpak0lHHN4avP11TxKIv8Y79bWyiuIrXZV7CEytTSEB9RRhi/Op0WmPy3TA5A779qfCKnVOHWDydVIF3Qmg==}
+  '@theholocron/holocron-plugin-github@2.0.0-alpha.56':
+    resolution: {integrity: sha512-N3gKA1WOGWPWHmTe40c4JKal9OP6AIf3xxNDBiWhbVZCZ+M2ulxFl1I9KaXU9EMggopAFNNkVcvL8RrrZuHzxg==}
     peerDependencies:
-      '@theholocron/cli': 2.0.0-alpha.54
-      '@theholocron/github-client': ^0.7.0
+      '@theholocron/cli': 2.0.0-alpha.56
+      '@theholocron/github-client': ^0.11.3
+
+  '@theholocron/http-client@0.11.3':
+    resolution: {integrity: sha512-eayCX5Na1tWRMYLeQdl1aA4IfbFrIbAC8nvbbc4QzlV/BeoVjZik0FK5jz3WAQZP9McEC1Y5nR4pFImXtxG1JA==}
+    engines: {node: '>=22.0.0'}
 
   '@theholocron/http-client@0.6.2':
     resolution: {integrity: sha512-NOYWFX16/9Hei5vo3Ev3QyqSAgPW5ro4vTZewGBmLgL9KsgCEwiLK0hQufF9XZq+W2G/lMzlz9uJNKPxcTq4HQ==}
-    engines: {node: '>=22.0.0'}
-
-  '@theholocron/http-client@0.7.0':
-    resolution: {integrity: sha512-D2zC97WwBtMSrfKFtZM3GPVHxbuTJeMDjBH/JxlcB5YYSUzWX+LXrN8GrcHgm9heOPcwEf2GOGN6K9+DBq8Ntg==}
     engines: {node: '>=22.0.0'}
 
   '@turbo/darwin-64@2.10.5':
@@ -8144,27 +8144,27 @@ snapshots:
     dependencies:
       '@testing-library/dom': 10.4.1
 
-  '@theholocron/cli@2.0.0-alpha.54':
+  '@theholocron/cli@2.0.0-alpha.56':
     dependencies:
       '@napi-rs/keyring': 1.3.0
-      '@theholocron/github-client': 0.7.0
-      '@theholocron/http-client': 0.7.0
+      '@theholocron/github-client': 0.11.3
+      '@theholocron/http-client': 0.11.3
       tsx: 4.23.1
       yargs: 18.0.0
 
-  '@theholocron/github-client@0.7.0':
+  '@theholocron/github-client@0.11.3':
     dependencies:
       '@theholocron/http-client': 0.6.2
 
-  '@theholocron/holocron-plugin-github@2.0.0-alpha.54(@theholocron/cli@2.0.0-alpha.54)(@theholocron/github-client@0.7.0)':
+  '@theholocron/holocron-plugin-github@2.0.0-alpha.56(@theholocron/cli@2.0.0-alpha.56)(@theholocron/github-client@0.11.3)':
     dependencies:
-      '@theholocron/cli': 2.0.0-alpha.54
-      '@theholocron/github-client': 0.7.0
+      '@theholocron/cli': 2.0.0-alpha.56
+      '@theholocron/github-client': 0.11.3
       libsodium-wrappers: 0.7.16
 
-  '@theholocron/http-client@0.6.2': {}
+  '@theholocron/http-client@0.11.3': {}
 
-  '@theholocron/http-client@0.7.0': {}
+  '@theholocron/http-client@0.6.2': {}
 
   '@turbo/darwin-64@2.10.5':
     optional: true
