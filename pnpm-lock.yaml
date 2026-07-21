@@ -21,10 +21,10 @@ catalogs:
   holocron:
     '@theholocron/cli':
       specifier: '>=2.0.0-alpha.0 <2.0.0'
-      version: 2.0.0-alpha.67
+      version: 2.0.0-alpha.69
     '@theholocron/holocron-plugin-github':
       specifier: '>=2.0.0-alpha.0 <2.0.0'
-      version: 2.0.0-alpha.67
+      version: 2.0.0-alpha.0
 
 overrides:
   '@commitlint/config-conventional>conventional-changelog-conventionalcommits': '7'
@@ -58,7 +58,7 @@ importers:
         version: 12.0.9(semantic-release@25.0.7(typescript@5.9.3))
       '@theholocron/cli':
         specifier: catalog:holocron
-        version: 2.0.0-alpha.67
+        version: 2.0.0-alpha.69(vitest@4.1.10)
       '@theholocron/commitlint-config':
         specifier: workspace:*
         version: link:packages/commitlint-config
@@ -70,13 +70,16 @@ importers:
         version: link:packages/holocron-config
       '@theholocron/holocron-plugin-github':
         specifier: catalog:holocron
-        version: 2.0.0-alpha.67(@theholocron/cli@2.0.0-alpha.67)(@theholocron/github-client@0.11.3)
+        version: 2.0.0-alpha.0(@theholocron/cli@2.0.0-alpha.69(vitest@4.1.10))
       '@theholocron/lint-staged-config':
         specifier: workspace:*
         version: link:packages/lint-staged-config
       '@theholocron/semantic-release-config':
         specifier: workspace:*
         version: link:packages/semantic-release-config
+      '@theholocron/skills':
+        specifier: ^1.0.0
+        version: 1.0.0
       conventional-changelog-conventionalcommits:
         specifier: ^10.2.1
         version: 10.2.1
@@ -191,7 +194,7 @@ importers:
     devDependencies:
       '@theholocron/cli':
         specifier: catalog:holocron
-        version: 2.0.0-alpha.67
+        version: 2.0.0-alpha.69(vitest@4.1.10)
       '@theholocron/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
@@ -2205,27 +2208,31 @@ packages:
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
 
-  '@theholocron/cli@2.0.0-alpha.67':
-    resolution: {integrity: sha512-WRa+jWsp41Cb+QF7MdzmZ+Pm6GUe3ZQSqkUCQk72tAUimcDN6T+V3Q+kHDUVw/PHcJ8P2Dl4MM16dRo1WNohLg==}
+  '@theholocron/cli@2.0.0-alpha.69':
+    resolution: {integrity: sha512-bbMWW0HbULkad+HkqjudIHLc0L1PArQRUg4MJdjZ8NDAZSSI1GaVfxuxJHrb7ybjqDeJUhiXrACkktmDF9PjzQ==}
     hasBin: true
 
-  '@theholocron/github-client@0.11.3':
-    resolution: {integrity: sha512-5XilkR1+0L0sE6/KGs2rGGvCPySKnYu0hRJ3vf6YRf1sz1kA2YPy9/zeZTArG0PVtF4GQWGZQ0DQCUvOWZAc6g==}
+  '@theholocron/github-client@1.1.0':
+    resolution: {integrity: sha512-lgx91s07K1mxJoZra91c8KlLxNO1XAezCYd5ma7B7YmscKKlo++kjmjycPKetfWICPFiGMTyaY5Pz6MPpGKT5g==}
     engines: {node: '>=22.0.0'}
 
-  '@theholocron/holocron-plugin-github@2.0.0-alpha.67':
-    resolution: {integrity: sha512-gEGG5M4oxi5uqFImHFohqDB0U0vJYnaE9FK3BiqTu0gCir0UgiyW3/yr9p436HRcb1B+TmLyTOR4V+NB7pZT0g==}
+  '@theholocron/holocron-plugin-github@2.0.0-alpha.0':
+    resolution: {integrity: sha512-rBVmU6Lz/hXeOiCHW47VpkbcqGWGGaFCIyLvBXHc+ERugZzbCGjBEYSvrzfeOAD5m8nmRDeZnHZU2RGyli05xA==}
     peerDependencies:
-      '@theholocron/cli': 2.0.0-alpha.67
-      '@theholocron/github-client': ^0.11.3
+      '@theholocron/cli': 2.0.0-alpha.0
 
-  '@theholocron/http-client@0.11.3':
-    resolution: {integrity: sha512-eayCX5Na1tWRMYLeQdl1aA4IfbFrIbAC8nvbbc4QzlV/BeoVjZik0FK5jz3WAQZP9McEC1Y5nR4pFImXtxG1JA==}
+  '@theholocron/http-client@1.1.0':
+    resolution: {integrity: sha512-ph/lgmMfbO34j5tIAFNFI5Ykvl/ruQcjN/w/3BdNinsFnJvNHXRBaZ2YPSdLNCEdLymmAq8h3oY7UxihfkyqeQ==}
     engines: {node: '>=22.0.0'}
+    peerDependencies:
+      vitest: '>=4.0.0'
+    peerDependenciesMeta:
+      vitest:
+        optional: true
 
-  '@theholocron/http-client@0.6.2':
-    resolution: {integrity: sha512-NOYWFX16/9Hei5vo3Ev3QyqSAgPW5ro4vTZewGBmLgL9KsgCEwiLK0hQufF9XZq+W2G/lMzlz9uJNKPxcTq4HQ==}
-    engines: {node: '>=22.0.0'}
+  '@theholocron/skills@1.0.0':
+    resolution: {integrity: sha512-tk+3U0eJLzDSVIEcr08j1+GbSUb/HExLZrwFrWDKoYTFWhVHnk6SID+JobqwUfGSlVn65ffK7EFiUqYBIKQmbA==}
+    engines: {node: '>=22', pnpm: '>=10'}
 
   '@turbo/darwin-64@2.10.5':
     resolution: {integrity: sha512-ENvPwy3x5yS7MwNYHeWjqOBXkwIMp39Pd+/zXC6PoiNzF8EIvvLZOZZ+ny6L9x4WgS5vxUii2LM5gM+zjPdnWw==}
@@ -8168,29 +8175,34 @@ snapshots:
     dependencies:
       '@testing-library/dom': 10.4.1
 
-  '@theholocron/cli@2.0.0-alpha.67':
+  '@theholocron/cli@2.0.0-alpha.69(vitest@4.1.10)':
     dependencies:
       '@napi-rs/keyring': 1.3.0
-      '@theholocron/github-client': 0.11.3
-      '@theholocron/http-client': 0.11.3
+      '@theholocron/github-client': 1.1.0(vitest@4.1.10)
+      '@theholocron/http-client': 1.1.0(vitest@4.1.10)
       chalk: 5.6.2
       ora: 8.2.0
       tsx: 4.23.1
       yargs: 18.0.0
+    transitivePeerDependencies:
+      - vitest
 
-  '@theholocron/github-client@0.11.3':
+  '@theholocron/github-client@1.1.0(vitest@4.1.10)':
     dependencies:
-      '@theholocron/http-client': 0.6.2
+      '@theholocron/http-client': 1.1.0(vitest@4.1.10)
+    transitivePeerDependencies:
+      - vitest
 
-  '@theholocron/holocron-plugin-github@2.0.0-alpha.67(@theholocron/cli@2.0.0-alpha.67)(@theholocron/github-client@0.11.3)':
+  '@theholocron/holocron-plugin-github@2.0.0-alpha.0(@theholocron/cli@2.0.0-alpha.69(vitest@4.1.10))':
     dependencies:
-      '@theholocron/cli': 2.0.0-alpha.67
-      '@theholocron/github-client': 0.11.3
+      '@theholocron/cli': 2.0.0-alpha.69(vitest@4.1.10)
       libsodium-wrappers: 0.7.16
 
-  '@theholocron/http-client@0.11.3': {}
+  '@theholocron/http-client@1.1.0(vitest@4.1.10)':
+    optionalDependencies:
+      vitest: 4.1.10(@types/node@26.1.1)(@vitest/coverage-v8@4.1.10)(jsdom@26.1.0)(vite@7.3.6(@types/node@26.1.1)(jiti@2.6.1)(tsx@4.23.1)(yaml@2.9.0))
 
-  '@theholocron/http-client@0.6.2': {}
+  '@theholocron/skills@1.0.0': {}
 
   '@turbo/darwin-64@2.10.5':
     optional: true
