@@ -28,5 +28,11 @@ export default defineConfig({
 	workflows: [...workflows, { name: "release", with: { "run-build": true } }],
 	providers,
 	agent: "claude",
-	skills: ["git-safety", "pr-workflow", "commit-standards", "security-review", "holocron-skill-config"],
+	skills: [
+		"git-safety",
+		"pr-workflow",
+		"commit-standards",
+		"security-review",
+		"holocron-skill-config",
+	],
 } satisfies HolocronConfig);
