@@ -5,7 +5,7 @@ import { node } from "@theholocron/holocron-config";
 const { repo, workflows, providers } = node();
 export default defineConfig({
 	description:
-		"Shared configuration packages for the theholocron organization.",
+		"Shared configuration files.",
 	repo: {
 		topics: [
 			"browserslist-config",
