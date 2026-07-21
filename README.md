@@ -1,7 +1,9 @@
 # @theholocron/configs
 
 <!-- holocron:description -->
+
 Shared configuration packages for the theholocron organization.
+
 <!-- /holocron:description -->
 
 Shareable configuration used accross the Galaxy.
