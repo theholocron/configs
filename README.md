@@ -2,11 +2,9 @@
 
 <!-- holocron:description -->
 
-Shared configuration packages for the theholocron organization.
+Shared configuration files.
 
 <!-- /holocron:description -->
-
-Shareable configuration used accross the Galaxy.
 
 ## Packages
 
