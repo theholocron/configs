@@ -41,7 +41,7 @@ release.config.ts        — semantic-release config (lockstep publish, root CHA
 
 ## Adding a new config package
 
-Use the `.claude/skills/configs-package.md` skill, which scaffolds the full
+Use the `.claude/skills/holocron-skill-config/` skill, which scaffolds the full
 package. Quick checklist:
 
 1. Create `packages/<tool>-config/` with the following files, modelled on an
