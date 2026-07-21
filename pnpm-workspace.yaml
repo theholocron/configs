@@ -1,14 +1,14 @@
 packages:
   - "packages/*"
 
+catalog:
+  '@vitest/coverage-v8': ^4.1.10
+  tsdown: ^0.22.8
+  typescript: ^5.9.3
+  vitest: ^4.1.10
+
 # Holocron CLI and plugins — pinned in lockstep; bump together when running setup.
 catalogs:
   holocron:
-    '@theholocron/cli': '>=2.0.0-alpha.0 <2.0.0'
-    '@theholocron/holocron-plugin-github': '>=2.0.0-alpha.0 <2.0.0'
-
-catalog:
-  tsdown: ^0.22.8
-  typescript: ^5.9.3
-  '@vitest/coverage-v8': ^4.1.10
-  vitest: ^4.1.10
+    '@theholocron/cli': '2.0.0-alpha.69'
+    '@theholocron/holocron-plugin-github': '2.0.0-alpha.0'
