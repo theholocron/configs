@@ -6,6 +6,7 @@ const { repo, workflows, providers } = node();
 export default defineConfig({
 	description: "Shared configuration files.",
 	repo: {
+		teams: [{ slug: "gatekeepers", permission: "maintain" }],
 		topics: [
 			"browserslist-config",
 			"commitlint-config",
