@@ -1,9 +1,7 @@
 # @theholocron/configs
 
 <!-- holocron:description -->
-
 Shared configuration files.
-
 <!-- /holocron:description -->
 
 ## Packages
