@@ -1,4 +1,4 @@
-# @theholocron/configs
+# `@theholocron/configs`
 
 <!-- holocron:description -->
 
