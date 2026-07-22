@@ -41,7 +41,7 @@ release.config.ts        — semantic-release config (lockstep publish, root CHA
 
 ## Adding a new config package
 
-Use the `.claude/skills/configs-package.md` skill, which scaffolds the full
+Use the `/holocron-skill-config` skill, which scaffolds the full
 package. Quick checklist:
 
 1. Create `packages/<tool>-config/` with the following files, modelled on an
@@ -67,11 +67,6 @@ package. Quick checklist:
 
 ## Code patterns
 
-- **ESLint override:** `n/no-unpublished-import` is turned off in every
-  package's `eslint.config.ts`. This is a known false positive for the
-  TypeScript `src/ → dist/` build model — `files[]` in `package.json`
-  lists `dist/`, so every relative `src/` import is flagged. Keep the
-  rule off at project level; do not push it to the org config.
 - **TypeScript source compiles to `dist/`.** Imports inside source files use
   `.js` extensions (TypeScript ESM convention — the TS resolver finds `.ts`
   files).
@@ -83,7 +78,7 @@ package. Quick checklist:
   Single-purpose packages (prettier, commitlint) use a default export.
 - **Bundles** — combine multiple presets + opinionated settings into a single
   import. Use a `bundles/` subdir with separate files per use-case (e.g.
-  `bundles/library.js`, `bundles/react-app.js`).
+  `bundles/library.ts`, `bundles/react-app.ts`).
 
 ## Quality
 
