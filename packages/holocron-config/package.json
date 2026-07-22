@@ -1,6 +1,6 @@
 {
   "name": "@theholocron/holocron-config",
-  "version": "7.4.1",
+  "version": "7.5.0",
   "description": "Shareable holocron configuration presets for theholocron repositories.",
   "homepage": "https://github.com/theholocron/configs/tree/main/packages/holocron-config#readme",
   "bugs": "https://github.com/theholocron/configs/issues",
