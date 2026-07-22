@@ -75,7 +75,10 @@ export function defineConfig({
 			"@semantic-release/changelog",
 			...(npm ? [["@semantic-release/npm", npmOptions]] : []),
 			...(exec ? [["@semantic-release/exec", exec]] : []),
-			["@semantic-release/git", { assets: resolvedAssets, message: defaultMessage }],
+			[
+				"@semantic-release/git",
+				{ assets: resolvedAssets, message: defaultMessage },
+			],
 			"@semantic-release/github",
 		],
 	};

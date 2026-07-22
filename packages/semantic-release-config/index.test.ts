@@ -60,7 +60,9 @@ describe("semantic-release-config", () => {
 
 		describe("npm option", () => {
 			it("inserts @semantic-release/npm with access: public when npm: true", () => {
-				const config = defineConfig({ npm: true }) as { plugins: unknown[] };
+				const config = defineConfig({ npm: true }) as {
+					plugins: unknown[];
+				};
 				const npm = config.plugins.find(
 					(p) => Array.isArray(p) && p[0] === "@semantic-release/npm",
 				) as [string, { access: string }];
@@ -69,21 +71,31 @@ describe("semantic-release-config", () => {
 			});
 
 			it("places @semantic-release/npm after changelog and before git", () => {
-				const config = defineConfig({ npm: true }) as { plugins: unknown[] };
+				const config = defineConfig({ npm: true }) as {
+					plugins: unknown[];
+				};
 				const plugins = config.plugins as unknown[];
-				const changelogIdx = plugins.indexOf("@semantic-release/changelog");
+				const changelogIdx = plugins.indexOf(
+					"@semantic-release/changelog",
+				);
 				const npmIdx = plugins.findIndex(
-					(p) => Array.isArray(p) && (p as unknown[])[0] === "@semantic-release/npm",
+					(p) =>
+						Array.isArray(p) &&
+						(p as unknown[])[0] === "@semantic-release/npm",
 				);
 				const gitIdx = plugins.findIndex(
-					(p) => Array.isArray(p) && (p as unknown[])[0] === "@semantic-release/git",
+					(p) =>
+						Array.isArray(p) &&
+						(p as unknown[])[0] === "@semantic-release/git",
 				);
 				expect(npmIdx).toBeGreaterThan(changelogIdx);
 				expect(npmIdx).toBeLessThan(gitIdx);
 			});
 
 			it("accepts npm options object", () => {
-				const config = defineConfig({ npm: { access: "restricted" } }) as {
+				const config = defineConfig({
+					npm: { access: "restricted" },
+				}) as {
 					plugins: unknown[];
 				};
 				const npm = config.plugins.find(
@@ -93,7 +105,9 @@ describe("semantic-release-config", () => {
 			});
 
 			it("uses single-package assets when npm is set", () => {
-				const config = defineConfig({ npm: true }) as { plugins: unknown[] };
+				const config = defineConfig({ npm: true }) as {
+					plugins: unknown[];
+				};
 				const git = config.plugins.find(
 					(p) => Array.isArray(p) && p[0] === "@semantic-release/git",
 				) as [string, { assets: string[] }];
