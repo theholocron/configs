@@ -96,4 +96,5 @@ test-report.junit.xml
 /.claude/skills/commit-standards
 /.claude/skills/security-review
 /.claude/skills/holocron-skill-config
+/.claude/skills/turborepo
 # end managed by holocron setup — skills

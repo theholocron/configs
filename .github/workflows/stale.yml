@@ -1,6 +1,6 @@
 # AUTO-GENERATED — do not edit directly.
 # Source:  theholocron/holocron · packages/cli/src/commands/setup-workflows.ts
-# Synced:  2026-07-21T21:58:21.679Z
+# Synced:  2026-07-22T15:53:01.103Z
 # Tool:    holocron setup
 # Changes: run `holocron setup` to regenerate.
 name: Stale
