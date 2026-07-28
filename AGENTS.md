@@ -25,6 +25,7 @@ packages/
   browserslist-config/   — @theholocron/browserslist-config
   commitlint-config/     — @theholocron/commitlint-config
   eslint-config/         — @theholocron/eslint-config  (configs/ + bundles/)
+  holocron-config/       — @theholocron/holocron-config (presets/)
   lint-staged-config/    — @theholocron/lint-staged-config
   prettier-config/       — @theholocron/prettier-config
   semantic-release-config/ — @theholocron/semantic-release-config
