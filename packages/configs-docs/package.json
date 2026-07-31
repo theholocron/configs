@@ -30,7 +30,6 @@
   },
   "devDependencies": {
     "@theholocron/tsconfig": "workspace:*",
-    "@theholocron/tsdown-config": "workspace:*",
     "@types/node": "^26.1.2",
     "tsdown": "catalog:",
     "typescript": "catalog:"

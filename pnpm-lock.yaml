@@ -168,9 +168,6 @@ importers:
       '@theholocron/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
-      '@theholocron/tsdown-config':
-        specifier: workspace:*
-        version: link:../tsdown-config
       '@types/node':
         specifier: ^26.1.2
         version: 26.1.2
