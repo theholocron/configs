@@ -11,5 +11,6 @@ catalog:
 # Holocron CLI and plugins — pinned in lockstep; bump together when running setup.
 catalogs:
   holocron:
-    '@theholocron/cli': ^2.1.1
-    '@theholocron/holocron-plugin-github': ^2.1.1
+    '@theholocron/cli': ^3.4.0
+    '@theholocron/holocron-config': ^7.6.1
+    '@theholocron/holocron-plugin-github': ^3.4.0
