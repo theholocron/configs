@@ -92,3 +92,8 @@ component_management:
       name: "vitest-config"
       paths:
         - packages/vitest-config/**
+
+    - component_id: configs-docs
+      name: "configs-docs"
+      paths:
+        - packages/configs-docs/**
