@@ -29,24 +29,24 @@ export default defineConfig({
 
 ## Release rules
 
-| Commit type | Release |
-| --- | --- |
-| `feat` | minor |
-| `fix`, `perf`, `refactor` | patch |
-| `chore(deps)` | patch |
-| Breaking change (`!`) | major |
+| Commit type               | Release |
+| ------------------------- | ------- |
+| `feat`                    | minor   |
+| `fix`, `perf`, `refactor` | patch   |
+| `chore(deps)`             | patch   |
+| Breaking change (`!`)     | major   |
 
 Types `docs`, `chore`, `ci`, `test` do **not** trigger a release.
 
 ## Changelog sections
 
-| Type | Section | Visible |
-| --- | --- | --- |
-| `feat` | Features | ✓ |
-| `fix` | Bug Fixes | ✓ |
-| `perf` | Performance | ✓ |
-| `refactor` | Refactoring | ✓ |
-| `docs` | Documentation | ✓ |
-| `chore` | Chores | ✓ |
-| `ci` | CI | hidden |
-| `test` | Tests | hidden |
+| Type       | Section       | Visible |
+| ---------- | ------------- | ------- |
+| `feat`     | Features      | ✓       |
+| `fix`      | Bug Fixes     | ✓       |
+| `perf`     | Performance   | ✓       |
+| `refactor` | Refactoring   | ✓       |
+| `docs`     | Documentation | ✓       |
+| `chore`    | Chores        | ✓       |
+| `ci`       | CI            | hidden  |
+| `test`     | Tests         | hidden  |

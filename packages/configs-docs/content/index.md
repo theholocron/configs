@@ -9,21 +9,21 @@ sidebar:
 
 ## Packages
 
-| Package | Description |
-| --- | --- |
-| [`@theholocron/browserslist-config`](./browserslist-config) | Browserslist target browser list |
-| [`@theholocron/commitlint-config`](./commitlint-config) | CommitLint rules for Conventional Commits |
-| [`@theholocron/eslint-config`](./eslint-config) | ESLint configs and bundles |
-| [`@theholocron/holocron-config`](./holocron-config) | Shareable Holocron CLI presets |
-| [`@theholocron/lint-staged-config`](./lint-staged-config) | Lint-staged hooks configuration |
-| [`@theholocron/prettier-config`](./prettier-config) | Prettier formatting rules |
+| Package                                                             | Description                                        |
+| ------------------------------------------------------------------- | -------------------------------------------------- |
+| [`@theholocron/browserslist-config`](./browserslist-config)         | Browserslist target browser list                   |
+| [`@theholocron/commitlint-config`](./commitlint-config)             | CommitLint rules for Conventional Commits          |
+| [`@theholocron/eslint-config`](./eslint-config)                     | ESLint configs and bundles                         |
+| [`@theholocron/holocron-config`](./holocron-config)                 | Shareable Holocron CLI presets                     |
+| [`@theholocron/lint-staged-config`](./lint-staged-config)           | Lint-staged hooks configuration                    |
+| [`@theholocron/prettier-config`](./prettier-config)                 | Prettier formatting rules                          |
 | [`@theholocron/semantic-release-config`](./semantic-release-config) | semantic-release factory with Conventional Commits |
-| [`@theholocron/storybook-config`](./storybook-config) | Storybook main and preview configuration |
-| [`@theholocron/stylelint-config`](./stylelint-config) | Stylelint CSS rules |
-| [`@theholocron/tsconfig`](./tsconfig) | TypeScript base configurations |
-| [`@theholocron/tsdown-config`](./tsdown-config) | tsdown build presets |
-| [`@theholocron/vite-config`](./vite-config) | Vite configuration presets |
-| [`@theholocron/vitest-config`](./vitest-config) | Vitest configuration presets |
+| [`@theholocron/storybook-config`](./storybook-config)               | Storybook main and preview configuration           |
+| [`@theholocron/stylelint-config`](./stylelint-config)               | Stylelint CSS rules                                |
+| [`@theholocron/tsconfig`](./tsconfig)                               | TypeScript base configurations                     |
+| [`@theholocron/tsdown-config`](./tsdown-config)                     | tsdown build presets                               |
+| [`@theholocron/vite-config`](./vite-config)                         | Vite configuration presets                         |
+| [`@theholocron/vitest-config`](./vitest-config)                     | Vitest configuration presets                       |
 
 ## Install
 
