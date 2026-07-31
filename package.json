@@ -20,7 +20,7 @@
     "vite-config",
     "vitest-config"
   ],
-  "homepage": "https://docs.theholocron.dev/config/",
+  "homepage": "https://docs.theholocron.dev/configs/",
   "bugs": "https://github.com/theholocron/configs/issues",
   "repository": {
     "type": "git",
