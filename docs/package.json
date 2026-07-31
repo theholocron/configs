@@ -1,0 +1,26 @@
+{
+  "name": "@theholocron/configs-site",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Docs site for the @theholocron/configs monorepo",
+  "homepage": "https://theholocron.github.io/configs/",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.41.5",
+    "@theholocron/configs-docs": "workspace:*",
+    "@theholocron/docs-theme": "^1.1.0",
+    "astro": "^7.1.5",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "typescript": "catalog:"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
