@@ -27,7 +27,15 @@ export default defineConfig({
 		],
 		...repo,
 	},
-	workflows: [...workflows, { name: "release", with: { "run-build": true } }],
+	workflows: [
+		...workflows,
+		{ name: "release", with: { "run-build": true } },
+		{
+			name: "deploy-docs",
+			with: { name: "configs" },
+			paths: ["packages/configs-docs/**"],
+		},
+	],
 	providers,
 	agent: "claude",
 	skills: [
