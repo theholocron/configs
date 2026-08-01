@@ -10,9 +10,9 @@ vi.mock("@theholocron/docs-theme", () => ({
 	docsTheme: vi.fn(() => ({ name: "@theholocron/docs-theme" })),
 }));
 
-import { defineDocsConfig } from "./index.js";
+import { defineConfig } from "./index.js";
 
-const mockConfig = {
+const mockDocs = {
 	slug: "clients",
 	name: "Clients",
 	sidebar: [
@@ -21,42 +21,43 @@ const mockConfig = {
 	],
 };
 
-describe("defineDocsConfig", () => {
-	it("sets base from the config slug", () => {
-		const config = defineDocsConfig(mockConfig, import.meta.url) as { base: string };
+describe("defineConfig", () => {
+	it("sets base from the docs slug", () => {
+		const config = defineConfig({ docs: mockDocs, importMetaUrl: import.meta.url }) as {
+			base: string;
+		};
 		expect(config.base).toBe("/clients");
 	});
 
 	it("derives sidebar label from sidebar[1].label when it is a group", () => {
-		const config = defineDocsConfig(mockConfig, import.meta.url) as {
+		const config = defineConfig({ docs: mockDocs, importMetaUrl: import.meta.url }) as {
 			integrations: Array<{ config: { sidebar: Array<{ label: string }> } }>;
 		};
-		const sidebar = config.integrations[0].config.sidebar;
-		expect(sidebar[1].label).toBe("Packages");
+		expect(config.integrations[0].config.sidebar[1].label).toBe("Packages");
 	});
 
 	it("accepts a sidebarLabel override", () => {
-		const config = defineDocsConfig(mockConfig, import.meta.url, {
+		const config = defineConfig({
+			docs: mockDocs,
+			importMetaUrl: import.meta.url,
 			sidebarLabel: "Reference",
 		}) as {
 			integrations: Array<{ config: { sidebar: Array<{ label: string }> } }>;
 		};
-		const sidebar = config.integrations[0].config.sidebar;
-		expect(sidebar[1].label).toBe("Reference");
+		expect(config.integrations[0].config.sidebar[1].label).toBe("Reference");
 	});
 
 	it("falls back to 'Contents' when sidebar[1] is a link not a group", () => {
-		const linkConfig = {
-			...mockConfig,
+		const linkDocs = {
+			...mockDocs,
 			sidebar: [
 				{ label: "Overview", slug: "clients" },
 				{ label: "Getting Started", slug: "clients/start" },
 			],
 		};
-		const config = defineDocsConfig(linkConfig, import.meta.url) as {
+		const config = defineConfig({ docs: linkDocs, importMetaUrl: import.meta.url }) as {
 			integrations: Array<{ config: { sidebar: Array<{ label: string }> } }>;
 		};
-		const sidebar = config.integrations[0].config.sidebar;
-		expect(sidebar[1].label).toBe("Contents");
+		expect(config.integrations[0].config.sidebar[1].label).toBe("Contents");
 	});
 });

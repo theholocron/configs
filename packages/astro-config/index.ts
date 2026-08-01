@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url";
 
 import starlight from "@astrojs/starlight";
 import { docsTheme } from "@theholocron/docs-theme";
-import { defineConfig } from "astro/config";
+import { defineConfig as astroDefineConfig } from "astro/config";
 
 interface SidebarGroup {
 	label: string;
@@ -16,44 +16,42 @@ export interface DocsConfig {
 	sidebar: Array<{ label: string } & ({ slug: string } | { items: unknown[] })>;
 }
 
-export interface DefineDocsConfigOptions {
+export interface DocsConfigInput {
+	docs: DocsConfig;
+	importMetaUrl: string;
 	sidebarLabel?: string;
 }
 
-export function defineDocsConfig(
-	docsConfig: DocsConfig,
-	importMetaUrl: string,
-	options: DefineDocsConfigOptions = {},
-) {
+export function defineConfig({ docs, importMetaUrl, sidebarLabel }: DocsConfigInput) {
 	const docsDir = fileURLToPath(new URL(".", importMetaUrl));
 	const contentDir = fileURLToPath(
-		new URL(`../packages/${docsConfig.slug}-docs/content`, importMetaUrl),
+		new URL(`../packages/${docs.slug}-docs/content`, importMetaUrl),
 	);
 	const contentRelDir = relative(docsDir, contentDir);
 
-	const secondItem = docsConfig.sidebar[1] as SidebarGroup | undefined;
+	const secondItem = docs.sidebar[1] as SidebarGroup | undefined;
 	const defaultLabel =
 		secondItem !== undefined && "items" in secondItem ? secondItem.label : "Contents";
-	const sidebarLabel = options.sidebarLabel ?? defaultLabel;
+	const label = sidebarLabel ?? defaultLabel;
 
-	return defineConfig({
+	return astroDefineConfig({
 		site: "https://theholocron.github.io",
-		base: `/${docsConfig.slug}`,
+		base: `/${docs.slug}`,
 		integrations: [
 			starlight({
-				title: docsConfig.name,
+				title: docs.name,
 				plugins: [docsTheme()],
 				social: [
 					{
 						icon: "github",
 						label: "GitHub",
-						href: `https://github.com/theholocron/${docsConfig.slug}`,
+						href: `https://github.com/theholocron/${docs.slug}`,
 					},
 				],
 				sidebar: [
 					{ label: "Overview", slug: "" },
 					{
-						label: sidebarLabel,
+						label,
 						items: [{ autogenerate: { directory: contentRelDir } }],
 					},
 				],
