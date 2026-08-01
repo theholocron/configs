@@ -36,7 +36,7 @@ describe("defineConfig", () => {
 		const config = defineConfig({
 			docs: mockDocs,
 			importMetaUrl: import.meta.url,
-		}) as {
+		}) as unknown as {
 			integrations: Array<{
 				config: { sidebar: Array<{ label: string }> };
 			}>;
@@ -49,14 +49,12 @@ describe("defineConfig", () => {
 			docs: mockDocs,
 			importMetaUrl: import.meta.url,
 			sidebarLabel: "Reference",
-		}) as {
+		}) as unknown as {
 			integrations: Array<{
 				config: { sidebar: Array<{ label: string }> };
 			}>;
 		};
-		expect(config.integrations[0].config.sidebar[1].label).toBe(
-			"Reference",
-		);
+		expect(config.integrations[0].config.sidebar[1].label).toBe("Reference");
 	});
 
 	it("falls back to 'Contents' when sidebar[1] is a link not a group", () => {
@@ -70,7 +68,7 @@ describe("defineConfig", () => {
 		const config = defineConfig({
 			docs: linkDocs,
 			importMetaUrl: import.meta.url,
-		}) as {
+		}) as unknown as {
 			integrations: Array<{
 				config: { sidebar: Array<{ label: string }> };
 			}>;
