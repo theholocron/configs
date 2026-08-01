@@ -23,15 +23,23 @@ const mockDocs = {
 
 describe("defineConfig", () => {
 	it("sets base from the docs slug", () => {
-		const config = defineConfig({ docs: mockDocs, importMetaUrl: import.meta.url }) as {
+		const config = defineConfig({
+			docs: mockDocs,
+			importMetaUrl: import.meta.url,
+		}) as {
 			base: string;
 		};
 		expect(config.base).toBe("/clients");
 	});
 
 	it("derives sidebar label from sidebar[1].label when it is a group", () => {
-		const config = defineConfig({ docs: mockDocs, importMetaUrl: import.meta.url }) as {
-			integrations: Array<{ config: { sidebar: Array<{ label: string }> } }>;
+		const config = defineConfig({
+			docs: mockDocs,
+			importMetaUrl: import.meta.url,
+		}) as {
+			integrations: Array<{
+				config: { sidebar: Array<{ label: string }> };
+			}>;
 		};
 		expect(config.integrations[0].config.sidebar[1].label).toBe("Packages");
 	});
@@ -42,9 +50,13 @@ describe("defineConfig", () => {
 			importMetaUrl: import.meta.url,
 			sidebarLabel: "Reference",
 		}) as {
-			integrations: Array<{ config: { sidebar: Array<{ label: string }> } }>;
+			integrations: Array<{
+				config: { sidebar: Array<{ label: string }> };
+			}>;
 		};
-		expect(config.integrations[0].config.sidebar[1].label).toBe("Reference");
+		expect(config.integrations[0].config.sidebar[1].label).toBe(
+			"Reference",
+		);
 	});
 
 	it("falls back to 'Contents' when sidebar[1] is a link not a group", () => {
@@ -55,8 +67,13 @@ describe("defineConfig", () => {
 				{ label: "Getting Started", slug: "clients/start" },
 			],
 		};
-		const config = defineConfig({ docs: linkDocs, importMetaUrl: import.meta.url }) as {
-			integrations: Array<{ config: { sidebar: Array<{ label: string }> } }>;
+		const config = defineConfig({
+			docs: linkDocs,
+			importMetaUrl: import.meta.url,
+		}) as {
+			integrations: Array<{
+				config: { sidebar: Array<{ label: string }> };
+			}>;
 		};
 		expect(config.integrations[0].config.sidebar[1].label).toBe("Contents");
 	});

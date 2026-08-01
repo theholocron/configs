@@ -13,7 +13,9 @@ interface SidebarGroup {
 export interface DocsConfig {
 	slug: string;
 	name: string;
-	sidebar: Array<{ label: string } & ({ slug: string } | { items: unknown[] })>;
+	sidebar: Array<
+		{ label: string } & ({ slug: string } | { items: unknown[] })
+	>;
 }
 
 export interface DocsConfigInput {
@@ -22,7 +24,11 @@ export interface DocsConfigInput {
 	sidebarLabel?: string;
 }
 
-export function defineConfig({ docs, importMetaUrl, sidebarLabel }: DocsConfigInput) {
+export function defineConfig({
+	docs,
+	importMetaUrl,
+	sidebarLabel,
+}: DocsConfigInput) {
 	const docsDir = fileURLToPath(new URL(".", importMetaUrl));
 	const contentDir = fileURLToPath(
 		new URL(`../packages/${docs.slug}-docs/content`, importMetaUrl),
@@ -31,7 +37,9 @@ export function defineConfig({ docs, importMetaUrl, sidebarLabel }: DocsConfigIn
 
 	const secondItem = docs.sidebar[1] as SidebarGroup | undefined;
 	const defaultLabel =
-		secondItem !== undefined && "items" in secondItem ? secondItem.label : "Contents";
+		secondItem !== undefined && "items" in secondItem
+			? secondItem.label
+			: "Contents";
 	const label = sidebarLabel ?? defaultLabel;
 
 	return astroDefineConfig({
