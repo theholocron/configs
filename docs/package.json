@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@astrojs/starlight": "^0.41.5",
-    "@theholocron/astro-config": "workspace:*",
+    "@theholocron/astro-config": "^7.8.1",
     "@theholocron/configs-docs": "workspace:*",
     "@theholocron/docs-theme": "^1.3.0",
     "astro": "^7.1.5"
