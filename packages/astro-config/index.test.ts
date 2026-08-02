@@ -4,10 +4,18 @@ vi.mock("astro/config", () => ({
 	defineConfig: vi.fn((config: unknown) => config),
 }));
 
+import type starlight from "@astrojs/starlight";
+import type { docsTheme } from "@theholocron/docs-theme";
+
 import { defineConfig } from "./index.js";
 
-const mockStarlight = vi.fn((config: unknown) => ({ name: "starlight", config }));
-const mockDocsTheme = vi.fn(() => ({ name: "@theholocron/docs-theme" }));
+const mockStarlight = vi.fn(
+	(config: unknown) => ({ name: "starlight", config }),
+) as unknown as typeof starlight;
+
+const mockDocsTheme = vi.fn(
+	() => ({ name: "@theholocron/docs-theme" }),
+) as unknown as typeof docsTheme;
 
 const mockDocs = {
 	slug: "clients",

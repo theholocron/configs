@@ -1,6 +1,8 @@
 import { relative } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import type starlight from "@astrojs/starlight";
+import type { docsTheme } from "@theholocron/docs-theme";
 import { defineConfig as astroDefineConfig } from "astro/config";
 
 interface SidebarGroup {
@@ -19,10 +21,8 @@ export interface DocsConfig {
 export interface DocsConfigInput {
 	docs: DocsConfig;
 	importMetaUrl: string;
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	starlight: (config: any) => any;
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	docsTheme: () => any;
+	starlight: typeof starlight;
+	docsTheme: typeof docsTheme;
 	sidebarLabel?: string;
 }
 
