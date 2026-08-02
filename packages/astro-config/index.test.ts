@@ -9,13 +9,14 @@ import type { docsTheme } from "@theholocron/docs-theme";
 
 import { defineConfig } from "./index.js";
 
-const mockStarlight = vi.fn(
-	(config: unknown) => ({ name: "starlight", config }),
-) as unknown as typeof starlight;
+const mockStarlight = vi.fn((config: unknown) => ({
+	name: "starlight",
+	config,
+})) as unknown as typeof starlight;
 
-const mockDocsTheme = vi.fn(
-	() => ({ name: "@theholocron/docs-theme" }),
-) as unknown as typeof docsTheme;
+const mockDocsTheme = vi.fn(() => ({
+	name: "@theholocron/docs-theme",
+})) as unknown as typeof docsTheme;
 
 const mockDocs = {
 	slug: "clients",
@@ -57,7 +58,9 @@ describe("defineConfig", () => {
 				config: { sidebar: Array<{ label: string }> };
 			}>;
 		};
-		expect(config.integrations[0].config.sidebar[1].label).toBe("Reference");
+		expect(config.integrations[0].config.sidebar[1].label).toBe(
+			"Reference",
+		);
 	});
 
 	it("falls back to 'Contents' when sidebar[1] is a link not a group", () => {
