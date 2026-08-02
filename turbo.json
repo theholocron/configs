@@ -3,7 +3,7 @@
   "tasks": {
     "build": { "dependsOn": ["^build"], "outputs": ["dist/**"] },
     "lint": { "dependsOn": ["^build"] },
-    "test": { "dependsOn": ["build", "^build"] },
+    "test": { "dependsOn": ["build", "^build"], "outputs": ["test-report.junit.xml"] },
     "typecheck": { "dependsOn": ["^build"] }
   }
 }
