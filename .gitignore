@@ -89,6 +89,7 @@ dist
 super-linter-output
 test-report.junit.xml
 docs/.astro/
+docs/dist/
 
 # managed by holocron setup — skills
 /.agents/skills/
