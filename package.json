@@ -48,6 +48,7 @@
     "@theholocron/cli": "catalog:holocron",
     "@theholocron/skills": "^1.2.0",
     "@theholocron/commitlint-config": "workspace:*",
+    "@theholocron/prettier-config": "workspace:*",
     "@theholocron/eslint-config": "workspace:*",
     "@theholocron/holocron-config": "workspace:*",
     "@theholocron/holocron-plugin-github": "catalog:holocron",
