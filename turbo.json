@@ -4,6 +4,7 @@
     "build": { "dependsOn": ["^build"], "outputs": ["dist/**"] },
     "lint": { "dependsOn": ["^build"] },
     "test": { "dependsOn": ["build", "^build"], "outputs": ["test-report.junit.xml"] },
+    "test:coverage": { "dependsOn": ["build", "^build"], "outputs": ["coverage/**", "test-report.junit.xml"] },
     "typecheck": { "dependsOn": ["^build"] }
   }
 }
