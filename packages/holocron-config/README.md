@@ -33,10 +33,10 @@ export default defineConfig({
 
 `node()` returns three fragments:
 
-| Fragment    | Contents                                                                                                |
-| ----------- | ------------------------------------------------------------------------------------------------------- |
-| `repo`      | `protection: "strict"`, `properties: { lifecycle: "active", … }`                                        |
+| Fragment    | Contents                                                                                             |
+| ----------- | ---------------------------------------------------------------------------------------------------- |
+| `repo`      | `protection: "strict"`, `properties: { lifecycle: "active", … }`                                     |
 | `workflows` | `lint`, `test`, `typecheck`, `codeql`, `review`, `stale`, `greetings`, `dependencies`, `bookkeeping` |
-| `providers` | `source: "github"`, `ci: "github"`, `issues: ["github", { labels: … }]`                                 |
+| `providers` | `source: "github"`, `ci: "github"`, `issues: ["github", { labels: … }]`                              |
 
 Everything else — `name`, `repo.name`, `repo.topics`, and any per-repo workflow overrides (e.g. `release`) — stays in the consuming repo's config.
