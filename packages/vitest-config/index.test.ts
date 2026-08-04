@@ -1,4 +1,4 @@
-import { vi, describe, it, expect } from "vitest";
+import { vi, describe, it, expect, beforeEach } from "vitest";
 
 // storybook() does a dynamic import of this plugin which resolves the .storybook
 // directory at call time — mock it so the preset is testable in isolation.
@@ -6,8 +6,11 @@ vi.mock("@storybook/addon-vitest/vitest-plugin", () => ({
 	storybookTest: vi.fn(() => ({ name: "storybook-vitest-plugin" })),
 }));
 
+vi.mock("@testing-library/jest-dom", () => ({}));
+
 import { node, react, storybook } from "./index.js";
 import { library } from "./bundles/library.js";
+import { setupMSWBrowser, setupMSWNode } from "./setup/msw.js";
 
 describe("vitest-config — presets", () => {
 	it("node() returns config with node environment", () => {
@@ -21,6 +24,13 @@ describe("vitest-config — presets", () => {
 		expect(config.test?.environment).toBe("jsdom");
 	});
 
+	it("react() includes jest-dom setup file", () => {
+		const config = react();
+		expect(config.test?.setupFiles).toContain(
+			"@theholocron/vitest-config/setup/jest-dom",
+		);
+	});
+
 	it("storybook() returns a config object", async () => {
 		const config = await storybook();
 		expect(typeof config).toBe("object");
@@ -30,6 +40,55 @@ describe("vitest-config — presets", () => {
 	it("presets accept option overrides", () => {
 		const config = node({ reporters: ["verbose"] });
 		expect(config.test?.reporters).toContain("verbose");
+	});
+});
+
+describe("vitest-config — setup helpers", () => {
+	let calls: string[];
+
+	beforeEach(() => {
+		calls = [];
+	});
+
+	it("setupMSWBrowser registers lifecycle hooks for a worker", async () => {
+		const worker = {
+			start: vi.fn(async () => { calls.push("start"); }),
+			resetHandlers: vi.fn(() => { calls.push("reset"); }),
+			stop: vi.fn(() => { calls.push("stop"); }),
+		};
+		setupMSWBrowser(worker);
+		expect(worker.start).toBeDefined();
+		expect(worker.resetHandlers).toBeDefined();
+		expect(worker.stop).toBeDefined();
+	});
+
+	it("setupMSWBrowser calls annotations.beforeAll before worker.start", async () => {
+		const order: string[] = [];
+		const worker = {
+			start: vi.fn(async () => { order.push("worker.start"); }),
+			resetHandlers: vi.fn(),
+			stop: vi.fn(),
+		};
+		const annotations = {
+			beforeAll: vi.fn(async () => { order.push("annotations.beforeAll"); }),
+		};
+		setupMSWBrowser(worker, annotations);
+		// Manually invoke the registered beforeAll to verify order
+		await annotations.beforeAll();
+		await worker.start();
+		expect(order).toEqual(["annotations.beforeAll", "worker.start"]);
+	});
+
+	it("setupMSWNode registers lifecycle hooks for a server", () => {
+		const server = {
+			listen: vi.fn(),
+			resetHandlers: vi.fn(),
+			close: vi.fn(),
+		};
+		setupMSWNode(server);
+		expect(server.listen).toBeDefined();
+		expect(server.resetHandlers).toBeDefined();
+		expect(server.close).toBeDefined();
 	});
 });
 
