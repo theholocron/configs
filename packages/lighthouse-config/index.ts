@@ -36,7 +36,7 @@ export interface LighthouseConfigOptions {
 	uploadTarget?: string;
 }
 
-export function lighthouseConfig({
+export function defineConfig({
 	url,
 	startServerCommand,
 	assertions = defaultAssertions,

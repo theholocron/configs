@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { defaultAssertions, lighthouseConfig } from "./index.js";
+import { defaultAssertions, defineConfig } from "./index.js";
 
 describe("lighthouse-config", () => {
 	describe("defaultAssertions", () => {
@@ -18,20 +18,20 @@ describe("lighthouse-config", () => {
 		});
 	});
 
-	describe("lighthouseConfig()", () => {
+	describe("defineConfig()", () => {
 		it("wraps a single url in an array", () => {
-			const config = lighthouseConfig({ url: "http://localhost:3000/" });
+			const config = defineConfig({ url: "http://localhost:3000/" });
 			expect(config.ci.collect.url).toEqual(["http://localhost:3000/"]);
 		});
 
 		it("passes an array url through unchanged", () => {
 			const urls = ["http://localhost:3000/", "http://localhost:3000/about"];
-			const config = lighthouseConfig({ url: urls });
+			const config = defineConfig({ url: urls });
 			expect(config.ci.collect.url).toEqual(urls);
 		});
 
 		it("includes startServerCommand when provided", () => {
-			const config = lighthouseConfig({
+			const config = defineConfig({
 				url: "http://localhost:3000/",
 				startServerCommand: "pnpm dev",
 			});
@@ -39,18 +39,18 @@ describe("lighthouse-config", () => {
 		});
 
 		it("omits startServerCommand when not provided", () => {
-			const config = lighthouseConfig({ url: "http://localhost:3000/" });
+			const config = defineConfig({ url: "http://localhost:3000/" });
 			expect(config.ci.collect).not.toHaveProperty("startServerCommand");
 		});
 
 		it("uses defaultAssertions by default", () => {
-			const config = lighthouseConfig({ url: "http://localhost:3000/" });
+			const config = defineConfig({ url: "http://localhost:3000/" });
 			expect(config.ci.assert.assertions).toBe(defaultAssertions);
 		});
 
 		it("accepts custom assertions", () => {
 			const custom = { "bf-cache": ["error", { minScore: 1 }] as ["error", { minScore: number }] };
-			const config = lighthouseConfig({
+			const config = defineConfig({
 				url: "http://localhost:3000/",
 				assertions: custom,
 			});
@@ -61,12 +61,12 @@ describe("lighthouse-config", () => {
 		});
 
 		it("defaults upload target to temporary-public-storage", () => {
-			const config = lighthouseConfig({ url: "http://localhost:3000/" });
+			const config = defineConfig({ url: "http://localhost:3000/" });
 			expect(config.ci.upload.target).toBe("temporary-public-storage");
 		});
 
 		it("accepts a custom upload target", () => {
-			const config = lighthouseConfig({
+			const config = defineConfig({
 				url: "http://localhost:3000/",
 				uploadTarget: "lhci",
 			});
