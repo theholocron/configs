@@ -23,9 +23,7 @@ describe("vitest-config — presets", () => {
 
 	it("react() includes jest-dom setup file", () => {
 		const config = react();
-		expect(config.test?.setupFiles).toContain(
-			"@theholocron/vitest-config/setup/jest-dom",
-		);
+		expect(config.test?.setupFiles).toContain("@theholocron/vitest-config/setup/jest-dom");
 	});
 
 	it("storybook() returns a config object", async () => {
@@ -60,8 +58,6 @@ describe("vitest-config — bundles", () => {
 				},
 			},
 		});
-		expect(
-			config.test?.coverage?.thresholds?.["src/generated.ts"],
-		).toBeDefined();
+		expect(config.test?.coverage?.thresholds?.["src/generated.ts"]).toBeDefined();
 	});
 });
