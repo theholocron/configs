@@ -43,6 +43,11 @@ component_management:
       paths:
         - packages/commitlint-config/**
 
+    - component_id: lighthouse-config
+      name: "lighthouse-config"
+      paths:
+        - packages/lighthouse-config/**
+
     - component_id: configs-docs
       name: "configs-docs"
       paths:
