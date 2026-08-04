@@ -4,17 +4,11 @@ import { defaultAssertions, defineConfig } from "./index.js";
 describe("lighthouse-config", () => {
 	describe("defaultAssertions", () => {
 		it("warns on largest-contentful-paint below 0.9", () => {
-			expect(defaultAssertions["largest-contentful-paint"]).toEqual([
-				"warn",
-				{ minScore: 0.9 },
-			]);
+			expect(defaultAssertions["largest-contentful-paint"]).toEqual(["warn", { minScore: 0.9 }]);
 		});
 
 		it("warns on unused-javascript with maxLength 0", () => {
-			expect(defaultAssertions["unused-javascript"]).toEqual([
-				"warn",
-				{ maxLength: 0 },
-			]);
+			expect(defaultAssertions["unused-javascript"]).toEqual(["warn", { maxLength: 0 }]);
 		});
 	});
 
@@ -54,10 +48,7 @@ describe("lighthouse-config", () => {
 				url: "http://localhost:3000/",
 				assertions: custom,
 			});
-			expect(config.ci.assert.assertions["bf-cache"]).toEqual([
-				"error",
-				{ minScore: 1 },
-			]);
+			expect(config.ci.assert.assertions["bf-cache"]).toEqual(["error", { minScore: 1 }]);
 		});
 
 		it("defaults upload target to temporary-public-storage", () => {

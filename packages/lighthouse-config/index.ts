@@ -6,7 +6,7 @@ export interface LighthouseAssertion {
 	"bf-cache"?: MinScoreAssertion;
 	"errors-in-console"?: MinScoreAssertion;
 	"font-display"?: MinScoreAssertion;
-	"label"?: MinScoreAssertion;
+	label?: MinScoreAssertion;
 	"largest-contentful-paint"?: MinScoreAssertion;
 	"lcp-lazy-loaded"?: MinScoreAssertion;
 	"non-composited-animations"?: MinScoreAssertion;
@@ -20,7 +20,7 @@ export const defaultAssertions: LighthouseAssertion = {
 	"bf-cache": ["warn", { minScore: 0.9 }],
 	"errors-in-console": ["warn", { minScore: 0.9 }],
 	"font-display": ["warn", { minScore: 0.9 }],
-	"label": ["warn", { minScore: 0.9 }],
+	label: ["warn", { minScore: 0.9 }],
 	"largest-contentful-paint": ["warn", { minScore: 0.9 }],
 	"lcp-lazy-loaded": ["warn", { minScore: 0.9 }],
 	"non-composited-animations": ["warn", { minScore: 0.9 }],
