@@ -28,6 +28,11 @@ component_management:
       - type: project
         target: auto
   individual_components:
+    - component_id: astro-config
+      name: "astro-config"
+      paths:
+        - packages/astro-config/**
+
     - component_id: browserslist-config
       name: "browserslist-config"
       paths:
@@ -37,6 +42,11 @@ component_management:
       name: "commitlint-config"
       paths:
         - packages/commitlint-config/**
+
+    - component_id: configs-docs
+      name: "configs-docs"
+      paths:
+        - packages/configs-docs/**
 
     - component_id: eslint-config
       name: "eslint-config"
@@ -92,8 +102,3 @@ component_management:
       name: "vitest-config"
       paths:
         - packages/vitest-config/**
-
-    - component_id: configs-docs
-      name: "configs-docs"
-      paths:
-        - packages/configs-docs/**
