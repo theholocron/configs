@@ -33,9 +33,7 @@ describe("eslint-config — individual configs", () => {
 
 	it("react() config runs without throwing on ESLint v10 context API", () => {
 		const linter = new Linter({ configType: "flat" });
-		expect(() =>
-			linter.verify("const x = 1;", react() as Parameters<Linter["verify"]>[1]),
-		).not.toThrow();
+		expect(() => linter.verify("const x = 1;", react() as Parameters<Linter["verify"]>[1])).not.toThrow();
 	});
 });
 
