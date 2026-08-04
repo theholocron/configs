@@ -26,9 +26,7 @@ describe("vitest-config — presets", () => {
 
 	it("react() includes jest-dom setup file", () => {
 		const config = react();
-		expect(config.test?.setupFiles).toContain(
-			"@theholocron/vitest-config/setup/jest-dom",
-		);
+		expect(config.test?.setupFiles).toContain("@theholocron/vitest-config/setup/jest-dom");
 	});
 
 	it("storybook() returns a config object", async () => {
@@ -52,9 +50,15 @@ describe("vitest-config — setup helpers", () => {
 
 	it("setupMSWBrowser registers lifecycle hooks for a worker", async () => {
 		const worker = {
-			start: vi.fn(async () => { calls.push("start"); }),
-			resetHandlers: vi.fn(() => { calls.push("reset"); }),
-			stop: vi.fn(() => { calls.push("stop"); }),
+			start: vi.fn(async () => {
+				calls.push("start");
+			}),
+			resetHandlers: vi.fn(() => {
+				calls.push("reset");
+			}),
+			stop: vi.fn(() => {
+				calls.push("stop");
+			}),
 		};
 		setupMSWBrowser(worker);
 		expect(worker.start).toBeDefined();
@@ -65,12 +69,16 @@ describe("vitest-config — setup helpers", () => {
 	it("setupMSWBrowser calls annotations.beforeAll before worker.start", async () => {
 		const order: string[] = [];
 		const worker = {
-			start: vi.fn(async () => { order.push("worker.start"); }),
+			start: vi.fn(async () => {
+				order.push("worker.start");
+			}),
 			resetHandlers: vi.fn(),
 			stop: vi.fn(),
 		};
 		const annotations = {
-			beforeAll: vi.fn(async () => { order.push("annotations.beforeAll"); }),
+			beforeAll: vi.fn(async () => {
+				order.push("annotations.beforeAll");
+			}),
 		};
 		setupMSWBrowser(worker, annotations);
 		// Manually invoke the registered beforeAll to verify order
