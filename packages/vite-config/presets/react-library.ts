@@ -31,7 +31,7 @@ export async function reactLibrary({
 				enableBundleAnalysis: !!process.env.CODECOV_TOKEN,
 				bundleName: resolvedName,
 				uploadToken: process.env.CODECOV_TOKEN,
-			}) as never,
+			}) as never
 		);
 	} catch {
 		// @codecov/vite-plugin not installed — bundle analysis skipped
@@ -59,6 +59,6 @@ export async function reactLibrary({
 				sourcemap: true,
 			},
 		},
-		overrides,
+		overrides
 	);
 }

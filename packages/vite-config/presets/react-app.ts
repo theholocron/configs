@@ -18,7 +18,7 @@ export async function reactApp(overrides: UserConfig = {}): Promise<UserConfig> 
 				enableBundleAnalysis: !!process.env.CODECOV_TOKEN,
 				bundleName: getPackageName(),
 				uploadToken: process.env.CODECOV_TOKEN,
-			}) as never,
+			}) as never
 		);
 	} catch {
 		// @codecov/vite-plugin not installed — bundle analysis skipped
