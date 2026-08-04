@@ -90,11 +90,7 @@ Add project-specific configs after the bundle — they are merged in order:
 import { reactApp } from "@theholocron/eslint-config/bundles/react-app";
 import { cypress } from "@theholocron/eslint-config/cypress";
 
-export default [
-  ...reactApp(),
-  ...cypress(),
-  { settings: { react: { version: "detect" } } },
-];
+export default [...reactApp(), ...cypress(), { settings: { react: { version: "detect" } } }];
 ```
 
 ## ESLint version

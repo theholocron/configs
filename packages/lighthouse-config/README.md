@@ -22,8 +22,8 @@ Create a `lighthouse.config.js` at the project root and pass it to `lhci` with `
 import { defineConfig } from "@theholocron/lighthouse-config";
 
 export default defineConfig({
-  url: "http://localhost:5173/",
-  startServerCommand: "pnpm dev",
+	url: "http://localhost:5173/",
+	startServerCommand: "pnpm dev",
 });
 ```
 
@@ -37,12 +37,12 @@ pnpm lhci autorun --config=./lighthouse.config.js
 
 ## Options
 
-| Option | Type | Default | Description |
-|---|---|---|---|
-| `url` | `string \| string[]` | — | URL(s) to audit |
-| `startServerCommand` | `string` | — | Command to start the dev server before collecting |
-| `assertions` | `LighthouseAssertion` | `defaultAssertions` | Audit thresholds |
-| `uploadTarget` | `string` | `"temporary-public-storage"` | Where to upload results |
+| Option               | Type                  | Default                      | Description                                       |
+| -------------------- | --------------------- | ---------------------------- | ------------------------------------------------- |
+| `url`                | `string \| string[]`  | —                            | URL(s) to audit                                   |
+| `startServerCommand` | `string`              | —                            | Command to start the dev server before collecting |
+| `assertions`         | `LighthouseAssertion` | `defaultAssertions`          | Audit thresholds                                  |
+| `uploadTarget`       | `string`              | `"temporary-public-storage"` | Where to upload results                           |
 
 ## Default assertions
 
@@ -59,11 +59,11 @@ Override individual thresholds by spreading and replacing:
 import { defineConfig, defaultAssertions } from "@theholocron/lighthouse-config";
 
 export default defineConfig({
-  url: "http://localhost:5173/",
-  startServerCommand: "pnpm dev",
-  assertions: {
-    ...defaultAssertions,
-    "largest-contentful-paint": ["error", { minScore: 0.95 }],
-  },
+	url: "http://localhost:5173/",
+	startServerCommand: "pnpm dev",
+	assertions: {
+		...defaultAssertions,
+		"largest-contentful-paint": ["error", { minScore: 0.95 }],
+	},
 });
 ```

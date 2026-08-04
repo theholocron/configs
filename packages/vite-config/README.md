@@ -29,10 +29,10 @@ import { reactLibrary } from "@theholocron/vite-config/react-library";
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
 
 export default reactLibrary({
-  name: "my-lib",
-  overrides: {
-    plugins: [storybookTest()],
-  },
+	name: "my-lib",
+	overrides: {
+		plugins: [storybookTest()],
+	},
 });
 ```
 
