@@ -17,5 +17,4 @@ export function cli(options: UserConfig = {}) {
 	});
 }
 
-/** Ready-to-use config for CLIs that need no customisation. */
 export default cli();
