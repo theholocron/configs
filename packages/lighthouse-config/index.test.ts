@@ -77,6 +77,14 @@ describe("lighthouse-config", () => {
 			expect(config.ci.collect).not.toHaveProperty("startServerReadyPattern");
 		});
 
+		it("includes startServerReadyPattern when empty string", () => {
+			const config = defineConfig({
+				url: "http://localhost:3000/",
+				startServerReadyPattern: "",
+			});
+			expect(config.ci.collect.startServerReadyPattern).toBe("");
+		});
+
 		it("includes startServerReadyTimeout when provided", () => {
 			const config = defineConfig({
 				url: "http://localhost:3000/",
@@ -88,6 +96,14 @@ describe("lighthouse-config", () => {
 		it("omits startServerReadyTimeout when not provided", () => {
 			const config = defineConfig({ url: "http://localhost:3000/" });
 			expect(config.ci.collect).not.toHaveProperty("startServerReadyTimeout");
+		});
+
+		it("includes startServerReadyTimeout when 0", () => {
+			const config = defineConfig({
+				url: "http://localhost:3000/",
+				startServerReadyTimeout: 0,
+			});
+			expect(config.ci.collect.startServerReadyTimeout).toBe(0);
 		});
 	});
 });

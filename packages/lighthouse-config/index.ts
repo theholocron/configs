@@ -54,8 +54,8 @@ export function defineConfig({
 			collect: {
 				url: Array.isArray(url) ? url : [url],
 				...(startServerCommand ? { startServerCommand } : {}),
-				...(startServerReadyPattern ? { startServerReadyPattern } : {}),
-				...(startServerReadyTimeout ? { startServerReadyTimeout } : {}),
+				...(startServerReadyPattern !== undefined ? { startServerReadyPattern } : {}),
+				...(startServerReadyTimeout !== undefined ? { startServerReadyTimeout } : {}),
 			},
 			assert: { assertions },
 			upload: { target: uploadTarget },
