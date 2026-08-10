@@ -66,6 +66,6 @@ To customise the entry point or other options, use the `cli()` factory:
 import { cli } from "@theholocron/tsdown-config/presets/cli";
 
 export default cli({
-	entry: ["src/my-cli.ts"],
+  entry: ["src/my-cli.ts"],
 });
 ```
