@@ -24,11 +24,8 @@ describe("prettier-config", () => {
 	});
 
 	it("uses spaces (not tabs) for markdown files", () => {
-		const mdOverride = config.overrides!.find(
-			(o) =>
-				Array.isArray(o.files)
-					? o.files.includes("*.md")
-					: o.files === "*.md",
+		const mdOverride = config.overrides!.find((o) =>
+			Array.isArray(o.files) ? o.files.includes("*.md") : o.files === "*.md"
 		);
 		expect(mdOverride).toBeDefined();
 		expect(mdOverride!.options?.useTabs).toBe(false);

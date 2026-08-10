@@ -19,15 +19,15 @@ import { node } from "@theholocron/holocron-config";
 
 const { repo, workflows, providers } = node();
 export default defineConfig({
-	name: "my-repo",
-	description: "What this repo does.",
-	repo: {
-		name: "theholocron/my-repo",
-		topics: ["nodejs", "typescript"],
-		...repo,
-	},
-	workflows: [...workflows, { name: "release", with: { "run-build": true } }],
-	providers,
+  name: "my-repo",
+  description: "What this repo does.",
+  repo: {
+    name: "theholocron/my-repo",
+    topics: ["nodejs", "typescript"],
+    ...repo,
+  },
+  workflows: [...workflows, { name: "release", with: { "run-build": true } }],
+  providers,
 } satisfies HolocronConfig);
 ```
 

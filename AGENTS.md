@@ -47,15 +47,15 @@ package. Quick checklist:
 
 1. Create `packages/<tool>-config/` with the following files, modelled on an
    existing TypeScript package (e.g. `prettier-config`):
-    - `package.json` — follow the standard shape; include all relevant
-      `peerDependencies`, mark optional ones under `peerDependenciesMeta`
-    - `index.ts` — default export or named export(s) of the config object/function
-    - `tsconfig.json` — extend `@theholocron/tsconfig/node-lts`; set
-      `rootDir: "."` and `outDir: "dist"`
-    - `tsdown.config.ts` — list every entry point that needs its own dist file
-    - `vitest.config.ts` — use the `node` preset from `@theholocron/vitest-config`
-    - `index.test.ts` — smoke test that every export has the expected runtime shape
-    - `README.md` — Installation + Usage sections; see existing packages for tone
+   - `package.json` — follow the standard shape; include all relevant
+     `peerDependencies`, mark optional ones under `peerDependenciesMeta`
+   - `index.ts` — default export or named export(s) of the config object/function
+   - `tsconfig.json` — extend `@theholocron/tsconfig/node-lts`; set
+     `rootDir: "."` and `outDir: "dist"`
+   - `tsdown.config.ts` — list every entry point that needs its own dist file
+   - `vitest.config.ts` — use the `node` preset from `@theholocron/vitest-config`
+   - `index.test.ts` — smoke test that every export has the expected runtime shape
+   - `README.md` — Installation + Usage sections; see existing packages for tone
 2. Add `vitest` and `@theholocron/vitest-config: "workspace:*"` to `devDependencies`.
 3. Add `"build": "tsdown"`, `"test": "vitest run"`, and `"typecheck": "tsc --noEmit"`
    to `scripts`.
