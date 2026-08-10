@@ -49,3 +49,23 @@ export default cli({
   entry: ["src/my-cli.ts"],
 });
 ```
+
+### `cli` — CLI binary
+
+Single entry point (`src/cli.ts`), no type declarations (binaries don't need them), sourcemap enabled, injects `#!/usr/bin/env node` shebang so the output is directly executable.
+
+```ts
+// tsdown.config.ts
+export { default } from "@theholocron/tsdown-config/presets/cli";
+```
+
+To customise the entry point or other options, use the `cli()` factory:
+
+```ts
+// tsdown.config.ts
+import { cli } from "@theholocron/tsdown-config/presets/cli";
+
+export default cli({
+	entry: ["src/my-cli.ts"],
+});
+```
