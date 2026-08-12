@@ -35,7 +35,7 @@ export function defineConfig({ docs, importMetaUrl, starlight, docsTheme, sideba
 
 	return astroDefineConfig({
 		site: "https://theholocron.github.io",
-		base: `/${docs.slug}`,
+		base: `/projects/${docs.slug}`,
 		integrations: [
 			starlight({
 				title: docs.name,

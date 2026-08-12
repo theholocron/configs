@@ -37,7 +37,7 @@ const baseInput = {
 describe("defineConfig", () => {
 	it("sets base from the docs slug", () => {
 		const config = defineConfig(baseInput) as { base: string };
-		expect(config.base).toBe("/clients");
+		expect(config.base).toBe("/projects/clients");
 	});
 
 	it("derives sidebar label from sidebar[1].label when it is a group", () => {
