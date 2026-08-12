@@ -31,11 +31,7 @@ export default defineConfig({
 		...workflows,
 		{ name: "test", with: { "run-unit": true } },
 		{ name: "release", with: { "run-build": true } },
-		{
-			name: "deploy-docs",
-			with: { name: "configs" },
-			paths: ["packages/configs-docs/**"],
-		},
+		{ name: "deploy-docs", with: { name: "configs" }, paths: ["docs/**"] },
 	],
 	providers,
 	agent: "claude",
