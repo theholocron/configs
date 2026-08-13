@@ -44,11 +44,6 @@ component_management:
       paths:
         - packages/commitlint-config/**
 
-    - component_id: configs-docs
-      name: "configs-docs"
-      paths:
-        - packages/configs-docs/**
-
     - component_id: eslint-config
       name: "eslint-config"
       paths:
