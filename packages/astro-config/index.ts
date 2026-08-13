@@ -2,10 +2,12 @@ import type starlight from "@astrojs/starlight";
 import type { docsTheme } from "@theholocron/docs-theme";
 import { defineConfig as astroDefineConfig } from "astro/config";
 
+type StarlightSidebar = NonNullable<Parameters<typeof starlight>[0]["sidebar"]>;
+
 export interface DocsConfig {
 	name: string;
 	github: string;
-	sidebar: Array<{ label: string } & ({ slug: string } | { items: unknown[] })>;
+	sidebar: StarlightSidebar;
 }
 
 export interface DocsConfigInput {
