@@ -31,4 +31,7 @@ export default defineConfig({
 	},
 	starlight,
 	docsTheme,
+	srcDir: "./docs/src",
+	outDir: "./docs/dist",
+	publicDir: "./docs/public",
 });

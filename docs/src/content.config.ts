@@ -1,7 +1,3 @@
-import { docsLoader } from "@astrojs/starlight/loaders";
-import { docsSchema } from "@astrojs/starlight/schema";
-import { defineCollection } from "astro:content";
+import { createDocsCollections } from "@theholocron/docs-theme/content";
 
-export const collections = {
-	docs: defineCollection({ loader: docsLoader(), schema: docsSchema() }),
-};
+export const collections = createDocsCollections();
