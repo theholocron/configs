@@ -14,6 +14,7 @@ export default defineConfig({
 					{ label: "Astro", slug: "astro-config" },
 					{ label: "Browserslist", slug: "browserslist-config" },
 					{ label: "CommitLint", slug: "commitlint-config" },
+					{ label: "Devmoji", slug: "devmoji-config" },
 					{ label: "ESLint", slug: "eslint-config" },
 					{ label: "Holocron", slug: "holocron-config" },
 					{ label: "Lint Staged", slug: "lint-staged-config" },
