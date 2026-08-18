@@ -10,10 +10,13 @@ Shared configuration files.
 
 | Package                                                                      | Description                                        |
 | ---------------------------------------------------------------------------- | -------------------------------------------------- |
+| [`@theholocron/astro-config`](./packages/astro-config)                       | Astro + Starlight docs site configuration          |
 | [`@theholocron/browserslist-config`](./packages/browserslist-config)         | Browser and device targets                         |
 | [`@theholocron/commitlint-config`](./packages/commitlint-config)             | Conventional commit enforcement                    |
+| [`@theholocron/devmoji-config`](./packages/devmoji-config)                   | Devmoji emoji mappings for conventional commits    |
 | [`@theholocron/eslint-config`](./packages/eslint-config)                     | ESLint rules for JS/TS/React/Next/Node             |
 | [`@theholocron/holocron-config`](./packages/holocron-config)                 | Shareable holocron configuration presets           |
+| [`@theholocron/lighthouse-config`](./packages/lighthouse-config)             | Lighthouse CI performance and accessibility audits |
 | [`@theholocron/lint-staged-config`](./packages/lint-staged-config)           | Pre-commit lint-staged hooks                       |
 | [`@theholocron/prettier-config`](./packages/prettier-config)                 | Prettier formatting rules                          |
 | [`@theholocron/semantic-release-config`](./packages/semantic-release-config) | Semantic-release config for automated versioning   |

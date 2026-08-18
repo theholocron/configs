@@ -44,6 +44,11 @@ component_management:
       paths:
         - packages/commitlint-config/**
 
+    - component_id: devmoji-config
+      name: "devmoji-config"
+      paths:
+        - packages/devmoji-config/**
+
     - component_id: eslint-config
       name: "eslint-config"
       paths:
