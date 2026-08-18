@@ -10,26 +10,36 @@ export interface DevmojiConfig {
 	devmoji?: DevmojiEntry[];
 }
 
+const defaultTypes: string[] = ["lint"];
+
+const defaultDevmoji: DevmojiEntry[] = [
+	{ code: "feat", emoji: "boom" },
+	{
+		code: "fail",
+		emoji: "poop",
+		description: "catastrophic failure or emergency hot fix — not for routine bug fixes",
+	},
+	{ code: "config", gitmoji: "wrench", emoji: "gear" },
+];
+
 /**
- * Shared devmoji configuration for theholocron repos.
+ * Returns a devmoji configuration merged with theholocron defaults.
+ * Pass overrides to extend or replace specific entries for a given repo.
  *
- * Consuming repos reference this via `devmoji.config.cjs`:
  * ```js
- * const pkg = require('@theholocron/devmoji-config');
- * module.exports = pkg.default ?? pkg;
+ * // devmoji.config.cjs
+ * const { defineConfig } = require('@theholocron/devmoji-config');
+ * module.exports = defineConfig();
+ *
+ * // With repo-specific overrides:
+ * module.exports = defineConfig({
+ *   devmoji: [{ code: "feat", emoji: "sparkles" }],
+ * });
  * ```
  */
-const config: DevmojiConfig = {
-	types: ["lint"],
-	devmoji: [
-		{ code: "feat", emoji: "boom" },
-		{
-			code: "fail",
-			emoji: "poop",
-			description: "catastrophic failure or emergency hot fix — not for routine bug fixes",
-		},
-		{ code: "config", gitmoji: "wrench", emoji: "gear" },
-	],
-};
-
-export default config;
+export function defineConfig(overrides: Partial<DevmojiConfig> = {}): DevmojiConfig {
+	return {
+		types: [...defaultTypes, ...(overrides.types ?? [])],
+		devmoji: [...defaultDevmoji, ...(overrides.devmoji ?? [])],
+	};
+}
