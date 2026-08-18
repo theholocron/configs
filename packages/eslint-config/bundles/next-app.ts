@@ -9,5 +9,14 @@ import { storybook } from "../configs/storybook.js";
 import { vitest } from "../configs/vitest.js";
 
 export function nextApp(): Linter.FlatConfig[] {
-	return [...base(), ...typescript(), ...react(), ...next(), ...vitest(), ...storybook(), ...cypress(), ...packageJson()];
+	return [
+		...base(),
+		...typescript(),
+		...react(),
+		...next(),
+		...vitest(),
+		...storybook(),
+		...cypress(),
+		...packageJson(),
+	];
 }
