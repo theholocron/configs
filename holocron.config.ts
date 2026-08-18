@@ -26,6 +26,7 @@ export default defineConfig({
 			"vitest-config",
 		],
 		...repo,
+		protection: "strict",
 	},
 	workflows: [
 		...workflows,
