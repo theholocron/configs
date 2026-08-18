@@ -12,8 +12,6 @@ export interface DevmojiConfig {
 
 /**
  * Shared devmoji configuration for theholocron repos.
- * All standard commit types (feat, fix, chore, docs, ci, test, refactor, perf)
- * are covered by devmoji's built-in defaults — no overrides needed.
  *
  * Consuming repos reference this via `devmoji.config.cjs`:
  * ```js
@@ -21,6 +19,17 @@ export interface DevmojiConfig {
  * module.exports = pkg.default ?? pkg;
  * ```
  */
-const config: DevmojiConfig = {};
+const config: DevmojiConfig = {
+	types: ["lint"],
+	devmoji: [
+		{ code: "feat", emoji: "boom" },
+		{
+			code: "fail",
+			emoji: "poop",
+			description: "catastrophic failure or emergency hot fix — not for routine bug fixes",
+		},
+		{ code: "config", gitmoji: "wrench", emoji: "gear" },
+	],
+};
 
 export default config;

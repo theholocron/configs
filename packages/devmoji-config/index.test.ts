@@ -7,12 +7,25 @@ describe("devmoji-config", () => {
 		expect(config).not.toBeNull();
 	});
 
-	it("has no extra types by default — all theholocron types are devmoji built-ins", () => {
-		expect(config.types).toBeUndefined();
+	it("includes lint as an extra accepted type", () => {
+		expect(config.types).toContain("lint");
 	});
 
-	it("has no custom devmoji entries by default", () => {
-		expect(config.devmoji).toBeUndefined();
+	it("maps feat to boom emoji", () => {
+		const feat = config.devmoji?.find((e) => e.code === "feat");
+		expect(feat?.emoji).toBe("boom");
+	});
+
+	it("maps fail to poop emoji with a description", () => {
+		const fail = config.devmoji?.find((e) => e.code === "fail");
+		expect(fail?.emoji).toBe("poop");
+		expect(fail?.description).toBeTruthy();
+	});
+
+	it("maps config to gear emoji via gitmoji wrench", () => {
+		const cfg = config.devmoji?.find((e) => e.code === "config");
+		expect(cfg?.gitmoji).toBe("wrench");
+		expect(cfg?.emoji).toBe("gear");
 	});
 
 	it("satisfies the DevmojiConfig interface", () => {
