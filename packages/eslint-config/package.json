@@ -1,6 +1,6 @@
 {
   "name": "@theholocron/eslint-config",
-  "version": "7.22.0",
+  "version": "7.22.1",
   "description": "A ESLint configuration for writing well-formed Javascript within the Galaxy.",
   "homepage": "https://github.com/theholocron/configs/tree/main/packages/eslint-config#readme",
   "bugs": "https://github.com/theholocron/configs/issues",
@@ -37,10 +37,10 @@
     "@theholocron/vitest-config": "workspace:*",
     "@vitest/coverage-v8": "catalog:",
     "eslint-plugin-simple-import-sort": "^14.0.0",
-    "globals": "^17.9.0",
+    "globals": "^17.11.0",
     "tsdown": "catalog:",
     "typescript": "catalog:",
-    "typescript-eslint": "^8.66.0",
+    "typescript-eslint": "^8.67.0",
     "vitest": "catalog:"
   },
   "exports": {
