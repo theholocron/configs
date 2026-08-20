@@ -17,6 +17,7 @@ export default defineConfig({
 					{ label: "Devmoji", slug: "devmoji-config" },
 					{ label: "ESLint", slug: "eslint-config" },
 					{ label: "Holocron", slug: "holocron-config" },
+					{ label: "Lighthouse", slug: "lighthouse-config" },
 					{ label: "Lint Staged", slug: "lint-staged-config" },
 					{ label: "Prettier", slug: "prettier-config" },
 					{ label: "Semantic Release", slug: "semantic-release-config" },
