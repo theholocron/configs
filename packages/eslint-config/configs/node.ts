@@ -1,5 +1,5 @@
-import type { Linter } from "eslint";
 import n from "eslint-plugin-n";
+import type { Linter } from "eslint";
 
 const JS_TS_FILES = ["**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}"];
 
