@@ -26,13 +26,6 @@ export function defineConfig({ docs, starlight, docsTheme, srcDir, outDir, publi
 		...(srcDir && { srcDir }),
 		...(outDir && { outDir }),
 		...(publicDir && { publicDir }),
-		vite: {
-			resolve: {
-				// @/ maps to the docs src directory so MDX pages can import
-				// without deep relative paths (e.g. @/links.config.ts)
-				alias: { "@": new URL(srcDir ?? "src", `file://${process.cwd()}/`).pathname },
-			},
-		},
 		integrations: [
 			starlight({
 				title: docs.name,
