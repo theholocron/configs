@@ -16,6 +16,13 @@ export default [
 		},
 	},
 	{
+		files: ["docs/src/**"],
+		rules: {
+			// docs/src imports live in root package.json, not docs/package.json
+			"n/no-extraneous-import": "off",
+		},
+	},
+	{
 		ignores: ["**/node_modules/**", "**/dist/**"],
 	},
 ] satisfies Linter.Config[];
