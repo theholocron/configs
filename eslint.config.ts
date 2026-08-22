@@ -23,6 +23,6 @@ export default [
 		},
 	},
 	{
-		ignores: ["**/node_modules/**", "**/dist/**", "**/*.json"],
+		ignores: ["**/node_modules/**", "**/dist/**", "**/*.json", "docs/**"],
 	},
 ] satisfies Linter.Config[];
