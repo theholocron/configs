@@ -28,7 +28,8 @@ export function defineConfig({ docs, starlight, docsTheme, srcDir, outDir, publi
 		...(publicDir && { publicDir }),
 		vite: {
 			resolve: {
-				alias: { "~": process.cwd() },
+				// @/ maps to the docs src dir so MDX pages avoid deep relative imports
+				alias: { "@": new URL(srcDir ?? "src", `file://${process.cwd()}/`).pathname },
 			},
 		},
 		integrations: [
