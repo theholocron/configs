@@ -26,6 +26,11 @@ export function defineConfig({ docs, starlight, docsTheme, srcDir, outDir, publi
 		...(srcDir && { srcDir }),
 		...(outDir && { outDir }),
 		...(publicDir && { publicDir }),
+		vite: {
+			resolve: {
+				alias: { "~": process.cwd() },
+			},
+		},
 		integrations: [
 			starlight({
 				title: docs.name,
