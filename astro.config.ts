@@ -9,6 +9,12 @@ export default defineConfig({
 		sidebar: [
 			{ label: "Overview", slug: "" },
 			{
+				label: "Decisions",
+				items: [
+					{ label: "ADR 0001: ESLint normalization", slug: "decisions/0001-eslint-shared-config-normalization" },
+				],
+			},
+			{
 				label: "Packages",
 				items: [
 					{ label: "Astro", slug: "astro-config" },
