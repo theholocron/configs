@@ -11,7 +11,10 @@ export default defineConfig({
 			{
 				label: "Decisions",
 				items: [
-					{ label: "ADR 0001: ESLint normalization", slug: "decisions/0001-eslint-shared-config-normalization" },
+					{
+						label: "ADR 0001: ESLint normalization",
+						slug: "decisions/0001-eslint-shared-config-normalization",
+					},
 				],
 			},
 			{

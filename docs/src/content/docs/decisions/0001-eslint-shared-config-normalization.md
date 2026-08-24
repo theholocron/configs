@@ -22,15 +22,15 @@ A rule override is a candidate for the shared bundle when it applies to every re
 
 Rules moved into the shared bundles during this normalization:
 
-| Rule | Bundle | Reason |
-|---|---|---|
-| `n/no-unpublished-import: off` | `library()` | tsdown compiles `src/` → `dist/`; `package.json#files` lists `dist/` only, so every `src/` import is flagged as unpublished — universal false positive for the TypeScript src→dist build model |
-| `n/no-missing-import: off` | `node()` | TypeScript's resolver handles module resolution better than this rule; kept off to avoid false positives on path aliases and type-only imports |
-| `n/hashbang: off` | `library()` | Library packages often include dev scripts with shebangs not listed as `bin` entries; bundlers (e.g. tsdown) also inject shebangs at build time rather than in source |
-| `no-irregular-whitespace: off` for JSON | `packageJson()` | `@eslint/json` 2.x provides a JSON `sourceCode` without `getAllComments()`, causing this core rule to crash; JSON has no comments anyway |
-| `n/no-unsupported-features/node-builtins: off` for JSON | `packageJson()` | Reads `globalScope`, which is absent in the JSON parse context |
-| `n/no-extraneous-require: off` for JSON | `packageJson()` | Calls `get-tsconfig`, which is irrelevant for JSON |
-| `package-json/sort-properties: off` | `packageJson()` | `sort-package-json` (lint-staged) already owns field ordering and uses a different canonical order; keeping both active creates an unresolvable conflict on every `package.json` change |
+| Rule                                                    | Bundle          | Reason                                                                                                                                                                                         |
+| ------------------------------------------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `n/no-unpublished-import: off`                          | `library()`     | tsdown compiles `src/` → `dist/`; `package.json#files` lists `dist/` only, so every `src/` import is flagged as unpublished — universal false positive for the TypeScript src→dist build model |
+| `n/no-missing-import: off`                              | `node()`        | TypeScript's resolver handles module resolution better than this rule; kept off to avoid false positives on path aliases and type-only imports                                                 |
+| `n/hashbang: off`                                       | `library()`     | Library packages often include dev scripts with shebangs not listed as `bin` entries; bundlers (e.g. tsdown) also inject shebangs at build time rather than in source                          |
+| `no-irregular-whitespace: off` for JSON                 | `packageJson()` | `@eslint/json` 2.x provides a JSON `sourceCode` without `getAllComments()`, causing this core rule to crash; JSON has no comments anyway                                                       |
+| `n/no-unsupported-features/node-builtins: off` for JSON | `packageJson()` | Reads `globalScope`, which is absent in the JSON parse context                                                                                                                                 |
+| `n/no-extraneous-require: off` for JSON                 | `packageJson()` | Calls `get-tsconfig`, which is irrelevant for JSON                                                                                                                                             |
+| `package-json/sort-properties: off`                     | `packageJson()` | `sort-package-json` (lint-staged) already owns field ordering and uses a different canonical order; keeping both active creates an unresolvable conflict on every `package.json` change        |
 
 ### 2. Scope `node()` and `react()` to JS/TS files
 
@@ -38,24 +38,24 @@ Both configs are now restricted to `**/*.{js,jsx,ts,tsx,mjs,cjs}` via a `files` 
 
 ### 3. Bundle selection by repo type
 
-| Repo type | Bundle |
-|---|---|
-| TypeScript library (`src/` → `dist/`) | `library()` |
-| React component library or app | `react-app()` |
-| Next.js app | `next-app()` |
-| Node.js CLI or service | `node-app()` |
-| Site or doc-only (no JS logic) | `base()` + `typescript()` directly |
+| Repo type                             | Bundle                             |
+| ------------------------------------- | ---------------------------------- |
+| TypeScript library (`src/` → `dist/`) | `library()`                        |
+| React component library or app        | `react-app()`                      |
+| Next.js app                           | `next-app()`                       |
+| Node.js CLI or service                | `node-app()`                       |
+| Site or doc-only (no JS logic)        | `base()` + `typescript()` directly |
 
 ### 4. What qualifies as a legitimate local override
 
 A local override is acceptable when it is caused by that repo's specific file layout or technology choice — not by a gap in the shared config. Current legitimate local overrides across the org:
 
-| Override | Where | Why |
-|---|---|---|
-| `n/no-extraneous-import: off` for `docs/src/**` | repos with an Astro docs site | `docs/src` imports packages declared in the root `package.json`, not a `docs/package.json`; the plugin sees them as extraneous |
-| `n/no-unsupported-features/node-builtins: off` for browser packages | `utils` | Packages targeting browser APIs (`navigator`, `sessionStorage`) — the Node.js built-ins rule doesn't apply |
-| `n/no-unpublished-require: off` for `**/*.cjs` | monorepo templates | CJS config files (e.g. tool configs that predate ESM) cannot use `import`; the require form is intentional |
-| `@typescript-eslint/triple-slash-reference: off` for `src/env.d.ts` | Astro sites | Astro generates `env.d.ts` with `/// <reference path>` directives; this is intentional codegen output |
+| Override                                                            | Where                         | Why                                                                                                                            |
+| ------------------------------------------------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `n/no-extraneous-import: off` for `docs/src/**`                     | repos with an Astro docs site | `docs/src` imports packages declared in the root `package.json`, not a `docs/package.json`; the plugin sees them as extraneous |
+| `n/no-unsupported-features/node-builtins: off` for browser packages | `utils`                       | Packages targeting browser APIs (`navigator`, `sessionStorage`) — the Node.js built-ins rule doesn't apply                     |
+| `n/no-unpublished-require: off` for `**/*.cjs`                      | monorepo templates            | CJS config files (e.g. tool configs that predate ESM) cannot use `import`; the require form is intentional                     |
+| `@typescript-eslint/triple-slash-reference: off` for `src/env.d.ts` | Astro sites                   | Astro generates `env.d.ts` with `/// <reference path>` directives; this is intentional codegen output                          |
 
 If the same override appears in three or more repos for the same reason, it belongs in the shared bundle, not repeated locally.
 
