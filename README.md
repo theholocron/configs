@@ -8,6 +8,8 @@ Shared configuration files.
 
 ## Packages
 
+<!-- holocron:packages -->
+
 | Package                                                                      | Description                                        |
 | ---------------------------------------------------------------------------- | -------------------------------------------------- |
 | [`@theholocron/astro-config`](./packages/astro-config)                       | Astro + Starlight docs site configuration          |
@@ -27,7 +29,11 @@ Shared configuration files.
 | [`@theholocron/vite-config`](./packages/vite-config)                         | Vite presets for libraries, React apps, Node tools |
 | [`@theholocron/vitest-config`](./packages/vitest-config)                     | Vitest presets and coverage bundles                |
 
+<!-- /holocron:packages -->
+
 ## Development
+
+<!-- holocron:development -->
 
 This repo uses [pnpm workspaces](https://pnpm.io/workspaces) and [Turbo](https://turbo.build).
 
@@ -39,6 +45,12 @@ pnpm typecheck     # typecheck all packages
 pnpm lint          # lint all packages
 ```
 
+<!-- /holocron:development -->
+
 ## Releases
 
+<!-- holocron:releases -->
+
 Releases are automated via [semantic-release](https://semantic-release.gitbook.io/) on push to `main`. All packages are versioned and published in lockstep. See [CHANGELOG.md](CHANGELOG.md) for the release history.
+
+<!-- /holocron:releases -->
