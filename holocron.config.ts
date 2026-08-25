@@ -54,6 +54,7 @@ export default defineConfig({
 		"audit",
 		{ name: "test", with: { "run-unit": true } },
 		{ name: "release", with: { "run-build": true } },
+		"sync",
 		{ name: "deploy", with: { docs: true } },
 	],
 	providers,
