@@ -42,6 +42,7 @@
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
+    "@astrojs/react": "^6.0.4",
     "@astrojs/starlight": "^0.41.7",
     "@commitlint/cli": "^21.2.2",
     "@commitlint/config-conventional": "^21.2.2",
@@ -52,6 +53,7 @@
     "@semantic-release/github": "^12.0.9",
     "@theholocron/astro-config": "workspace:*",
     "@theholocron/cli": "catalog:holocron",
+    "@theholocron/components-doc": "catalog:docs",
     "@theholocron/commitlint-config": "workspace:*",
     "@theholocron/docs-theme": "^1.3.5",
     "@theholocron/eslint-config": "workspace:*",
@@ -59,6 +61,7 @@
     "@theholocron/holocron-plugin-github": "catalog:holocron",
     "@theholocron/lint-staged-config": "workspace:*",
     "@theholocron/prettier-config": "workspace:*",
+    "@theholocron/registry-doc": "catalog:docs",
     "@theholocron/semantic-release-config": "workspace:*",
     "@theholocron/skills": "^1.3.3",
     "astro": "^7.2.2",
@@ -68,6 +71,8 @@
     "globals": "^17.11.0",
     "husky": "^9.1.7",
     "knip": "^6.32.2",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
     "semantic-release": "^25.0.9",
     "sort-package-json": "^4.0.0",
     "turbo": "^2.10.10"
@@ -84,8 +89,7 @@
   },
   "packageManager": "pnpm@10.34.4",
   "engines": {
-    "node": ">=22",
-    "pnpm": ">=10"
+    "node": ">=22"
   },
   "releases": "https://github.com/theholocron/configs/releases",
   "wiki": "https://github.com/theholocron/configs/wiki"
