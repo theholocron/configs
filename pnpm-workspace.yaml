@@ -9,6 +9,11 @@ catalog:
 
 # Holocron CLI and plugins — pinned in lockstep; bump together when running setup.
 catalogs:
+  # Docs components and registry — release in lockstep; bump both entries together.
+  docs:
+    '@theholocron/components-doc': ^1.6.0
+    '@theholocron/registry-doc': ^1.6.0
+
   holocron:
     '@theholocron/cli': ^3.17.0
     '@theholocron/holocron-plugin-github': ^3.24.4
