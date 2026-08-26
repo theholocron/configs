@@ -1,6 +1,6 @@
 {
   "name": "@theholocron/configs",
-  "version": "7.25.1",
+  "version": "7.25.2",
   "private": true,
   "description": "Shared configuration files.",
   "keywords": [
