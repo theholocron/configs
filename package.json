@@ -1,6 +1,6 @@
 {
   "name": "@theholocron/configs",
-  "version": "7.25.0",
+  "version": "7.25.1",
   "private": true,
   "description": "Shared configuration files.",
   "keywords": [
@@ -81,7 +81,8 @@
     "overrides": {
       "@commitlint/config-conventional>conventional-changelog-conventionalcommits": "7",
       "yuku-parser": "0.6.3",
-      "uuid": "^11.1.1"
+      "uuid": "^11.1.1",
+      "conventional-changelog-conventionalcommits": "9.3.1"
     },
     "onlyBuiltDependencies": [
       "esbuild"
