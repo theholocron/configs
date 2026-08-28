@@ -67,15 +67,15 @@ Extends `node()` for repos that publish a documentation site and deploy previews
 
 **Adds on top of `node()`:**
 
-| Field | Value |
-|-------|-------|
-| `org` | `"theholocron"` |
-| `domain` | `"theholocron.dev"` |
-| `docs` | `{ build: "workflow", https: true }` |
-| `providers.deployment` | `"cloudflare"` |
-| `providers.dns` | `"cloudflare"` |
-| `workflows` | `{ name: "deploy", with: { docs: true, preview: true } }` |
-| `requiredChecks` | `"Lint / Conclusion"`, `"Test / Conclusion"`, `"Typecheck / Conclusion"`, `"audit / Conclusion"`, `"codecov/patch"`, `"codecov/project"` |
+| Field                  | Value                                                                                                                                    |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `org`                  | `"theholocron"`                                                                                                                          |
+| `domain`               | `"theholocron.dev"`                                                                                                                      |
+| `docs`                 | `{ build: "workflow", https: true }`                                                                                                     |
+| `providers.deployment` | `"cloudflare"`                                                                                                                           |
+| `providers.dns`        | `"cloudflare"`                                                                                                                           |
+| `workflows`            | `{ name: "deploy", with: { docs: true, preview: true } }`                                                                                |
+| `requiredChecks`       | `"Lint / Conclusion"`, `"Test / Conclusion"`, `"Typecheck / Conclusion"`, `"audit / Conclusion"`, `"codecov/patch"`, `"codecov/project"` |
 
 **Per-repo still provides:** `description`, `homepage`, `repo.name/topics/teams`, `requiredChecks` extensions (`codecov/patch/<package>` per package), extra providers (`vault`, `secrets`, `environments`), extra workflow options (`release`, `audit`, `test` choices).
 
@@ -95,17 +95,9 @@ export default defineConfig({
     ...repo,
     name: "theholocron/my-lib",
     topics: ["typescript", "library"],
-    requiredChecks: [
-      ...repo.requiredChecks,
-      "codecov/patch/my-package",
-      "codecov/project/my-package",
-    ],
+    requiredChecks: [...repo.requiredChecks, "codecov/patch/my-package", "codecov/project/my-package"],
   },
-  workflows: [
-    ...workflows,
-    "audit",
-    { name: "release", with: { "run-build": true } },
-  ],
+  workflows: [...workflows, "audit", { name: "release", with: { "run-build": true } }],
   providers: { ...providers, secrets: "github" },
 });
 ```
@@ -120,17 +112,17 @@ For single-package Next.js application repos.
 
 **Includes:**
 
-| Field | Value |
-|-------|-------|
-| `org` | `"theholocron"` |
-| `domain` | `"theholocron.dev"` |
-| `repo.properties.runtime_environment` | `"browser"` |
-| `repo.properties.uses_external_packages` | `false` |
-| `providers.deployment` | `"vercel"` |
-| `providers.secrets` | `"github"` |
-| `workflows.audit` | `{ run-knip: true, run-performance: true, lighthouse-config: "lighthouse.config.cjs" }` |
-| `workflows.test` | `{ run-unit: false, run-storybook: true, run-interaction: true, run-user-flow: true }` |
-| `requiredChecks` | Conclusion jobs + `codecov/patch`, `codecov/project`, `Storybook Publish`, `UI Review`, `UI Tests`, `lhci/url/` |
+| Field                                    | Value                                                                                                           |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `org`                                    | `"theholocron"`                                                                                                 |
+| `domain`                                 | `"theholocron.dev"`                                                                                             |
+| `repo.properties.runtime_environment`    | `"browser"`                                                                                                     |
+| `repo.properties.uses_external_packages` | `false`                                                                                                         |
+| `providers.deployment`                   | `"vercel"`                                                                                                      |
+| `providers.secrets`                      | `"github"`                                                                                                      |
+| `workflows.audit`                        | `{ run-knip: true, run-performance: true, lighthouse-config: "lighthouse.config.cjs" }`                         |
+| `workflows.test`                         | `{ run-unit: false, run-storybook: true, run-interaction: true, run-user-flow: true }`                          |
+| `requiredChecks`                         | Conclusion jobs + `codecov/patch`, `codecov/project`, `Storybook Publish`, `UI Review`, `UI Tests`, `lhci/url/` |
 
 **Per-repo still provides:** `run-chromatic` configuration (projects and tokenName vary), `wait-on-url`, cypress check names, storybook deploy config.
 
@@ -181,11 +173,11 @@ A function that wraps any base preset and applies monorepo-specific overrides. I
 
 **Overrides:**
 
-| Field | Change |
-|-------|--------|
-| `repo.properties.uses_external_packages` | `true` (workspaces pull in many deps) |
-| `workflows.test` | Adds `run-chromatic` in projects-array format |
-| `workflows.deploy` | Switches storybook from single `{ name: "" }` to `storybook-projects` array |
+| Field                                    | Change                                                                      |
+| ---------------------------------------- | --------------------------------------------------------------------------- |
+| `repo.properties.uses_external_packages` | `true` (workspaces pull in many deps)                                       |
+| `workflows.test`                         | Adds `run-chromatic` in projects-array format                               |
+| `workflows.deploy`                       | Switches storybook from single `{ name: "" }` to `storybook-projects` array |
 
 **Per-repo still provides:** the actual `storybook-projects` array content, chromatic project definitions, workspace-specific required checks.
 

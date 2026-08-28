@@ -2,7 +2,7 @@
 
 **Status:** Proposed  
 **Date:** 2026-08-28  
-**Repo:** theholocron/configs  
+**Repo:** theholocron/configs
 
 ---
 
@@ -57,16 +57,19 @@ Per-repo `requiredChecks` arrays extend the preset with repo-specific entries �
 ## Consequences
 
 **Positive**
+
 - A new org-wide CI change (e.g., adding a deploy preview workflow) requires editing the preset once, not every repo.
 - `requiredChecks` arrays shrink from 15–20 entries to 5–8 stable entries plus per-repo package components.
 - Branch protection is insulated from internal workflow job renames.
 - The preset hierarchy documents the org's repo taxonomy explicitly.
 
 **Negative**
+
 - Adding a new preset requires a release of `@theholocron/holocron-config` before consuming repos can adopt it — two-PR chains per change.
 - `codecov/patch` at the repo level does not guarantee individual component thresholds are met; per-component entries in each repo are still needed for component-level enforcement.
 - The `monorepo()` extension pattern (function-wrapping rather than standalone preset) is less discoverable than a named preset.
 
 **Neutral**
+
 - Existing `node()` usage is unchanged; adoption of the new presets is repo-by-repo.
 - Template repos are excluded from the node/docs presets since they have divergent testing setups.
