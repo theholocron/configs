@@ -57,9 +57,6 @@ export function nodeDocs(): NodeDocsPreset {
 			...base.repo,
 			requiredChecks: REQUIRED_CHECKS,
 		},
-		workflows: [
-			...base.workflows,
-			{ name: "deploy", with: { docs: true, preview: true } },
-		],
+		workflows: [...base.workflows, { name: "deploy", with: { docs: true, preview: true } }],
 	};
 }
