@@ -1,11 +1,14 @@
 import { defineConfig } from "@theholocron/cli";
 import type { HolocronConfig } from "@theholocron/cli";
-import { node } from "@theholocron/holocron-config";
+import { nodeDocs } from "@theholocron/holocron-config";
 
-const { repo, workflows, providers } = node();
+const { repo, workflows, providers, org, domain, docs } = nodeDocs();
 export default defineConfig({
 	description: "Shared configuration files.",
 	homepage: "https://docs.theholocron.dev/configs/",
+	org,
+	domain,
+	docs,
 	repo: {
 		teams: [{ slug: "gatekeepers", permission: "maintain" }],
 		topics: [
@@ -26,11 +29,8 @@ export default defineConfig({
 			"vitest-config",
 		],
 		...repo,
-		protection: "strict",
 		requiredChecks: [
-			"audit / Knip",
-			"codecov/patch",
-			"codecov/project",
+			...repo.requiredChecks,
 			"codecov/project/astro-config",
 			"codecov/project/browserslist-config",
 			"codecov/project/commitlint-config",
@@ -55,9 +55,8 @@ export default defineConfig({
 		{ name: "test", with: { "run-unit": true } },
 		{ name: "release", with: { "run-build": true } },
 		"sync",
-		{ name: "deploy", with: { docs: true } },
 	],
-	providers,
+	providers: { ...providers, secrets: "github" },
 	agent: "claude",
 	skills: ["git-safety", "pr-workflow", "commit-standards", "security-review", "holocron-skill-config", "turborepo"],
 } satisfies HolocronConfig);
