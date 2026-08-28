@@ -46,6 +46,26 @@
       "import": "./dist/configs/node.js",
       "default": "./dist/configs/node.js"
     },
+    "./node-docs": {
+      "types": "./dist/configs/node-docs.d.ts",
+      "import": "./dist/configs/node-docs.js",
+      "default": "./dist/configs/node-docs.js"
+    },
+    "./nextjs": {
+      "types": "./dist/configs/nextjs.d.ts",
+      "import": "./dist/configs/nextjs.js",
+      "default": "./dist/configs/nextjs.js"
+    },
+    "./react": {
+      "types": "./dist/configs/react.d.ts",
+      "import": "./dist/configs/react.js",
+      "default": "./dist/configs/react.js"
+    },
+    "./monorepo": {
+      "types": "./dist/configs/monorepo.d.ts",
+      "import": "./dist/configs/monorepo.js",
+      "default": "./dist/configs/monorepo.js"
+    },
     "./package.json": "./package.json"
   },
   "files": [
