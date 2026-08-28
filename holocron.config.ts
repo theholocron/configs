@@ -6,6 +6,9 @@ const { repo, workflows, providers } = node();
 export default defineConfig({
 	description: "Shared configuration files.",
 	homepage: "https://docs.theholocron.dev/configs/",
+	org: "theholocron",
+	domain: "theholocron.dev",
+	docs: { build: "workflow", https: true },
 	repo: {
 		teams: [{ slug: "gatekeepers", permission: "maintain" }],
 		topics: [
@@ -55,12 +58,13 @@ export default defineConfig({
 		{ name: "test", with: { "run-unit": true } },
 		{ name: "release", with: { "run-build": true } },
 		"sync",
-		{
-			name: "deploy",
-			with: { docs: true, preview: { project: "theholocron-preview", domain: "preview.theholocron.dev" } },
-		},
+		{ name: "deploy", with: { docs: true, preview: true } },
 	],
-	providers,
+	providers: {
+		...providers,
+		deployment: "cloudflare",
+		dns: "cloudflare",
+	},
 	agent: "claude",
 	skills: ["git-safety", "pr-workflow", "commit-standards", "security-review", "holocron-skill-config", "turborepo"],
 } satisfies HolocronConfig);
