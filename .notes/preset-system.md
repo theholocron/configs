@@ -242,7 +242,7 @@ requiredChecks: [
 ],
 ```
 
-The Conclusion job pattern (see [ADR 001](/.notes/decisions/001-holocron-config-preset-system.md)) means that when a workflow gains or renames a job, no `requiredChecks` array needs updating — only the workflow file itself changes.
+The Conclusion job pattern (see [ADR 001](./decisions/001-holocron-config-preset-system.md)) means that when a workflow gains or renames a job, no `requiredChecks` array needs updating — only the workflow file itself changes.
 
 ---
 
