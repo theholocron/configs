@@ -2,8 +2,11 @@ import type { HolocronConfig, RepoConfig } from "@theholocron/cli";
 
 export interface HolocronPreset {
 	providers: HolocronConfig["providers"];
-	repo: Omit<RepoConfig, "name" | "requiredChecks">;
+	repo: Omit<RepoConfig, "name"> & { requiredChecks?: string[] };
 	workflows: NonNullable<HolocronConfig["workflows"]>;
+	org?: string;
+	domain?: string;
+	docs?: HolocronConfig["docs"];
 }
 
 /**
