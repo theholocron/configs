@@ -55,7 +55,10 @@ export default defineConfig({
 		{ name: "test", with: { "run-unit": true } },
 		{ name: "release", with: { "run-build": true } },
 		"sync",
-		{ name: "deploy", with: { docs: true, preview: { project: "theholocron-preview", domain: "preview.theholocron.dev" } } },
+		{
+			name: "deploy",
+			with: { docs: true, preview: { project: "theholocron-preview", domain: "preview.theholocron.dev" } },
+		},
 	],
 	providers,
 	agent: "claude",
