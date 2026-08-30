@@ -74,7 +74,7 @@ Extends `node()` for repos that publish a documentation site and deploy previews
 | `org`                  | `"theholocron"`                                                                                                                          |
 | `domain`               | `"theholocron.dev"`                                                                                                                      |
 | `docs`                 | `{ build: "workflow", https: true }`                                                                                                     |
-| `providers.deployment` | `"cloudflare"`                                                                                                                           |
+| `providers.deployment` | `["cloudflare", { accountId: "9c558af98664d13fc89b7e0a0d93d5a8" }]` — org account ID baked in so local tooling (`holocron cleanup-preview`) works without a separate env var |
 | `providers.dns`        | `"cloudflare"`                                                                                                                           |
 | `workflows`            | `{ name: "deploy", with: { docs: true, preview: true } }`                                                                                |
 | `requiredChecks`       | `"Lint / Conclusion"`, `"Test / Conclusion"`, `"Typecheck / Conclusion"`, `"audit / Conclusion"`, `"codecov/patch"`, `"codecov/project"` |
