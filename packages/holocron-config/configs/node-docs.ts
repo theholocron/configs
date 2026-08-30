@@ -11,12 +11,21 @@ const REQUIRED_CHECKS = [
 	"codecov/project",
 ];
 
+const REQUIRED_CHECKS_SITE = [
+	"Lint / Conclusion",
+	"Test / Conclusion",
+	"codecov/patch",
+	"codecov/project",
+];
+
 export interface NodeDocsPreset extends HolocronPreset {
 	org: string;
 	domain: string;
 	docs: NonNullable<HolocronConfig["docs"]>;
 	repo: HolocronPreset["repo"] & { requiredChecks: string[] };
 }
+
+export type NodeDocsSitePreset = NodeDocsPreset;
 
 /**
  * Extends `node()` for repos that publish a documentation site and deploy
@@ -58,5 +67,55 @@ export function nodeDocs(): NodeDocsPreset {
 			requiredChecks: REQUIRED_CHECKS,
 		},
 		workflows: [...base.workflows, { name: "deploy", with: { docs: true, preview: true } }],
+	};
+}
+
+/**
+ * Variant of `nodeDocs()` for repos that are documentation-only sites with no
+ * TypeScript source to check. Identical to `nodeDocs()` except typecheck is
+ * not included — neither the workflow nor the required CI check.
+ *
+ * Use this for repos like `skills` or `themes` where the site content is
+ * the primary artifact and there is no TS library to compile.
+ *
+ * @example
+ * const { repo, workflows, providers, org, domain, docs } = nodeDocsSite();
+ * export default defineConfig({
+ *   description: "...",
+ *   org,
+ *   domain,
+ *   docs,
+ *   repo: { ...repo, name: "theholocron/my-site" },
+ *   workflows: [...workflows, { name: "release", with: { "run-build": false } }, "sync"],
+ *   providers: { ...providers, secrets: "github" },
+ * });
+ */
+export function nodeDocsSite(): NodeDocsSitePreset {
+	const base = node();
+	return {
+		...base,
+		org: "theholocron",
+		domain: "theholocron.dev",
+		docs: { build: "workflow", https: true },
+		providers: {
+			...base.providers,
+			deployment: ["cloudflare", { accountId: "9c558af98664d13fc89b7e0a0d93d5a8" }],
+			dns: "cloudflare",
+		},
+		repo: {
+			...base.repo,
+			requiredChecks: REQUIRED_CHECKS_SITE,
+		},
+		workflows: [
+			"lint",
+			"test",
+			"codeql",
+			"review",
+			"stale",
+			"greetings",
+			"dependencies",
+			"bookkeeping",
+			{ name: "deploy", with: { docs: true, preview: true } },
+		],
 	};
 }
