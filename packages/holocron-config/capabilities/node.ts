@@ -32,15 +32,6 @@ export function node(): Capability {
 			},
 		},
 		requiredChecks: ["Lint / Conclusion", "Test / Conclusion"],
-		workflows: [
-			"lint",
-			"test",
-			"codeql",
-			"review",
-			"stale",
-			"greetings",
-			"dependencies",
-			"bookkeeping",
-		],
+		workflows: ["lint", "test", "codeql", "review", "stale", "greetings", "dependencies", "bookkeeping"],
 	};
 }
