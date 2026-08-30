@@ -77,9 +77,9 @@ describe("nodeDocs()", () => {
 	});
 
 	describe("providers", () => {
-		it("adds cloudflare deployment and dns", () => {
+		it("adds cloudflare deployment with accountId and dns", () => {
 			const { providers } = nodeDocs();
-			expect(providers.deployment).toBe("cloudflare");
+			expect(providers.deployment).toEqual(["cloudflare", { accountId: "9c558af98664d13fc89b7e0a0d93d5a8" }]);
 			expect(providers.dns).toBe("cloudflare");
 		});
 
