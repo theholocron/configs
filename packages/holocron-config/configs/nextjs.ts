@@ -14,28 +14,39 @@ const REQUIRED_CHECKS = [
 	"lhci/url/",
 ];
 
+export interface NextjsOptions {
+	/** Extra `with:` inputs merged into the `test` workflow entry (e.g. wait-on-url, run-chromatic). */
+	test?: Record<string, unknown>;
+}
+
 /**
  * Preset for single-package Next.js application repos. Includes Vercel
  * deployment, Lighthouse audit, Storybook + interaction + user-flow tests,
- * and the Conclusion required checks. Per-repo still provides: chromatic
- * project config, wait-on-url, storybook deploy config, sync workflow.
+ * and the Conclusion required checks.
+ *
+ * Pass `test` overrides to merge repo-specific options (e.g. `wait-on-url`,
+ * `run-chromatic`) into the single test workflow entry so the sync tool sees
+ * one complete entry rather than two conflicting ones.
  *
  * @example
- * const { repo, workflows, providers, org, domain } = nextjs();
+ * const { repo, workflows, providers, org, domain } = nextjs({
+ *   test: { "wait-on-url": "http://localhost:3000", "run-chromatic": true },
+ * });
  * export default defineConfig({
  *   org,
  *   domain,
  *   repo: { ...repo, name: "theholocron/my-app", topics: ["nextjs"] },
  *   workflows: [
  *     ...workflows,
- *     { name: "test", with: { "run-chromatic": true, "wait-on-url": "http://localhost:3000" } },
  *     "sync",
  *     { name: "deploy", with: { docs: true, storybook: [{ name: "" }] } },
  *   ],
  *   providers,
  * });
  */
-export function nextjs(): HolocronPreset & { org: string; domain: string } {
+export function nextjs(
+	{ test: testOverrides = {} }: NextjsOptions = {}
+): HolocronPreset & { org: string; domain: string } {
 	const base = node();
 	return {
 		...base,
@@ -68,6 +79,7 @@ export function nextjs(): HolocronPreset & { org: string; domain: string } {
 					"run-storybook": true,
 					"run-interaction": true,
 					"run-user-flow": true,
+					...testOverrides,
 				},
 			},
 		],
