@@ -62,33 +62,24 @@ export default defineConfig({
     ...repo,
     name: "theholocron/my-lib",
     topics: ["typescript"],
-    requiredChecks: [
-      ...repo.requiredChecks,
-      "codecov/patch/my-package",
-      "codecov/project/my-package",
-    ],
+    requiredChecks: [...repo.requiredChecks, "codecov/patch/my-package", "codecov/project/my-package"],
   },
-  workflows: [
-    ...workflows,
-    "audit",
-    { name: "release", with: { "run-build": true } },
-    "sync",
-  ],
+  workflows: [...workflows, "audit", { name: "release", with: { "run-build": true } }, "sync"],
   providers: { ...providers, secrets: "github" },
 });
 ```
 
 Adds on top of `node()`:
 
-| Fragment              | Contents                                                                                              |
-| --------------------- | ----------------------------------------------------------------------------------------------------- |
-| `org`                 | `"theholocron"`                                                                                       |
-| `domain`              | `"theholocron.dev"`                                                                                   |
-| `docs`                | `{ build: "workflow", https: true }`                                                                  |
-| `providers.deployment`| `["cloudflare", { accountId: "9c558af98664d13fc89b7e0a0d93d5a8" }]`                                  |
-| `providers.dns`       | `"cloudflare"`                                                                                        |
-| `workflows`           | adds `{ name: "deploy", with: { docs: true, preview: true } }`                                        |
-| `repo.requiredChecks` | `"Lint / Conclusion"`, `"Test / Conclusion"`, `"Typecheck / Conclusion"`, `"audit / Conclusion"`, `"codecov/patch"`, `"codecov/project"` |
+| Fragment               | Contents                                                                                                                                 |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `org`                  | `"theholocron"`                                                                                                                          |
+| `domain`               | `"theholocron.dev"`                                                                                                                      |
+| `docs`                 | `{ build: "workflow", https: true }`                                                                                                     |
+| `providers.deployment` | `["cloudflare", { accountId: "9c558af98664d13fc89b7e0a0d93d5a8" }]`                                                                      |
+| `providers.dns`        | `"cloudflare"`                                                                                                                           |
+| `workflows`            | adds `{ name: "deploy", with: { docs: true, preview: true } }`                                                                           |
+| `repo.requiredChecks`  | `"Lint / Conclusion"`, `"Test / Conclusion"`, `"Typecheck / Conclusion"`, `"audit / Conclusion"`, `"codecov/patch"`, `"codecov/project"` |
 
 Per-repo extends `requiredChecks` with its own `codecov/patch/<package>` entries.
 
