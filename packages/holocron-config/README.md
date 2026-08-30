@@ -40,3 +40,49 @@ export default defineConfig({
 | `providers` | `source: "github"`, `ci: "github"`, `issues: ["github", { labels: … }]`                              |
 
 Everything else — `name`, `repo.name`, `repo.topics`, and any per-repo workflow overrides (e.g. `release`) — stays in the consuming repo's config.
+
+## Presets
+
+### `nodeDocs()`
+
+Extends `node()` for repos that publish a documentation site and deploy Cloudflare Pages previews on PRs.
+
+```ts
+import { defineConfig } from "@theholocron/cli";
+import { nodeDocs } from "@theholocron/holocron-config";
+
+const { repo, workflows, providers, org, domain, docs } = nodeDocs();
+export default defineConfig({
+  description: "...",
+  homepage: "https://docs.theholocron.dev/my-lib/",
+  org,
+  domain,
+  docs,
+  repo: {
+    ...repo,
+    name: "theholocron/my-lib",
+    topics: ["typescript"],
+    requiredChecks: [...repo.requiredChecks, "codecov/patch/my-package", "codecov/project/my-package"],
+  },
+  workflows: [...workflows, "audit", { name: "release", with: { "run-build": true } }, "sync"],
+  providers: { ...providers, secrets: "github" },
+});
+```
+
+Adds on top of `node()`:
+
+| Fragment               | Contents                                                                                                                                 |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `org`                  | `"theholocron"`                                                                                                                          |
+| `domain`               | `"theholocron.dev"`                                                                                                                      |
+| `docs`                 | `{ build: "workflow", https: true }`                                                                                                     |
+| `providers.deployment` | `["cloudflare", { accountId: "9c558af98664d13fc89b7e0a0d93d5a8" }]`                                                                      |
+| `providers.dns`        | `"cloudflare"`                                                                                                                           |
+| `workflows`            | adds `{ name: "deploy", with: { docs: true, preview: true } }`                                                                           |
+| `repo.requiredChecks`  | `"Lint / Conclusion"`, `"Test / Conclusion"`, `"Typecheck / Conclusion"`, `"audit / Conclusion"`, `"codecov/patch"`, `"codecov/project"` |
+
+Per-repo extends `requiredChecks` with its own `codecov/patch/<package>` entries.
+
+### `nextjs()` · `react()` · `monorepo(base)`
+
+See [`.notes/preset-system.md`](../../.notes/preset-system.md) for the full preset hierarchy and usage examples for browser app repos.
