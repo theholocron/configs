@@ -177,6 +177,23 @@ describe("nextjs()", () => {
 				with: { "run-storybook": true, "run-interaction": true, "run-user-flow": true, "run-unit": false },
 			});
 		});
+
+		it("merges test overrides into the single test entry", () => {
+			const { workflows } = nextjs({ test: { "wait-on-url": "http://localhost:3000", "run-chromatic": true } });
+			const test = workflows.find((w) => typeof w !== "string" && w.name === "test");
+			expect(test).toMatchObject({
+				name: "test",
+				with: {
+					"run-unit": false,
+					"run-storybook": true,
+					"run-interaction": true,
+					"run-user-flow": true,
+					"wait-on-url": "http://localhost:3000",
+					"run-chromatic": true,
+				},
+			});
+			expect(workflows.filter((w) => typeof w !== "string" && w.name === "test")).toHaveLength(1);
+		});
 	});
 });
 
