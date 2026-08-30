@@ -50,7 +50,7 @@ export function nodeDocs(): NodeDocsPreset {
 		docs: { build: "workflow", https: true },
 		providers: {
 			...base.providers,
-			deployment: "cloudflare",
+			deployment: ["cloudflare", { accountId: "9c558af98664d13fc89b7e0a0d93d5a8" }],
 			dns: "cloudflare",
 		},
 		repo: {
