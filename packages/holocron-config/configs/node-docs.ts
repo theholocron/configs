@@ -11,12 +11,7 @@ const REQUIRED_CHECKS = [
 	"codecov/project",
 ];
 
-const REQUIRED_CHECKS_SITE = [
-	"Lint / Conclusion",
-	"Test / Conclusion",
-	"codecov/patch",
-	"codecov/project",
-];
+const REQUIRED_CHECKS_SITE = ["Lint / Conclusion", "Test / Conclusion", "codecov/patch", "codecov/project"];
 
 export interface NodeDocsPreset extends HolocronPreset {
 	org: string;
