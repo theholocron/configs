@@ -86,7 +86,7 @@ interface ComposedPreset {
 ## `compose()` API
 
 ```ts
-function compose(...capabilities: (Capability | Capability[])[]): ComposedPreset
+function compose(...capabilities: (Capability | Capability[])[]): ComposedPreset;
 ```
 
 Accepts individual capabilities or nested arrays (for bundle presets — see
@@ -183,7 +183,7 @@ export function nextjs(): Capability[] {
 }
 
 // compose() flattens and deduplicates:
-compose(node(), typecheck(), nextjs())
+compose(node(), typecheck(), nextjs());
 //  → node, typecheck (x2 → deduped to one), react, storybook, cypress, docs, nextjs
 ```
 
@@ -195,29 +195,29 @@ an error. This makes compositions self-documenting without being fragile.
 
 ## Capabilities catalogue
 
-| Capability | ID | Requires | Contributes |
-|---|---|---|---|
-| `node()` | `node` | — | lint, test, codeql, review, stale, greetings, dependencies, bookkeeping |
-| `typecheck()` | `typecheck` | `node` | typecheck workflow + "Typecheck / Conclusion" required check |
-| `docs()` | `docs` | `node` | deploy+preview+cleanup workflows; Cloudflare + DNS providers; org/domain/docs fields |
-| `react()` | `react` | `typecheck` | react-specific ESLint/TS config in review; stubs storybook if absent |
-| `storybook()` | `storybook` | `node` | storybook job in test workflow; chromatic job in deploy |
-| `cypress()` | `cypress` | `node` | cypress job in test workflow |
-| `nextjs()` *(bundle)* | — | — | returns `[typecheck(), react(), storybook(), cypress(), docs(), nextjsCapability()]` |
-| `monorepo()` | `monorepo` | `node` | adjusts `on.push.paths` across all workflows to workspace layout; adds turbo |
-| `audit()` | `audit` | `node` | BundleWatch + Knip; "audit / Conclusion" required check |
+| Capability            | ID          | Requires    | Contributes                                                                          |
+| --------------------- | ----------- | ----------- | ------------------------------------------------------------------------------------ |
+| `node()`              | `node`      | —           | lint, test, codeql, review, stale, greetings, dependencies, bookkeeping              |
+| `typecheck()`         | `typecheck` | `node`      | typecheck workflow + "Typecheck / Conclusion" required check                         |
+| `docs()`              | `docs`      | `node`      | deploy+preview+cleanup workflows; Cloudflare + DNS providers; org/domain/docs fields |
+| `react()`             | `react`     | `typecheck` | react-specific ESLint/TS config in review; stubs storybook if absent                 |
+| `storybook()`         | `storybook` | `node`      | storybook job in test workflow; chromatic job in deploy                              |
+| `cypress()`           | `cypress`   | `node`      | cypress job in test workflow                                                         |
+| `nextjs()` _(bundle)_ | —           | —           | returns `[typecheck(), react(), storybook(), cypress(), docs(), nextjsCapability()]` |
+| `monorepo()`          | `monorepo`  | `node`      | adjusts `on.push.paths` across all workflows to workspace layout; adds turbo         |
+| `audit()`             | `audit`     | `node`      | BundleWatch + Knip; "audit / Conclusion" required check                              |
 
 ---
 
 ## Where each piece lives
 
-| Piece | Package |
-|---|---|
-| `Capability` type, `ComposedPreset` type, `compose()` function | `@theholocron/cli` — `src/config.ts` |
-| `ConfigError` for missing deps | `@theholocron/cli` — existing error class |
-| `node()`, `typecheck()`, `docs()`, `react()`, etc. | `@theholocron/holocron-config` — one file per capability |
-| `nextjs()` bundle | `@theholocron/holocron-config` — `configs/nextjs.ts` |
-| `monorepo()` | `@theholocron/holocron-config` — `configs/monorepo.ts` |
+| Piece                                                          | Package                                                  |
+| -------------------------------------------------------------- | -------------------------------------------------------- |
+| `Capability` type, `ComposedPreset` type, `compose()` function | `@theholocron/cli` — `src/config.ts`                     |
+| `ConfigError` for missing deps                                 | `@theholocron/cli` — existing error class                |
+| `node()`, `typecheck()`, `docs()`, `react()`, etc.             | `@theholocron/holocron-config` — one file per capability |
+| `nextjs()` bundle                                              | `@theholocron/holocron-config` — `configs/nextjs.ts`     |
+| `monorepo()`                                                   | `@theholocron/holocron-config` — `configs/monorepo.ts`   |
 
 The CLI owns the merge semantics; the config package owns the org-specific
 values (account IDs, domains, check names).
