@@ -44,9 +44,10 @@ export interface NextjsOptions {
  *   providers,
  * });
  */
-export function nextjs(
-	{ test: testOverrides = {} }: NextjsOptions = {}
-): HolocronPreset & { org: string; domain: string } {
+export function nextjs({ test: testOverrides = {} }: NextjsOptions = {}): HolocronPreset & {
+	org: string;
+	domain: string;
+} {
 	const base = node();
 	return {
 		...base,
