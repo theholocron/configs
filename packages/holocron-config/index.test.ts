@@ -131,10 +131,10 @@ describe("nodeDocs()", () => {
 			expect(deploy).toMatchObject({ name: "deploy", with: { docs: true, preview: true } });
 		});
 
-		it("includes audit", () => {
+		it("does not include audit workflow (stays repo-specific)", () => {
 			const { workflows } = nodeDocs();
 			const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
-			expect(names).toContain("audit");
+			expect(names).not.toContain("audit");
 		});
 
 		it("does not include release (stays repo-specific)", () => {
