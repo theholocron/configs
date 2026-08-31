@@ -1,7 +1,6 @@
 import { compose } from "@theholocron/cli";
 import type { ComposedPreset } from "@theholocron/cli";
 
-import { audit } from "../capabilities/audit.js";
 import { docs } from "../capabilities/docs.js";
 import { node } from "../capabilities/node.js";
 import { typecheck } from "../capabilities/typecheck.js";
@@ -11,11 +10,16 @@ export type NodeDocsSitePreset = ComposedPreset;
 
 /**
  * Preset for theholocron repos that are TypeScript libraries AND publish a
- * documentation site (e.g. configs, utils, holocron). Includes typecheck and
- * audit in addition to the docs deploy.
+ * documentation site (e.g. configs, utils, holocron, clients).
  *
- * For repos that are docs-only sites without TypeScript source to check,
- * use nodeDocsSite() instead.
+ * Includes the "audit / Conclusion" required check so branch protection works
+ * for repos that add the audit workflow explicitly. The workflow itself is
+ * intentionally left repo-specific — add it with your own options:
+ *   workflows: [...preset.workflows, "audit", ...]
+ *   // or with overrides:
+ *   workflows: [...preset.workflows, { name: "audit", with: { "run-knip": true } }, ...]
+ *
+ * For docs-only sites without TypeScript source, use nodeDocsSite() instead.
  *
  * @example
  * const preset = nodeDocs();
@@ -29,13 +33,18 @@ export type NodeDocsSitePreset = ComposedPreset;
  * });
  */
 export function nodeDocs(): NodeDocsPreset {
-	return compose(node(), typecheck(), docs(), audit());
+	return compose(
+		node(),
+		typecheck(),
+		docs(),
+		// Audit required check only — the workflow is added per-repo with repo-specific options.
+		{ id: "audit-check", requires: ["node"], requiredChecks: ["audit / Conclusion"] },
+	);
 }
 
 /**
  * Preset for theholocron repos that are documentation-only sites with no
- * TypeScript source to check (e.g. skills, themes). Identical to nodeDocs()
- * except typecheck and audit are not included.
+ * TypeScript source to check (e.g. skills, themes). No typecheck, no audit.
  *
  * @example
  * const preset = nodeDocsSite();
