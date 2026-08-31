@@ -11,6 +11,7 @@ export { docs } from "./capabilities/docs.js";
 export { audit } from "./capabilities/audit.js";
 export type { AuditOptions } from "./capabilities/audit.js";
 export { react as reactCapability } from "./capabilities/react.js";
+export type { ReactOptions } from "./capabilities/react.js";
 export { nextjs as nextjsBundle } from "./capabilities/nextjs.js";
 export type { NextjsOptions } from "./capabilities/nextjs.js";
 export { monorepo as monorepoCapability } from "./capabilities/monorepo.js";
