@@ -85,7 +85,7 @@ audit({
 
 Contributes: `audit` workflow (with any options), `audit / Conclusion` required check.
 
-### `react()`
+### `react(options?)`
 
 Adds React/Storybook UI testing and browser runtime configuration. Requires `node`, `typecheck`.
 
@@ -95,6 +95,12 @@ Contributes:
 - **Repo** — `runtime_environment: browser`, `uses_external_packages: false`
 - **Workflows** — `audit` (Knip + Lighthouse), `test` (Storybook + interaction, no unit)
 - **Required checks** — `Storybook Publish`, `UI Review`, `UI Tests`, `lhci/url/`
+
+Pass a `test` object to merge extra inputs into the single `test` workflow entry — prevents a second entry in `workflows` from silently overwriting the base options:
+
+```ts
+react({ test: { "run-user-flow": true, "run-chromatic": { projects: [...] } } })
+```
 
 ### `nextjsBundle(options?)`
 
@@ -132,21 +138,21 @@ These are backward-compatible wrappers around `compose()` for repos that don't n
 
 ### `nodeDocs()`
 
-`compose(node(), typecheck(), docs())` + `"audit / Conclusion"` required check. For TypeScript libraries that publish a documentation site. Used by `configs`, `utils`, `clients`, and `holocron`.
+`compose(node(), typecheck(), docs())` + `"audit / Conclusion"` required check. For TypeScript libraries that publish a documentation site. Used by `configs`, `utils`, `clients`, `holocron`, and `themes`.
 
 The audit **workflow** is intentionally left repo-specific — add it with your own options in `workflows: [...preset.workflows, "audit", ...]`. The required check is included so branch protection works once you add the workflow.
 
 ### `nodeDocsSite()`
 
-`compose(node(), docs())` — for documentation-only sites without TypeScript source to check. Use for repos like `skills` and `themes`.
+`compose(node(), docs())` — for documentation-only sites without TypeScript source to check (e.g. `skills`).
 
 ### `nextjs(options?)`
 
 `compose(node(), typecheck(), ...nextjsBundle(options))` — full Next.js preset.
 
-### `reactPreset()`
+### `react(options?)`
 
-`compose(node(), typecheck(), react())` — full React/Vite preset.
+`compose(node(), typecheck(), react(options))` — full React/Vite preset. Accepts the same `options` as the `react()` capability.
 
 ### `monorepo(base)`
 
