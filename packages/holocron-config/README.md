@@ -82,7 +82,7 @@ Pre-built `compose()` calls for the most common combinations. Import and spread 
 
 ### `nodeDocs()`
 
-= `compose(node(), typecheck(), docs(), audit())`. For TypeScript library repos that publish a docs site.
+= `compose(node(), typecheck(), docs())` + `"audit / Conclusion"` required check. For TypeScript library repos that publish a docs site. The audit workflow is repo-specific — add it explicitly: `workflows: [...preset.workflows, "audit", ...]`.
 
 ```ts
 import { defineConfig } from "@theholocron/cli";
