@@ -132,7 +132,9 @@ These are backward-compatible wrappers around `compose()` for repos that don't n
 
 ### `nodeDocs()`
 
-`compose(node(), typecheck(), docs(), audit())` — for TypeScript libraries that publish a documentation site. Used by `configs`, `utils`, `clients`, and `holocron`.
+`compose(node(), typecheck(), docs())` + `"audit / Conclusion"` required check. For TypeScript libraries that publish a documentation site. Used by `configs`, `utils`, `clients`, and `holocron`.
+
+The audit **workflow** is intentionally left repo-specific — add it with your own options in `workflows: [...preset.workflows, "audit", ...]`. The required check is included so branch protection works once you add the workflow.
 
 ### `nodeDocsSite()`
 
