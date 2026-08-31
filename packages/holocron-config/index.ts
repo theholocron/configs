@@ -1,3 +1,7 @@
+// ── compose() — re-exported from @theholocron/cli for convenience ───────────
+export { compose } from "@theholocron/cli";
+export type { Capability, ComposedPreset } from "@theholocron/cli";
+
 // ── Capability factories ────────────────────────────────────────────────────
 // Use these with compose() from @theholocron/cli to build a preset:
 //   compose(node(), typecheck(), docs())

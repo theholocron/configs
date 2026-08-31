@@ -22,6 +22,8 @@ export function nextjs({ test: testOverrides = {} }: NextjsOptions = {}): Capabi
 	const nextjsCapability: Capability = {
 		id: "nextjs",
 		requires: ["react"],
+		org: "theholocron",
+		domain: "theholocron.dev",
 		providers: { deployment: "vercel" },
 		workflows: [
 			{
