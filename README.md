@@ -6,28 +6,44 @@ Shared configuration files.
 
 <!-- /holocron:description -->
 
+<!-- holocron:installation -->
+
+## Installation
+
+```bash
+pnpm install @theholocron/configs
+```
+
+## Usage
+
+```typescript
+import { } from "@theholocron/configs";
+```
+
+<!-- /holocron:installation -->
+
 ## Packages
 
 <!-- holocron:packages -->
 
-| Package                                                                      | Description                                        |
-| ---------------------------------------------------------------------------- | -------------------------------------------------- |
-| [`@theholocron/astro-config`](./packages/astro-config)                       | Astro + Starlight docs site configuration          |
-| [`@theholocron/browserslist-config`](./packages/browserslist-config)         | Browser and device targets                         |
-| [`@theholocron/commitlint-config`](./packages/commitlint-config)             | Conventional commit enforcement                    |
-| [`@theholocron/devmoji-config`](./packages/devmoji-config)                   | Devmoji emoji mappings for conventional commits    |
-| [`@theholocron/eslint-config`](./packages/eslint-config)                     | ESLint rules for JS/TS/React/Next/Node             |
-| [`@theholocron/holocron-config`](./packages/holocron-config)                 | Shareable holocron configuration presets           |
-| [`@theholocron/lighthouse-config`](./packages/lighthouse-config)             | Lighthouse CI performance and accessibility audits |
-| [`@theholocron/lint-staged-config`](./packages/lint-staged-config)           | Pre-commit lint-staged hooks                       |
-| [`@theholocron/prettier-config`](./packages/prettier-config)                 | Prettier formatting rules                          |
-| [`@theholocron/semantic-release-config`](./packages/semantic-release-config) | Semantic-release config for automated versioning   |
-| [`@theholocron/storybook-config`](./packages/storybook-config)               | Storybook addon and theme setup                    |
-| [`@theholocron/stylelint-config`](./packages/stylelint-config)               | StyleLint rules for CSS/SCSS                       |
-| [`@theholocron/tsconfig`](./packages/tsconfig)                               | TypeScript base configs (NextJS, node-lts)         |
-| [`@theholocron/tsdown-config`](./packages/tsdown-config)                     | tsdown presets for ESM library builds              |
-| [`@theholocron/vite-config`](./packages/vite-config)                         | Vite presets for libraries, React apps, Node tools |
-| [`@theholocron/vitest-config`](./packages/vitest-config)                     | Vitest presets and coverage bundles                |
+| Package | Docs | npm |
+|---|---|---|
+| `@theholocron/astro-config` | [Docs](https://docs.theholocron.dev/configs/astro) | [npm](https://www.npmjs.com/package/@theholocron/astro-config) |
+| `@theholocron/browserslist-config` | [Docs](https://docs.theholocron.dev/configs/browserslist) | [npm](https://www.npmjs.com/package/@theholocron/browserslist-config) |
+| `@theholocron/commitlint-config` | [Docs](https://docs.theholocron.dev/configs/commitlint) | [npm](https://www.npmjs.com/package/@theholocron/commitlint-config) |
+| `@theholocron/devmoji-config` | [Docs](https://docs.theholocron.dev/configs/devmoji) | [npm](https://www.npmjs.com/package/@theholocron/devmoji-config) |
+| `@theholocron/eslint-config` | [Docs](https://docs.theholocron.dev/configs/eslint) | [npm](https://www.npmjs.com/package/@theholocron/eslint-config) |
+| `@theholocron/holocron-config` | [Docs](https://docs.theholocron.dev/configs/holocron) | [npm](https://www.npmjs.com/package/@theholocron/holocron-config) |
+| `@theholocron/lighthouse-config` | [Docs](https://docs.theholocron.dev/configs/lighthouse) | [npm](https://www.npmjs.com/package/@theholocron/lighthouse-config) |
+| `@theholocron/lint-staged-config` | [Docs](https://docs.theholocron.dev/configs/lint-staged) | [npm](https://www.npmjs.com/package/@theholocron/lint-staged-config) |
+| `@theholocron/prettier-config` | [Docs](https://docs.theholocron.dev/configs/prettier) | [npm](https://www.npmjs.com/package/@theholocron/prettier-config) |
+| `@theholocron/semantic-release-config` | [Docs](https://docs.theholocron.dev/configs/semantic-release) | [npm](https://www.npmjs.com/package/@theholocron/semantic-release-config) |
+| `@theholocron/storybook-config` | [Docs](https://docs.theholocron.dev/configs/storybook) | [npm](https://www.npmjs.com/package/@theholocron/storybook-config) |
+| `@theholocron/stylelint-config` | [Docs](https://docs.theholocron.dev/configs/stylelint) | [npm](https://www.npmjs.com/package/@theholocron/stylelint-config) |
+| `@theholocron/tsconfig` | [Docs](https://docs.theholocron.dev/configs/tsconfig) | [npm](https://www.npmjs.com/package/@theholocron/tsconfig) |
+| `@theholocron/tsdown-config` | [Docs](https://docs.theholocron.dev/configs/tsdown) | [npm](https://www.npmjs.com/package/@theholocron/tsdown-config) |
+| `@theholocron/vite-config` | [Docs](https://docs.theholocron.dev/configs/vite) | [npm](https://www.npmjs.com/package/@theholocron/vite-config) |
+| `@theholocron/vitest-config` | [Docs](https://docs.theholocron.dev/configs/vitest) | [npm](https://www.npmjs.com/package/@theholocron/vitest-config) |
 
 <!-- /holocron:packages -->
 
@@ -35,15 +51,17 @@ Shared configuration files.
 
 <!-- holocron:development -->
 
-This repo uses [pnpm workspaces](https://pnpm.io/workspaces) and [Turbo](https://turbo.build).
-
-```bash
-pnpm install       # install all deps
-pnpm build         # build all packages
-pnpm test          # test all packages
-pnpm typecheck     # typecheck all packages
-pnpm lint          # lint all packages
-```
+| Script | Command |
+|---|---|
+| `pnpm build` | `turbo run build` |
+| `pnpm docs:dev` | `astro dev` |
+| `pnpm docs:build` | `astro build` |
+| `pnpm docs:preview` | `astro preview` |
+| `pnpm lint` | `turbo run lint` |
+| `pnpm test` | `turbo run test` |
+| `pnpm test:coverage` | `turbo run test:coverage` |
+| `pnpm typecheck` | `turbo run typecheck` |
+| `pnpm audit` | `knip` |
 
 <!-- /holocron:development -->
 
@@ -51,6 +69,7 @@ pnpm lint          # lint all packages
 
 <!-- holocron:releases -->
 
-Releases are automated via [semantic-release](https://semantic-release.gitbook.io/) on push to `main`. All packages are versioned and published in lockstep. See [CHANGELOG.md](CHANGELOG.md) for the release history.
+Automated via [semantic-release](https://semantic-release.gitbook.io/semantic-release/).
+See the [releases page](https://docs.theholocron.dev/configs//releases) and [CHANGELOG.md](./CHANGELOG.md).
 
 <!-- /holocron:releases -->
