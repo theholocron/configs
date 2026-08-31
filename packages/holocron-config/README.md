@@ -1,6 +1,12 @@
 # Holocron Config
 
-Shareable [holocron](https://github.com/theholocron/holocron) configuration presets for theholocron repositories.
+<!-- holocron:description -->
+
+Composable capability presets for [Holocron CLI](https://github.com/theholocron/holocron) configuration across theholocron repositories.
+
+<!-- /holocron:description -->
+
+<!-- holocron:installation -->
 
 ## Installation
 
@@ -10,79 +16,128 @@ pnpm add -D @theholocron/holocron-config @theholocron/cli
 
 ## Usage
 
-In your repo's `holocron.config.ts`, import the preset and spread each fragment into the unique parts for that repo:
+Pick the capabilities your repo needs and pass them to `compose()`. The result spreads directly into `defineConfig()`.
 
 ```ts
-import { defineConfig } from "@theholocron/cli";
-import type { HolocronConfig } from "@theholocron/cli";
-import { node } from "@theholocron/holocron-config";
+import { defineConfig } from "@theholocton/cli";
+import { compose, node, typecheck, docs, audit } from "@theholocron/holocron-config";
 
-const { repo, workflows, providers } = node();
+const preset = compose(node(), typecheck(), docs(), audit());
+
 export default defineConfig({
-  name: "my-repo",
-  description: "What this repo does.",
+  ...preset,
+  description: "My TypeScript library.",
+  homepage: "https://docs.theholocron.dev/my-lib/",
   repo: {
-    name: "theholocron/my-repo",
-    topics: ["nodejs", "typescript"],
-    ...repo,
+    ...preset.repo,
+    name: "theholocron/my-lib",
+    topics: ["typescript"],
   },
-  workflows: [...workflows, { name: "release", with: { "run-build": true } }],
-  providers,
-} satisfies HolocronConfig);
+  workflows: [...preset.workflows, "sync"],
+  providers: { ...preset.providers, secrets: "github" },
+});
 ```
 
-`node()` returns three fragments:
+<!-- /holocron:installation -->
 
-| Fragment    | Contents                                                                                             |
-| ----------- | ---------------------------------------------------------------------------------------------------- |
-| `repo`      | `protection: "strict"`, `properties: { lifecycle: "active", … }`                                     |
-| `workflows` | `lint`, `test`, `typecheck`, `codeql`, `review`, `stale`, `greetings`, `dependencies`, `bookkeeping` |
-| `providers` | `source: "github"`, `ci: "github"`, `issues: ["github", { labels: … }]`                              |
+## Capability factories
 
-Everything else — `name`, `repo.name`, `repo.topics`, and any per-repo workflow overrides (e.g. `release`) — stays in the consuming repo's config.
+Each factory returns a `Capability` fragment. Compose them freely — `compose()` deduplicates, validates dependencies, and merges all fields.
 
-## Presets
+| Capability             | Requires            | Adds                                                                                                                                                                                                |
+| ---------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `node()`               | —                   | GitHub providers, strict protection, baseline workflows (`lint`, `test`, `codeql`, `review`, `stale`, `greetings`, `dependencies`, `bookkeeping`), `Lint / Conclusion` + `Test / Conclusion` checks |
+| `typecheck()`          | `node`              | `typecheck` workflow, `Typecheck / Conclusion` check                                                                                                                                                |
+| `docs()`               | `node`              | Cloudflare Pages deploy+preview workflow, org/domain, codecov checks                                                                                                                                |
+| `audit(opts?)`         | `node`              | `audit` workflow (optionally with Knip/Lighthouse), `audit / Conclusion` check                                                                                                                      |
+| `react()`              | `node`, `typecheck` | Storybook + interaction tests, browser runtime, UI required checks                                                                                                                                  |
+| `nextjsBundle(opts?)`  | —                   | Bundle: `[react(), nextjsCapability]` — adds Vercel deployment + user-flow tests                                                                                                                    |
+| `monorepoCapability()` | `node`              | `uses_external_packages: true`                                                                                                                                                                      |
+
+### Composition recipes
+
+```ts
+// Node.js library — no docs
+compose(node(), typecheck());
+
+// Library with docs site
+compose(node(), typecheck(), docs(), audit());
+
+// Docs-only site — no TypeScript to check
+compose(node(), docs());
+
+// React/Vite app
+compose(node(), typecheck(), react());
+
+// Next.js app
+compose(node(), typecheck(), ...nextjsBundle());
+
+// Next.js monorepo
+compose(node(), typecheck(), ...nextjsBundle(), monorepoCapability());
+```
+
+## Preset shims
+
+Pre-built `compose()` calls for the most common combinations. Import and spread directly — no capability list needed.
 
 ### `nodeDocs()`
 
-Extends `node()` for repos that publish a documentation site and deploy Cloudflare Pages previews on PRs.
+= `compose(node(), typecheck(), docs(), audit())`. For TypeScript library repos that publish a docs site.
 
 ```ts
 import { defineConfig } from "@theholocron/cli";
 import { nodeDocs } from "@theholocron/holocron-config";
 
-const { repo, workflows, providers, org, domain, docs } = nodeDocs();
+const preset = nodeDocs();
 export default defineConfig({
+  ...preset,
   description: "...",
   homepage: "https://docs.theholocron.dev/my-lib/",
-  org,
-  domain,
-  docs,
   repo: {
-    ...repo,
+    ...preset.repo,
     name: "theholocron/my-lib",
     topics: ["typescript"],
-    requiredChecks: [...repo.requiredChecks, "codecov/patch/my-package", "codecov/project/my-package"],
   },
-  workflows: [...workflows, "audit", { name: "release", with: { "run-build": true } }, "sync"],
-  providers: { ...providers, secrets: "github" },
+  workflows: [...preset.workflows, "sync"],
+  providers: { ...preset.providers, secrets: "github" },
 });
 ```
 
-Adds on top of `node()`:
+### `nodeDocsSite()`
 
-| Fragment               | Contents                                                                                                                                 |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `org`                  | `"theholocron"`                                                                                                                          |
-| `domain`               | `"theholocron.dev"`                                                                                                                      |
-| `docs`                 | `{ build: "workflow", https: true }`                                                                                                     |
-| `providers.deployment` | `["cloudflare", { accountId: "9c558af98664d13fc89b7e0a0d93d5a8" }]`                                                                      |
-| `providers.dns`        | `"cloudflare"`                                                                                                                           |
-| `workflows`            | adds `{ name: "deploy", with: { docs: true, preview: true } }`                                                                           |
-| `repo.requiredChecks`  | `"Lint / Conclusion"`, `"Test / Conclusion"`, `"Typecheck / Conclusion"`, `"audit / Conclusion"`, `"codecov/patch"`, `"codecov/project"` |
+= `compose(node(), docs())`. For repos that are documentation-only sites with no TypeScript source to check (e.g. `skills`, `themes`).
 
-Per-repo extends `requiredChecks` with its own `codecov/patch/<package>` entries.
+```ts
+import { defineConfig } from "@theholocron/cli";
+import { nodeDocsSite } from "@theholocron/holocron-config";
 
-### `nextjs()` · `react()` · `monorepo(base)`
+const preset = nodeDocsSite();
+export default defineConfig({
+  ...preset,
+  description: "...",
+  repo: { ...preset.repo, name: "theholocron/my-site" },
+  workflows: [...preset.workflows, { name: "release", with: { "run-build": false } }, "sync"],
+  providers: { ...preset.providers, secrets: "github" },
+});
+```
 
-See [`.notes/preset-system.md`](../../.notes/preset-system.md) for the full preset hierarchy and usage examples for browser app repos.
+### `nextjs(options?)` · `reactPreset()` · `monorepo(base)`
+
+Full preset shims for browser app repos. See the [docs site](https://docs.theholocron.dev/configs/holocron-config/) for the full reference.
+
+## Development
+
+| Script           | Description                   |
+| ---------------- | ----------------------------- |
+| `pnpm build`     | Compile TypeScript to `dist/` |
+| `pnpm typecheck` | Type-check without emitting   |
+| `pnpm test`      | Run vitest suite              |
+| `pnpm lint`      | ESLint                        |
+
+## Releases
+
+Automated via semantic-release. See [CHANGELOG.md](./CHANGELOG.md).
+
+## Documentation
+
+Full capability reference, composition recipes, and merge semantics: [docs.theholocron.dev/configs/holocron-config](https://docs.theholocron.dev/configs/holocron-config/).

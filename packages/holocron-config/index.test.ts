@@ -1,64 +1,74 @@
 import { describe, expect, it } from "vitest";
-import { monorepo, nextjs, node, nodeDocs, react } from "./index.js";
+import {
+	audit,
+	compose,
+	docs,
+	monorepo,
+	monorepoCapability,
+	nextjs,
+	node,
+	nodeDocs,
+	nodeDocsSite,
+	reactPreset,
+	typecheck,
+} from "./index.js";
 
-describe("node()", () => {
-	describe("repo", () => {
-		it("sets strict protection", () => {
-			const { repo } = node();
-			expect(repo.protection).toBe("strict");
-		});
-
-		it("does not include requiredChecks", () => {
-			const { repo } = node();
-			expect(repo.requiredChecks).toBeUndefined();
-		});
+describe("node() capability", () => {
+	it("has id 'node'", () => {
+		expect(node().id).toBe("node");
 	});
 
-	describe("workflows", () => {
-		it("includes the baseline workflow set", () => {
-			const { workflows } = node();
-			const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
-			for (const expected of [
-				"lint",
-				"test",
-				"typecheck",
-				"codeql",
-				"review",
-				"stale",
-				"greetings",
-				"dependencies",
-				"bookkeeping",
-			]) {
-				expect(names).toContain(expected);
-			}
-		});
-
-		it("does not include release (stays repo-specific)", () => {
-			const { workflows } = node();
-			const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
-			expect(names).not.toContain("release");
-		});
+	it("contributes Lint and Test required checks", () => {
+		expect(node().requiredChecks).toContain("Lint / Conclusion");
+		expect(node().requiredChecks).toContain("Test / Conclusion");
 	});
 
-	describe("providers", () => {
-		it("uses github for source and ci", () => {
-			const { providers } = node();
-			expect(providers.source).toBe("github");
-			expect(providers.ci).toBe("github");
-		});
+	it("contributes the baseline workflow set without typecheck", () => {
+		const names = (node().workflows ?? []).map((w) => (typeof w === "string" ? w : w.name));
+		for (const expected of [
+			"lint",
+			"test",
+			"codeql",
+			"review",
+			"stale",
+			"greetings",
+			"dependencies",
+			"bookkeeping",
+		]) {
+			expect(names).toContain(expected);
+		}
+		expect(names).not.toContain("typecheck");
+	});
+});
 
-		it("configures github issues with status labels", () => {
-			const { providers } = node();
-			expect(providers.issues).toMatchObject([
-				"github",
-				{
-					labels: {
-						inProgress: "status:in-progress",
-						inReview: "status:in-review",
-					},
-				},
-			]);
-		});
+describe("compose(node())", () => {
+	it("produces a ComposedPreset with strict protection", () => {
+		const { repo } = compose(node());
+		expect(repo.protection).toBe("strict");
+	});
+
+	it("includes github source and ci providers", () => {
+		const { providers } = compose(node());
+		expect(providers.source).toBe("github");
+		expect(providers.ci).toBe("github");
+	});
+
+	it("does not include typecheck (add typecheck() separately)", () => {
+		const { workflows } = compose(node());
+		const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
+		expect(names).not.toContain("typecheck");
+	});
+
+	it("includes typecheck when typecheck() is composed in", () => {
+		const { workflows } = compose(node(), typecheck());
+		const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
+		expect(names).toContain("typecheck");
+	});
+
+	it("includes deploy when docs() is composed in", () => {
+		const { workflows } = compose(node(), docs());
+		const deploy = workflows.find((w) => typeof w !== "string" && w.name === "deploy");
+		expect(deploy).toMatchObject({ name: "deploy", with: { docs: true, preview: true } });
 	});
 });
 
@@ -71,8 +81,8 @@ describe("nodeDocs()", () => {
 		});
 
 		it("sets docs config", () => {
-			const { docs } = nodeDocs();
-			expect(docs).toEqual({ build: "workflow", https: true });
+			const { docs: docsConfig } = nodeDocs();
+			expect(docsConfig).toEqual({ build: "workflow", https: true });
 		});
 	});
 
@@ -91,7 +101,7 @@ describe("nodeDocs()", () => {
 	});
 
 	describe("repo", () => {
-		it("includes Conclusion required checks", () => {
+		it("includes all Conclusion required checks", () => {
 			const { repo } = nodeDocs();
 			expect(repo.requiredChecks).toContain("Lint / Conclusion");
 			expect(repo.requiredChecks).toContain("Test / Conclusion");
@@ -99,7 +109,7 @@ describe("nodeDocs()", () => {
 			expect(repo.requiredChecks).toContain("audit / Conclusion");
 		});
 
-		it("includes cross-repo codecov checks", () => {
+		it("includes codecov checks", () => {
 			const { repo } = nodeDocs();
 			expect(repo.requiredChecks).toContain("codecov/patch");
 			expect(repo.requiredChecks).toContain("codecov/project");
@@ -107,7 +117,7 @@ describe("nodeDocs()", () => {
 	});
 
 	describe("workflows", () => {
-		it("includes all node() baseline workflows", () => {
+		it("includes all node() baseline workflows and typecheck", () => {
 			const { workflows } = nodeDocs();
 			const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
 			expect(names).toContain("lint");
@@ -121,10 +131,15 @@ describe("nodeDocs()", () => {
 			expect(deploy).toMatchObject({ name: "deploy", with: { docs: true, preview: true } });
 		});
 
-		it("does not include audit or release (stay repo-specific)", () => {
+		it("includes audit", () => {
 			const { workflows } = nodeDocs();
 			const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
-			expect(names).not.toContain("audit");
+			expect(names).toContain("audit");
+		});
+
+		it("does not include release (stays repo-specific)", () => {
+			const { workflows } = nodeDocs();
+			const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
 			expect(names).not.toContain("release");
 		});
 	});
@@ -169,7 +184,7 @@ describe("nextjs()", () => {
 			expect(audit).toMatchObject({ name: "audit", with: { "run-knip": true, "run-performance": true } });
 		});
 
-		it("includes test with storybook and interaction", () => {
+		it("includes test with storybook, interaction, and user-flow", () => {
 			const { workflows } = nextjs();
 			const test = workflows.find((w) => typeof w !== "string" && w.name === "test");
 			expect(test).toMatchObject({
@@ -197,22 +212,22 @@ describe("nextjs()", () => {
 	});
 });
 
-describe("react()", () => {
+describe("reactPreset()", () => {
 	describe("providers", () => {
 		it("does not include vercel deployment", () => {
-			const { providers } = react();
+			const { providers } = reactPreset();
 			expect(providers.deployment).toBeUndefined();
 		});
 
 		it("sets github secrets", () => {
-			const { providers } = react();
+			const { providers } = reactPreset();
 			expect(providers.secrets).toBe("github");
 		});
 	});
 
 	describe("workflows", () => {
 		it("includes test without run-user-flow", () => {
-			const { workflows } = react();
+			const { workflows } = reactPreset();
 			const test = workflows.find((w) => typeof w !== "string" && w.name === "test");
 			expect(test).toMatchObject({ name: "test", with: { "run-storybook": true, "run-interaction": true } });
 			if (typeof test !== "string" && test) {
@@ -222,14 +237,73 @@ describe("react()", () => {
 	});
 });
 
+describe("audit() capability", () => {
+	it("contributes plain string workflow when no options given", () => {
+		const cap = audit();
+		expect(cap.workflows).toContainEqual("audit");
+	});
+
+	it("contributes object workflow with run-knip when knip: true", () => {
+		const cap = audit({ knip: true });
+		expect(cap.workflows).toContainEqual({ name: "audit", with: { "run-knip": true } });
+	});
+
+	it("contributes object workflow with run-performance when performance: true", () => {
+		const cap = audit({ performance: true });
+		expect(cap.workflows).toContainEqual({ name: "audit", with: { "run-performance": true } });
+	});
+
+	it("includes lighthouseConfig in with block", () => {
+		const cap = audit({ knip: true, performance: true, lighthouseConfig: "lighthouse.config.cjs" });
+		expect(cap.workflows).toContainEqual({
+			name: "audit",
+			with: { "run-knip": true, "run-performance": true, "lighthouse-config": "lighthouse.config.cjs" },
+		});
+	});
+});
+
+describe("nodeDocsSite()", () => {
+	it("sets org and domain", () => {
+		const { org, domain } = nodeDocsSite();
+		expect(org).toBe("theholocron");
+		expect(domain).toBe("theholocron.dev");
+	});
+
+	it("does not include typecheck or audit workflows", () => {
+		const { workflows } = nodeDocsSite();
+		const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
+		expect(names).not.toContain("typecheck");
+		expect(names).not.toContain("audit");
+	});
+
+	it("includes deploy with docs and preview", () => {
+		const { workflows } = nodeDocsSite();
+		const deploy = workflows.find((w) => typeof w !== "string" && w.name === "deploy");
+		expect(deploy).toMatchObject({ name: "deploy", with: { docs: true, preview: true } });
+	});
+
+	it("does not include Typecheck or audit required checks", () => {
+		const { repo } = nodeDocsSite();
+		expect(repo.requiredChecks).not.toContain("Typecheck / Conclusion");
+		expect(repo.requiredChecks).not.toContain("audit / Conclusion");
+	});
+});
+
+describe("monorepoCapability()", () => {
+	it("sets uses_external_packages to true when composed", () => {
+		const { repo } = compose(node(), monorepoCapability());
+		expect(repo.properties?.uses_external_packages).toBe(true);
+	});
+});
+
 describe("monorepo()", () => {
 	it("wraps nextjs() and sets uses_external_packages to true", () => {
 		const { repo } = monorepo(nextjs());
 		expect(repo.properties?.uses_external_packages).toBe(true);
 	});
 
-	it("wraps react() and preserves browser runtime", () => {
-		const { repo } = monorepo(react());
+	it("wraps reactPreset() and preserves browser runtime", () => {
+		const { repo } = monorepo(reactPreset());
 		expect(repo.properties?.runtime_environment).toBe("browser");
 		expect(repo.properties?.uses_external_packages).toBe(true);
 	});

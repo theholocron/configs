@@ -1,37 +1,20 @@
-import type { HolocronPreset } from "./node.js";
+import type { ComposedPreset } from "@theholocron/cli";
 
 /**
- * Extension that wraps any base preset with monorepo-specific overrides.
- * Not a standalone preset — always takes a base (e.g. `monorepo(nextjs())`).
+ * Wraps any composed preset with monorepo-specific overrides
+ * (sets uses_external_packages: true).
  *
- * Overrides: `uses_external_packages: true` (workspaces pull in many deps).
- * Per-repo still provides: storybook-projects array, chromatic project
- * definitions, workspace-specific required checks.
+ * For new configs, prefer: compose(node(), typecheck(), ..., monorepo())
  *
  * @example
- * const { repo, workflows, providers, org, domain } = monorepo(nextjs());
- * export default defineConfig({
- *   org,
- *   domain,
- *   repo: { ...repo, name: "theholocron/my-monorepo" },
- *   workflows: [
- *     ...workflows,
- *     { name: "test", with: { "run-chromatic": { projects: [{ tokenName: "WEB", workingDir: "apps/web" }] } } },
- *     "sync",
- *     { name: "deploy", with: { docs: true, "storybook-projects": [{ name: "web", workingDir: "apps/web" }] } },
- *   ],
- *   providers,
- * });
+ * const preset = monorepo(nextjs());
  */
-export function monorepo<T extends HolocronPreset>(base: T): T {
+export function monorepo(base: ComposedPreset): ComposedPreset {
 	return {
 		...base,
 		repo: {
 			...base.repo,
-			properties: {
-				...base.repo.properties,
-				uses_external_packages: true,
-			},
+			properties: { ...base.repo.properties, uses_external_packages: true },
 		},
 	};
 }
