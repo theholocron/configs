@@ -1,62 +1,52 @@
-import type { HolocronConfig } from "@theholocron/cli";
-import { node } from "./node.js";
-import type { HolocronPreset } from "./node.js";
+import { compose } from "@theholocron/cli";
+import type { ComposedPreset } from "@theholocron/cli";
 
-const REQUIRED_CHECKS = [
-	"Lint / Conclusion",
-	"Test / Conclusion",
-	"Typecheck / Conclusion",
-	"audit / Conclusion",
-	"codecov/patch",
-	"codecov/project",
-];
+import { audit } from "../capabilities/audit.js";
+import { docs } from "../capabilities/docs.js";
+import { node } from "../capabilities/node.js";
+import { typecheck } from "../capabilities/typecheck.js";
 
-export interface NodeDocsPreset extends HolocronPreset {
-	org: string;
-	domain: string;
-	docs: NonNullable<HolocronConfig["docs"]>;
-	repo: HolocronPreset["repo"] & { requiredChecks: string[] };
-}
+export type NodeDocsPreset = ComposedPreset;
+export type NodeDocsSitePreset = ComposedPreset;
 
 /**
- * Extends `node()` for repos that publish a documentation site and deploy
- * previews via Cloudflare Pages. Adds org/domain, Cloudflare providers,
- * deploy+preview workflow, and the Conclusion required checks.
+ * Preset for theholocron repos that are TypeScript libraries AND publish a
+ * documentation site (e.g. configs, utils, holocron). Includes typecheck and
+ * audit in addition to the docs deploy.
+ *
+ * For repos that are docs-only sites without TypeScript source to check,
+ * use nodeDocsSite() instead.
  *
  * @example
- * const { repo, workflows, providers, org, domain, docs } = nodeDocs();
+ * const preset = nodeDocs();
  * export default defineConfig({
+ *   ...preset,
  *   description: "...",
  *   homepage: "https://docs.theholocron.dev/my-lib/",
- *   org,
- *   domain,
- *   docs,
- *   repo: {
- *     ...repo,
- *     name: "theholocron/my-lib",
- *     topics: ["typescript"],
- *     requiredChecks: [...repo.requiredChecks, "codecov/patch/my-pkg"],
- *   },
- *   workflows: [...workflows, "audit", { name: "release", with: { "run-build": true } }, "sync"],
- *   providers: { ...providers, secrets: "github" },
+ *   repo: { ...preset.repo, name: "theholocron/my-lib", topics: ["typescript"] },
+ *   workflows: [...preset.workflows, "audit", { name: "release", with: { "run-build": true } }, "sync"],
+ *   providers: { ...preset.providers, secrets: "github" },
  * });
  */
 export function nodeDocs(): NodeDocsPreset {
-	const base = node();
-	return {
-		...base,
-		org: "theholocron",
-		domain: "theholocron.dev",
-		docs: { build: "workflow", https: true },
-		providers: {
-			...base.providers,
-			deployment: ["cloudflare", { accountId: "9c558af98664d13fc89b7e0a0d93d5a8" }],
-			dns: "cloudflare",
-		},
-		repo: {
-			...base.repo,
-			requiredChecks: REQUIRED_CHECKS,
-		},
-		workflows: [...base.workflows, { name: "deploy", with: { docs: true, preview: true } }],
-	};
+	return compose(node(), typecheck(), docs(), audit());
+}
+
+/**
+ * Preset for theholocron repos that are documentation-only sites with no
+ * TypeScript source to check (e.g. skills, themes). Identical to nodeDocs()
+ * except typecheck and audit are not included.
+ *
+ * @example
+ * const preset = nodeDocsSite();
+ * export default defineConfig({
+ *   ...preset,
+ *   description: "...",
+ *   repo: { ...preset.repo, name: "theholocron/my-site" },
+ *   workflows: [...preset.workflows, { name: "release", with: { "run-build": false } }, "sync"],
+ *   providers: { ...preset.providers, secrets: "github" },
+ * });
+ */
+export function nodeDocsSite(): NodeDocsSitePreset {
+	return compose(node(), docs());
 }
