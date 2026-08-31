@@ -25,7 +25,16 @@ describe("node() capability", () => {
 
 	it("contributes the baseline workflow set without typecheck", () => {
 		const names = (node().workflows ?? []).map((w) => (typeof w === "string" ? w : w.name));
-		for (const expected of ["lint", "test", "codeql", "review", "stale", "greetings", "dependencies", "bookkeeping"]) {
+		for (const expected of [
+			"lint",
+			"test",
+			"codeql",
+			"review",
+			"stale",
+			"greetings",
+			"dependencies",
+			"bookkeeping",
+		]) {
 			expect(names).toContain(expected);
 		}
 		expect(names).not.toContain("typecheck");

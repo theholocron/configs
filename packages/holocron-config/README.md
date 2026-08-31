@@ -1,10 +1,13 @@
 # Holocron Config
 
 <!-- holocron:description -->
+
 Composable capability presets for [Holocron CLI](https://github.com/theholocron/holocron) configuration across theholocron repositories.
+
 <!-- /holocron:description -->
 
 <!-- holocron:installation -->
+
 ## Installation
 
 ```bash
@@ -34,42 +37,43 @@ export default defineConfig({
   providers: { ...preset.providers, secrets: "github" },
 });
 ```
+
 <!-- /holocron:installation -->
 
 ## Capability factories
 
 Each factory returns a `Capability` fragment. Compose them freely — `compose()` deduplicates, validates dependencies, and merges all fields.
 
-| Capability | Requires | Adds |
-|---|---|---|
-| `node()` | — | GitHub providers, strict protection, baseline workflows (`lint`, `test`, `codeql`, `review`, `stale`, `greetings`, `dependencies`, `bookkeeping`), `Lint / Conclusion` + `Test / Conclusion` checks |
-| `typecheck()` | `node` | `typecheck` workflow, `Typecheck / Conclusion` check |
-| `docs()` | `node` | Cloudflare Pages deploy+preview workflow, org/domain, codecov checks |
-| `audit(opts?)` | `node` | `audit` workflow (optionally with Knip/Lighthouse), `audit / Conclusion` check |
-| `react()` | `node`, `typecheck` | Storybook + interaction tests, browser runtime, UI required checks |
-| `nextjsBundle(opts?)` | — | Bundle: `[react(), nextjsCapability]` — adds Vercel deployment + user-flow tests |
-| `monorepoCapability()` | `node` | `uses_external_packages: true` |
+| Capability             | Requires            | Adds                                                                                                                                                                                                |
+| ---------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `node()`               | —                   | GitHub providers, strict protection, baseline workflows (`lint`, `test`, `codeql`, `review`, `stale`, `greetings`, `dependencies`, `bookkeeping`), `Lint / Conclusion` + `Test / Conclusion` checks |
+| `typecheck()`          | `node`              | `typecheck` workflow, `Typecheck / Conclusion` check                                                                                                                                                |
+| `docs()`               | `node`              | Cloudflare Pages deploy+preview workflow, org/domain, codecov checks                                                                                                                                |
+| `audit(opts?)`         | `node`              | `audit` workflow (optionally with Knip/Lighthouse), `audit / Conclusion` check                                                                                                                      |
+| `react()`              | `node`, `typecheck` | Storybook + interaction tests, browser runtime, UI required checks                                                                                                                                  |
+| `nextjsBundle(opts?)`  | —                   | Bundle: `[react(), nextjsCapability]` — adds Vercel deployment + user-flow tests                                                                                                                    |
+| `monorepoCapability()` | `node`              | `uses_external_packages: true`                                                                                                                                                                      |
 
 ### Composition recipes
 
 ```ts
 // Node.js library — no docs
-compose(node(), typecheck())
+compose(node(), typecheck());
 
 // Library with docs site
-compose(node(), typecheck(), docs(), audit())
+compose(node(), typecheck(), docs(), audit());
 
 // Docs-only site — no TypeScript to check
-compose(node(), docs())
+compose(node(), docs());
 
 // React/Vite app
-compose(node(), typecheck(), react())
+compose(node(), typecheck(), react());
 
 // Next.js app
-compose(node(), typecheck(), ...nextjsBundle())
+compose(node(), typecheck(), ...nextjsBundle());
 
 // Next.js monorepo
-compose(node(), typecheck(), ...nextjsBundle(), monorepoCapability())
+compose(node(), typecheck(), ...nextjsBundle(), monorepoCapability());
 ```
 
 ## Preset shims
@@ -123,12 +127,12 @@ Full preset shims for browser app repos. See the [docs site](https://docs.thehol
 
 ## Development
 
-| Script | Description |
-|---|---|
-| `pnpm build` | Compile TypeScript to `dist/` |
-| `pnpm typecheck` | Type-check without emitting |
-| `pnpm test` | Run vitest suite |
-| `pnpm lint` | ESLint |
+| Script           | Description                   |
+| ---------------- | ----------------------------- |
+| `pnpm build`     | Compile TypeScript to `dist/` |
+| `pnpm typecheck` | Type-check without emitting   |
+| `pnpm test`      | Run vitest suite              |
+| `pnpm lint`      | ESLint                        |
 
 ## Releases
 

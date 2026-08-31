@@ -74,10 +74,13 @@ Contributes:
 Adds BundleWatch bundle-size auditing. Requires `node`.
 
 ```ts
-audit()                                          // BundleWatch only
-audit({ knip: true })                            // + unused-export analysis
-audit({ knip: true, performance: true,           // + Lighthouse
-        lighthouseConfig: "lighthouse.config.cjs" })
+audit(); // BundleWatch only
+audit({ knip: true }); // + unused-export analysis
+audit({
+  knip: true,
+  performance: true, // + Lighthouse
+  lighthouseConfig: "lighthouse.config.cjs",
+});
 ```
 
 Contributes: `audit` workflow (with any options), `audit / Conclusion` required check.
@@ -98,7 +101,7 @@ Contributes:
 **Bundle** — returns `Capability[]` containing `react()` plus Next.js-specific overrides. Compose with `node()` and `typecheck()`:
 
 ```ts
-compose(node(), typecheck(), ...nextjsBundle())
+compose(node(), typecheck(), ...nextjsBundle());
 // or use the nextjs() shim below
 ```
 
@@ -109,19 +112,19 @@ Adds Vercel deployment, org/domain context, and Cypress user-flow tests on top o
 Adjusts an existing composition for monorepo layout — sets `uses_external_packages: true`. Requires `node`.
 
 ```ts
-compose(node(), typecheck(), nextjsBundle(), monorepoCapability())
+compose(node(), typecheck(), nextjsBundle(), monorepoCapability());
 ```
 
 ## Composition recipes
 
-| Repo type | Composition |
-|---|---|
-| Node.js library (no docs) | `compose(node(), typecheck())` |
-| Library with docs | `compose(node(), typecheck(), docs(), audit())` |
-| Docs-only site (no TS) | `compose(node(), docs())` |
-| React/Vite app | `compose(node(), typecheck(), react())` |
-| Next.js app | `compose(node(), typecheck(), ...nextjsBundle())` |
-| Next.js monorepo | `compose(node(), typecheck(), ...nextjsBundle(), monorepoCapability())` |
+| Repo type                 | Composition                                                             |
+| ------------------------- | ----------------------------------------------------------------------- |
+| Node.js library (no docs) | `compose(node(), typecheck())`                                          |
+| Library with docs         | `compose(node(), typecheck(), docs(), audit())`                         |
+| Docs-only site (no TS)    | `compose(node(), docs())`                                               |
+| React/Vite app            | `compose(node(), typecheck(), react())`                                 |
+| Next.js app               | `compose(node(), typecheck(), ...nextjsBundle())`                       |
+| Next.js monorepo          | `compose(node(), typecheck(), ...nextjsBundle(), monorepoCapability())` |
 
 ## Preset shims
 
@@ -155,25 +158,25 @@ Wraps any `ComposedPreset` with `uses_external_packages: true`. For new repos pr
 ConfigError: compose(): unmet dependencies — "typecheck" requires "node"
 ```
 
-| Capability | Requires |
-|---|---|
-| `typecheck` | `node` |
-| `docs` | `node` |
-| `audit` | `node` |
-| `react` | `node`, `typecheck` |
-| `nextjs` (in bundle) | `react` |
-| `monorepoCapability` | `node` |
+| Capability           | Requires            |
+| -------------------- | ------------------- |
+| `typecheck`          | `node`              |
+| `docs`               | `node`              |
+| `audit`              | `node`              |
+| `react`              | `node`, `typecheck` |
+| `nextjs` (in bundle) | `react`             |
+| `monorepoCapability` | `node`              |
 
 ## Merge semantics
 
 When the same field is contributed by multiple capabilities:
 
-| Field | Merge rule |
-|---|---|
-| `workflows` | Dedup by name — last writer wins |
-| `providers` | Shallow merge — last writer wins per key |
-| `requiredChecks` | Union (insertion order, no duplicates) |
-| `repo.properties` | `Object.assign` — later overrides per-key |
-| `repo.topics` / `repo.teams` | Union by value / slug |
-| `repo` scalars (`protection`, etc.) | Last writer wins |
-| `org`, `domain`, `docs` | Last writer wins |
+| Field                               | Merge rule                                |
+| ----------------------------------- | ----------------------------------------- |
+| `workflows`                         | Dedup by name — last writer wins          |
+| `providers`                         | Shallow merge — last writer wins per key  |
+| `requiredChecks`                    | Union (insertion order, no duplicates)    |
+| `repo.properties`                   | `Object.assign` — later overrides per-key |
+| `repo.topics` / `repo.teams`        | Union by value / slug                     |
+| `repo` scalars (`protection`, etc.) | Last writer wins                          |
+| `org`, `domain`, `docs`             | Last writer wins                          |
