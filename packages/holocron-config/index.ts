@@ -10,7 +10,7 @@ export { typecheck } from "./capabilities/typecheck.js";
 export { docs } from "./capabilities/docs.js";
 export { audit } from "./capabilities/audit.js";
 export type { AuditOptions } from "./capabilities/audit.js";
-export { react } from "./capabilities/react.js";
+export { react as reactCapability } from "./capabilities/react.js";
 export { nextjs as nextjsBundle } from "./capabilities/nextjs.js";
 export type { NextjsOptions } from "./capabilities/nextjs.js";
 export { monorepo as monorepoCapability } from "./capabilities/monorepo.js";
@@ -21,7 +21,7 @@ export { monorepo as monorepoCapability } from "./capabilities/monorepo.js";
 export { nodeDocs, nodeDocsSite } from "./configs/node-docs.js";
 export type { NodeDocsPreset, NodeDocsSitePreset } from "./configs/node-docs.js";
 export { nextjs } from "./configs/nextjs.js";
-export { react as reactPreset } from "./configs/react.js";
+export { react } from "./configs/react.js";
 export { monorepo } from "./configs/monorepo.js";
 
 // HolocronPreset is now ComposedPreset — re-exported for backward compat
