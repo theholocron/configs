@@ -38,7 +38,7 @@ export function nodeDocs(): NodeDocsPreset {
 		typecheck(),
 		docs(),
 		// Audit required check only — the workflow is added per-repo with repo-specific options.
-		{ id: "audit-check", requires: ["node"], requiredChecks: ["audit / Conclusion"] },
+		{ id: "audit-check", requires: ["node"], requiredChecks: ["audit / Conclusion"] }
 	);
 }
 
