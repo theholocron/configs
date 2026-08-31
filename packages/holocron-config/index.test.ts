@@ -1,5 +1,17 @@
 import { describe, expect, it } from "vitest";
-import { compose, node, nodeDocs, nextjs, reactPreset, monorepo, typecheck, docs } from "./index.js";
+import {
+	audit,
+	compose,
+	docs,
+	monorepo,
+	monorepoCapability,
+	nextjs,
+	node,
+	nodeDocs,
+	nodeDocsSite,
+	reactPreset,
+	typecheck,
+} from "./index.js";
 
 describe("node() capability", () => {
 	it("has id 'node'", () => {
@@ -213,6 +225,65 @@ describe("reactPreset()", () => {
 				expect((test.with as Record<string, unknown>)["run-user-flow"]).toBeUndefined();
 			}
 		});
+	});
+});
+
+describe("audit() capability", () => {
+	it("contributes plain string workflow when no options given", () => {
+		const cap = audit();
+		expect(cap.workflows).toContainEqual("audit");
+	});
+
+	it("contributes object workflow with run-knip when knip: true", () => {
+		const cap = audit({ knip: true });
+		expect(cap.workflows).toContainEqual({ name: "audit", with: { "run-knip": true } });
+	});
+
+	it("contributes object workflow with run-performance when performance: true", () => {
+		const cap = audit({ performance: true });
+		expect(cap.workflows).toContainEqual({ name: "audit", with: { "run-performance": true } });
+	});
+
+	it("includes lighthouseConfig in with block", () => {
+		const cap = audit({ knip: true, performance: true, lighthouseConfig: "lighthouse.config.cjs" });
+		expect(cap.workflows).toContainEqual({
+			name: "audit",
+			with: { "run-knip": true, "run-performance": true, "lighthouse-config": "lighthouse.config.cjs" },
+		});
+	});
+});
+
+describe("nodeDocsSite()", () => {
+	it("sets org and domain", () => {
+		const { org, domain } = nodeDocsSite();
+		expect(org).toBe("theholocron");
+		expect(domain).toBe("theholocron.dev");
+	});
+
+	it("does not include typecheck or audit workflows", () => {
+		const { workflows } = nodeDocsSite();
+		const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
+		expect(names).not.toContain("typecheck");
+		expect(names).not.toContain("audit");
+	});
+
+	it("includes deploy with docs and preview", () => {
+		const { workflows } = nodeDocsSite();
+		const deploy = workflows.find((w) => typeof w !== "string" && w.name === "deploy");
+		expect(deploy).toMatchObject({ name: "deploy", with: { docs: true, preview: true } });
+	});
+
+	it("does not include Typecheck or audit required checks", () => {
+		const { repo } = nodeDocsSite();
+		expect(repo.requiredChecks).not.toContain("Typecheck / Conclusion");
+		expect(repo.requiredChecks).not.toContain("audit / Conclusion");
+	});
+});
+
+describe("monorepoCapability()", () => {
+	it("sets uses_external_packages to true when composed", () => {
+		const { repo } = compose(node(), monorepoCapability());
+		expect(repo.properties?.uses_external_packages).toBe(true);
 	});
 });
 
