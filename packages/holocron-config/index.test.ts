@@ -9,7 +9,7 @@ import {
 	node,
 	nodeDocs,
 	nodeDocsSite,
-	reactPreset,
+	react,
 	typecheck,
 } from "./index.js";
 
@@ -212,22 +212,22 @@ describe("nextjs()", () => {
 	});
 });
 
-describe("reactPreset()", () => {
+describe("react()", () => {
 	describe("providers", () => {
 		it("does not include vercel deployment", () => {
-			const { providers } = reactPreset();
+			const { providers } = react();
 			expect(providers.deployment).toBeUndefined();
 		});
 
 		it("sets github secrets", () => {
-			const { providers } = reactPreset();
+			const { providers } = react();
 			expect(providers.secrets).toBe("github");
 		});
 	});
 
 	describe("workflows", () => {
 		it("includes test without run-user-flow", () => {
-			const { workflows } = reactPreset();
+			const { workflows } = react();
 			const test = workflows.find((w) => typeof w !== "string" && w.name === "test");
 			expect(test).toMatchObject({ name: "test", with: { "run-storybook": true, "run-interaction": true } });
 			if (typeof test !== "string" && test) {
@@ -302,8 +302,8 @@ describe("monorepo()", () => {
 		expect(repo.properties?.uses_external_packages).toBe(true);
 	});
 
-	it("wraps reactPreset() and preserves browser runtime", () => {
-		const { repo } = monorepo(reactPreset());
+	it("wraps react() and preserves browser runtime", () => {
+		const { repo } = monorepo(react());
 		expect(repo.properties?.runtime_environment).toBe("browser");
 		expect(repo.properties?.uses_external_packages).toBe(true);
 	});
