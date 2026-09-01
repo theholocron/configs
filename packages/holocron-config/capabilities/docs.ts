@@ -1,5 +1,7 @@
 import type { Capability } from "@theholocron/cli";
 
+import { CLOUDFLARE_ACCOUNT_ID } from "../constants.js";
+
 /**
  * Adds a documentation site deployed to Cloudflare Pages with PR previews.
  * Sets org/domain, wires Cloudflare + DNS providers, and adds codecov
@@ -14,8 +16,9 @@ export function docs(): Capability {
 		domain: "theholocron.dev",
 		docs: { build: "workflow", https: true },
 		providers: {
-			deployment: ["cloudflare", { accountId: "9c558af98664d13fc89b7e0a0d93d5a8" }],
+			deployment: ["cloudflare", { accountId: CLOUDFLARE_ACCOUNT_ID }],
 			dns: "cloudflare",
+			workers: ["cloudflare", { accountId: CLOUDFLARE_ACCOUNT_ID }],
 		},
 		workflows: [{ name: "deploy", with: { docs: true, preview: true } }],
 		requiredChecks: ["codecov/patch", "codecov/project"],
