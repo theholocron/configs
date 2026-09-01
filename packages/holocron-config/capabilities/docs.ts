@@ -16,6 +16,7 @@ export function docs(): Capability {
 		providers: {
 			deployment: ["cloudflare", { accountId: "9c558af98664d13fc89b7e0a0d93d5a8" }],
 			dns: "cloudflare",
+			workers: ["cloudflare", { accountId: "9c558af98664d13fc89b7e0a0d93d5a8" }],
 		},
 		workflows: [{ name: "deploy", with: { docs: true, preview: true } }],
 		requiredChecks: ["codecov/patch", "codecov/project"],
