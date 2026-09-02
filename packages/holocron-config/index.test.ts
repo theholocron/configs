@@ -13,6 +13,7 @@ import {
 	nodeDocsSite,
 	react,
 	typecheck,
+	wikiCapability as wiki,
 } from "./index.js";
 
 describe("node() capability", () => {
@@ -314,5 +315,21 @@ describe("monorepo()", () => {
 		const result = monorepo(nodeDocs());
 		expect(result.org).toBe("theholocron");
 		expect(result.domain).toBe("theholocron.dev");
+	});
+});
+
+describe("wiki() capability", () => {
+	it("has id 'wiki'", () => {
+		expect(wiki().id).toBe("wiki");
+	});
+
+	it("sets wiki provider to fern with theholocron domain", () => {
+		const { providers } = wiki();
+		expect(providers?.wiki).toMatchObject(["fern", { domain: "wiki.theholocron.dev", fernOrg: "holocron" }]);
+	});
+
+	it("includes wiki workflow", () => {
+		const workflows = (wiki().workflows ?? []).map((w) => (typeof w === "string" ? w : w.name));
+		expect(workflows).toContain("wiki");
 	});
 });
