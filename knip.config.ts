@@ -32,6 +32,8 @@ const config: KnipConfig = {
 		// passed as --config arg to lint-staged binary in .husky/pre-commit
 		"@theholocron/lint-staged-config",
 		// loaded at runtime by the holocron plugin system — not a static import
+		"@theholocron/holocron-plugin-cloudflare",
+		"@theholocron/holocron-plugin-fern",
 		"@theholocron/holocron-plugin-github",
 		// used by prettier.config.ts which is in ignoreFiles
 		"@theholocron/prettier-config",
