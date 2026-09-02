@@ -1,4 +1,6 @@
 import { describe, expect, it } from "vitest";
+
+import { CLOUDFLARE_ACCOUNT_ID } from "./constants.js";
 import {
 	audit,
 	compose,
@@ -11,6 +13,7 @@ import {
 	nodeDocsSite,
 	react,
 	typecheck,
+	wikiCapability as wiki,
 } from "./index.js";
 
 describe("node() capability", () => {
@@ -89,7 +92,7 @@ describe("nodeDocs()", () => {
 	describe("providers", () => {
 		it("adds cloudflare deployment with accountId and dns", () => {
 			const { providers } = nodeDocs();
-			expect(providers.deployment).toEqual(["cloudflare", { accountId: "9c558af98664d13fc89b7e0a0d93d5a8" }]);
+			expect(providers.deployment).toEqual(["cloudflare", { accountId: CLOUDFLARE_ACCOUNT_ID }]);
 			expect(providers.dns).toBe("cloudflare");
 		});
 
@@ -312,5 +315,21 @@ describe("monorepo()", () => {
 		const result = monorepo(nodeDocs());
 		expect(result.org).toBe("theholocron");
 		expect(result.domain).toBe("theholocron.dev");
+	});
+});
+
+describe("wiki() capability", () => {
+	it("has id 'wiki'", () => {
+		expect(wiki().id).toBe("wiki");
+	});
+
+	it("sets wiki provider to fern with theholocron domain", () => {
+		const { providers } = wiki();
+		expect(providers?.wiki).toMatchObject(["fern", { domain: "wiki.theholocron.dev", fernOrg: "holocron" }]);
+	});
+
+	it("includes wiki workflow", () => {
+		const workflows = (wiki().workflows ?? []).map((w) => (typeof w === "string" ? w : w.name));
+		expect(workflows).toContain("wiki");
 	});
 });
