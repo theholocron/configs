@@ -8,7 +8,7 @@ decision, the options that were considered, and the rationale for the choice mad
 Copy the template and number it sequentially:
 
 ```sh
-cp docs/decisions/template.md docs/decisions/000N-short-title.md
+cp docs/wiki/decisions/template.md docs/wiki/decisions/000N-short-title.md
 ```
 
 `madr` has no CLI — creation is manual. Frontmatter is validated in CI
