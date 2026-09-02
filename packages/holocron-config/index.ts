@@ -18,6 +18,7 @@ export type { ReactOptions } from "./capabilities/react.js";
 export { nextjs as nextjsBundle } from "./capabilities/nextjs.js";
 export type { NextjsOptions } from "./capabilities/nextjs.js";
 export { monorepo as monorepoCapability } from "./capabilities/monorepo.js";
+export { wiki as wikiCapability } from "./capabilities/wiki.js";
 
 // ── Preset shims ────────────────────────────────────────────────────────────
 // Backward-compatible wrappers around compose(). Prefer the capability API
