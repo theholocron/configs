@@ -16,15 +16,15 @@ via `scripts/validate-adrs.mjs` (runs as part of the Lint workflow).
 
 ## Status values
 
-| Status       | Meaning                                       |
-| ------------ | --------------------------------------------- |
-| `proposed`   | Under discussion — not yet accepted           |
-| `accepted`   | In effect                                     |
-| `rejected`   | Considered and declined                       |
-| `deprecated` | Was accepted; no longer relevant              |
+| Status       | Meaning                                            |
+| ------------ | -------------------------------------------------- |
+| `proposed`   | Under discussion — not yet accepted                |
+| `accepted`   | In effect                                          |
+| `rejected`   | Considered and declined                            |
+| `deprecated` | Was accepted; no longer relevant                   |
 | `superseded` | Replaced by a later decision (link in frontmatter) |
 
 ## Index
 
-| ID | Title | Status |
-| -- | ----- | ------ |
+| ID  | Title | Status |
+| --- | ----- | ------ |
