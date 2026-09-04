@@ -31,7 +31,7 @@ describe("node() capability", () => {
 		for (const expected of [
 			"lint",
 			"test",
-			"codeql",
+			"security",
 			"review",
 			"stale",
 			"greetings",

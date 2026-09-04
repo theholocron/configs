@@ -3,7 +3,7 @@ import type { Capability } from "@theholocron/cli";
 /**
  * Base capability for all theholocron Node.js repositories.
  * Contributes: GitHub source/CI/issues providers, strict branch protection,
- * and the standard workflow set (lint, test, codeql, review, stale, greetings,
+ * and the standard workflow set (lint, test, security, review, stale, greetings,
  * dependencies, bookkeeping). Does NOT include typecheck — add that separately.
  */
 export function node(): Capability {
@@ -32,6 +32,6 @@ export function node(): Capability {
 			},
 		},
 		requiredChecks: ["Lint / Conclusion", "Test / Conclusion"],
-		workflows: ["lint", "test", "codeql", "review", "stale", "greetings", "dependencies", "bookkeeping"],
+		workflows: ["lint", "test", "security", "review", "stale", "greetings", "dependencies", "bookkeeping"],
 	};
 }
