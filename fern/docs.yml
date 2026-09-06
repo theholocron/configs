@@ -4,6 +4,11 @@ instances:
   - url: holocron.docs.buildwithfern.com/configs
     custom-domain: wiki.theholocron.dev/configs
     multi-source: true
+    edit-this-page:
+      github:
+        owner: theholocron
+        repo: configs
+        branch: main
 
 title: configs Engineering
 
@@ -42,6 +47,40 @@ navigation:
         contents:
           - page: Overview
             path: ../docs/wiki/specifications/README.md
+
+navbar-links:
+  - type: github
+    value: https://github.com/theholocron/configs
+  - type: dropdown
+    text: Other Projects
+    icon: fa-duotone fa-book
+    links:
+      - href: https://wiki.theholocron.dev
+        text: Cli Template
+      - href: https://wiki.theholocron.dev
+        text: Clients
+      - href: https://wiki.theholocron.dev
+        text: Holocron
+      - href: https://wiki.theholocron.dev/internal
+        text: Internal
+      - href: https://wiki.theholocron.dev
+        text: Monorepo Nextjs Template
+      - href: https://wiki.theholocron.dev
+        text: Monorepo React Template
+      - href: https://wiki.theholocron.dev
+        text: Monorepo Template
+      - href: https://wiki.theholocron.dev
+        text: Nextjs Template
+      - href: https://wiki.theholocron.dev
+        text: Node Template
+      - href: https://wiki.theholocron.dev
+        text: React Template
+      - href: https://wiki.theholocron.dev
+        text: Skills
+      - href: https://wiki.theholocron.dev
+        text: Themes
+      - href: https://wiki.theholocron.dev
+        text: Utils
 
 colors:
   accent-primary:
