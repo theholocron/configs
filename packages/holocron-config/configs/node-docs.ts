@@ -15,9 +15,9 @@ export type NodeDocsSitePreset = ComposedPreset;
  * Includes the "audit / Conclusion" required check so branch protection works
  * for repos that add the audit workflow explicitly. The workflow itself is
  * intentionally left repo-specific — add it with your own options:
- *   workflows: [...preset.workflows, "audit", ...]
+ *   tasks: [...preset.tasks, "audit", ...]
  *   // or with overrides:
- *   workflows: [...preset.workflows, { name: "audit", with: { "run-knip": true } }, ...]
+ *   tasks: [...preset.tasks, { name: "audit", with: { "run-knip": true } }, ...]
  *
  * For docs-only sites without TypeScript source, use nodeDocsSite() instead.
  *
@@ -28,7 +28,7 @@ export type NodeDocsSitePreset = ComposedPreset;
  *   description: "...",
  *   homepage: "https://docs.theholocron.dev/my-lib/",
  *   repo: { ...preset.repo, name: "theholocron/my-lib", topics: ["typescript"] },
- *   workflows: [...preset.workflows, "audit", { name: "release", with: { "run-build": true } }, "sync"],
+ *   tasks: [...preset.tasks, "audit", { name: "release", with: { "run-build": true } }, "sync"],
  *   providers: { ...preset.providers, secrets: "github" },
  * });
  */
@@ -52,7 +52,7 @@ export function nodeDocs(): NodeDocsPreset {
  *   ...preset,
  *   description: "...",
  *   repo: { ...preset.repo, name: "theholocron/my-site" },
- *   workflows: [...preset.workflows, { name: "release", with: { "run-build": false } }, "sync"],
+ *   tasks: [...preset.tasks, { name: "release", with: { "run-build": false } }, "sync"],
  *   providers: { ...preset.providers, secrets: "github" },
  * });
  */

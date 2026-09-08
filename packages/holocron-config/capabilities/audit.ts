@@ -22,7 +22,7 @@ export function audit({ knip = false, performance = false, lighthouseConfig }: A
 	return {
 		id: "audit",
 		requires: ["node"],
-		workflows: [Object.keys(withBlock).length > 0 ? { name: "audit", with: withBlock } : "audit"],
+		tasks: [Object.keys(withBlock).length > 0 ? { name: "audit", with: withBlock } : "audit"],
 		requiredChecks: ["audit / Conclusion"],
 	};
 }

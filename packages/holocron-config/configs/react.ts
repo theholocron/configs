@@ -22,7 +22,7 @@ export type { ReactOptions };
  * export default defineConfig({
  *   ...preset,
  *   repo: { ...preset.repo, name: "theholocron/my-app" },
- *   workflows: [...preset.workflows, "sync", { name: "deploy", with: { docs: true, storybook: [{ name: "" }] } }],
+ *   tasks: [...preset.tasks, "sync", { name: "deploy", with: { docs: true, storybook: [{ name: "" }] } }],
  * });
  */
 export function react(options?: ReactOptions): ComposedPreset {
