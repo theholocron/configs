@@ -20,7 +20,7 @@ export function docs(): Capability {
 			dns: "cloudflare",
 			workers: ["cloudflare", { accountId: CLOUDFLARE_ACCOUNT_ID }],
 		},
-		workflows: [{ name: "deploy", with: { docs: true, preview: true } }],
+		tasks: [{ name: "deploy", with: { docs: true, preview: true } }],
 		requiredChecks: ["codecov/patch", "codecov/project"],
 	};
 }

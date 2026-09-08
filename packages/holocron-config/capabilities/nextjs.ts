@@ -25,7 +25,7 @@ export function nextjs({ test: testOverrides = {} }: NextjsOptions = {}): Capabi
 		org: "theholocron",
 		domain: "theholocron.dev",
 		providers: { deployment: "vercel" },
-		workflows: [
+		tasks: [
 			{
 				name: "test",
 				with: {

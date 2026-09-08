@@ -8,7 +8,7 @@ export function typecheck(): Capability {
 	return {
 		id: "typecheck",
 		requires: ["node"],
-		workflows: ["typecheck"],
+		tasks: ["typecheck"],
 		requiredChecks: ["Typecheck / Conclusion"],
 	};
 }

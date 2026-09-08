@@ -32,6 +32,6 @@ export function node(): Capability {
 			},
 		},
 		requiredChecks: ["Lint / Conclusion", "Test / Conclusion"],
-		workflows: ["lint", "test", "security", "review", "stale", "greetings", "dependencies", "bookkeeping"],
+		tasks: ["lint", "test", "security", "review", "stale", "greetings", "dependencies", "bookkeeping"],
 	};
 }

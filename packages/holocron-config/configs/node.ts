@@ -14,7 +14,7 @@ export type { ComposedPreset as HolocronPreset };
  * export default defineConfig({
  *   ...preset,
  *   repo: { ...preset.repo, name: "theholocron/my-lib" },
- *   workflows: [...preset.workflows, { name: "release", with: { "run-build": true } }],
+ *   tasks: [...preset.tasks, { name: "release", with: { "run-build": true } }],
  * });
  */
 export function node(): ComposedPreset {
