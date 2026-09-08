@@ -33,7 +33,7 @@
     "@vitest/coverage-v8": "catalog:"
   },
   "peerDependencies": {
-    "@theholocron/cli": ">=2.0.0-alpha.1"
+    "@theholocron/cli": ">=4.0.0"
   },
   "exports": {
     ".": {

@@ -17,8 +17,8 @@ export type { NextjsOptions } from "../capabilities/nextjs.js";
  * export default defineConfig({
  *   ...preset,
  *   repo: { ...preset.repo, name: "theholocron/my-app", topics: ["nextjs"] },
- *   workflows: [
- *     ...preset.workflows,
+ *   tasks: [
+ *     ...preset.tasks,
  *     "sync",
  *     { name: "deploy", with: { docs: true, storybook: [{ name: "" }] } },
  *   ],

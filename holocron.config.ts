@@ -2,7 +2,7 @@ import { defineConfig } from "@theholocron/cli";
 import type { HolocronConfig } from "@theholocron/cli";
 import { compose, nodeDocs, wikiCapability as wiki } from "@theholocron/holocron-config";
 
-const { repo, workflows, providers, org, domain, docs } = compose(nodeDocs(), wiki());
+const { repo, tasks, providers, org, domain, docs } = compose(nodeDocs(), wiki());
 export default defineConfig({
 	description: "Shared configuration files.",
 	homepage: "https://docs.theholocron.dev/configs/",
@@ -49,8 +49,8 @@ export default defineConfig({
 			"codecov/project/vitest-config",
 		],
 	},
-	workflows: [
-		...workflows,
+	tasks: [
+		...tasks,
 		"audit",
 		{ name: "test", with: { "run-unit": true } },
 		{ name: "release", with: { "run-build": true } },

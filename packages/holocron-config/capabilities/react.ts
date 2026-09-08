@@ -26,7 +26,7 @@ export function react({ test: testOverrides = {} }: ReactOptions = {}): Capabili
 		repo: {
 			properties: { runtime_environment: "browser", uses_external_packages: false },
 		},
-		workflows: [
+		tasks: [
 			{
 				name: "audit",
 				with: {

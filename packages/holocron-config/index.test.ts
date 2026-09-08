@@ -27,7 +27,7 @@ describe("node() capability", () => {
 	});
 
 	it("contributes the baseline workflow set without typecheck", () => {
-		const names = (node().workflows ?? []).map((w) => (typeof w === "string" ? w : w.name));
+		const names = (node().tasks ?? []).map((w) => (typeof w === "string" ? w : w.name));
 		for (const expected of [
 			"lint",
 			"test",
@@ -57,20 +57,20 @@ describe("compose(node())", () => {
 	});
 
 	it("does not include typecheck (add typecheck() separately)", () => {
-		const { workflows } = compose(node());
-		const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
+		const { tasks } = compose(node());
+		const names = tasks.map((w) => (typeof w === "string" ? w : w.name));
 		expect(names).not.toContain("typecheck");
 	});
 
 	it("includes typecheck when typecheck() is composed in", () => {
-		const { workflows } = compose(node(), typecheck());
-		const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
+		const { tasks } = compose(node(), typecheck());
+		const names = tasks.map((w) => (typeof w === "string" ? w : w.name));
 		expect(names).toContain("typecheck");
 	});
 
 	it("includes deploy when docs() is composed in", () => {
-		const { workflows } = compose(node(), docs());
-		const deploy = workflows.find((w) => typeof w !== "string" && w.name === "deploy");
+		const { tasks } = compose(node(), docs());
+		const deploy = tasks.find((w) => typeof w !== "string" && w.name === "deploy");
 		expect(deploy).toMatchObject({ name: "deploy", with: { docs: true, preview: true } });
 	});
 });
@@ -119,30 +119,30 @@ describe("nodeDocs()", () => {
 		});
 	});
 
-	describe("workflows", () => {
-		it("includes all node() baseline workflows and typecheck", () => {
-			const { workflows } = nodeDocs();
-			const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
+	describe("tasks", () => {
+		it("includes all node() baseline tasks and typecheck", () => {
+			const { tasks } = nodeDocs();
+			const names = tasks.map((w) => (typeof w === "string" ? w : w.name));
 			expect(names).toContain("lint");
 			expect(names).toContain("test");
 			expect(names).toContain("typecheck");
 		});
 
 		it("includes deploy with docs and preview", () => {
-			const { workflows } = nodeDocs();
-			const deploy = workflows.find((w) => typeof w !== "string" && w.name === "deploy");
+			const { tasks } = nodeDocs();
+			const deploy = tasks.find((w) => typeof w !== "string" && w.name === "deploy");
 			expect(deploy).toMatchObject({ name: "deploy", with: { docs: true, preview: true } });
 		});
 
 		it("does not include audit workflow (stays repo-specific)", () => {
-			const { workflows } = nodeDocs();
-			const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
+			const { tasks } = nodeDocs();
+			const names = tasks.map((w) => (typeof w === "string" ? w : w.name));
 			expect(names).not.toContain("audit");
 		});
 
 		it("does not include release (stays repo-specific)", () => {
-			const { workflows } = nodeDocs();
-			const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
+			const { tasks } = nodeDocs();
+			const names = tasks.map((w) => (typeof w === "string" ? w : w.name));
 			expect(names).not.toContain("release");
 		});
 	});
@@ -180,16 +180,16 @@ describe("nextjs()", () => {
 		});
 	});
 
-	describe("workflows", () => {
+	describe("tasks", () => {
 		it("includes audit with knip and performance", () => {
-			const { workflows } = nextjs();
-			const audit = workflows.find((w) => typeof w !== "string" && w.name === "audit");
+			const { tasks } = nextjs();
+			const audit = tasks.find((w) => typeof w !== "string" && w.name === "audit");
 			expect(audit).toMatchObject({ name: "audit", with: { "run-knip": true, "run-performance": true } });
 		});
 
 		it("includes test with storybook, interaction, and user-flow", () => {
-			const { workflows } = nextjs();
-			const test = workflows.find((w) => typeof w !== "string" && w.name === "test");
+			const { tasks } = nextjs();
+			const test = tasks.find((w) => typeof w !== "string" && w.name === "test");
 			expect(test).toMatchObject({
 				name: "test",
 				with: { "run-storybook": true, "run-interaction": true, "run-user-flow": true, "run-unit": false },
@@ -197,8 +197,8 @@ describe("nextjs()", () => {
 		});
 
 		it("merges test overrides into the single test entry", () => {
-			const { workflows } = nextjs({ test: { "wait-on-url": "http://localhost:3000", "run-chromatic": true } });
-			const test = workflows.find((w) => typeof w !== "string" && w.name === "test");
+			const { tasks } = nextjs({ test: { "wait-on-url": "http://localhost:3000", "run-chromatic": true } });
+			const test = tasks.find((w) => typeof w !== "string" && w.name === "test");
 			expect(test).toMatchObject({
 				name: "test",
 				with: {
@@ -210,7 +210,7 @@ describe("nextjs()", () => {
 					"run-chromatic": true,
 				},
 			});
-			expect(workflows.filter((w) => typeof w !== "string" && w.name === "test")).toHaveLength(1);
+			expect(tasks.filter((w) => typeof w !== "string" && w.name === "test")).toHaveLength(1);
 		});
 	});
 });
@@ -228,10 +228,10 @@ describe("react()", () => {
 		});
 	});
 
-	describe("workflows", () => {
+	describe("tasks", () => {
 		it("includes test without run-user-flow", () => {
-			const { workflows } = react();
-			const test = workflows.find((w) => typeof w !== "string" && w.name === "test");
+			const { tasks } = react();
+			const test = tasks.find((w) => typeof w !== "string" && w.name === "test");
 			expect(test).toMatchObject({ name: "test", with: { "run-storybook": true, "run-interaction": true } });
 			if (typeof test !== "string" && test) {
 				expect((test.with as Record<string, unknown>)["run-user-flow"]).toBeUndefined();
@@ -243,22 +243,22 @@ describe("react()", () => {
 describe("audit() capability", () => {
 	it("contributes plain string workflow when no options given", () => {
 		const cap = audit();
-		expect(cap.workflows).toContainEqual("audit");
+		expect(cap.tasks).toContainEqual("audit");
 	});
 
 	it("contributes object workflow with run-knip when knip: true", () => {
 		const cap = audit({ knip: true });
-		expect(cap.workflows).toContainEqual({ name: "audit", with: { "run-knip": true } });
+		expect(cap.tasks).toContainEqual({ name: "audit", with: { "run-knip": true } });
 	});
 
 	it("contributes object workflow with run-performance when performance: true", () => {
 		const cap = audit({ performance: true });
-		expect(cap.workflows).toContainEqual({ name: "audit", with: { "run-performance": true } });
+		expect(cap.tasks).toContainEqual({ name: "audit", with: { "run-performance": true } });
 	});
 
 	it("includes lighthouseConfig in with block", () => {
 		const cap = audit({ knip: true, performance: true, lighthouseConfig: "lighthouse.config.cjs" });
-		expect(cap.workflows).toContainEqual({
+		expect(cap.tasks).toContainEqual({
 			name: "audit",
 			with: { "run-knip": true, "run-performance": true, "lighthouse-config": "lighthouse.config.cjs" },
 		});
@@ -272,16 +272,16 @@ describe("nodeDocsSite()", () => {
 		expect(domain).toBe("theholocron.dev");
 	});
 
-	it("does not include typecheck or audit workflows", () => {
-		const { workflows } = nodeDocsSite();
-		const names = workflows.map((w) => (typeof w === "string" ? w : w.name));
+	it("does not include typecheck or audit tasks", () => {
+		const { tasks } = nodeDocsSite();
+		const names = tasks.map((w) => (typeof w === "string" ? w : w.name));
 		expect(names).not.toContain("typecheck");
 		expect(names).not.toContain("audit");
 	});
 
 	it("includes deploy with docs and preview", () => {
-		const { workflows } = nodeDocsSite();
-		const deploy = workflows.find((w) => typeof w !== "string" && w.name === "deploy");
+		const { tasks } = nodeDocsSite();
+		const deploy = tasks.find((w) => typeof w !== "string" && w.name === "deploy");
 		expect(deploy).toMatchObject({ name: "deploy", with: { docs: true, preview: true } });
 	});
 
@@ -329,7 +329,7 @@ describe("wiki() capability", () => {
 	});
 
 	it("includes wiki workflow", () => {
-		const workflows = (wiki().workflows ?? []).map((w) => (typeof w === "string" ? w : w.name));
-		expect(workflows).toContain("wiki");
+		const tasks = (wiki().tasks ?? []).map((w) => (typeof w === "string" ? w : w.name));
+		expect(tasks).toContain("wiki");
 	});
 });
