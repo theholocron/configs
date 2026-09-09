@@ -19,6 +19,8 @@ const ORG_LINTERS = [
  * dependencies, bookkeeping). Does NOT include typecheck — add that separately.
  * The `lint` task carries the org linter list explicitly so every repo runs the
  * same set (a repo can override with its own `{ name: "lint", linters: [...] }`).
+ * `lint` and `test` are marked `required` — `holocron setup` derives their
+ * `… / Conclusion` branch-protection check contexts from the manifest.
  */
 export function node(): Capability {
 	return {
@@ -45,10 +47,9 @@ export function node(): Capability {
 				uses_external_packages: true,
 			},
 		},
-		requiredChecks: ["Lint / Conclusion", "Test / Conclusion"],
 		tasks: [
-			{ name: "lint", linters: ORG_LINTERS },
-			"test",
+			{ name: "lint", required: true, linters: ORG_LINTERS },
+			{ name: "test", required: true },
 			"security",
 			"review",
 			"stale",

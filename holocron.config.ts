@@ -2,7 +2,7 @@ import { defineConfig } from "@theholocron/cli";
 import type { HolocronConfig } from "@theholocron/cli";
 import { compose, nodeDocs, wikiCapability as wiki } from "@theholocron/holocron-config";
 
-const { repo, tasks, providers, org, domain, docs } = compose(nodeDocs(), wiki());
+const { repo, tasks, providers, org, domain, docs, extraRequiredChecks } = compose(nodeDocs(), wiki());
 export default defineConfig({
 	description: "Shared configuration files.",
 	homepage: "https://docs.theholocron.dev/configs/",
@@ -29,30 +29,33 @@ export default defineConfig({
 			"vitest-config",
 		],
 		...repo,
-		requiredChecks: [
-			...repo.requiredChecks,
-			"codecov/project/astro-config",
-			"codecov/project/browserslist-config",
-			"codecov/project/commitlint-config",
-			"codecov/project/devmoji-config",
-			"codecov/project/eslint-config",
-			"codecov/project/holocron-config",
-			"codecov/project/lighthouse-config",
-			"codecov/project/lint-staged-config",
-			"codecov/project/prettier-config",
-			"codecov/project/semantic-release-config",
-			"codecov/project/storybook-config",
-			"codecov/project/stylelint-config",
-			"codecov/project/tsconfig",
-			"codecov/project/tsdown-config",
-			"codecov/project/vite-config",
-			"codecov/project/vitest-config",
-		],
 	},
+	// Task-backed checks (Lint / Test / Typecheck / audit "… / Conclusion") are
+	// derived from the `{ required: true }` tasks. These are the extras: codecov
+	// gates from the preset + one per-package `codecov/project/*`.
+	extraRequiredChecks: [
+		...extraRequiredChecks,
+		"codecov/project/astro-config",
+		"codecov/project/browserslist-config",
+		"codecov/project/commitlint-config",
+		"codecov/project/devmoji-config",
+		"codecov/project/eslint-config",
+		"codecov/project/holocron-config",
+		"codecov/project/lighthouse-config",
+		"codecov/project/lint-staged-config",
+		"codecov/project/prettier-config",
+		"codecov/project/semantic-release-config",
+		"codecov/project/storybook-config",
+		"codecov/project/stylelint-config",
+		"codecov/project/tsconfig",
+		"codecov/project/tsdown-config",
+		"codecov/project/vite-config",
+		"codecov/project/vitest-config",
+	],
 	tasks: [
 		...tasks,
-		"audit",
-		{ name: "test", with: { "run-unit": true } },
+		{ name: "audit", required: true },
+		{ name: "test", required: true, with: { "run-unit": true } },
 		{ name: "release", with: { "run-build": true } },
 		"sync",
 	],
