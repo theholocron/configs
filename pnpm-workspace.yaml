@@ -15,7 +15,7 @@ catalogs:
     '@theholocron/registry-doc': ^1.8.0
 
   holocron:
-    '@theholocron/cli': ^4.0.0
-    '@theholocron/holocron-plugin-cloudflare': ^3.50.0
-    '@theholocron/holocron-plugin-fern': ^3.50.0
-    '@theholocron/holocron-plugin-github': ^3.50.0
+    '@theholocron/cli': ^4.6.0
+    '@theholocron/holocron-plugin-cloudflare': ^4.6.0
+    '@theholocron/holocron-plugin-fern': ^4.6.0
+    '@theholocron/holocron-plugin-github': ^4.6.0
