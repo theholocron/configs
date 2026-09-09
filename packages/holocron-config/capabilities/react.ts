@@ -8,7 +8,7 @@ export interface ReactOptions {
 /**
  * Adds React/Storybook UI testing and browser runtime config.
  * Contributes: secrets provider, browser runtime property, Storybook + interaction
- * test jobs, audit with Knip + Lighthouse, and UI required checks.
+ * test jobs, audit with Knip + Lighthouse, and the UI `extraRequiredChecks`.
  * Requires: node, typecheck
  *
  * Pass `test` overrides to merge repo-specific options into the single test
@@ -40,6 +40,8 @@ export function react({ test: testOverrides = {} }: ReactOptions = {}): Capabili
 				with: { "run-unit": false, "run-storybook": true, "run-interaction": true, ...testOverrides },
 			},
 		],
-		requiredChecks: ["Storybook Publish", "UI Review", "UI Tests", "lhci/url/"],
+		// Storybook / lhci job contexts — not manifest tasks. `holocron setup`
+		// appends these to the `{ required: true }` task contexts.
+		extraRequiredChecks: ["Storybook Publish", "UI Review", "UI Tests", "lhci/url/"],
 	};
 }

@@ -12,12 +12,13 @@ export type NodeDocsSitePreset = ComposedPreset;
  * Preset for theholocron repos that are TypeScript libraries AND publish a
  * documentation site (e.g. configs, utils, holocron, clients).
  *
- * Includes the "audit / Conclusion" required check so branch protection works
- * for repos that add the audit workflow explicitly. The workflow itself is
- * intentionally left repo-specific — add it with your own options:
- *   tasks: [...preset.tasks, "audit", ...]
+ * Includes the "audit / Conclusion" check in `extraRequiredChecks` so branch
+ * protection works for repos that add the audit workflow explicitly. The
+ * workflow itself is intentionally left repo-specific — add it with your own
+ * options:
+ *   tasks: [...preset.tasks, { name: "audit", required: true }, ...]
  *   // or with overrides:
- *   tasks: [...preset.tasks, { name: "audit", with: { "run-knip": true } }, ...]
+ *   tasks: [...preset.tasks, { name: "audit", required: true, with: { "run-knip": true } }, ...]
  *
  * For docs-only sites without TypeScript source, use nodeDocsSite() instead.
  *
@@ -28,7 +29,7 @@ export type NodeDocsSitePreset = ComposedPreset;
  *   description: "...",
  *   homepage: "https://docs.theholocron.dev/my-lib/",
  *   repo: { ...preset.repo, name: "theholocron/my-lib", topics: ["typescript"] },
- *   tasks: [...preset.tasks, "audit", { name: "release", with: { "run-build": true } }, "sync"],
+ *   tasks: [...preset.tasks, { name: "audit", required: true }, { name: "release", with: { "run-build": true } }, "sync"],
  *   providers: { ...preset.providers, secrets: "github" },
  * });
  */
@@ -37,8 +38,10 @@ export function nodeDocs(): NodeDocsPreset {
 		node(),
 		typecheck(),
 		docs(),
-		// Audit required check only — the workflow is added per-repo with repo-specific options.
-		{ id: "audit-check", requires: ["node"], requiredChecks: ["audit / Conclusion"] }
+		// `audit / Conclusion` required for every nodeDocs repo — the audit
+		// workflow is added per-repo (with repo-specific options), so this is an
+		// extra check rather than a `{ required: true }` task.
+		{ id: "audit-check", requires: ["node"], extraRequiredChecks: ["audit / Conclusion"] }
 	);
 }
 

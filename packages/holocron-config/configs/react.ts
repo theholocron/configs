@@ -10,7 +10,7 @@ export type { ReactOptions };
 
 /**
  * Preset for single-package React/Vite application repos. Includes Storybook,
- * interaction tests, Knip + Lighthouse audit, and UI required checks.
+ * interaction tests, Knip + Lighthouse audit, and the UI extraRequiredChecks.
  *
  * Pass `test` overrides to merge repo-specific options (e.g. run-chromatic)
  * into the single test workflow entry so the sync tool sees one complete entry:
