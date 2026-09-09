@@ -1,10 +1,24 @@
 import type { Capability } from "@theholocron/cli";
 
+/** The org-standard linter set — drives both CI super-linter and `holocron run lint`. */
+const ORG_LINTERS = [
+	"eslint",
+	"prettier",
+	"yamllint",
+	"actionlint",
+	"gitleaks",
+	"editorconfig",
+	"commitlint",
+	"git-merge-conflict-markers",
+];
+
 /**
  * Base capability for all theholocron Node.js repositories.
  * Contributes: GitHub source/CI/issues providers, strict branch protection,
  * and the standard workflow set (lint, test, security, review, stale, greetings,
  * dependencies, bookkeeping). Does NOT include typecheck — add that separately.
+ * The `lint` task carries the org linter list explicitly so every repo runs the
+ * same set (a repo can override with its own `{ name: "lint", linters: [...] }`).
  */
 export function node(): Capability {
 	return {
@@ -32,6 +46,15 @@ export function node(): Capability {
 			},
 		},
 		requiredChecks: ["Lint / Conclusion", "Test / Conclusion"],
-		tasks: ["lint", "test", "security", "review", "stale", "greetings", "dependencies", "bookkeeping"],
+		tasks: [
+			{ name: "lint", linters: ORG_LINTERS },
+			"test",
+			"security",
+			"review",
+			"stale",
+			"greetings",
+			"dependencies",
+			"bookkeeping",
+		],
 	};
 }
