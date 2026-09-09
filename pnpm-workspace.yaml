@@ -5,7 +5,7 @@ catalog:
   '@vitest/coverage-v8': ^4.1.10
   tsdown: ^0.22.14
   typescript: ^5.9.3
-  vitest: ^4.1.10
+  vitest: ^5.0.0
 
 # Holocron CLI and plugins — pinned in lockstep; bump together when running setup.
 catalogs:
