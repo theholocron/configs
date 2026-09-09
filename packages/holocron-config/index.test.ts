@@ -21,9 +21,10 @@ describe("node() capability", () => {
 		expect(node().id).toBe("node");
 	});
 
-	it("contributes Lint and Test required checks", () => {
-		expect(node().requiredChecks).toContain("Lint / Conclusion");
-		expect(node().requiredChecks).toContain("Test / Conclusion");
+	it("marks lint and test required (branch-protection checks are derived from these)", () => {
+		const byName = new Map((node().tasks ?? []).map((t) => (typeof t === "string" ? [t, {}] : [t.name, t])));
+		expect(byName.get("lint")).toMatchObject({ required: true });
+		expect(byName.get("test")).toMatchObject({ required: true });
 	});
 
 	it("contributes the baseline workflow set without typecheck", () => {
@@ -111,19 +112,19 @@ describe("nodeDocs()", () => {
 		});
 	});
 
-	describe("repo", () => {
-		it("includes all Conclusion required checks", () => {
-			const { repo } = nodeDocs();
-			expect(repo.requiredChecks).toContain("Lint / Conclusion");
-			expect(repo.requiredChecks).toContain("Test / Conclusion");
-			expect(repo.requiredChecks).toContain("Typecheck / Conclusion");
-			expect(repo.requiredChecks).toContain("audit / Conclusion");
+	describe("required checks", () => {
+		it("marks lint / test / typecheck required so their Conclusion checks are derived", () => {
+			const byName = new Map(nodeDocs().tasks.map((t) => (typeof t === "string" ? [t, {}] : [t.name, t])));
+			expect(byName.get("lint")).toMatchObject({ required: true });
+			expect(byName.get("test")).toMatchObject({ required: true });
+			expect(byName.get("typecheck")).toMatchObject({ required: true });
 		});
 
-		it("includes codecov checks", () => {
-			const { repo } = nodeDocs();
-			expect(repo.requiredChecks).toContain("codecov/patch");
-			expect(repo.requiredChecks).toContain("codecov/project");
+		it("carries audit / Conclusion + the codecov gates as extraRequiredChecks", () => {
+			const { extraRequiredChecks } = nodeDocs();
+			expect(extraRequiredChecks).toContain("audit / Conclusion");
+			expect(extraRequiredChecks).toContain("codecov/patch");
+			expect(extraRequiredChecks).toContain("codecov/project");
 		});
 	});
 
@@ -179,12 +180,12 @@ describe("nextjs()", () => {
 			expect(repo.properties?.runtime_environment).toBe("browser");
 		});
 
-		it("includes Storybook and lhci required checks", () => {
-			const { repo } = nextjs();
-			expect(repo.requiredChecks).toContain("Storybook Publish");
-			expect(repo.requiredChecks).toContain("UI Review");
-			expect(repo.requiredChecks).toContain("UI Tests");
-			expect(repo.requiredChecks).toContain("lhci/url/");
+		it("includes Storybook and lhci extraRequiredChecks", () => {
+			const { extraRequiredChecks } = nextjs();
+			expect(extraRequiredChecks).toContain("Storybook Publish");
+			expect(extraRequiredChecks).toContain("UI Review");
+			expect(extraRequiredChecks).toContain("UI Tests");
+			expect(extraRequiredChecks).toContain("lhci/url/");
 		});
 	});
 
@@ -249,25 +250,26 @@ describe("react()", () => {
 });
 
 describe("audit() capability", () => {
-	it("contributes plain string workflow when no options given", () => {
+	it("contributes a required audit task when no options given", () => {
 		const cap = audit();
-		expect(cap.tasks).toContainEqual("audit");
+		expect(cap.tasks).toContainEqual({ name: "audit", required: true });
 	});
 
-	it("contributes object workflow with run-knip when knip: true", () => {
+	it("contributes a required audit task with run-knip when knip: true", () => {
 		const cap = audit({ knip: true });
-		expect(cap.tasks).toContainEqual({ name: "audit", with: { "run-knip": true } });
+		expect(cap.tasks).toContainEqual({ name: "audit", required: true, with: { "run-knip": true } });
 	});
 
-	it("contributes object workflow with run-performance when performance: true", () => {
+	it("contributes a required audit task with run-performance when performance: true", () => {
 		const cap = audit({ performance: true });
-		expect(cap.tasks).toContainEqual({ name: "audit", with: { "run-performance": true } });
+		expect(cap.tasks).toContainEqual({ name: "audit", required: true, with: { "run-performance": true } });
 	});
 
 	it("includes lighthouseConfig in with block", () => {
 		const cap = audit({ knip: true, performance: true, lighthouseConfig: "lighthouse.config.cjs" });
 		expect(cap.tasks).toContainEqual({
 			name: "audit",
+			required: true,
 			with: { "run-knip": true, "run-performance": true, "lighthouse-config": "lighthouse.config.cjs" },
 		});
 	});
@@ -293,10 +295,11 @@ describe("nodeDocsSite()", () => {
 		expect(deploy).toMatchObject({ name: "deploy", with: { docs: true, preview: true } });
 	});
 
-	it("does not include Typecheck or audit required checks", () => {
-		const { repo } = nodeDocsSite();
-		expect(repo.requiredChecks).not.toContain("Typecheck / Conclusion");
-		expect(repo.requiredChecks).not.toContain("audit / Conclusion");
+	it("does not carry Typecheck or audit required checks", () => {
+		const preset = nodeDocsSite();
+		const names = preset.tasks.map((t) => (typeof t === "string" ? t : t.name));
+		expect(names).not.toContain("typecheck");
+		expect(preset.extraRequiredChecks).not.toContain("audit / Conclusion");
 	});
 });
 

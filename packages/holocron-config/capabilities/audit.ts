@@ -10,7 +10,9 @@ export interface AuditOptions {
 }
 
 /**
- * Adds BundleWatch + optional Knip and Lighthouse auditing.
+ * Adds BundleWatch + optional Knip and Lighthouse auditing. Marked `required` —
+ * `holocron setup` derives the `audit / Conclusion` branch-protection check
+ * from the manifest.
  * Requires: node
  */
 export function audit({ knip = false, performance = false, lighthouseConfig }: AuditOptions = {}): Capability {
@@ -22,7 +24,10 @@ export function audit({ knip = false, performance = false, lighthouseConfig }: A
 	return {
 		id: "audit",
 		requires: ["node"],
-		tasks: [Object.keys(withBlock).length > 0 ? { name: "audit", with: withBlock } : "audit"],
-		requiredChecks: ["audit / Conclusion"],
+		tasks: [
+			Object.keys(withBlock).length > 0
+				? { name: "audit", required: true, with: withBlock }
+				: { name: "audit", required: true },
+		],
 	};
 }

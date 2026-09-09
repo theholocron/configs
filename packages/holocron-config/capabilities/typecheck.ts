@@ -1,14 +1,14 @@
 import type { Capability } from "@theholocron/cli";
 
 /**
- * Adds TypeScript type-checking to a repo.
+ * Adds TypeScript type-checking to a repo. Marked `required` — `holocron setup`
+ * derives the `Typecheck / Conclusion` branch-protection check from the manifest.
  * Requires: node
  */
 export function typecheck(): Capability {
 	return {
 		id: "typecheck",
 		requires: ["node"],
-		tasks: ["typecheck"],
-		requiredChecks: ["Typecheck / Conclusion"],
+		tasks: [{ name: "typecheck", required: true }],
 	};
 }
