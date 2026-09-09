@@ -42,6 +42,14 @@ describe("node() capability", () => {
 		}
 		expect(names).not.toContain("typecheck");
 	});
+
+	it("carries the org linter list on the lint task", () => {
+		const lint = (node().tasks ?? []).find((w) => typeof w !== "string" && w.name === "lint");
+		expect(lint).toMatchObject({ name: "lint" });
+		expect((lint as { linters: string[] }).linters).toEqual(
+			expect.arrayContaining(["eslint", "prettier", "yamllint", "actionlint", "gitleaks"])
+		);
+	});
 });
 
 describe("compose(node())", () => {
