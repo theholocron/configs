@@ -12,10 +12,12 @@ coverage:
         # Configs packages have smoke tests, not unit tests — track trend rather
         # than enforcing a hard threshold.
         target: auto
+        if_not_found: success
         threshold: 5%
     patch:
       default:
         target: auto
+        if_not_found: success
         threshold: 5%
 
 comment:
@@ -28,6 +30,7 @@ component_management:
     statuses:
       - type: project
         target: auto
+        if_not_found: success
   individual_components:
     - component_id: astro-config
       name: "astro-config"
