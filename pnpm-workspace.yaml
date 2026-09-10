@@ -11,11 +11,11 @@ catalog:
 catalogs:
   # Docs components and registry — release in lockstep; bump both entries together.
   docs:
-    '@theholocron/components-doc': ^1.8.0
-    '@theholocron/registry-doc': ^1.8.0
+    '@theholocron/components-doc': ^1.13.0
+    '@theholocron/registry-doc': ^1.13.0
 
   holocron:
-    '@theholocron/cli': ^4.10.0
-    '@theholocron/holocron-plugin-cloudflare': ^4.10.0
-    '@theholocron/holocron-plugin-fern': ^4.10.0
-    '@theholocron/holocron-plugin-github': ^4.10.0
+    '@theholocron/cli': ^4.16.2
+    '@theholocron/holocron-plugin-cloudflare': ^4.16.1
+    '@theholocron/holocron-plugin-fern': ^4.16.2
+    '@theholocron/holocron-plugin-github': ^4.16.1
