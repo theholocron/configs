@@ -39,12 +39,15 @@ const config: KnipConfig = {
 		"@theholocron/prettier-config",
 		// skills referenced as strings in holocron.config.ts
 		"@theholocron/skills",
-		// invoked as binary in prepare script and .husky; Knip doesn't trace script values
-		"husky",
 		// invoked by @theholocron/lint-staged-config tasks, not a direct import
 		"sort-package-json",
 		// referenced in compiled type declarations in vitest-config/dist
 		"vite",
+		// docs workspace uses @astrojs/react as an Astro peer dep and
+		// components-doc/registry-doc via .mdx — not traceable as TS imports
+		"@astrojs/react",
+		"@theholocron/components-doc",
+		"@theholocron/registry-doc",
 	],
 	// lint-staged: invoked via pnpm exec in .husky/pre-commit; resolved from workspace packages
 	// tsdown/vitest: used in package scripts declared via catalog: — Knip can't resolve catalog
