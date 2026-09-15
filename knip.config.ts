@@ -43,9 +43,7 @@ const config: KnipConfig = {
 		"sort-package-json",
 		// referenced in compiled type declarations in vitest-config/dist
 		"vite",
-		// docs workspace uses @astrojs/react as an Astro peer dep and
-		// components-doc/registry-doc via .mdx — not traceable as TS imports
-		"@astrojs/react",
+		// components-doc/registry-doc referenced via .mdx — not traceable as TS imports
 		"@theholocron/components-doc",
 		"@theholocron/registry-doc",
 	],
