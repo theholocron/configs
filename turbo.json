@@ -1,10 +1,65 @@
 {
   "$schema": "https://turborepo.org/schema.json",
+  "globalDependencies": [
+    "pnpm-workspace.yaml",
+    "tsconfig.json"
+  ],
   "tasks": {
-    "build": { "dependsOn": ["^build"], "outputs": ["dist/**"] },
-    "lint": { "dependsOn": ["^build"] },
-    "test": { "dependsOn": ["build", "^build"], "outputs": ["test-report.junit.xml"] },
-    "test:coverage": { "dependsOn": ["build", "^build"], "outputs": ["coverage/**", "test-report.junit.xml"] },
-    "typecheck": { "dependsOn": ["^build"] }
+    "sourceQuality.staticAnalysis": {
+      "inputs": [
+        "src/**",
+        "eslint.config.ts",
+        "eslint.config.js",
+        "eslint.config.mjs",
+        "eslint.config.cjs"
+      ],
+      "outputs": [],
+      "dependsOn": [
+        "^delivery.build"
+      ]
+    },
+    "verification.unitTests": {
+      "inputs": [
+        "src/**",
+        "vitest.config.ts",
+        "vitest.config.js",
+        "vitest.config.mjs",
+        "package.json"
+      ],
+      "outputs": [
+        "test-report.junit.xml",
+        "coverage/**"
+      ],
+      "dependsOn": [
+        "delivery.build",
+        "^delivery.build"
+      ]
+    },
+    "verification.typeSafety": {
+      "inputs": [
+        "src/**",
+        "tsconfig.json"
+      ],
+      "outputs": [],
+      "dependsOn": [
+        "^delivery.build"
+      ]
+    },
+    "delivery.build": {
+      "inputs": [
+        "src/**",
+        "package.json",
+        "tsdown.config.ts",
+        "vite.config.ts",
+        "rollup.config.ts",
+        "tsconfig.json"
+      ],
+      "outputs": [
+        "dist/**"
+      ],
+      "dependsOn": [
+        "^delivery.build"
+      ]
+    }
   }
 }

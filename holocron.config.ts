@@ -1,15 +1,15 @@
-import { defineConfig } from "@theholocron/cli";
 import type { HolocronConfig } from "@theholocron/cli";
-import { compose, nodeDocs, wikiCapability as wiki } from "@theholocron/holocron-config";
+import { defineConfig } from "@theholocron/cli";
 
-const { repo, tasks, providers, org, domain, docs, extraRequiredChecks } = compose(nodeDocs(), wiki());
 export default defineConfig({
 	description: "Shared configuration files.",
 	homepage: "https://docs.theholocron.dev/configs/",
-	org,
-	domain,
-	docs,
+	org: "theholocron",
+	domain: "theholocron.dev",
+	docs: { build: "workflow", https: true },
 	repo: {
+		protection: "strict",
+		properties: { lifecycle: "active", open_source: true, runtime_environment: "node", uses_external_packages: true },
 		teams: [{ slug: "gatekeepers", permission: "maintain" }],
 		topics: [
 			"browserslist-config",
@@ -28,13 +28,27 @@ export default defineConfig({
 			"vite-config",
 			"vitest-config",
 		],
-		...repo,
 	},
-	// Task-backed checks (Lint / Test / Typecheck / audit "… / Conclusion") are
-	// derived from the `{ required: true }` tasks. These are the extras: codecov
-	// gates from the preset + one per-package `codecov/project/*`.
+	tasks: [
+		{ name: "sourceQuality.staticAnalysis", required: true },
+		{ name: "sourceQuality.formatting", required: true },
+		{ name: "sourceQuality.structuredDataValidation", required: true },
+		{ name: "security.secretDetection", required: true },
+		{ name: "platform.commitStandards", required: true },
+		{ name: "verification.unitTests", required: true },
+		"security.codeScanning",
+		"review",
+		"stale",
+		"greetings",
+		"dependencies",
+		"bookkeeping",
+		{ name: "verification.typeSafety", required: true },
+		{ name: "knowledge.docs", with: { preview: true } },
+		"knowledge.wiki",
+	],
 	extraRequiredChecks: [
-		...extraRequiredChecks,
+		"codecov/patch",
+		"codecov/project",
 		"codecov/project/astro-config",
 		"codecov/project/browserslist-config",
 		"codecov/project/commitlint-config",
@@ -52,16 +66,14 @@ export default defineConfig({
 		"codecov/project/vite-config",
 		"codecov/project/vitest-config",
 	],
-	tasks: [
-		...tasks,
-		{ name: "audit", required: true },
-		{ name: "test", required: true, with: { "run-unit": true } },
-		{ name: "release", with: { "run-build": true } },
-		"sync",
-	],
 	providers: {
-		...providers,
+		source: "github",
+		ci: "github",
+		issues: ["github", { labels: { inProgress: "status:in-progress", inReview: "status:in-review" } }],
 		secrets: "github",
+		dns: "cloudflare",
+		deployment: ["cloudflare", { accountId: "9c558af98664d13fc89b7e0a0d93d5a8" }],
+		workers: ["cloudflare", { accountId: "9c558af98664d13fc89b7e0a0d93d5a8" }],
 		wiki: ["fern", { domain: "wiki.theholocron.dev", fernOrg: "holocron", icon: "fa-duotone fa-sliders" }],
 	},
 	agent: "claude",
