@@ -5,8 +5,6 @@ const config: KnipConfig = {
 		".": {
 			entry: ["holocron.config.ts", "astromech.config.ts", "docs/src/content.config.ts"],
 			project: ["*.ts"],
-			// standalone tool configs — not imported by project code
-			ignoreFiles: ["prettier.config.ts"],
 			// astro.config.ts is the docs build config, not an Astro workspace — disable plugin
 			astro: false,
 		},
@@ -35,8 +33,6 @@ const config: KnipConfig = {
 		"@theholocron/holocron-plugin-cloudflare",
 		"@theholocron/holocron-plugin-fern",
 		"@theholocron/holocron-plugin-github",
-		// used by prettier.config.ts which is in ignoreFiles
-		"@theholocron/prettier-config",
 		// skills referenced as strings in holocron.config.ts
 		"@theholocron/skills",
 		// invoked by @theholocron/lint-staged-config tasks, not a direct import
@@ -47,10 +43,9 @@ const config: KnipConfig = {
 		"@theholocron/components-doc",
 		"@theholocron/registry-doc",
 	],
-	// lint-staged: invoked via pnpm exec in .husky/pre-commit; resolved from workspace packages
 	// tsdown/vitest: used in package scripts declared via catalog: — Knip can't resolve catalog
 	//   specifiers to binaries for some packages despite them being correctly declared
-	ignoreBinaries: ["lint-staged", "tsdown", "vitest"],
+	ignoreBinaries: ["tsdown", "vitest"],
 	ignoreExportsUsedInFile: true,
 	// optional peer deps are correctly declared and used — not an actionable finding
 	exclude: ["optionalPeerDependencies"],
