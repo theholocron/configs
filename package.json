@@ -31,22 +31,22 @@
   "type": "module",
   "scripts": {
     "build": "turbo run delivery.build",
+    "delivery.build": "holocron run delivery.build --",
     "docs:build": "astro build",
     "docs:dev": "astro dev",
     "docs:preview": "astro preview",
-    "prepare": "turbo run delivery.build && husky",
     "holocron": "holocron",
-    "sourceQuality.staticAnalysis": "holocron run sourceQuality.staticAnalysis --",
-    "sourceQuality.formatting": "holocron run sourceQuality.formatting --",
-    "sourceQuality.structuredDataValidation": "holocron run sourceQuality.structuredDataValidation --",
-    "security.secretDetection": "holocron run security.secretDetection --",
-    "platform.commitStandards": "holocron run platform.commitStandards --",
-    "verification.unitTests": "holocron run verification.unitTests --",
-    "verification.typeSafety": "holocron run verification.typeSafety --",
     "knowledge.wiki": "holocron run knowledge.wiki --",
-    "sourceQuality.deadCodeAnalysis": "holocron run sourceQuality.deadCodeAnalysis --",
+    "platform.commitStandards": "holocron run platform.commitStandards --",
     "platform.repoSync": "holocron run platform.repoSync --",
-    "delivery.build": "holocron run delivery.build --"
+    "prepare": "turbo run delivery.build && husky",
+    "security.secretDetection": "holocron run security.secretDetection --",
+    "sourceQuality.deadCodeAnalysis": "holocron run sourceQuality.deadCodeAnalysis --",
+    "sourceQuality.formatting": "holocron run sourceQuality.formatting --",
+    "sourceQuality.staticAnalysis": "holocron run sourceQuality.staticAnalysis --",
+    "sourceQuality.structuredDataValidation": "holocron run sourceQuality.structuredDataValidation --",
+    "verification.typeSafety": "holocron run verification.typeSafety --",
+    "verification.unitTests": "holocron run verification.unitTests --"
   },
   "devDependencies": {
     "@astrojs/react": "^6.0.4",
@@ -80,26 +80,28 @@
     "globals": "^17.11.0",
     "husky": "^9.1.7",
     "knip": "^6.32.2",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.9.6",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "semantic-release": "^25.0.9",
     "sort-package-json": "^4.0.0",
     "turbo": "^2.10.10"
   },
-  "pnpm": {
-    "overrides": {
-      "@commitlint/config-conventional>conventional-changelog-conventionalcommits": "7",
-      "yuku-parser": "0.6.3",
-      "uuid": "^11.1.1",
-      "conventional-changelog-conventionalcommits": "9.3.1"
-    },
-    "onlyBuiltDependencies": [
-      "esbuild"
-    ]
-  },
   "packageManager": "pnpm@10.34.4",
   "engines": {
     "node": ">=22"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ],
+    "overrides": {
+      "@commitlint/config-conventional>conventional-changelog-conventionalcommits": "7",
+      "conventional-changelog-conventionalcommits": "9.3.1",
+      "uuid": "^11.1.1",
+      "yuku-parser": "0.6.3"
+    }
   },
   "releases": "https://github.com/theholocron/configs/releases",
   "wiki": "https://github.com/theholocron/configs/wiki"

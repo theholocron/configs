@@ -9,7 +9,12 @@ export default defineConfig({
 	docs: { build: "workflow", https: true },
 	repo: {
 		protection: "strict",
-		properties: { lifecycle: "active", open_source: true, runtime_environment: "node", uses_external_packages: true },
+		properties: {
+			lifecycle: "active",
+			open_source: true,
+			runtime_environment: "node",
+			uses_external_packages: true,
+		},
 		teams: [{ slug: "gatekeepers", permission: "maintain" }],
 		topics: [
 			"browserslist-config",
