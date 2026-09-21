@@ -1,6 +1,6 @@
 {
   "name": "@theholocron/configs",
-  "version": "8.4.1",
+  "version": "8.4.2",
   "private": true,
   "description": "Shared configuration files.",
   "keywords": [
