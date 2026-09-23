@@ -1,6 +1,6 @@
 {
   "name": "@theholocron/holocron-config",
-  "version": "8.4.6",
+  "version": "8.4.7",
   "description": "Shareable holocron configuration presets for theholocron repositories.",
   "keywords": [
     "holocron",
