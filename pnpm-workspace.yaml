@@ -2,7 +2,7 @@ packages:
   - "packages/*"
 
 catalog:
-  "@vitest/coverage-v8": ^4.1.10
+  "@vitest/coverage-v8": ^5.0.1
   tsdown: ^0.22.14
   typescript: ^5.9.3
   vitest: ^4.1.10
