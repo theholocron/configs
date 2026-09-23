@@ -2,6 +2,12 @@
   "name": "@theholocron/holocron-config",
   "version": "8.4.5",
   "description": "Shareable holocron configuration presets for theholocron repositories.",
+  "keywords": [
+    "holocron",
+    "config",
+    "preset",
+    "theholocron"
+  ],
   "homepage": "https://github.com/theholocron/configs/tree/main/packages/holocron-config#readme",
   "bugs": "https://github.com/theholocron/configs/issues",
   "repository": {
@@ -10,32 +16,7 @@
   },
   "license": "GPL-3.0",
   "author": "Newton Koumantzelis",
-  "keywords": [
-    "holocron",
-    "config",
-    "preset",
-    "theholocron"
-  ],
   "type": "module",
-  "scripts": {
-    "delivery.build": "tsdown",
-    "sourceQuality.staticAnalysis": "holocron run sourceQuality.staticAnalysis --",
-    "test:watch": "vitest",
-    "verification.typeSafety": "holocron run verification.typeSafety --",
-    "verification.unitTests": "holocron run verification.unitTests --"
-  },
-  "devDependencies": {
-    "@theholocron/cli": "catalog:holocron",
-    "@theholocron/tsconfig": "workspace:*",
-    "@theholocron/vitest-config": "workspace:*",
-    "@vitest/coverage-v8": "catalog:",
-    "tsdown": "catalog:",
-    "typescript": "catalog:",
-    "vitest": "catalog:"
-  },
-  "peerDependencies": {
-    "@theholocron/cli": ">=4.10.0"
-  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -72,6 +53,25 @@
   "files": [
     "dist/"
   ],
+  "scripts": {
+    "delivery.build": "tsdown",
+    "sourceQuality.staticAnalysis": "holocron run sourceQuality.staticAnalysis --",
+    "test:watch": "vitest",
+    "verification.typeSafety": "holocron run verification.typeSafety --",
+    "verification.unitTests": "holocron run verification.unitTests --"
+  },
+  "devDependencies": {
+    "@theholocron/cli": "catalog:holocron",
+    "@theholocron/tsconfig": "workspace:*",
+    "@theholocron/vitest-config": "workspace:*",
+    "@vitest/coverage-v8": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "@theholocron/cli": ">=4.10.0-0"
+  },
   "engines": {
     "node": ">=22.0.0"
   },
