@@ -69,9 +69,6 @@
     "typescript": "catalog:",
     "vitest": "catalog:"
   },
-  "peerDependencies": {
-    "@theholocron/cli": ">=4.10.0-0"
-  },
   "engines": {
     "node": ">=22.0.0"
   },
