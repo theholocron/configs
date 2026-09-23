@@ -29,7 +29,7 @@
     "verification.unitTests": "holocron run verification.unitTests --"
   },
   "dependencies": {
-    "@eslint/compat": "^2.1.0",
+    "@eslint/compat": "^2.1.1",
     "eslint-package-json": "^0.3.0"
   },
   "devDependencies": {
@@ -39,10 +39,10 @@
     "@theholocron/vitest-config": "workspace:*",
     "@vitest/coverage-v8": "catalog:",
     "eslint-plugin-simple-import-sort": "^14.0.0",
-    "globals": "^17.11.0",
+    "globals": "^17.12.0",
     "tsdown": "catalog:",
     "typescript": "catalog:",
-    "typescript-eslint": "^8.67.0",
+    "typescript-eslint": "^8.70.0",
     "vitest": "catalog:"
   },
   "exports": {
