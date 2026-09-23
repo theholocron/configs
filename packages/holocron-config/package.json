@@ -60,8 +60,10 @@
     "verification.typeSafety": "holocron run verification.typeSafety --",
     "verification.unitTests": "holocron run verification.unitTests --"
   },
+  "dependencies": {
+    "@theholocron/cli": "catalog:holocron"
+  },
   "devDependencies": {
-    "@theholocron/cli": "catalog:holocron",
     "@theholocron/tsconfig": "workspace:*",
     "@theholocron/vitest-config": "workspace:*",
     "@vitest/coverage-v8": "catalog:",
