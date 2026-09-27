@@ -43,10 +43,11 @@ catalogs:
       version: 5.0.0-alpha.3
 
 overrides:
+  "@astrojs/markdown-remark": ^7.3.1
   "@commitlint/config-conventional>conventional-changelog-conventionalcommits": "7"
-  yuku-parser: 0.6.3
-  uuid: ^11.1.1
   conventional-changelog-conventionalcommits: 9.3.1
+  uuid: ^11.1.1
+  yuku-parser: 0.6.3
 
 importers:
   .:
@@ -56,7 +57,7 @@ importers:
         version: 6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0)
       "@astrojs/starlight":
         specifier: ^0.41.7
-        version: 0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)
+        version: 0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)
       "@commitlint/cli":
         specifier: ^21.2.2
         version: 21.2.2(@types/node@26.5.0)(conventional-commits-parser@7.1.2)(typescript@5.9.3)
@@ -86,28 +87,28 @@ importers:
         version: 5.0.0-alpha.3
       "@theholocron/cli":
         specifier: catalog:holocron
-        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
+        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
       "@theholocron/commitlint-config":
         specifier: workspace:*
         version: link:packages/commitlint-config
       "@theholocron/components-doc":
         specifier: catalog:docs
-        version: 1.13.0(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        version: 1.13.0(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       "@theholocron/docs-theme":
         specifier: ^1.3.5
-        version: 1.3.5(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
+        version: 1.3.5(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
       "@theholocron/eslint-config":
         specifier: workspace:*
         version: link:packages/eslint-config
       "@theholocron/holocron-plugin-cloudflare":
         specifier: catalog:holocron
-        version: 5.0.0-alpha.3(@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10))(@theholocron/cloudflare-client@1.13.0(vitest@4.1.10))
+        version: 5.0.0-alpha.3(@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10))(@theholocron/cloudflare-client@1.13.0(vitest@4.1.10))
       "@theholocron/holocron-plugin-fern":
         specifier: catalog:holocron
-        version: 5.0.0-alpha.3(@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10))
+        version: 5.0.0-alpha.3(@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10))
       "@theholocron/holocron-plugin-github":
         specifier: catalog:holocron
-        version: 5.0.0-alpha.3(@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10))(@theholocron/github-client@1.15.0(vitest@4.1.10))
+        version: 5.0.0-alpha.3(@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10))(@theholocron/github-client@1.15.0(vitest@4.1.10))
       "@theholocron/lint-staged-config":
         specifier: workspace:*
         version: link:packages/lint-staged-config
@@ -125,7 +126,7 @@ importers:
         version: 1.3.3
       astro:
         specifier: ^7.2.2
-        version: 7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
+        version: 7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
       conventional-changelog-conventionalcommits:
         specifier: 9.3.1
         version: 9.3.1
@@ -176,13 +177,13 @@ importers:
         version: 6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tsx@4.23.12)(yaml@2.9.0)
       "@astrojs/starlight":
         specifier: ^0.41.7
-        version: 0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)
+        version: 0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)
       "@theholocron/cli":
         specifier: catalog:holocron
-        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(rxjs@7.8.2)(vitest@4.1.10)
+        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(rxjs@7.8.2)(vitest@4.1.10)
       "@theholocron/docs-theme":
         specifier: ^1.3.5
-        version: 1.3.5(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
+        version: 1.3.5(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
       "@theholocron/tsconfig":
         specifier: workspace:*
         version: link:../tsconfig
@@ -191,7 +192,7 @@ importers:
         version: 4.1.10(@vitest/browser@4.1.10)(vitest@4.1.10)
       astro:
         specifier: ^7.2.4
-        version: 7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
+        version: 7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
       react:
         specifier: ^19.0.0
         version: 19.2.7
@@ -224,7 +225,7 @@ importers:
         version: 21.2.0
       "@theholocron/cli":
         specifier: catalog:holocron
-        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
+        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
       "@theholocron/tsconfig":
         specifier: workspace:*
         version: link:../tsconfig
@@ -248,7 +249,7 @@ importers:
     devDependencies:
       "@theholocron/cli":
         specifier: catalog:holocron
-        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
+        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
       "@theholocron/tsconfig":
         specifier: workspace:*
         version: link:../tsconfig
@@ -306,7 +307,7 @@ importers:
         version: 10.0.1(eslint@10.8.1(jiti@2.7.0))
       "@theholocron/cli":
         specifier: catalog:holocron
-        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.25.12)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
+        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.25.12)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
       "@theholocron/tsconfig":
         specifier: workspace:*
         version: link:../tsconfig
@@ -339,7 +340,7 @@ importers:
     dependencies:
       "@theholocron/cli":
         specifier: catalog:holocron
-        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
+        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
     devDependencies:
       "@theholocron/tsconfig":
         specifier: workspace:*
@@ -364,7 +365,7 @@ importers:
     devDependencies:
       "@theholocron/cli":
         specifier: catalog:holocron
-        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
+        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
       "@theholocron/tsconfig":
         specifier: workspace:*
         version: link:../tsconfig
@@ -395,7 +396,7 @@ importers:
     devDependencies:
       "@theholocron/cli":
         specifier: catalog:holocron
-        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
+        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
       "@theholocron/tsconfig":
         specifier: workspace:*
         version: link:../tsconfig
@@ -426,7 +427,7 @@ importers:
     devDependencies:
       "@theholocron/cli":
         specifier: catalog:holocron
-        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
+        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
       "@theholocron/tsconfig":
         specifier: workspace:*
         version: link:../tsconfig
@@ -454,7 +455,7 @@ importers:
     devDependencies:
       "@theholocron/cli":
         specifier: catalog:holocron
-        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
+        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
       "@theholocron/tsconfig":
         specifier: workspace:*
         version: link:../tsconfig
@@ -503,7 +504,7 @@ importers:
     devDependencies:
       "@theholocron/cli":
         specifier: catalog:holocron
-        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
+        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
       "@theholocron/tsconfig":
         specifier: workspace:*
         version: link:../tsconfig
@@ -591,7 +592,7 @@ importers:
     devDependencies:
       "@theholocron/cli":
         specifier: catalog:holocron
-        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.2.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.2.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(rxjs@7.8.2)(vitest@4.1.10)
+        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.2.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.2.0)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(rxjs@7.8.2)(vitest@4.1.10)
       "@theholocron/tsconfig":
         specifier: workspace:*
         version: link:../tsconfig
@@ -625,7 +626,7 @@ importers:
     devDependencies:
       "@theholocron/cli":
         specifier: catalog:holocron
-        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
+        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
       "@theholocron/tsconfig":
         specifier: workspace:*
         version: link:../tsconfig
@@ -655,7 +656,7 @@ importers:
     devDependencies:
       "@theholocron/cli":
         specifier: catalog:holocron
-        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
+        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
       "@theholocron/tsconfig":
         specifier: workspace:*
         version: link:../tsconfig
@@ -689,7 +690,7 @@ importers:
         version: 2.0.1(vite@8.2.1(@types/node@26.5.0)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
       "@theholocron/cli":
         specifier: catalog:holocron
-        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
+        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
       "@theholocron/tsconfig":
         specifier: workspace:*
         version: link:../tsconfig
@@ -741,7 +742,7 @@ importers:
     devDependencies:
       "@theholocron/cli":
         specifier: catalog:holocron
-        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
+        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
       "@theholocron/tsconfig":
         specifier: workspace:*
         version: link:../tsconfig
@@ -969,9 +970,9 @@ packages:
     resolution:
       { integrity: sha512-3rzxJ+xbo0+8YyqOzLziIN32wmsHdCjEVz2sGOpRxJ+Ben/KiLph4ItxBy1abEL+E8fkRzqjg0rfXmaHJGw9JA== }
 
-  "@astrojs/markdown-remark@7.2.2":
+  "@astrojs/markdown-remark@7.3.1":
     resolution:
-      { integrity: sha512-FGfmK84zSNcrsBd0dl1gXE9JvZYElp8EXQa2jpHVAxG4deGKAp43wspxFupjADJX7MSsMRHwYCnfT6EyVmgeFQ== }
+      { integrity: sha512-QCjsjZQl0+Cgb91+T3Ip9hyUe1r5aLm4udi584rML9YO3syupbAYE+jWpAxYg+z4lFLNUugPrylFxZ+8qFTClg== }
 
   "@astrojs/markdown-satteri@0.3.5":
     resolution:
@@ -1015,7 +1016,7 @@ packages:
     resolution:
       { integrity: sha512-579VJuZgo20UpNQPm9EIez5W3DFSrD16uiV2YX6rUlpLtjgKSdnc69TxVTZXn4AtI2B731TI2qhW1O3K+vwtrQ== }
     peerDependencies:
-      "@astrojs/markdown-remark": ^7.2.0
+      "@astrojs/markdown-remark": ^7.3.1
       astro: ^7.0.2
     peerDependenciesMeta:
       "@astrojs/markdown-remark":
@@ -5514,7 +5515,7 @@ packages:
     engines: { node: ">=22.12.0", npm: ">=9.6.5", pnpm: ">=7.1.0" }
     hasBin: true
     peerDependencies:
-      "@astrojs/markdown-remark": 7.2.2
+      "@astrojs/markdown-remark": ^7.3.1
     peerDependenciesMeta:
       "@astrojs/markdown-remark":
         optional: true
@@ -5525,7 +5526,7 @@ packages:
     engines: { node: ">=22.12.0", npm: ">=9.6.5", pnpm: ">=7.1.0" }
     hasBin: true
     peerDependencies:
-      "@astrojs/markdown-remark": ^7.3.0
+      "@astrojs/markdown-remark": ^7.3.1
     peerDependenciesMeta:
       "@astrojs/markdown-remark":
         optional: true
@@ -12232,12 +12233,16 @@ snapshots:
       smol-toml: 1.8.0
       unified: 11.0.5
 
-  "@astrojs/markdown-remark@7.2.2":
+  "@astrojs/markdown-remark@7.3.1":
     dependencies:
-      "@astrojs/internal-helpers": 0.10.2
+      "@astrojs/internal-helpers": 0.11.0
       "@astrojs/prism": 4.0.2
+      "@mdx-js/mdx": 3.1.1
+      acorn: 8.18.0
+      estree-util-visit: 2.0.0
       github-slugger: 2.0.0
       hast-util-from-html: 2.0.3
+      hast-util-to-html: 9.0.5
       hast-util-to-text: 4.0.2
       mdast-util-definitions: 6.0.0
       rehype-raw: 7.0.0
@@ -12246,6 +12251,7 @@ snapshots:
       remark-parse: 11.0.0
       remark-rehype: 11.1.2
       remark-smartypants: 3.0.3
+      source-map: 0.7.6
       unified: 11.0.5
       unist-util-remove-position: 5.0.0
       unist-util-visit: 5.1.0
@@ -12269,13 +12275,13 @@ snapshots:
       github-slugger: 2.0.0
       satteri: 0.10.5
 
-  "@astrojs/mdx@7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))":
+  "@astrojs/mdx@7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))":
     dependencies:
       "@astrojs/internal-helpers": 0.10.2
-      "@astrojs/markdown-remark": 7.2.2
+      "@astrojs/markdown-remark": 7.3.1
       "@mdx-js/mdx": 3.1.1
       acorn: 8.18.0
-      astro: 7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
+      astro: 7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
       es-module-lexer: 2.3.1
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.5
@@ -12291,13 +12297,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  "@astrojs/mdx@7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))":
+  "@astrojs/mdx@7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))":
     dependencies:
       "@astrojs/internal-helpers": 0.10.2
-      "@astrojs/markdown-remark": 7.2.2
+      "@astrojs/markdown-remark": 7.3.1
       "@mdx-js/mdx": 3.1.1
       acorn: 8.18.0
-      astro: 7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
+      astro: 7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
       es-module-lexer: 2.3.1
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.5
@@ -12313,13 +12319,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  "@astrojs/mdx@7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))":
+  "@astrojs/mdx@7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))":
     dependencies:
       "@astrojs/internal-helpers": 0.10.2
-      "@astrojs/markdown-remark": 7.2.2
+      "@astrojs/markdown-remark": 7.3.1
       "@mdx-js/mdx": 3.1.1
       acorn: 8.18.0
-      astro: 7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
+      astro: 7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
       es-module-lexer: 2.3.1
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.5
@@ -12451,17 +12457,17 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 4.4.3
 
-  "@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)":
+  "@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)":
     dependencies:
       "@astrojs/markdown-satteri": 0.3.5
-      "@astrojs/mdx": 7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
+      "@astrojs/mdx": 7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
       "@astrojs/sitemap": 3.7.3
       "@pagefind/default-ui": 1.5.2
       "@types/hast": 3.0.5
       "@types/js-yaml": 4.0.9
       "@types/mdast": 4.0.4
-      astro: 7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
-      astro-expressive-code: 0.44.1(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
+      astro: 7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
+      astro-expressive-code: 0.44.1(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
       bcp-47: 2.1.1
       hast-util-from-html: 2.0.3
       hast-util-select: 6.0.4
@@ -12484,22 +12490,22 @@ snapshots:
       unist-util-visit: 5.1.0
       vfile: 6.0.3
     optionalDependencies:
-      "@astrojs/markdown-remark": 7.2.2
+      "@astrojs/markdown-remark": 7.3.1
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  "@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)":
+  "@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)":
     dependencies:
       "@astrojs/markdown-satteri": 0.3.5
-      "@astrojs/mdx": 7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
+      "@astrojs/mdx": 7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
       "@astrojs/sitemap": 3.7.3
       "@pagefind/default-ui": 1.5.2
       "@types/hast": 3.0.5
       "@types/js-yaml": 4.0.9
       "@types/mdast": 4.0.4
-      astro: 7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
-      astro-expressive-code: 0.44.1(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
+      astro: 7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
+      astro-expressive-code: 0.44.1(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
       bcp-47: 2.1.1
       hast-util-from-html: 2.0.3
       hast-util-select: 6.0.4
@@ -12522,22 +12528,22 @@ snapshots:
       unist-util-visit: 5.1.0
       vfile: 6.0.3
     optionalDependencies:
-      "@astrojs/markdown-remark": 7.2.2
+      "@astrojs/markdown-remark": 7.3.1
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  "@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)":
+  "@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)":
     dependencies:
       "@astrojs/markdown-satteri": 0.3.5
-      "@astrojs/mdx": 7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
+      "@astrojs/mdx": 7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
       "@astrojs/sitemap": 3.7.3
       "@pagefind/default-ui": 1.5.2
       "@types/hast": 3.0.5
       "@types/js-yaml": 4.0.9
       "@types/mdast": 4.0.4
-      astro: 7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
-      astro-expressive-code: 0.44.1(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
+      astro: 7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
+      astro-expressive-code: 0.44.1(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
       bcp-47: 2.1.1
       hast-util-from-html: 2.0.3
       hast-util-select: 6.0.4
@@ -12560,7 +12566,7 @@ snapshots:
       unist-util-visit: 5.1.0
       vfile: 6.0.3
     optionalDependencies:
-      "@astrojs/markdown-remark": 7.2.2
+      "@astrojs/markdown-remark": 7.3.1
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -15626,7 +15632,7 @@ snapshots:
     dependencies:
       "@theholocron/datapad": 5.0.0-alpha.3
 
-  "@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.2.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.2.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(rxjs@7.8.2)(vitest@4.1.10)":
+  "@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.2.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.2.0)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(rxjs@7.8.2)(vitest@4.1.10)":
     dependencies:
       "@axiomhq/pino": 2.0.0
       "@inquirer/prompts": 8.5.2(@types/node@26.2.0)
@@ -15634,7 +15640,7 @@ snapshots:
       "@napi-rs/keyring": 1.3.0
       "@sentry/node": 10.70.0(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))
       "@theholocron/astromech": 5.0.0-alpha.3
-      "@theholocron/components-doc": 1.13.0(@astrojs/react@6.0.4(@types/node@26.2.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      "@theholocron/components-doc": 1.13.0(@astrojs/react@6.0.4(@types/node@26.2.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       "@theholocron/datapad": 5.0.0-alpha.3
       "@theholocron/env-utils": 1.7.0(dotenv@16.6.1)
       "@theholocron/github-client": 1.15.0(vitest@4.1.10)
@@ -15661,7 +15667,7 @@ snapshots:
       - supports-color
       - vitest
 
-  "@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.25.12)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)":
+  "@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.25.12)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)":
     dependencies:
       "@axiomhq/pino": 2.0.0
       "@inquirer/prompts": 8.5.2(@types/node@26.5.0)
@@ -15669,7 +15675,7 @@ snapshots:
       "@napi-rs/keyring": 1.3.0
       "@sentry/node": 10.70.0(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))
       "@theholocron/astromech": 5.0.0-alpha.3
-      "@theholocron/components-doc": 1.13.0(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.25.12)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      "@theholocron/components-doc": 1.13.0(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.25.12)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       "@theholocron/datapad": 5.0.0-alpha.3
       "@theholocron/env-utils": 1.7.0(dotenv@16.6.1)
       "@theholocron/github-client": 1.15.0(vitest@4.1.10)
@@ -15696,7 +15702,7 @@ snapshots:
       - supports-color
       - vitest
 
-  "@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(rxjs@7.8.2)(vitest@4.1.10)":
+  "@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(rxjs@7.8.2)(vitest@4.1.10)":
     dependencies:
       "@axiomhq/pino": 2.0.0
       "@inquirer/prompts": 8.5.2(@types/node@26.5.0)
@@ -15704,7 +15710,7 @@ snapshots:
       "@napi-rs/keyring": 1.3.0
       "@sentry/node": 10.70.0(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))
       "@theholocron/astromech": 5.0.0-alpha.3
-      "@theholocron/components-doc": 1.13.0(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      "@theholocron/components-doc": 1.13.0(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       "@theholocron/datapad": 5.0.0-alpha.3
       "@theholocron/env-utils": 1.7.0(dotenv@16.6.1)
       "@theholocron/github-client": 1.15.0(vitest@4.1.10)
@@ -15731,7 +15737,7 @@ snapshots:
       - supports-color
       - vitest
 
-  "@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)":
+  "@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)":
     dependencies:
       "@axiomhq/pino": 2.0.0
       "@inquirer/prompts": 8.5.2(@types/node@26.5.0)
@@ -15739,7 +15745,7 @@ snapshots:
       "@napi-rs/keyring": 1.3.0
       "@sentry/node": 10.70.0(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))
       "@theholocron/astromech": 5.0.0-alpha.3
-      "@theholocron/components-doc": 1.13.0(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      "@theholocron/components-doc": 1.13.0(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       "@theholocron/datapad": 5.0.0-alpha.3
       "@theholocron/env-utils": 1.7.0(dotenv@16.6.1)
       "@theholocron/github-client": 1.15.0(vitest@4.1.10)
@@ -15766,7 +15772,7 @@ snapshots:
       - supports-color
       - vitest
 
-  "@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)":
+  "@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)":
     dependencies:
       "@axiomhq/pino": 2.0.0
       "@inquirer/prompts": 8.5.2(@types/node@26.5.0)
@@ -15774,7 +15780,7 @@ snapshots:
       "@napi-rs/keyring": 1.3.0
       "@sentry/node": 10.70.0(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))
       "@theholocron/astromech": 5.0.0-alpha.3
-      "@theholocron/components-doc": 1.13.0(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      "@theholocron/components-doc": 1.13.0(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       "@theholocron/datapad": 5.0.0-alpha.3
       "@theholocron/env-utils": 1.7.0(dotenv@16.6.1)
       "@theholocron/github-client": 1.15.0(vitest@4.1.10)
@@ -15807,11 +15813,11 @@ snapshots:
     transitivePeerDependencies:
       - vitest
 
-  "@theholocron/components-doc@1.13.0(@astrojs/react@6.0.4(@types/node@26.2.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)":
+  "@theholocron/components-doc@1.13.0(@astrojs/react@6.0.4(@types/node@26.2.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)":
     dependencies:
-      "@astrojs/starlight": 0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)
+      "@astrojs/starlight": 0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)
       "@codesandbox/sandpack-react": 2.20.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      astro: 7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
+      astro: 7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
       mdast-util-mdx-jsx: 3.2.0
       unist-util-visit: 5.1.0
     optionalDependencies:
@@ -15821,11 +15827,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  "@theholocron/components-doc@1.13.0(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.25.12)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)":
+  "@theholocron/components-doc@1.13.0(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.25.12)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)":
     dependencies:
-      "@astrojs/starlight": 0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)
+      "@astrojs/starlight": 0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)
       "@codesandbox/sandpack-react": 2.20.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      astro: 7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
+      astro: 7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
       mdast-util-mdx-jsx: 3.2.0
       unist-util-visit: 5.1.0
     optionalDependencies:
@@ -15835,11 +15841,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  "@theholocron/components-doc@1.13.0(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)":
+  "@theholocron/components-doc@1.13.0(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)":
     dependencies:
-      "@astrojs/starlight": 0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)
+      "@astrojs/starlight": 0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)
       "@codesandbox/sandpack-react": 2.20.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      astro: 7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
+      astro: 7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
       mdast-util-mdx-jsx: 3.2.0
       unist-util-visit: 5.1.0
     optionalDependencies:
@@ -15849,11 +15855,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  "@theholocron/components-doc@1.13.0(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)":
+  "@theholocron/components-doc@1.13.0(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)":
     dependencies:
-      "@astrojs/starlight": 0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)
+      "@astrojs/starlight": 0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)
       "@codesandbox/sandpack-react": 2.20.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      astro: 7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
+      astro: 7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
       mdast-util-mdx-jsx: 3.2.0
       unist-util-visit: 5.1.0
     optionalDependencies:
@@ -15863,11 +15869,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  "@theholocron/components-doc@1.13.0(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)":
+  "@theholocron/components-doc@1.13.0(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)":
     dependencies:
-      "@astrojs/starlight": 0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)
+      "@astrojs/starlight": 0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)
       "@codesandbox/sandpack-react": 2.20.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      astro: 7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
+      astro: 7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
       mdast-util-mdx-jsx: 3.2.0
       unist-util-visit: 5.1.0
     optionalDependencies:
@@ -15881,16 +15887,16 @@ snapshots:
     dependencies:
       tsx: 4.23.12
 
-  "@theholocron/docs-theme@1.3.5(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))":
+  "@theholocron/docs-theme@1.3.5(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))":
     dependencies:
-      "@astrojs/starlight": 0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)
-      astro: 7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
+      "@astrojs/starlight": 0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)
+      astro: 7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
       gray-matter: 4.0.3
 
-  "@theholocron/docs-theme@1.3.5(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))":
+  "@theholocron/docs-theme@1.3.5(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))":
     dependencies:
-      "@astrojs/starlight": 0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)
-      astro: 7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
+      "@astrojs/starlight": 0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3)
+      astro: 7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
       gray-matter: 4.0.3
 
   "@theholocron/env-utils@1.7.0(dotenv@16.6.1)":
@@ -15903,18 +15909,18 @@ snapshots:
     transitivePeerDependencies:
       - vitest
 
-  "@theholocron/holocron-plugin-cloudflare@5.0.0-alpha.3(@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10))(@theholocron/cloudflare-client@1.13.0(vitest@4.1.10))":
+  "@theholocron/holocron-plugin-cloudflare@5.0.0-alpha.3(@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10))(@theholocron/cloudflare-client@1.13.0(vitest@4.1.10))":
     dependencies:
-      "@theholocron/cli": 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
+      "@theholocron/cli": 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
       "@theholocron/cloudflare-client": 1.13.0(vitest@4.1.10)
 
-  "@theholocron/holocron-plugin-fern@5.0.0-alpha.3(@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10))":
+  "@theholocron/holocron-plugin-fern@5.0.0-alpha.3(@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10))":
     dependencies:
-      "@theholocron/cli": 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
+      "@theholocron/cli": 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
 
-  "@theholocron/holocron-plugin-github@5.0.0-alpha.3(@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10))(@theholocron/github-client@1.15.0(vitest@4.1.10))":
+  "@theholocron/holocron-plugin-github@5.0.0-alpha.3(@theholocron/cli@5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10))(@theholocron/github-client@1.15.0(vitest@4.1.10))":
     dependencies:
-      "@theholocron/cli": 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
+      "@theholocron/cli": 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.3.1)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
       "@theholocron/github-client": 1.15.0(vitest@4.1.10)
       libsodium-wrappers: 0.8.4
 
@@ -16772,25 +16778,25 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro-expressive-code@0.44.1(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)):
+  astro-expressive-code@0.44.1(astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)):
     dependencies:
-      astro: 7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
+      astro: 7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
       rehype-expressive-code: 0.44.1
       url-extras: 0.1.0
 
-  astro-expressive-code@0.44.1(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)):
+  astro-expressive-code@0.44.1(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)):
     dependencies:
-      astro: 7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
+      astro: 7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
       rehype-expressive-code: 0.44.1
       url-extras: 0.1.0
 
-  astro-expressive-code@0.44.1(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)):
+  astro-expressive-code@0.44.1(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)):
     dependencies:
-      astro: 7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
+      astro: 7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
       rehype-expressive-code: 0.44.1
       url-extras: 0.1.0
 
-  astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0):
+  astro@7.2.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0):
     dependencies:
       "@astrojs/compiler-rs": 0.3.2(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)
       "@astrojs/internal-helpers": 0.10.2
@@ -16846,7 +16852,7 @@ snapshots:
       yargs-parser: 22.0.0
       zod: 4.4.3
     optionalDependencies:
-      "@astrojs/markdown-remark": 7.2.2
+      "@astrojs/markdown-remark": 7.3.1
       sharp: 0.35.3(@types/node@26.5.0)
     transitivePeerDependencies:
       - "@azure/app-configuration"
@@ -16882,7 +16888,7 @@ snapshots:
       - uploadthing
       - yaml
 
-  astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0):
+  astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0):
     dependencies:
       "@astrojs/compiler-rs": 0.4.0(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)
       "@astrojs/internal-helpers": 0.11.0
@@ -16938,7 +16944,7 @@ snapshots:
       yargs-parser: 22.0.0
       zod: 4.6.1
     optionalDependencies:
-      "@astrojs/markdown-remark": 7.2.2
+      "@astrojs/markdown-remark": 7.3.1
       sharp: 0.35.4(@types/node@26.2.0)
     transitivePeerDependencies:
       - "@azure/app-configuration"
@@ -16974,7 +16980,7 @@ snapshots:
       - uploadthing
       - yaml
 
-  astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0):
+  astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0):
     dependencies:
       "@astrojs/compiler-rs": 0.4.0(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)
       "@astrojs/internal-helpers": 0.11.0
@@ -17030,7 +17036,7 @@ snapshots:
       yargs-parser: 22.0.0
       zod: 4.6.1
     optionalDependencies:
-      "@astrojs/markdown-remark": 7.2.2
+      "@astrojs/markdown-remark": 7.3.1
       sharp: 0.35.4(@types/node@26.5.0)
     transitivePeerDependencies:
       - "@azure/app-configuration"

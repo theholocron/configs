@@ -98,6 +98,7 @@
       "esbuild"
     ],
     "overrides": {
+      "@astrojs/markdown-remark": "^7.3.1",
       "@commitlint/config-conventional>conventional-changelog-conventionalcommits": "7",
       "conventional-changelog-conventionalcommits": "9.3.1",
       "uuid": "^11.1.1",
