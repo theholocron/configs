@@ -81,6 +81,7 @@
     "husky": "^9.1.7",
     "knip": "^6.32.2",
     "lint-staged": "^16.4.0",
+    "markdownlint": "^0.41.1",
     "prettier": "^3.9.6",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",

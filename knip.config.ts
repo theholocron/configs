@@ -42,6 +42,10 @@ const config: KnipConfig = {
 		// components-doc/registry-doc referenced via .mdx — not traceable as TS imports
 		"@theholocron/components-doc",
 		"@theholocron/registry-doc",
+		// used via the "markdownlint/style/prettier" JSON subpath import in
+		// packages/markdownlint-config/index.ts — Knip's resolver doesn't
+		// trace a deep subpath import as usage of the root package
+		"markdownlint",
 	],
 	// tsdown/vitest: used in package scripts declared via catalog: — Knip can't resolve catalog
 	//   specifiers to binaries for some packages despite them being correctly declared

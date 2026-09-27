@@ -147,6 +147,9 @@ importers:
       lint-staged:
         specifier: ^16.4.0
         version: 16.4.0
+      markdownlint:
+        specifier: ^0.41.1
+        version: 0.41.1
       prettier:
         specifier: ^3.9.6
         version: 3.9.8
@@ -405,6 +408,34 @@ importers:
       husky:
         specifier: ^9.1.7
         version: 9.1.7
+      tsdown:
+        specifier: "catalog:"
+        version: 0.22.14(oxc-resolver@11.24.2)(tsx@4.23.12)(typescript@5.9.3)
+      typescript:
+        specifier: "catalog:"
+        version: 5.9.3
+      vitest:
+        specifier: "catalog:"
+        version: 4.1.10(@opentelemetry/api@1.9.1)(@types/node@26.5.0)(@vitest/browser-playwright@4.1.10)(@vitest/coverage-v8@4.1.10)(jsdom@26.1.0)(msw@2.15.0(@types/node@26.5.0)(typescript@5.9.3))(vite@8.2.1(@types/node@26.5.0)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
+
+  packages/markdownlint-config:
+    dependencies:
+      markdownlint:
+        specifier: ^0.41
+        version: 0.41.1
+    devDependencies:
+      "@theholocron/cli":
+        specifier: catalog:holocron
+        version: 5.0.0-alpha.3(@astrojs/react@6.0.4(@types/node@26.5.0)(@types/react-dom@19.2.5(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tsx@4.23.12)(yaml@2.9.0))(@astrojs/starlight@0.41.7(@astrojs/markdown-remark@7.2.2)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(typescript@5.9.3))(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(@types/node@26.5.0)(astro@7.3.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.5.0)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))(dotenv@16.6.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rxjs@7.8.2)(vitest@4.1.10)
+      "@theholocron/tsconfig":
+        specifier: workspace:*
+        version: link:../tsconfig
+      "@theholocron/vitest-config":
+        specifier: workspace:*
+        version: link:../vitest-config
+      "@vitest/coverage-v8":
+        specifier: "catalog:"
+        version: 4.1.10(@vitest/browser@4.1.10)(vitest@4.1.10)
       tsdown:
         specifier: "catalog:"
         version: 0.22.14(oxc-resolver@11.24.2)(tsx@4.23.12)(typescript@5.9.3)
@@ -4747,6 +4778,10 @@ packages:
     resolution:
       { integrity: sha512-R5M+SYhMbwBeQcNXYWNCZkl09vkVfAtcPIaCGdzIkkbeaTrVbGQ7HVgi4s+EmM/M1K4ZuWQH0jGcvMvNePfxYA== }
 
+  "@types/katex@0.16.8":
+    resolution:
+      { integrity: sha512-trgaNyfU+Xh2Tc+ABIb44a5AYUpicB3uwirOioeOkNPPbmgRNtcWyDeeFRzjPZENO9Vq8gvVqfhaaXWLlevVwg== }
+
   "@types/mdast@4.0.4":
     resolution:
       { integrity: sha512-kGaNbPh1k7AFzgpud/gMdvIm5xuECykRR+JnWKQno9TAXVa6WIVCGTPvYGekIDL4uwCZQSYbUxNBSb1aUo79oA== }
@@ -5949,6 +5984,11 @@ packages:
   commander@3.0.2:
     resolution:
       { integrity: sha512-Gar0ASD4BDyKC4hl4DwHqDrmvjoxWKZigVnAbn5H1owvm4CxCPdb0HQDehwNYMJpla5+M2tPmPARzhtYuwpHow== }
+
+  commander@8.3.0:
+    resolution:
+      { integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww== }
+    engines: { node: ">= 12" }
 
   comment-parser@1.4.1:
     resolution:
@@ -8396,6 +8436,11 @@ packages:
       { integrity: sha512-HzvLbEQcoqN2LmGnloShxu2hLadi/rkOTU3zt61UeMICLS0wGDvbf8neIi6+bGkxMnAePIcFMFnbqV+r6YvwxA== }
     engines: { node: ">=16" }
 
+  katex@0.16.47:
+    resolution:
+      { integrity: sha512-Eeo8Ys1doU1z+x8AZsPpQu+p/QcZBI5PeOo7QGQdy2x2m0MU/hYagBbGOmXwr5KVbEfVuWv9LpnQWeehogurjg== }
+    hasBin: true
+
   keyv@4.5.4:
     resolution:
       { integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw== }
@@ -8716,6 +8761,11 @@ packages:
     resolution:
       { integrity: sha512-wiYz4+JrLyb/DqW2hkFJxP7Vd7JuTDm77fvbM8VfEQdmSMqcImWeeRbHwZjBjIFki/VaMK2BhFi7oUUZeM5bqw== }
 
+  markdownlint@0.41.1:
+    resolution:
+      { integrity: sha512-qHKeU2E1bdyNAT077go2FVTNXvYcktN5IHtF6XyeD1l0PClxzSp2tUApAV14ORI8DGX4H9bNKZEzelZp4qn8IA== }
+    engines: { node: ">=22" }
+
   marked-terminal@7.3.0:
     resolution:
       { integrity: sha512-t4rBvPsHc57uE/2nJOLmMbZCQ4tgAccAED3ngXQqW6g+TxA488JzJ+FK3lQkzBQOI1mRV/r/Kq+1ZlJ4D0owQw== }
@@ -8876,6 +8926,10 @@ packages:
   micromark-extension-gfm@3.0.0:
     resolution:
       { integrity: sha512-vsKArQsicm7t0z2GugkCKtZehqUm31oeGBV/KVSorWSy8ZlNAv7ytjFhvaryUiCUJYqs+NoE6AFhpQvBTM6Q4w== }
+
+  micromark-extension-math@3.1.0:
+    resolution:
+      { integrity: sha512-lvEqd+fHjATVs+2v/8kg9i5Q0AP2k85H0WUOwpIVvUML8BapsMvh1XAogmQjOCsLpoKRCVQqEkQBB3NhVBcsOg== }
 
   micromark-extension-mdx-expression@3.0.1:
     resolution:
@@ -10722,6 +10776,11 @@ packages:
     resolution:
       { integrity: sha512-tsaTIkKW9b4N+AEj+SVA+WhJzV7/zMhcSu78mLKWSk7cXMOSHsBKFWUs0fWwq8QyK3MgJBQRX6Gbi4kYbdvGkQ== }
     engines: { node: ">=18" }
+
+  string-width@8.2.1:
+    resolution:
+      { integrity: sha512-IIaP0g3iy9Cyy18w3M9YcaDudujEAVHKt3a3QJg1+sr/oX96TbaGUubG0hJyCjCBThFH+tFpcIyoUHUn1ogaLA== }
+    engines: { node: ">=20" }
 
   string-width@8.2.2:
     resolution:
@@ -15967,6 +16026,8 @@ snapshots:
 
   "@types/junit-report-builder@3.0.2": {}
 
+  "@types/katex@0.16.8": {}
+
   "@types/mdast@4.0.4":
     dependencies:
       "@types/unist": 3.0.3
@@ -17362,6 +17423,8 @@ snapshots:
   commander@14.0.3: {}
 
   commander@3.0.2: {}
+
+  commander@8.3.0: {}
 
   comment-parser@1.4.1: {}
 
@@ -19860,6 +19923,10 @@ snapshots:
       make-dir: 3.1.0
       xmlbuilder: 15.1.1
 
+  katex@0.16.47:
+    dependencies:
+      commander: 8.3.0
+
   keyv@4.5.4:
     dependencies:
       json-buffer: 3.0.1
@@ -20112,6 +20179,20 @@ snapshots:
   markdown-extensions@2.0.0: {}
 
   markdown-table@3.0.4: {}
+
+  markdownlint@0.41.1:
+    dependencies:
+      micromark: 4.0.2
+      micromark-core-commonmark: 2.0.3
+      micromark-extension-directive: 4.0.0
+      micromark-extension-gfm-autolink-literal: 2.1.0
+      micromark-extension-gfm-footnote: 2.1.0
+      micromark-extension-gfm-table: 2.1.1
+      micromark-extension-math: 3.1.0
+      micromark-util-types: 2.0.2
+      string-width: 8.2.1
+    transitivePeerDependencies:
+      - supports-color
 
   marked-terminal@7.3.0(marked@15.0.12):
     dependencies:
@@ -20414,6 +20495,16 @@ snapshots:
       micromark-extension-gfm-tagfilter: 2.0.0
       micromark-extension-gfm-task-list-item: 2.1.0
       micromark-util-combine-extensions: 2.0.1
+      micromark-util-types: 2.0.2
+
+  micromark-extension-math@3.1.0:
+    dependencies:
+      "@types/katex": 0.16.8
+      devlop: 1.1.0
+      katex: 0.16.47
+      micromark-factory-space: 2.0.1
+      micromark-util-character: 2.1.1
+      micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.2
 
   micromark-extension-mdx-expression@3.0.1:
@@ -22428,6 +22519,11 @@ snapshots:
   string-width@7.2.0:
     dependencies:
       emoji-regex: 10.6.0
+      get-east-asian-width: 1.6.0
+      strip-ansi: 7.2.0
+
+  string-width@8.2.1:
+    dependencies:
       get-east-asian-width: 1.6.0
       strip-ansi: 7.2.0
 
