@@ -3,7 +3,7 @@ packages:
 
 catalog:
   "@vitest/coverage-v8": ^4.1.10
-  tsdown: ^0.22.14
+  tsdown: ^0.23.0
   typescript: ^5.9.3
   vitest: ^4.1.10
 
@@ -11,8 +11,8 @@ catalog:
 catalogs:
   # Docs components and registry — release in lockstep; bump both entries together.
   docs:
-    "@theholocron/components-doc": ^1.13.0
-    "@theholocron/registry-doc": ^1.13.0
+    "@theholocron/components-doc": ^1.14.0
+    "@theholocron/registry-doc": ^1.14.0
 
   holocron:
     "@theholocron/astromech": 5.0.0-alpha.3
