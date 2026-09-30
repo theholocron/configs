@@ -7,6 +7,7 @@ import { afterEach, describe, expect, it } from "vitest";
 
 import libraryDefault from "./bundles/library.js";
 import { library } from "./bundles/library.js";
+import { nodeApp } from "./bundles/node-app.js";
 import { base } from "./configs/base.js";
 import { node } from "./configs/node.js";
 import { packageJson } from "./configs/package-json.js";
@@ -108,6 +109,19 @@ describe("eslint-config — individual configs", () => {
 		expect(config.length).toBeGreaterThan(0);
 	});
 
+	it("node() pins no-unsupported-features/node-builtins to the org-wide >=22 floor explicitly -- never relies on package.json auto-detection", () => {
+		// recommended-module's own default auto-detects engines.node by walking
+		// up from the linted file to a real package.json on disk -- that can't
+		// work when Sentinel's Bucket 1 static-analysis check lints fetched PR
+		// content in-memory (holocron#849), which silently fell back to a
+		// conservative default and flagged long-stable globals (Request/
+		// Response) as unsupported (holocron#858/#859).
+		const linter = new Linter({ configType: "flat" });
+		const code = 'export function handler() { return new Response("ok"); }\n';
+		const results = linter.verify(code, node() as Parameters<Linter["verify"]>[1], { filename: "handler.ts" });
+		expect(results.some((m) => m.ruleId === "n/no-unsupported-features/node-builtins")).toBe(false);
+	});
+
 	it("react() returns a non-empty flat config array", () => {
 		const config = react();
 		expect(Array.isArray(config)).toBe(true);
@@ -194,6 +208,30 @@ describe("eslint-config — bundles", () => {
 		expect(browserPackages).toBeDefined();
 		expect(browserPackages?.files).toEqual(["packages/location-utils/src/**", "packages/misc-utils/src/**"]);
 		expect(browserPackages?.rules?.["n/no-unsupported-features/node-builtins"]).toBe("off");
+	});
+
+	it("library()'s docs/src exemption actually wins in real lint output -- not clobbered by node()'s recommended-module preset", () => {
+		// Regression: node()'s own recommended-module preset sets
+		// n/no-extraneous-import: "error" with no `files` restriction. Composed
+		// *after* base()'s docs/src exemption (library() = [...base(), ...node(), ...]),
+		// it silently re-enabled the rule everywhere -- base()'s own isolated
+		// test above never caught this, since it only checks the config object
+		// exists, never that it wins once composed into a real bundle.
+		const linter = new Linter({ configType: "flat" });
+		const code = 'import { defineConfig } from "astro/config";\nexport default defineConfig({});\n';
+		const results = linter.verify(code, library() as Parameters<Linter["verify"]>[1], {
+			filename: "docs/src/astro.config.ts",
+		});
+		expect(results.some((m) => m.ruleId === "n/no-extraneous-import")).toBe(false);
+	});
+
+	it("nodeApp() has the same docs/src exemption survive node()'s composition", () => {
+		const linter = new Linter({ configType: "flat" });
+		const code = 'import { defineConfig } from "astro/config";\nexport default defineConfig({});\n';
+		const results = linter.verify(code, nodeApp() as Parameters<Linter["verify"]>[1], {
+			filename: "docs/src/astro.config.ts",
+		});
+		expect(results.some((m) => m.ruleId === "n/no-extraneous-import")).toBe(false);
 	});
 
 	it("has a ready-to-use default export — required for `eslint --config <path>` to load it directly", () => {
