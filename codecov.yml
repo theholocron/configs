@@ -111,3 +111,8 @@ component_management:
       name: "vitest-config"
       paths:
         - packages/vitest-config/**
+
+    - component_id: rollup-plugin-transform-template
+      name: "rollup-plugin-transform-template"
+      paths:
+        - plugins/rollup-plugin-transform-template/**

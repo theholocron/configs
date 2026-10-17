@@ -11,7 +11,9 @@ read the same rules. Put durable, repo-wide agent guidance here.
 
 - **pnpm workspace monorepo** with Turborepo for task orchestration.
 - Each package under `packages/` is an independently published npm package
-  (`@theholocron/<name>`).
+  (`@theholocron/<name>`). `plugins/` holds build-tool plugins that go with the
+  configs (bundler / test-runner plugins rather than shareable config objects);
+  they are published and versioned the same way.
 - Packages are written in TypeScript and compiled to `dist/` via tsdown. Each
   package has a `build` script; `pnpm build` runs turbo across all packages.
 - **Lockstep versioning**: all packages share the same version number.
@@ -35,6 +37,8 @@ packages/
   tsdown-config/         — @theholocron/tsdown-config    (presets/)
   vite-config/           — @theholocron/vite-config      (presets/)
   vitest-config/         — @theholocron/vitest-config    (presets/ + bundles/)
+plugins/
+  rollup-plugin-transform-template/ — @theholocron/rollup-plugin-transform-template (Rollup/Vite/Rolldown plugin: template files → default-exported strings)
 scripts/
   bump-versions.mjs      — lockstep version bump (called by semantic-release)
 release.config.ts        — semantic-release config (lockstep publish, root CHANGELOG)
