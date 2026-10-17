@@ -4,3 +4,4 @@
 # there's no real formatting to enforce here.
 CHANGELOG.md
 packages/*/CHANGELOG.md
+plugins/*/CHANGELOG.md

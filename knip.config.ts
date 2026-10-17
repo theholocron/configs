@@ -11,6 +11,10 @@ const config: KnipConfig = {
 		"packages/*": {
 			project: ["**/*.ts", "!dist/**"],
 		},
+		"plugins/*": {
+			entry: ["src/**/*.test.ts"],
+			project: ["**/*.ts", "!dist/**"],
+		},
 		// browserslist-config and tsconfig ship JSON/JS only — no TypeScript to analyze
 		"packages/browserslist-config": {
 			entry: [],
