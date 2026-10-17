@@ -22,20 +22,23 @@ export default defineConfig({
 Then import template files directly:
 
 ```ts
-import editorconfigBody from "./editorconfig";
+import editorconfigBody from "./editorconfig.md";
 import labelerBody from "./github-labeler.yml";
 // Both resolve to plain strings at runtime
 ```
 
 ## What gets transformed
 
-| File type              | Condition                          | Result                                                           |
-| ---------------------- | ---------------------------------- | ---------------------------------------------------------------- |
-| `.yml`                 | Always                             | Default-exported string                                          |
-| `.md`                  | Always                             | Default-exported string                                          |
-| Any non-JSON extension | Path contains a string from `dirs` | Default-exported string                                          |
-| `.json`                | Even inside `dirs`                 | Not transformed — bundlers handle JSON natively as typed objects |
-| `.ts` / `.tsx`         | Even inside `dirs`                 | Not transformed — source files, not templates                    |
+| File type                        | Condition                          | Result                                                           |
+| -------------------------------- | ---------------------------------- | ---------------------------------------------------------------- |
+| `.yml`                           | Always                             | Default-exported string                                          |
+| `.md`                            | Always                             | Default-exported string                                          |
+| Any non-JSON extension           | Path contains a string from `dirs` | Default-exported string                                          |
+| `.json`                          | Even inside `dirs`                 | Not transformed — bundlers handle JSON natively as typed objects |
+| `.ts` / `.tsx` / `.mts` / `.cts` | Even inside `dirs`                 | Not transformed — source files, not templates                    |
+| `node_modules` / virtual ids     | Always                             | Not transformed                                                  |
+
+Query suffixes (`?raw`) are stripped before matching. Extensionless files in `dirs` are transformed, but TypeScript only types `*.yml`/`*.md` imports; cast or declare the others yourself.
 
 ## Options
 

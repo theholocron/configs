@@ -18,7 +18,7 @@ export interface TransformTemplateOptions {
  * default-exported string literals so they can be imported directly in code.
  *
  * Two categories of files are transformed:
- *  1. `.yml` and `.md` files — always, regardless of location.
+ *  1. `.yml` and `.md` files — always, regardless of location (except under `node_modules`).
  *  2. Any non-JSON file whose resolved path contains a string listed in `dirs`.
  *
  * JSON files in `dirs` are intentionally excluded: bundlers handle `.json`
@@ -35,14 +35,19 @@ export function transformTemplate(options: TransformTemplateOptions = {}) {
 	return {
 		name: "rollup-plugin-transform-template",
 		transform(_code: string, id: string) {
-			const isYmlOrMd = id.endsWith(".yml") || id.endsWith(".md");
-			// Exclude .json (native bundler handler) and .ts/.tsx (source files that
+			// Drop bundler query suffixes (`?raw`, `?v=123`) so the checks and the read see the real path.
+			const file = id.split("?")[0];
+			// Virtual modules and anything pulled in from a dependency are never templates;
+			// reading them would let a dependency inline arbitrary local files.
+			if (file.startsWith("\0") || file.includes("/node_modules/")) return null;
+			const isYmlOrMd = file.endsWith(".yml") || file.endsWith(".md");
+			// Exclude .json (native bundler handler) and TypeScript sources (they
 			// live inside template directories alongside their template files).
-			const isNativeOrSource = id.endsWith(".json") || id.endsWith(".ts") || id.endsWith(".tsx");
-			const isTemplateDir = dirs.length > 0 && dirs.some((dir) => id.includes(dir)) && !isNativeOrSource;
+			const isNativeOrSource = /\.(json|[cm]?tsx?)$/.test(file);
+			const isTemplateDir = dirs.length > 0 && dirs.some((dir) => file.includes(dir)) && !isNativeOrSource;
 			if (!isYmlOrMd && !isTemplateDir) return null;
 			return {
-				code: `export default ${JSON.stringify(readFileSync(id, "utf8"))};`,
+				code: `export default ${JSON.stringify(readFileSync(file, "utf8"))};`,
 				map: null,
 			};
 		},
