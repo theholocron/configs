@@ -35,19 +35,30 @@ export default defineConfig({
 		],
 	},
 	tasks: [
-		{ name: "sourceQuality.staticAnalysis", required: true },
+		// turbo.inputs appends "**/*.ts" to the registry default's "src/**"
+		// (holocron#845) — this repo is entirely flat-layout (index.ts,
+		// presets/*.ts, bundles/*.ts, configs/*.ts directly under each
+		// package root, no src/ directory anywhere), so "src/**" alone
+		// never matches anything here. Previously hand-edited directly
+		// into turbo.json as a stopgap after a real fix shipped (v8.5.1)
+		// with a stale cached dist/ because of exactly this gap — that
+		// hand-edit would have silently reverted on the next
+		// `holocron repo sync`/`setup`.
+		{ name: "sourceQuality.staticAnalysis", required: true, turbo: { inputs: ["**/*.ts"] } },
 		{ name: "sourceQuality.formatting", required: true },
 		{ name: "sourceQuality.structuredDataValidation", required: true },
 		{ name: "security.secretDetection", required: true },
 		{ name: "platform.commitStandards", required: true },
-		{ name: "verification.unitTests", required: true },
+		// Same flat-layout turbo.inputs override as sourceQuality.staticAnalysis above.
+		{ name: "verification.unitTests", required: true, turbo: { inputs: ["**/*.ts"] } },
 		"security.codeScanning",
 		"review",
 		"stale",
 		"greetings",
 		"dependencies",
 		"bookkeeping",
-		{ name: "verification.typeSafety", required: true },
+		// Same flat-layout turbo.inputs override as sourceQuality.staticAnalysis above.
+		{ name: "verification.typeSafety", required: true, turbo: { inputs: ["**/*.ts"] } },
 		{ name: "knowledge.docs", with: { preview: true } },
 		"knowledge.wiki",
 	],

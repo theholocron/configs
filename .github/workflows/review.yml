@@ -1,8 +1,8 @@
 # AUTO-GENERATED — do not edit directly.
 # Source:  theholocron/holocron · packages/astromech/src/thin-callers.ts
-# Tool:    holocron sync
+# Tool:    holocron repo sync
 # Changes: edit source in theholocron/holocron
-name: Review
+name: Source Quality
 
 on: # yamllint disable-line rule:truthy
   pull_request:
@@ -18,6 +18,6 @@ permissions:
 
 jobs:
   review:
-    name: Lint Annotations
+    name: Annotations
     uses: theholocron/.github/.github/workflows/review.yml@main
     secrets: inherit
