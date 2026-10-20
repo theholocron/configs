@@ -9,7 +9,10 @@ export default defineConfig({
 	tasks: [
 		// Build: sanity check that every workspace compiles to dist/. Also what
 		// delivery.publish's run-build: true actually runs (pnpm build).
-		{ name: "delivery.build", required: true },
+		// turbo.inputs appends "**/*.ts" to the registry default's "src/**"
+		// (holocron#845) — same flat-layout override as holocron.config.ts's
+		// sourceQuality.staticAnalysis/verification.*.
+		{ name: "delivery.build", required: true, turbo: { inputs: ["**/*.ts"] } },
 		// Audit, decomposed (epic #672, D3/#675 — the old single `audit` task's
 		// jobs are now separate tasks). No lighthouse config referenced here
 		// even though lighthouse-config is one of the packages — this repo

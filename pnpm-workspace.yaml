@@ -17,8 +17,8 @@ catalogs:
     "@theholocron/registry-doc": ^1.13.0
 
   holocron:
-    "@theholocron/astromech": 5.0.0-alpha.153
-    "@theholocron/cli": 5.0.0-alpha.153
-    "@theholocron/holocron-plugin-cloudflare": 5.0.0-alpha.153
-    "@theholocron/holocron-plugin-fern": 5.0.0-alpha.153
-    "@theholocron/holocron-plugin-github": 5.0.0-alpha.153
+    "@theholocron/astromech": 5.0.0-alpha.163
+    "@theholocron/cli": 5.0.0-alpha.163
+    "@theholocron/holocron-plugin-cloudflare": 5.0.0-alpha.163
+    "@theholocron/holocron-plugin-fern": 5.0.0-alpha.163
+    "@theholocron/holocron-plugin-github": 5.0.0-alpha.163

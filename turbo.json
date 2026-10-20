@@ -3,22 +3,30 @@
   "globalDependencies": ["pnpm-workspace.yaml", "tsconfig.json"],
   "tasks": {
     "sourceQuality.staticAnalysis": {
-      "inputs": ["**/*.ts", "eslint.config.ts", "eslint.config.js", "eslint.config.mjs", "eslint.config.cjs"],
+      "inputs": ["src/**", "eslint.config.ts", "eslint.config.js", "eslint.config.mjs", "eslint.config.cjs", "**/*.ts"],
       "outputs": [],
       "dependsOn": ["^delivery.build"]
     },
     "verification.unitTests": {
-      "inputs": ["**/*.ts", "vitest.config.ts", "vitest.config.js", "vitest.config.mjs", "package.json"],
+      "inputs": ["src/**", "vitest.config.ts", "vitest.config.js", "vitest.config.mjs", "package.json", "**/*.ts"],
       "outputs": ["test-report.junit.xml", "coverage/**"],
       "dependsOn": ["delivery.build", "^delivery.build"]
     },
     "verification.typeSafety": {
-      "inputs": ["**/*.ts", "tsconfig.json"],
+      "inputs": ["src/**", "tsconfig.json", "**/*.ts"],
       "outputs": [],
       "dependsOn": ["^delivery.build"]
     },
     "delivery.build": {
-      "inputs": ["**/*.ts", "package.json", "tsdown.config.ts", "vite.config.ts", "rollup.config.ts", "tsconfig.json"],
+      "inputs": [
+        "src/**",
+        "package.json",
+        "tsdown.config.ts",
+        "vite.config.ts",
+        "rollup.config.ts",
+        "tsconfig.json",
+        "**/*.ts"
+      ],
       "outputs": ["dist/**"],
       "dependsOn": ["^delivery.build"]
     }
