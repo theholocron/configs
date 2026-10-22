@@ -28,7 +28,7 @@
     "verification.unitTests": "holocron run verification.unitTests --"
   },
   "devDependencies": {
-    "@commitlint/types": "^21.2.0",
+    "@commitlint/types": "^21.2.3",
     "@theholocron/cli": "catalog:holocron",
     "@theholocron/tsconfig": "workspace:*",
     "@theholocron/vitest-config": "workspace:*",
